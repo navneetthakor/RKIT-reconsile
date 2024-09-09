@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hardy Zoo</title>
+    <style>
+      /* internal css */
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- header part  -->
+    <header style="height: 13vh"> <!-- inline css-->
+      <div id="logo">
+        <img src="logo1.png" alt="Hardy's Zoo" />
+      </div>
+      <nav>
+        <a href="https://google.com/"  target="_blank">Google</a>
+        <a href="./about.html">AboutUs</a>
+      </nav>
+    </header>
+
+    <main>
+        <div id="intro">
+            <h1>Hardy's Zoo</h1>
+            <h3>Second home of the nature</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique optio hic explicabo beatae, aperiam quia ipsum blanditiis voluptatum, molestias commodi illo placeat libero. Eaque aspernatur exercitationem esse odio totam velit ex, veniam voluptatibus iusto explicabo quia dignissimos similique? Amet hic illum, a aliquam error mollitia velit assumenda atque at, ipsa quae similique quam debitis aliquid incidunt! Repudiandae, cupiditate nulla rem explicabo distinctio quam? Ab natus labore recusandae dolorum minus! Sit id obcaecati deserunt cum expedita repellendus sapiente quisquam iure aperiam odit porro sequi laboriosam recusandae aspernatur dignissimos modi, quod autem commodi. Suscipit pariatur, laudantium dignissimos voluptate ad aliquid provident numquam id cumque reiciendis, laborum libero et est adipisci culpa nulla.</p>
+        </div>
+
+        <div id="ticketbook">
+            <h1>Book your ticket's now</h1>
+            <div id="formContainer">
+                <form method="get" action="./success.html">
+                    <div id="nameFields">
+                        <div >
+                            <label for="firstName">First name</label>
+                            <input id="firstName" name="firstName" type="text" required/>
+                        </div>
+                        <div >
+                            <label for="lastName">Last name</label>
+                            <input id="lastName" name="lastName" type="text" required/>
+                        </div>
+                    </div>
+                    <div id="sex">
+                            <fieldset>
+                                <legend>sex</legend>
+                                <input type="radio" id="sex1" name="sex" value="Male" />
+                                <label for="sex1">Male</label>
+                                <input type="radio" id="sex2" name="sex" value="Male" />
+                                <label for="sex2">Female</label>
+                                <input type="radio" id="sex3" name="sex" value="prefer Not to say" />
+                                <label for="sex3">prefer Not to say</label>
+                            </fieldset>
+                    </div>
+                    <div id="metaInfo">
+                        <div >
+                            <label for="age">age</label>
+                            <input id="age" name="age" type="number" required/>
+                        </div>
+                        <div >
+                            <label for="numOfTickets">Number of Tickets</label>
+                            <input id="numOfTickets" name="numOfTickets" type="number" required/>
+                        </div>
+                    </div>
+                    <div id="contactFields">
+                        <div >
+                            <label for="mobile">Mobile</label>
+                            <input id="mobile" name="mobile" type="number" required/>
+                        </div>
+                        <div >
+                            <label for="email">Email</label>
+                            <input id="lastName" name="lastName" type="email" />
+                        </div>
+                    </div>
+                    <div id="formButtonContainer">
+                        <button type="submit">Submit</button>
+                        <button type="reset" >Reset </button>
+                    </div>
+                    </form>
+            </div>
+        </div>
+    </main>
+  </body>
+</html>
