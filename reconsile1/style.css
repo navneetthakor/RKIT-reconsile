@@ -86,7 +86,7 @@ nav > a:hover{
     flex-direction: column;
 }
 
-#sex fieldset{
+.options fieldset{
     display: flex;
     flex-grow: 1;
     justify-content: space-evenly;
@@ -125,4 +125,8 @@ nav > a:hover{
 #formButtonContainer > button[type="reset"]:active{
     color: orangered;
     background: white;
+}
+
+input{
+padding: 2px;
 }
