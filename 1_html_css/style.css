@@ -1,0 +1,260 @@
+/* external css  */
+
+/* header of website  */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 7vw ;
+    box-shadow: 2px 1px 10px rgb(117, 120, 218);
+}
+
+#logo{
+    box-shadow: 3px 3px 5px gray;
+    border: 1px solid gray;
+    border-radius: 8px;
+    height: 90%;
+    width: 13rem;
+    overflow: hidden;
+}
+#logo:hover{
+    box-shadow: 3px 3px 5px rgb(36, 85, 190);
+}
+
+#logo > img{
+    height: 100%;
+    width: 100%;
+}
+
+nav{
+    height: 50%;
+    width: 20%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+nav > a{
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+nav > a:hover{
+    color: rgb(164, 63, 26);
+    text-decoration: underline;
+    transition-delay:1;
+    transition-timing-function: ease-in-out;
+}
+
+header > button{
+    height: 2.8rem;
+    width: 10rem;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    box-shadow: 1px 1px 50px rgb(36, 85, 190);
+    background-color: rgb(36, 85, 190);
+    color: white;
+}
+header > button:hover{
+    background-color: orangered;
+    box-shadow: 1px 1px 50px rgb(139, 58, 28);
+    transition-delay:1;
+    transition-timing-function: ease-in-out;
+    color: black;
+}
+
+
+
+
+/* styling in main division  */
+#intro{
+    position: relative;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10rem 5vw;
+    overflow: hidden;
+}
+
+#intro-circle{
+    border: 2px solid black;
+    height: 75rem;
+    width: 45rem;
+    /* border-top-left-radius: 50%; */
+    border-radius: 50%;
+    background-color: rgba(255, 68, 0, 0.699);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+    z-index: -1;
+}
+#intro-circle2{
+    border: 2px solid black;
+    height: 45rem;
+    width: 45rem;
+    /* border-top-left-radius: 50%; */
+    border-radius: 50%;
+    background-color: rgba(255, 68, 0, 0.699);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+    z-index: -1;
+}
+
+/* images in intro container  */
+.intro-img{
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 1px 30px rgb(36, 85, 190);
+    transition: transform 1s ease;
+}
+.intro-img img:hover{
+    /* transform: rotate(30deg) scale(2) translate(10px, 20px); */
+    transform: rotateY(180deg);
+}
+.intro-img img{
+    height: 100%;
+    width: 100%;
+}
+#intro-img-lion{
+    height: 10rem;
+    width: 10rem;
+    top: 0;
+    right: 0;  
+    transform: translate(-50%, 50%); 
+}
+#intro-img-tiger{
+    height: 15rem;
+    width: 15rem;
+    bottom: 0;
+    left: 0;  
+    transform: translate(100%, -20%); 
+}
+#intro-img-parrot{
+    height: 15rem;
+    width: 15rem;
+    bottom: 0;
+    right: 0;  
+    transform: translate(-100%, -20%); 
+}
+#intro-img-jeraf{
+    height: 10rem;
+    width: 10rem;
+    top: 0;
+    left: 0;  
+    transform: translate(50%, 50%); 
+}
+
+/* text of intro container  */
+#intro > h1{
+    font-size: 5rem;
+    letter-spacing: 10px;
+}
+#intro > h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+}
+#intro-para{
+    border: 2px solid black;
+    width: 50%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* form division  */
+#ticketbook{
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+}
+
+#formContainer{
+    border: 2px solid lightgray;
+    padding: 5vh;
+}
+
+#formContainer form > div{
+    display: flex;
+    margin-top: 2vh;
+}
+#formContainer form > div > div:first-child{
+    margin-right: 2vw;
+}
+
+#formContainer form > div > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.options fieldset{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    padding: 1vh;
+}
+
+#formButtonContainer{
+    display: flex;
+    justify-content: space-between;
+}
+#formButtonContainer > button{
+    width: 45%;
+    height: 5vh;
+    font-size: larger;
+    border: 1px solid gray;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#formButtonContainer > button:hover{
+    border: 2px solid black;
+}
+
+#formButtonContainer > button[type="submit"]{
+    background: rgb(39, 125, 39);
+    color: white;
+}
+#formButtonContainer > button[type="submit"]:active{
+    color: rgb(39, 125, 39);
+    background: white;
+}
+#formButtonContainer > button[type="reset"]{
+    background: orangered;
+    color: white;
+}
+#formButtonContainer > button[type="reset"]:active{
+    color: orangered;
+    background: white;
+}
+
+input{
+padding: 2px;
+}
+
+/* footer styling  */
+footer{
+    height: 10rem;
+    background-color: rgb(29, 54, 177);
+    color: white;
+    padding: 10px 20px;
+}
+
+footer h3{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+footer ul{
+    margin-left: 2vw;
+}
