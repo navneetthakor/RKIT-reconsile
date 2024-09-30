@@ -1,0 +1,8 @@
+#table-div{
+    /* border: 2px solid red; */
+    margin-bottom: 5rem;
+}
+
+th, td{
+    border-radius: 5px;
+}

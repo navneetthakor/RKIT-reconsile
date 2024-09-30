@@ -1,5 +1,7 @@
 /* external css  */
-
+*{
+    scroll-behavior: smooth;
+}
 /* header of website  */
 header{
     display: flex;
@@ -56,15 +58,22 @@ header > button{
     font-size: 1.5rem;
     box-shadow: 1px 1px 50px rgb(36, 85, 190);
     background-color: rgb(36, 85, 190);
-    color: white;
 }
 header > button:hover{
     background-color: orangered;
     box-shadow: 1px 1px 50px rgb(139, 58, 28);
     transition-delay:1;
     transition-timing-function: ease-in-out;
+}
+
+header > button > a{
+    text-decoration: none;
+    color: white;
+}
+header > button > a:hover{
     color: black;
 }
+
 
 
 
@@ -178,6 +187,7 @@ header > button:hover{
     flex-direction: column;
     align-items: center;
     gap: 3vh;
+    /* padding-top: 5rem; */
 }
 
 #formContainer{
