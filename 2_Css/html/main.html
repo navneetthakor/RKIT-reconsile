@@ -18,7 +18,7 @@
                     <li><a href="#boxModel">BoxModel</a></li>
                     <li><a href="#flexBox">FlexBox</a></li>
                     <li><a href="#grid">Grid</a></li>
-                    <li><a href="#backGround">Backgroud</a></li>
+                    <li><a href="https://www.w3schools.com/css/">Css_tutorial</a></li>
                 </ul>
             </div>
     </header>
@@ -30,6 +30,7 @@
             <div class="common_sec">
 
                 <pre>
+                    <code>
                     #boxmodel > div > div{
                         border:2px solid black;
                         height: 5rem;
@@ -40,6 +41,7 @@
                     #boxmodel_contentbox{
                         box-sizing: content-box;
                     }
+                </code>
                 </pre>
                 <div>
                     <div id="boxmodel_contentbox">
@@ -60,6 +62,7 @@
             <h3 class="typography_2" style="margin-top: 1rem;">center data</h3>
             <div class="common_sec">
                 <pre>
+                    <code>
                     #flex_center{
                         display: flex;
                         align-items: center;
@@ -71,6 +74,7 @@
                         padding: 5rem;
                         border: 2px solid blue;
                     }
+                </code>
                 </pre>
                 <div id="flex_center">
                     <div>
@@ -81,6 +85,7 @@
             <h3 class="typography_2" style="margin-top: 1rem;">Arrange div's in a row</h3>
             <div class="common_sec">
                 <pre>
+                    <code>
                     #flex_row{
                         display: flex;
                         align-items: center;
@@ -94,6 +99,7 @@
                         padding: 2rem;
                         border: 2px solid blue;
                     }
+                </code>
                 </pre>
                 <div id="flex_row">
                     <div></div>
@@ -104,33 +110,68 @@
         </div>
         <div id="grid" class="div_sections">
             <h1 class="typography_1">Grid</h1>
-            <h3 class="typography_2" style="margin-top: 1rem;">arrangement in grid</h3>
+            <h3 class="typography_2" style="margin-top: 1rem;">Grid Format - 1</h3>
             <div class="common_sec">
                 <pre>
-                    #flex_row{
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border: 2px solid red;
+                <code>
+                    #grid_1{
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
                         height: 15rem;
-                        min-width: 20rem;
-                        gap: 2rem;
+                        min-width: 25rem;
+                        border: 2px solid black;
+                        column-gap: 0.5rem;
+                        row-gap: 0.75rem;
+                        padding: 1rem;
                     }
-                    #flex_row > div{
-                        padding: 2rem;
+                    
+                    #grid_1 > div{
                         border: 2px solid blue;
                     }
+                </code>
                 </pre>
-                <div>
+                <div id="grid_1">
+                    <div></div>
+                    <div></div>
+                    <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
             </div>
+            <h3 class="typography_2" style="margin-top: 1rem;">Grid Format - 2</h3>
+            <div class="common_sec">
+                <pre>
+                <code>
+                    #grid_2{
+                        display: grid;
+                        height: 15rem;
+                        min-width: 25rem;
+                        gap: 0.5rem;
+                        padding: 1rem;
+                        border: 2px solid black;
+                        grid-template-areas: 'header header header'
+                            'menu1 main links'
+                            'footer footer footer';
+                    }
+                    #grid_2 > div{
+                        border: 2px solid blue;
+                    }
+                    .item1{
+                        grid-area: header;
+                    }
+                    " simillar for remaining items"
+                </code>
+                </pre>
+                <div id="grid_2">
+                    <div class="item1"></div>
+                    <div class="item2"></div>
+                    <div class="item3"></div>
+                    <div class="item4"></div>
+                    <div class="item5"></div>
+                </div>
+            </div>
 
-        </div>
-        <div id="backGround" class="div_sections">
-            <h1 class="typography_1">Backgroud</h1>
         </div>
     </main>
 </body>
