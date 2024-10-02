@@ -126,7 +126,6 @@ header > button > a:hover{
     transition: transform 1s ease;
 }
 .intro-img img:hover{
-    /* transform: rotate(30deg) scale(2) translate(10px, 20px); */
     transform: rotateY(180deg);
 }
 .intro-img img{

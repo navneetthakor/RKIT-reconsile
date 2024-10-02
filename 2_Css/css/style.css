@@ -3,7 +3,6 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
-    /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 html{
@@ -15,6 +14,7 @@ html{
 header{
     display: flex;
     flex-direction: column;
+    width: 100vw;
 }
 header > div {
     width: 100%;
@@ -174,12 +174,22 @@ pre{
 
 
 /* --- media queries --  */
-@media (min-width: 726px) {
+@media (min-width: 768px) {
     html{
         font-size: 16px;
+        /* display: flex;
+        flex-grow: 1; */
     }
 
     .common_sec{
         flex-direction: row;
     }
 }
+
+/* @media (min-width:1150px){
+    html{
+        display: block;
+    }
+} */
+
+/* see the breakpoint and font size */
