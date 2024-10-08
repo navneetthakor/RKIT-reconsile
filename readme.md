@@ -55,7 +55,7 @@
     - It will create single row.
     - for multi row grid add multiple such div tags.
 
-- comman classes used in Grid system.
+- comman classes used in Grid system are follows.
     
 
 
