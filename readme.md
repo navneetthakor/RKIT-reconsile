@@ -34,6 +34,19 @@
     ```
 
 ## Important Features
+### Break-points
+- Following are the break-points that we have in Bootstrap
+    ```
+        xs:  <  576px,
+        sm:  >= 576px,
+        md:  >= 768px,
+        lg:  >= 992px,
+        xl:  >= 1200px,
+        xxl: >= 1400px
+    ```
+- This breka-points are very Important in developoing responsive layouts.
+
+
 ### Containers
 - This are used to pad contains.
 - mainly 2 types of classes
@@ -56,6 +69,7 @@
     - for multi row grid add multiple such div tags.
 
 - comman classes used in Grid system are follows.
+
     
 
 
