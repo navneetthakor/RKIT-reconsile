@@ -78,6 +78,28 @@
     - ``` .offset-size``` - to leave blank space
 
 
-    
+# Javascript
 
+## Javascript Introduction
+- Javascript is the scripting language used for writing logic in the website by means,
+to create dynamic website.
+
+
+## Ways to include javascript
+- script can be placed either in ``` <head> ``` or ``` <body> ``` tag, with the help of ``` <script> ``` tag.
+- Generally, placing script at the end of ``` <body> ``` tag is preferable, as it will result in faster page loading. As,
+    - JS is blocking in nature so, whenever browser enconters ``` <script> ``` tag it stops the execution of rendering visual content and starts loading script.
+
+- we can write JS directly in the script tag like,
+    ```
+    <script>
+    let a = 5;
+    console.log(a);
+    </script>
+    ```
+
+    or we can write script in seprate file and then, load in the web-page.
+
+    ```
+    <script src="./script.js" > </script>
 
