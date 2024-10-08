@@ -6,7 +6,7 @@
 
 # Bootstrap 5
 
-## Intoduction of Bootstrap 5
+## Intoduction
 - It's latest version of bootstrap
 - Supports all major borwsers but, internet explorer 11 and down are not supported.
 - What new it has compare to older versions is,
@@ -14,4 +14,24 @@
         - improved performance, as now the this size of javascript code needed to load is reduced.
         - Better DOM interection due to use of native javascript methods which are more efficient compare to JQuery.
     - Added new componentes
+
+## Ways to use Bootstrap
+- Include it from ``` CDN (Content Delivery Network) ``` as follow4
+    - CSS
+    ```
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    ```
+
+    - Javascript
+    ```
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    ```
+
+- Second way is we can download ``` Compiled version ``` as well as ``` source file version ``` from thier website.
+- It also allows to pull it, from well known package managers. like for ``` NPM ```
+    ```
+    npm install bootstrap
+    ```
+
+
 
