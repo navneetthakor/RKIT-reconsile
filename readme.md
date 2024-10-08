@@ -33,5 +33,14 @@
     npm install bootstrap
     ```
 
+## Important Features
+### Containers
+- This are used to pad contains.
+- mainly 2 types of classes
+    - ``` .container ``` which is fixed length container
+    - ``` .container-fluid ``` which is full width contianer
+
+
+
 
 
