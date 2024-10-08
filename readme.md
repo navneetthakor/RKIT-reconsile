@@ -41,6 +41,21 @@
     - ``` .container-fluid ``` which is full width contianer
 
 
+### Grid System
+- Grid is build with the helop of flex-box.
+- It supports upto 12 column in single row.
+- syntax for creating grid 
+    ```
+    <div class="row">
+        <div class="col">col1</div>
+        <div class="col">col2</div>
+        <div class="col">col3</div>
+    </div>
+    ```
+    - It will create single row.
+    - for multi row grid add multiple such div tags.
 
+- comman classes used in Grid system.
+    
 
 
