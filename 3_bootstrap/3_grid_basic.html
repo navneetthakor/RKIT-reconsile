@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Boostrap Grid</title>
+    <style>
+        div {
+            border: 2px solid grey;
+        }
+        .col{
+            height: 5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="m-3">Basic Grid Layout</h1>
+    <div class="mx-5 row">
+        <div class="col">R1 C1</div>
+        <div class="col">R1 C2</div>
+        <div class="col">R1 C3</div>
+    </div>
+    <div class="mx-5 mt-1 row">
+        <div class="col">R2 C1</div>
+        <div class="col">R2 C2</div>
+    </div>
+
+    <h1 class="m-3">Maximum 12 columns allowed</h1>
+    <div class="row">
+        <div class="col"> temp </div>
+        <div class="col"> temp </div>
+        <div class="col"> temp </div>
+        <div class="col"> temp </div>
+        <div class="col"> temp </div>
+        <div class="col"> temp </div>
+        <div class="col"> temp </div>
+        <div class="col"> temp </div>
+        <div class="col"> temp </div>
+        <div class="col"> temp </div>
+        <div class="col"> temp </div>
+        <div class="col"> temp </div>
+    </div>
+
+    <h1 class="m-3">Column of different width</h1>
+    <div class=" row">
+        <div class="col col-1 bg-primary text-white">Size - 1</div>
+        <div class="col col-8 bg-success text-white">Size - 8</div>
+        <div class="col col-3 bg-primary text-white">Size - 3</div>
+    </div>
+
+    
+</body>
+</html>
