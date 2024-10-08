@@ -6,7 +6,7 @@
 
 # Bootstrap 5
 
-### Intoduction of Bootstrap 5
+## Intoduction of Bootstrap 5
 - It's latest version of bootstrap
 - Supports all major borwsers but, internet explorer 11 and down are not supported.
 - What new it has compare to older versions is,
