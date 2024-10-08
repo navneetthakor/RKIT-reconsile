@@ -75,6 +75,7 @@
         - size can take following values: ```sm | md | lg | xl | xxl ```, 
     - ``` .col- size - width``` - simillar to above but, column will be of different size.
         - width can take values in range 1 to 12
+    - ``` .offset-size``` - to leave blank space
 
 
     
