@@ -4,14 +4,14 @@
 let myName = "Navneet";
 
 // Second - with String Object constructor 
-let myNickName = "nk";
+let myNickName = new String("nk");
     // -> but prefer to used String literals as they are optimized compare to second method 
     // -> Because second method will create String object in heap, 
-    // while First will create non-mutable string on the stack
+    // while First will create string on the stack
 
 // Following are the some useful methods of string 
 // -> when we apply method to string literal, it temporory creates String Object and after task complete, 
-// that object will be delected 
+// that object will be deleted 
 
 // 1. charAt() 
 // returns character of specified index in string.
