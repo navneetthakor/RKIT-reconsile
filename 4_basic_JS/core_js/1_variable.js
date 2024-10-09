@@ -8,11 +8,10 @@ var name = "Navneet";
 let village = "Khankuva";
     // -> compare to "var" it gives following 
         // - it's block scoped
-        // - we can't define variable with the same name again. even following will result in the error
-                // - var name = "Navneet"
+        // - we can't define variable with the name already exists in the code. even following will result in the error
                 // - let name = "Navneet"
 
 const id = "21CP031";
     // -> it's block scoped 
-    // -> prevents reassingments, not mutability.
+    // -> prevents re-assingments, not mutability.
     // -> redeclaration will result in arror 
