@@ -104,7 +104,7 @@ to create dynamic website.
     <script src="./script.js" > </script>
     ```
 
-- Core - Javascript related information you will find in 4_basic_JS/core_js and 5_advance_js/core_js
+- Core - Javascript related information you will find in ``` 4_basic_JS/core_js ``` and ``` 5_advance_js/core_js```.
 
 ## DOM manipulation
 - In browser, ``` Window ``` is the global object. which contains following:
@@ -114,6 +114,10 @@ to create dynamic website.
         |- BOM
         |- core Javascript
     ```
+    - DOM (Document Object Model) -> represents HTML document itself.
+    - BOM (Browser Object Model) -> represents all features of the browser other than, DOM. like alert, promt etc...
+    
+- Dom Manupulation related all the practical information is available in ``` 4_basic_js ``` folder
 
 
 
