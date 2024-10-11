@@ -115,7 +115,7 @@ to create dynamic website.
         |- core Javascript
     ```
     - DOM (Document Object Model) -> represents HTML document itself.
-    - BOM (Browser Object Model) -> represents all features of the browser other than, DOM. like alert, promt etc...
+    - BOM (Browser Object Model) -> represents all features of the browser other than, DOM. like alert, prompt etc...
     
 - Dom Manupulation related all the practical information is available in ``` 4_basic_js ``` folder
 

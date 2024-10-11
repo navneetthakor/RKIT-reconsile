@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Dom Events</title>
 </head>
 <body>
-    
+    <div>1. Mouse Effect.</div>
+    <h3 class="m-2" >Hover over me!</h3>
+
+    <div>2. Key board events</div>
+    <input type="text" onkeydown="inputEdit(this)" />
+    <button id="inputTextRemoval">clear</button>
+
+    <script>
+        // mouse events 
+        // 1. onclick 
+        // 2. ondblclick
+        // 3. onmousedown
+        // 4. onmouseenter
+        // 5. onmouseover
+        // etc.. 
+        let h3eles = document.getElementsByTagName('h3');
+        h3eles[0].onmouseover = function ChangeColor(){
+            let colors = ["brown", "purple", "green", "red", "blue"];
+            let num = parseInt((Math.random()*100) % 5)
+            h3eles[0].style.color = colors[num];
+        }
+
+        
+        // keyborad events 
+        // 1. onkeydown
+        // 2. onkeypress
+        // 3. onkeyup
+
+        function inputEdit(inputEle){
+            inputEle.value = "Enter your name";
+        }
+
+        let inputTextRemovalbtn = document.getElementById('inputTextRemoval');
+        inputTextRemovalbtn.addEventListener("click", function (){
+            let inputArea = inputTextRemovalbtn.previousElementSibling;
+            inputArea.value = "";
+        })
+
+        // events related to forms 
+
+    </script>
 </body>
 </html>
