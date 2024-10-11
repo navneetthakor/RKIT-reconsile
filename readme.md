@@ -102,4 +102,18 @@ to create dynamic website.
 
     ```
     <script src="./script.js" > </script>
+    ```
+
+- Core - Javascript related information you will find in 4_basic_JS/core_js and 5_advance_js/core_js
+
+## DOM manipulation
+- In browser, ``` Window ``` is the global object. which contains following:
+    ```
+    |- Window
+        |- DOM
+        |- BOM
+        |- core Javascript
+    ```
+
+
 
