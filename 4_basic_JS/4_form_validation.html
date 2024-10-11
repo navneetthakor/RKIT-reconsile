@@ -62,13 +62,13 @@
     <!-- script  -->
      <script>
         // form events 
-        1. onsubmit
-        2. onreset
-        3. onchange
-        4. onfocus
-        5. onblur 
+        // 1. onsubmit
+        // 2. onreset
+        // 3. onchange
+        // 4. onfocus
+        // 5. onblur 
         // etc...
-        
+
         function handleForm(event){
             event.preventDefault(); // Prevent default form submission
             let email = document.getElementById('email').value;
@@ -79,6 +79,7 @@
                 alert('please Enter email');
                 return;
             }
+
 
             if(!fname){
                 alert('please Enter first name');
