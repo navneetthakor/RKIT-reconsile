@@ -71,11 +71,12 @@
 - comman classes used in Grid system are follows.
     - ``` .row ``` - It will create single row of grid system.
     - ``` .col ``` - to create columns of equal-size. (it will wrapped accourding to default settings for smaller   screen sizes)
+    - ``` .col-width ``` - to define number of column will be span.
+        - width can take values in range 1 to 12
     - ``` .col-size ``` - defined screen and above it will create equal size columns. But, below that it will create stacked columns, means single column in each line.
         - size can take following values: ```sm | md | lg | xl | xxl ```, 
-    - ``` .col- size - width``` - simillar to above but, column will be of different size.
-        - width can take values in range 1 to 12
-    - ``` .offset-size``` - to leave blank space
+    - ``` .col- size - width``` - Mixture of both of above properties.
+    - ``` .offset-size-width``` - to leave blank space (we may only use one from ```size``` and ```width```, but use both for better responsiveness).
 
 
 # Javascript
