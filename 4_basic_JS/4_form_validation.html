@@ -10,11 +10,7 @@
       crossorigin="anonymous"
     />
     <title>Form Validation</title>
-    <!-- <style>
-        *{
-            font-size: 1rem;
-        }
-    </style> -->
+
   </head>
   <body>
     <div class="container mt-5 " id="dataContainer">
@@ -70,7 +66,9 @@
         // etc...
 
         function handleForm(event){
-            event.preventDefault(); // Prevent default form submission
+            //to prevent default form submission
+            event.preventDefault(); 
+
             let email = document.getElementById('email').value;
             let fname = document.getElementById('fname').value;
             let tbody = document.getElementsByTagName('tbody')[0];
