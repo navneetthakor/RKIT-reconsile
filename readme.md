@@ -78,6 +78,7 @@
     - ``` .col- size - width``` - Mixture of both of above properties.
     - ``` .offset-size-width``` - to leave blank space (we may only use one from ```size``` and ```width```, but use both for better responsiveness).
 
+- Other important details are present in ``` 3_bootstrap ``` folder.
 
 # Javascript
 
