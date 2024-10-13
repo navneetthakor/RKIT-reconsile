@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Bootstrap | Forms</title>
+  </head>
+  <body class="d-flex align-items-center justify-content-evenly pt-5">
+
+    <div class="container border border-2 border-success m-5 w-50 rounded-3">
+      <form class="p-3" class="need-validation" onsubmit="handleForm(event)">
+        <div class="row mb-3">
+          <div class="col">
+            <label for="fname" class="form-label">First Name:</label>
+            <input type="text" class="form-control" id="fname" name="fname" required/>
+          </div>
+          <div class="col">
+            <label for="lname" class="form-label">Last Name:</label>
+            <input type="text" class="form-control" id="lname" name="lname" required/>
+          </div>
+        </div>
+
+        <label for="email" class="form-label">Email:</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="email" name="email" required/>
+          <span class="input-group-text">@gmail.com</span>
+        </div>
+
+        <label for="tel" class="form-label">Phone:</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">+91</span>
+          <input type="tel" class="form-control" id="tel" name="tel" />
+        </div>
+
+        <div class="mb-3 ps-2">
+            <input type="checkbox" name="terms" id="terms" class="form-check-input" required/>
+            <label for="terms" class="form-check-label ms-2">Accept terms & conditions</label>
+            
+        </div>
+
+        <div class="row fs-5">
+          <div class="col">
+            <button type="submit" class="btn btn-primary" style="width: 100%">
+              Submit
+            </button>
+          </div>
+          <div class="col">
+            <button type="reset" class="btn text-white" style="width: 100%; background-color: orangered;">
+              Reset
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        <a href="./6_table.html" class="fs-3 "> &larr; Table</a>
+    </div>
+
+    <script>
+        function handleForm(event){
+            event.preventDefault();
+            alert("form submited");
+        }
+    </script>
+  </body>
+</html>
