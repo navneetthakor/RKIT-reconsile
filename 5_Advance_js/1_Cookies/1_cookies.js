@@ -4,7 +4,7 @@
 // ---- (don't run below code it's meant for browser not node js ok) -----
 // 1. how to store cookie 
 const date = new Date();
-date.setTime(date.getTime() + (5*24*60*60*1000));
+date.setTime(date.getTime() + (5*24*60*60*1000)); //miliseconds
 document.cookie = `username=nk; expires=${date.toUTCString()}`;
     // - above line will through error, as it's not in brower so no document object is present.
     // - setting expire date is important, otherwise when browser closes cookie will be removed
