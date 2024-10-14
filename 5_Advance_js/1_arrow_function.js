@@ -17,11 +17,9 @@ myName(); //calling function
 // function greet(){
 //     this.greetmsg = "Namste";
 //     function greet2(){
-//         console.log(this)
 //         this.name = "nk";
 //     }
-//     greet2(this);
-//     console.log(this.greetmsg + "\n");
+//     greet2();
 // }
 // const obj = new greet();
 // console.log(obj);
@@ -33,7 +31,6 @@ function hello(){
         this.sname = "nk";
     }
     hello2();
-    console.log(this.sname + "\n");
 }
 const obj2 = new hello();
 console.log(obj2);
