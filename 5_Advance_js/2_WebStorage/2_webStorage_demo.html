@@ -14,29 +14,33 @@
 <body class="d-flex align-items-center justify-content-center flex-column p-5">
     
     <h1 class="fs-3 mb-2">Local storage</h1>
-    <div class=" d-flex justify-content-evenly p-3 border border-2 border-dark" style="width: 30rem; margin-bottom: 10rem;">
-        <input type="text" class="form-control w-50" placeholder="Enter username">
+    <div class=" d-flex justify-content-evenly p-3 border border-2 border-dark" style="width: 40rem; margin-bottom: 10rem;">
+        <input class="key" type="text" class="form-control w-50" placeholder="Enter key">
+        <input class="value" type="text" class="form-control w-50" placeholder="Enter value">
         <button class="btn btn-dark" onclick="handleLocalClick()">Add to LS</button>
     </div>
     <h1 class="fs-3 mb-2">Session storage</h1>
-    <div class=" d-flex justify-content-evenly p-3 border border-2 border-dark" style="width: 30rem;">
-        <input type="text" class="form-control w-50" placeholder="Enter username">
+    <div class=" d-flex justify-content-evenly p-3 border border-2 border-dark" style="width: 40rem;">
+        <input class="key" type="text" class="form-control w-50" placeholder="Enter key">
+        <input class="value" type="text" class="form-control w-50" placeholder="Enter value">
         <button class="btn btn-dark" onclick="handleSessionClick()">Add to SS</button>
     </div>
 
     <script>
         // local storage 
         function handleLocalClick(){
-            let username = document.getElementsByTagName('input')[0].value;
-            localStorage.setItem("username", username);
-            alert(localStorage.getItem("username"));
+            let key = document.getElementsByClassName('key')[0].value;
+            let value = document.getElementsByClassName('value')[0].value;
+            localStorage.setItem(key, value);
+            alert(localStorage.getItem(key));
         }
         
         // session storage 
         function handleSessionClick(){
-            let username = document.getElementsByTagName('input')[1].value;
-            sessionStorage.setItem("username", username);
-            alert(sessionStorage.getItem("username"));
+            let key = document.getElementsByClassName('key')[1].value;
+            let value = document.getElementsByClassName('value')[1].value;
+            sessionStorage.setItem(key, value);
+            alert(sessionStorage.getItem(key))
         }
     </script>
 </body>
