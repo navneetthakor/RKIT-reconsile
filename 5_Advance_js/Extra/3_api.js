@@ -1,0 +1,1 @@
+// api -> medium for communication between two applications 
