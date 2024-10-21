@@ -267,3 +267,54 @@ footer h3{
 footer ul{
     margin-left: 2vw;
 }
+
+@media (max-width: 1000px){
+    .intro-img{
+        position: static;
+    }
+    #intro{
+        padding: 5rem 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    html{
+        font-size: 10px;
+    }
+
+    header{
+        flex-direction: column;
+    }
+
+    header > button {
+        display: none;
+    }
+
+    nav{
+        margin-top: 1rem;
+    }
+    nav > a{
+        font-size: 2.2rem;
+    }
+
+    #logo{
+        width: 23rem;
+    }
+    #intro-img-lion,
+    #intro-img-jeraf{
+        height: 25rem;
+        width: 13rem;
+    }
+    #intro-img-tiger,
+    #intro-img-parrot{
+        height: 30rem;
+        width: 18rem;
+    }
+}
+
+@media (max-width: 490px){
+    html{
+        font-size: 8px;
+    }
+}
