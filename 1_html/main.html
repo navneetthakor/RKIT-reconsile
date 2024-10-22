@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hardy Zoo</title>
+  </head>
+
+  <body>
+    <!-- header part  -->
+    <header>
+      <div id="logo">
+        <img src="logo1.png" alt="Hardy's Zoo" />
+      </div>
+      <nav>
+        <a href="./main.html"  target="_blank">Home</a>
+        <a href="./about.html">AboutUs</a>
+        <a href="https://google.com/"  target="_blank">Google</a>
+      </nav>
+      <button >
+        <a href="#ticketbook">Book now</a>
+      </button>
+    </header>
+
+    <main>
+        <div id="intro">
+          <h1>Hardy's Zoo</h1>
+          <h3>Second home of the nature</h3>
+          <div id="intro-circle"></div>
+          <div id="intro-circle2"></div>
+        </div>
+
+        <!-- ticket booking -->
+        <div id="ticketbook">
+            <h1>Book your ticket's now</h1>
+            <div id="formContainer">
+                <form method="get" action="./success.html">
+                    <div id="nameFields">
+                        <div >
+                            <label for="firstName">First name</label>
+                            <input id="firstName" name="firstName" type="text" accesskey="n" required/>
+                        </div>
+                        <div >
+                            <label for="lastName">Last name</label>
+                            <input id="lastName" name="lastName" type="text" required/>
+                        </div>
+                    </div>
+                    <div class="options">
+                            <fieldset>
+                                <legend>sex</legend>
+                                <input type="radio" id="sex1" name="sex" value="Male" checked/>
+                                <label for="sex1">Male</label>
+                                <input type="radio" id="sex2" name="sex" value="Female" />
+                                <label for="sex2">Female</label>
+                                <input type="radio" id="sex3" name="sex" value="prefer Not to say" />
+                                <label for="sex3">prefer Not to say</label>
+                            </fieldset>
+                    </div>
+                    <div class="options">
+                            <fieldset>
+                                <legend>Things you want</legend>
+                                <input type="checkbox" id="p1" name="sex1" value="Pets" />
+                                <label for="p1">Pets</label>
+                                <input type="checkbox" id="p2" name="sex2" value="pets_of_fun" />
+                                <label for="p2">pets_of_fun</label>
+                                <input type="checkbox" id="p3" name="sex3" value="both" />
+                                <label for="p3">both</label>
+                            </fieldset>
+                    </div>
+                    <div id="metaInfo">
+                        <div >
+                            <label for="age">age</label>
+                            <input id="age" name="age" type="number" required/>
+                        </div>
+                        <div >
+                            <label for="numOfTickets">Number of Tickets</label>
+                            <input id="numOfTickets" name="numOfTickets" type="number" required/>
+                        </div>
+                    </div>
+                    <div id="contactFields">
+                        <div >
+                            <label for="mobile">Mobile</label>
+                            <input id="mobile" name="mobile" type="tel" required/>
+                        </div>
+                        <div >
+                            <label for="email">Email</label>
+                            <input id="lastName" name="lastName" type="email" />
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column;" >
+                      <label for="txtarea">Suggestions: </label>
+                      <textarea id="txtarea" style="flex-grow: 1;" rows="7">
+                      </textarea>
+                    </div>
+                    <div id="formButtonContainer">
+                        <button type="submit">Submit</button>
+                        <button type="reset" >Reset </button>
+                    </div>
+                    </form>
+            </div>
+        </div>
+      </main>
+      <footer>
+        <div>
+          <h3>Contact us:</h3>
+          <ul>
+          <li>D-590 ghanshyam road, Mayur vihar, new Mumbai, Maharastra, india</li>
+          <li>+91 6363636363</li>
+          <li>customercare@hardyzoo.com</li>
+        </ul>
+        </div>
+      </footer>
+  </body>
+</html>
