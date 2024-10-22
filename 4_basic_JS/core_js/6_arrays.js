@@ -63,7 +63,7 @@ console.log(arr.includes(12)) // result => True
 
 // 9. indexOf
 // return index of specified element 
-console.log(arr.indexOf(102)) // result => 0
+console.log(arr.indexOf(31)) // result => 0
     // -> element not exist then it will return '-1' as result 
 
 

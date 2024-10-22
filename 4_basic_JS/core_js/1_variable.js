@@ -16,5 +16,6 @@ let village = "Khankuva";
 const id = "21CP031";
     // -> it's block scoped 
     // -> prevents re-assingments, not mutability.
-    // -> redeclaration will result in arror 
-
+    // -> redeclaration will result in arror
+    
+// new type of declatraion 

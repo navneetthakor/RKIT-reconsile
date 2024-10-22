@@ -33,7 +33,7 @@ console.log(trimExamp.trim()); // result => "hello"
 console.log(myName.substring(1,3)); // result => 'av'
     // -> ending index is optional
     // -> ending indexed element will not be included 
-    // -> if end is greater then start then, they will be swaped 
+    // -> if start is greater then end then, they will be swaped 
     // -> start or end is negative then, result => str.length + (start | end)
 
 // 5. replace()

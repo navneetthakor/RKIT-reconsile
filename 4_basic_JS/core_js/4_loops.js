@@ -1,4 +1,4 @@
-// following are the three loops available in javascript
+// following are the four loops available in javascript
 // for iterable data-structures 
 
 // used for illustraion 
