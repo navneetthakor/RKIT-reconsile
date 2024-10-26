@@ -23,9 +23,9 @@ console.log(`Banches of class : ${Class.banches}`)
 
 // ----------- Let's extend it for one more class ---
 function School(){
+    Class.call(this);
     console.log("School is created\n");
-    this.class = new Class();
 }
 
 const s1 = new School();
-console.log(s1.class.capacity);
+console.log(s1.capacity);
