@@ -6,7 +6,7 @@ let myName = () => {
 };
 myName(); //calling function
 
-// it have following benefits compare to normal functions in javascript
+// it have following differences compare to normal functions in javascript
 
 // 1. Implicit 'this'
 // The 'this' keyword inside an arrow function refers to the 'this' of the enclosing lexical scope,
@@ -37,3 +37,7 @@ function hello() {
 }
 const obj2 = new hello();
 console.log(obj2);
+
+
+// 2. Can't be used as Constructor 
+  // -> arrow function can not be used to create object directly from it 
