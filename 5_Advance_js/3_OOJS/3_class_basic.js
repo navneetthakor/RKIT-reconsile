@@ -31,7 +31,6 @@ class School extends Class{
     constructor(){
         super();
         console.log("School is created");
-        
     }
 }
 
