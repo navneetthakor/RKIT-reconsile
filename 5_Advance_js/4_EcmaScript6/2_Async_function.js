@@ -42,3 +42,35 @@ result.then((data)=>{
 })
 
 // 3> ------- Using async/await -------
+// -> Async/await is the methodology in javascript to define asyncronous function 
+// -> This function always returns promise 
+        // --> "async" indicates that function may contain some asyncronous code 
+        // --> "await" used to push the execution of async function until perticular Promise resolves 
+
+// -> execution with-in function 
+        // --> first this function pushed to call stack 
+        // --> until async operation comes, function executed normally 
+        // --> once await is encountred, it saves state, removes it from call stack and handover task to web/node api
+        // --> meanwhile, JS engine executes further code 
+        // --> once promise resolves, it pushes remaining code of that async function with saved state to high priority queue
+        // --> Whenever event loop founds call stack is empty, it pushes our function once again on to the call stack 
+
+// -> Example: 
+
+console.log("\n------------- Async/await ---------\n")
+async function Hello() {
+    await new Promise((res,rej)=>{
+        setTimeout(() => {
+            console.log("Hello");
+            res();  
+        },3000)
+    })
+    
+    console.log("Hello2");
+    
+}
+
+Hello().then(()=>{
+    console.log("Async Hello complted")
+})
+console.log("Outer Hello");
