@@ -23,7 +23,9 @@ myName(); //calling function
 // }
 // const obj = new greet();
 // console.log(obj);
-// (in normal mode obj will not have 'name' property -> internal function's this is global this)
+    // -> in normal mode obj will not have 'name' property -> internal function's this is global this
+    // -> we can use 'call' method to pass corrent execution context to overcome this problem 
+
 
 // ---------work fine --------
 function hello() {
