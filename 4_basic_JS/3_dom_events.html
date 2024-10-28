@@ -19,8 +19,8 @@
         // 1. onclick 
         // 2. ondblclick
         // 3. onmousedown
-        // 4. onmouseenter
-        // 5. onmouseover
+        // 4. onmouseenter (it doesn't count child nodes)
+        // 5. onmouseover (it counts child nodes)
         // etc.. 
         let h3eles = document.getElementsByTagName('h3');
         h3eles[0].onmouseover = function ChangeColor(){
