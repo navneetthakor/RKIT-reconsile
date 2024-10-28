@@ -59,11 +59,46 @@ console.log(arr) // result => [31,12,13,14,8.97]
 
 // 8. includes 
 // returns true if element exist in array, otherwise false 
-console.log(arr.includes(12)) // result => True
+// params : (value, startingIndex)
+console.log(arr.includes(12,0)) // result => True
 
 // 9. indexOf
 // return index of specified element 
-console.log(arr.indexOf(31)) // result => 0
+// params : (value, startingIndex)
+console.log(arr.indexOf(31, 0)) // result => 0
     // -> element not exist then it will return '-1' as result 
 
+// 10. map 
+// used to create a new array by applying a specific function to each element of the current array
+const mapExmp = arr.map((val, key, arr) => {
+    return "map : " + val;
+})
+console.log(mapExmp); // result => [ 'map : 31', 'map : 12', 'map : 13', 'map : 14', 'map : 8.97' ]
+console.log(arr); // result => [ 31, 12, 13, 14, 8.97 ]
+    // -> return statement returns value that will be placed at the index in new array 
+    // -> if return statement is missing then value => 'undefined'
+
+// 11. filter 
+// use to create a new array with elements that pass a test defined by the callback function.
+const filterExmp = sliceExmp.filter((val,key,arr) => {
+    return (typeof val) === 'number'
+})
+console.log(filterExmp); // result => [ 8.97 ]
+console.log(sliceExmp); // result => [ 'Navneet', 8.97 ]
+    // -> here if return value is true then, that value will be added in resulting array 
+    // -> if we doesn't return anything then it will be considered as 'undefined' which implice false, so value won't be taken
+    // -> if we return non-boolean value then it will be converted to boolean value and then appropriate decision will be taken 
+            // --> sample conversions
+                // 1 => true; 0 => false
+                // undefined => false; null => false
+                // "" => false
+                // "navneet" => true
+
+// 12. reduce 
+// used to reduce entire array to single value 
+// params : (callback, initial_val_of_acc)
+const reduceExmp = arr.reduce((acc, val, key, arr)=>{
+    return acc + val;
+},0)
+console.log(reduceExmp); // result 78.97
 
