@@ -1,4 +1,4 @@
-// 2 ways to create object 
+// 3 ways to create object 
 
 // first with object literals {}
 const myObj = {
@@ -8,6 +8,10 @@ const myObj = {
 
 // second with Object constructor 
 const myObj2 = new Object();
+
+
+// third with any object as prototype 
+const myObj3 = Object.create(myObj);
 
 // accessing values 
 
