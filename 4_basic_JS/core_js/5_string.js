@@ -34,8 +34,8 @@ console.log(myName.substring(1,3)); // result => 'av'
     // -> ending index is optional
     // -> ending indexed element will not be included 
     // -> if start is greater then end then, they will be swaped 
-    // -> start or end is negative then, result => str.length + (start | end)
-    // -> if any argument is out of the bound then it will be exchanged by the size of string 
+    // -> start or end is negative then, result => 0
+    // -> if any argument is out of the bound then it will be exchanged by the size of string and thus returns "" (empty string)
 
 // 5. replace()
 // first matching pattern will be replaced 

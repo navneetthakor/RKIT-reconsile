@@ -102,3 +102,10 @@ const reduceExmp = arr.reduce((acc, val, key, arr)=>{
 },0)
 console.log(reduceExmp); // result 78.97
 
+// 13. foreach 
+// used to iterate over each element of the array once in order 
+arr.forEach((val,key,arr)=>{
+    console.log([key,val]);
+})
+    // -> given callback will be applied to each element once 
+    // -> if it encounters return statement in callback then, it will exit just for current Element, and go to the next one
