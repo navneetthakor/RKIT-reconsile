@@ -10,7 +10,7 @@
 // Following are the ways to create Asyncrounous functions 
 
 // 1> ------- Using callback -------
-//-> we can pass callback to Asyncrounous functions [This functions are provided by JS/NodeJS/Browser by defult], so whenever this functions completes its task callback will be executed.
+//-> we can pass callback to Asyncrounous functions [internally they may used async functions given by web/node api], so whenever this functions completes its task callback will be executed.
 //-> Execution process: 
             // --> Async function passed on to web/node api to compelete execution
             // --> after it put's callback to the callback queue
