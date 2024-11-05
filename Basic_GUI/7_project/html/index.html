@@ -11,17 +11,51 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script >
         $('document').ready(function() {
-            // not working -------
-            // const canvas = $('#myCanvas');
-            // const context = canvas.getContext('2d');
-
-            const canvas = $("#myCanvas")[0];
-            const context = canvas.getContext('2d');
+            const canvas = $("#myCanvas");
+            const context = document.getElementById('myCanvas').getContext('2d');
             
             // setting height of canvas
-            canvas.height = window.innerHeight;
-            canvas.width = window.width;
+            canvas.attr('height', window.innerHeight);
+            canvas.attr('width', window.innerWidth);
+
+            // variables to manage states 
+            let isDrawing = false;
+            let x = 0;
+            let y = 0;
+
+            // utility functions 
+            function getCordinates(e){
+                x = e.clientX;
+                y = e.clientY;
+            }
+
+            // functions regarding major events 
+            function mouseDown(e){
+                getCordinates(e);
+                isDrawing = true;
+            }
+
+            function mouseUp(e){
+                isDrawing = false;
+            }
             
+            function mouseMove(e){
+                if(isDrawing){
+                    context.beginPath();
+                    context.moveTo(x,y);
+                    getCordinates(e);
+                    context.lineTo(x,y);
+                    context.strokeStyle = "red";
+                    context.stroke();
+                    context.closePath();
+                }
+            }
+
+
+            // setting event listeners 
+            canvas.mousedown(mouseDown);
+            canvas.mouseup(mouseUp);
+            canvas.mousemove(mouseMove);
         })
     </script>
 </body>

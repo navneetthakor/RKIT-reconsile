@@ -8,5 +8,5 @@ body{
     overflow: hidden;
 }
 #myCanvas{
-
+    border: 2px solid red;
 }
