@@ -8,6 +8,7 @@
 </head>
 <body>
     <canvas id="myCanvas">Whiteboard not supported</canvas>
+    <button id="btn">Clear</button>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script >
         $('document').ready(function() {
@@ -56,6 +57,12 @@
             canvas.mousedown(mouseDown);
             canvas.mouseup(mouseUp);
             canvas.mousemove(mouseMove);
+
+            // logic related to buttons 
+            const clearBtn = $('#btn');
+            clearBtn.click(function(){
+                context.clearRect(0,0,window.innerWidth,window.innerHeight)
+            })
         })
     </script>
 </body>

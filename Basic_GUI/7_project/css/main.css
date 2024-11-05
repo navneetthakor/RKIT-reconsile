@@ -5,8 +5,21 @@
 }
 
 body{
+    /* position:relative; */
     overflow: hidden;
 }
 #myCanvas{
-    border: 2px solid red;
+    /* border: 2px solid red; */
+}
+
+#btn{
+    position: absolute;
+    height: 3rem;
+    width: 8rem;
+    top: 15px;
+    left: 5px;
+    border: 2px solid black;
+    border-radius: 8px;
+    z-index: 10;
+    font-size: 1.2rem;
 }
