@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiteboard</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <canvas id="myCanvas">Whiteboard not supported</canvas>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script >
+        $('document').ready(function() {
+            // not working -------
+            // const canvas = $('#myCanvas');
+            // const context = canvas.getContext('2d');
+
+            const canvas = $("#myCanvas")[0];
+            const context = canvas.getContext('2d');
+            
+            // setting height of canvas
+            canvas.height = window.innerHeight;
+            canvas.width = window.width;
+            
+        })
+    </script>
+</body>
+</html>
