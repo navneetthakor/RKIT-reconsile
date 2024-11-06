@@ -16,16 +16,18 @@
     <canvas id="myCanvas">Whiteboard not supported</canvas>
 
     <!-- colors  -->
-    <div class="colorPallet d-flex m-2 mt-3">
-      <div style="--color: red" class="w-100"></div>
-      <div style="--color: blue" class="w-100"></div>
-      <div style="--color: orangered" class="w-100"></div>
-      <div style="--color: yellow" class="w-100"></div>
-      <div style="--color: purple" class="w-100"></div>
-      <div style="--color: green" class="w-100"></div>
-      <div style="--color: rgb(221, 50, 78)" class="w-100"></div>
-    </div>
-    <button id="btn">Clear</button>
+    <header class="d-flex justify-content-between m-2 mt-3">
+      <div class="colorPallet d-flex ">
+        <div style="--color: red" class="w-100"></div>
+        <div style="--color: blue" class="w-100"></div>
+        <div style="--color: orangered" class="w-100"></div>
+        <div style="--color: yellow" class="w-100"></div>
+        <div style="--color: purple" class="w-100"></div>
+        <div style="--color: green" class="w-100"></div>
+        <div style="--color: rgb(221, 50, 78)" class="w-100"></div>
+      </div>
+      <button class="btn btn-dark">Clear</button>
+    </header>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
@@ -64,7 +66,6 @@
             context.moveTo(x, y);
             getCordinates(e);
             context.lineTo(x, y);
-            // context.strokeStyle = "red";
             context.stroke();
             context.closePath();
           }
@@ -78,32 +79,31 @@
         // logic related to buttons
         const clearBtn = $("#btn");
         clearBtn.click(function () {
-            context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+          context.clearRect(0, 0, window.innerWidth, window.innerHeight);
         });
-        
+
         // color buttons
         const colortabs = $(".colorPallet > div");
         let lastClickbtn = null;
-        colortabs.click(function (e){
-            const currentStyle = window.getComputedStyle($(this)[0]);
-            context.strokeStyle = currentStyle["background-color"];
-            console.log(currentStyle)
-            console.log("color: ", currentStyle["background-color"])
-            $(this).css("transform", "translateY(-0.25rem)");
-            $(this).css("box-shadow","2px 1px 20px var(--color)")
-            
-            if(lastClickbtn != null){
-                // alert(lastClickbtn)
-                // lastClickbtn.css("border","150px solid green")
-                lastClickbtn.css("transform", "none");
-                lastClickbtn.css("box-shadow","none")
-            }
+        colortabs.click(function (e) {
+        //   setting stoke color 
+          const currentStyle = window.getComputedStyle($(this)[0]);
+          context.strokeStyle = currentStyle["background-color"];
 
-            lastClickbtn = $(this);
-            console.log("j");
-        })
-        // $(this).css("transform", "translateY(-20px)");
-    });
+        //   changing style of current element 
+          $(this).css("transform", "translateY(-0.25rem)");
+          $(this).css("box-shadow", "2px 1px 20px var(--color)");
+
+        //   changing style of previous color element 
+          if (lastClickbtn != null) {
+            lastClickbtn.css("transform", "none");
+            lastClickbtn.css("box-shadow", "none");
+          }
+
+          lastClickbtn = $(this);
+          console.log("j");
+        });
+      });
     </script>
   </body>
 </html>
