@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body{
@@ -10,9 +11,28 @@ body{
 }
 #myCanvas{
     /* border: 2px solid red; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
-#btn{
+.colorPallet{
+    width: 20rem;
+    height: 3rem;
+    /* border: 2px solid black; */
+}
+.colorPallet > div{
+    border: 1px solid black;
+    background-color: var(--color);
+    transition: all 0.5s ease-in-out;
+    position: relative;
+}
+
+.colorPallet > div:active{
+    /* transform: translateY(-20px); */
+}
+/* #btn{
     position: absolute;
     height: 3rem;
     width: 8rem;
@@ -22,4 +42,4 @@ body{
     border-radius: 8px;
     z-index: 10;
     font-size: 1.2rem;
-}
+} */
