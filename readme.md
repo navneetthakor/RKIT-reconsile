@@ -122,4 +122,9 @@ to create dynamic website.
 - Dom Manupulation related all the practical information is available in ``` 4_basic_js ``` folder
 
 
+# JQuery
 
+## Intorduction to JQuery
+- jQuery is a lightweight, "write less, do more", JavaScript library.
+- Purpose of JQuery is to make use of JS much easier in website.
+ 
