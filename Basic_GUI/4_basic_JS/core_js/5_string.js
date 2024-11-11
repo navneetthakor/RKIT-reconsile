@@ -35,10 +35,11 @@ console.log(myName.substring(1,3)); // result => 'av'
     // -> ending indexed element will not be included 
     // -> if start is greater then end then, they will be swaped 
     // -> start or end is negative then, result => 0
-    // -> if any argument is out of the bound then it will be exchanged by the size of string and thus returns "" (empty string)
+    // -> if any argument is out of the bound then it will be exchanged by the size of string
+    // -> if both are out of the range (like for our case 15,20) thus returns "" (empty string)
 
 // 5. replace()
-// first matching pattern will be replaced 
+// first matching pattern from LHS will be replaced 
 console.log(myName.replace('e','E')); // result => 'NavnEet'
 
 // 6. replaceAll()
