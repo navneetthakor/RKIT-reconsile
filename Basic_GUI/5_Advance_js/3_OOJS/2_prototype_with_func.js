@@ -18,7 +18,7 @@ class1.capacity = 10;
 class1.banches = 10; // property for class1 object
 class1.sayCapacity();
 
-console.log(`Banches of class : ${Class.banches}`)
+console.log(`Banches of class : ${Class.banches}\n\n`)
 
 
 // ----------- Let's extend it for one more class ---

@@ -27,6 +27,8 @@ class1.capacity = 10;
 class1.banches = 10; // property for class1 object
 class1.sayCapacity();
 
+console.log("Banches of class :", Class.banches, "\n\n");
+
 class School extends Class{
     constructor(){
         super();
@@ -36,3 +38,9 @@ class School extends Class{
 
 const s1 = new School();
 console.log(s1.capacity);
+
+// --------
+// -> But through this syntax (class and extend) we can't perform multiple inheritance 
+// -> for that we can do like following 
+// -> params : (target, ...source)
+// Object.assign(School.prototype, Class.prototype, MyClass.prototype) 

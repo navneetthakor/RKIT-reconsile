@@ -25,7 +25,13 @@ class Animal{
     }
 
     set name(newname){
-        this.#name = newname;
+        if((typeof newname) === "string")
+        {
+            this.#name = newname;
+        }
+        else{
+            console.log("name must be string");
+        }
     }
 }
 
