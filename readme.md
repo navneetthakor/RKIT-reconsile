@@ -127,4 +127,18 @@ to create dynamic website.
 ## Intorduction to JQuery
 - jQuery is a lightweight, "write less, do more", JavaScript library.
 - Purpose of JQuery is to make use of JS much easier in website.
+
+## Ways to include JQuery
+- Using CDN network.
+    ```
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    ```
+- Downloading JQuery form it's website
+    - It have two versions
+    1. Development / Tesing version
+        - here, the code written is non-compressed and in human readable form
+    2. Production version
+        - This is for live website.
+        - it's minified and well compressed form
+        - Non-readable form
  
