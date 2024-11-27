@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my jquery</title>
+    <style>
+      div {
+        border: 2px solid red;
+        margin: 2rem;
+        width: 10rem;
+        padding: 1rem;
+        font-size: 2.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+
+    <script defer>
+      function $(selector) {
+        const eles = document.querySelectorAll(selector);
+
+        const jqueryObj = {
+          elements: eles,
+          click: function (callback) {
+            eles.forEach((value, key, arr) => {
+              value.addEventListener("click", callback);
+            });
+          },
+
+          hide: function (ele) {
+            ele.style.visibility = "hidden";
+          },
+          show: function (ele) {
+            ele.style.visibility = "visible";
+          },
+          isVisible: function (ele) {
+            if (ele.style.visibility !== "hidden") return true;
+            return false;
+          },
+        };
+
+        return jqueryObj;
+      }
+
+      const divs = $("div");
+      console.log(divs);
+      divs.click(function () {
+        divs.hide(this)
+      });
+    </script>
+  </body>
+</html>
