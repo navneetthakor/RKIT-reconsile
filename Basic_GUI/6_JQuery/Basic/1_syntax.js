@@ -38,6 +38,7 @@
                     |
             2. JQuery hidden Object 
              (provides all the methods in prototype)
+             (They may uses Object.create() or Object.assign() or call method for adding this functions.)
                     |
             Visible JQuery Object
             
