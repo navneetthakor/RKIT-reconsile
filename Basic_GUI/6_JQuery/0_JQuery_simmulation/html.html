@@ -35,13 +35,13 @@
           },
 
           hide: function (ele) {
-            ele.style.visibility = "hidden";
+            ele.style.display = "none";
           },
           show: function (ele) {
-            ele.style.visibility = "visible";
+            ele.style.display = "block";
           },
           isVisible: function (ele) {
-            if (ele.style.visibility !== "hidden") return true;
+            if (ele.style.display !== "block") return true;
             return false;
           },
         };
