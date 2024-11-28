@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <pre style="margin-bottom: 2rem;">Use inspect window to see the results</pre>
+    <div>hello</div>
+    <button id="button1">Set html</button>
+    <button id="button2">Get html</button>
+    <script >
+      $(function () {
+        $('#button1').click(function(){
+            $('div').html() === 'hello'?
+            $('div').html("Navneet") :
+            $('div').html("hello")
+        })
+
+        $('#button2').click(function(){
+            alert($('div').html())
+        })
+      });
+    </script>
+  </body>
+</html>
