@@ -35,3 +35,20 @@
         // -> result: 
         // <b>added part</b> 
         // <div>hello</div>
+
+
+// -> Following are the ways to create elements in HTML
+    // 1) using JQuery
+    let ele1 = $('<div></div>').text("my name is navneet")
+
+    // 2) using DOM methods 
+    let ele2 = document.createElement('div')
+    ele2.innerHTML = "my name is navneet"
+
+    // 3) using string 
+    let ele3 = "<div>my name is navneet</div>"
+
+// -> Here, we can pass several elements to getter in any function to add multiple elements at a time 
+    // -> example:
+
+    $('div').append(ele1, ele2, ele3)

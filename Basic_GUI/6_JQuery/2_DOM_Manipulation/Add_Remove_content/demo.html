@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        #main{
+            border: 3px solid black;
+            padding: 3rem;
+            margin: 2rem;
+        }
+
+        .btns{
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+
+  </head>
+  <body>
+    <div id="main">Hello</div>
+
+    <div class="btns">
+        <button id="append">Append</button>
+        <button id="prepend">Prepend</button>
+        <button id="before">before</button>
+        <button id="after">after</button>
+    </div>
+
+    <div class="btns">
+        <button id="remove">remove</button>
+        <button id="empty">empty</button>
+    </div>
+
+    <script>
+        $('#append').click(function(){
+            $('#main').append('<div>append</div>')
+        })
+        $('#prepend').click(function(){
+            $('#main').prepend('<div>prepend</div>')
+        })
+        $('#before').click(function(){
+            $('#main').before('<div>before</div>')
+        })
+        $('#after').click(function(){
+            $('#main').after('<div>after</div>')
+        })
+        $('#remove').click(function(){
+            $('#main').remove()
+        })
+        $('#empty').click(function(){
+            $('#main').empty()
+        })
+    </script>
+  </body>
+</html>
