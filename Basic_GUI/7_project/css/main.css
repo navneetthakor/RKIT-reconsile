@@ -28,6 +28,10 @@ body{
     transition: all 0.5s ease-in-out;
     position: relative;
 }
+#blackColor{
+    transform: translateY(-0.25rem);
+    box-shadow: 2px 1px 20px var(--color)
+}
 
 .colorPallet > div:active{
     /* transform: translateY(-20px); */

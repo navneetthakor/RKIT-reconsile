@@ -20,7 +20,7 @@
       <div class="colorPallet d-flex ">
         <div style="--color: red" class="w-100"></div>
         <div style="--color: blue" class="w-100"></div>
-        <div style="--color: orangered" class="w-100"></div>
+        <div id="blackColor" style="--color: black" class="w-100"></div>
         <div style="--color: yellow" class="w-100"></div>
         <div style="--color: purple" class="w-100"></div>
         <div style="--color: green" class="w-100"></div>
@@ -84,7 +84,7 @@
 
         // color buttons
         const colortabs = $(".colorPallet > div");
-        let lastClickbtn = null;
+        let lastClickbtn = $('#blackColor');
         colortabs.click(function (e) {
         //   setting stoke color 
           const currentStyle = window.getComputedStyle($(this)[0]);
