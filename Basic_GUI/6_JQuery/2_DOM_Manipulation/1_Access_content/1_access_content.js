@@ -34,6 +34,7 @@
 
 // 3) val()
     // -> set or get value (for elements which have this property like input elements)
+    // -> if selected element not have value attribute associated then it will return empty string 
     // -> example:
             // -> get:
                 $('#fname').val()
