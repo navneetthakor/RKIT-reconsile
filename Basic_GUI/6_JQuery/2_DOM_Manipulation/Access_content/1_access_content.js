@@ -48,16 +48,16 @@
     // -> get & set value of perticular attribute of the element 
     // -> example:
             // -> get: 
-                $('input[type="text"').attr('name')
+                $('input[type="text"]').attr('name')
             // -> set (single attribute):
-                $('input[type="text"').attr('name', "fname")
+                $('input[type="text"]').attr('name', "fname")
             // -> set (Multiple attribute)
-                $('input[type="text"').attr({
+                $('input[type="text"]').attr({
                     "name" : "fname",
                     "value" : "Navneet"
                 })
             // -> set with CallBack: 
-                $('input[type="text"').attr('name', function(i, orgAttr){
+                $('input[type="text"]').attr('name', function(i, orgAttr){
                     return orgAttr + ' : new ' + i;
                 })
                 

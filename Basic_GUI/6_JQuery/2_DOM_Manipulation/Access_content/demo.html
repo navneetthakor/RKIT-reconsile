@@ -17,12 +17,15 @@
       $(function () {
         $('#button1').click(function(){
             $('div').html() === 'hello'?
-            $('div').html("Navneet") :
+            $('div').html("Navneet <b> Thakor </b>") :
             $('div').html("hello")
         })
 
         $('#button2').click(function(){
             alert($('div').html())
+            // console.log(($('div').val()) === '' ? 'null' : 'not null')
+            // console.log(($('div').text()))
+            // console.log(($('div').html()))
         })
       });
     </script>
