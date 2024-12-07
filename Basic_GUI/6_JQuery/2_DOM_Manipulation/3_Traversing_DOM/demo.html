@@ -12,6 +12,7 @@
         <div id="div-2">
             div-2
             <div id="div-3"> div-3</div>
+            <span></span>
         </div>
     </div>
 
@@ -20,6 +21,7 @@
         $(function(){
             // parent related properties ----
             // $('#div-3').parents().css('border','2px solid red'); // all the parents
+            // $('#div-3').parentsUntil().css('border','2px solid red'); // all the parents
             // $('#div-3').parentsUntil('#div-1').css('border','2px solid red'); // all parents before '#div-1'
             // $('#div-3').parents('#div-1').css('border','2px solid red'); // all parents with id 'div-1'
 
@@ -28,7 +30,14 @@
             // $('#div-1').find().css('border','2px solid green'); // nothing will happen
             // $('#div-1').find('*').css('border','2px solid green'); // all the childrens 
             // $('#div-1').find('div').css('border','2px solid green'); // all 'div' childs
-            $('#div-1').find('#div-3').css('border','2px solid green'); // only '#div-3' child
+            // $('#div-1').find('#div-3').css('border','2px solid green'); // only '#div-3' child
+
+            // siblings ------
+            // console.log($('div').next()); // script and span elements in result
+
+            // filters -----
+            // console.log($('div').eq()); // JQuery object with no DOM element and 'length = 0'
+            // console.log($('div').eq(5)); // JQuery object with no DOM element and 'length = 0'
             
         })
     </script>

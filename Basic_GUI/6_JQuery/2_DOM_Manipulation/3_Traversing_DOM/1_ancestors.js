@@ -21,7 +21,7 @@
 // 3) parentsUntil()
 // -> it returns all the element until specified element reached
 // Syntax:
-    // $(selector).parentsUntil();
+    // $(selector).parentsUntil(filter);
 // Example:
     $('div').parentsUntil('main');
         // return all the ancestors of div upto 'main' ('main' not included)
