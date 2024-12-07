@@ -17,7 +17,14 @@ class Class{
         console.log(`Capacity of this class is ${this.capacity}`);
         console.log(`Banches of this class is ${this.banches}\n`);
     }
+    
+    // -> here we can use arrow function in class defination like below 
+    // -> but, constructor can't be arrow function 
+    greet = () => {
+        console.log(this.capacity);
+    }
 }
+
 
 // creating object 
 const class1 = new Class();

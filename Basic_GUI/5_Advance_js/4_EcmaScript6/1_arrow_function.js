@@ -10,13 +10,13 @@ myName(); //calling function
 
 // 1. Implicit 'this'
 // The 'this' keyword inside an arrow function refers to the 'this' of the enclosing lexical scope,
-// instead of the function itself
 // see below
 
 // ------ it will give error -------------
 // function greet(){
 //     this.greetmsg = "Namste";
 //     function greet2(){
+//         console.log(this)
 //         this.name = "nk";
 //     }
 //     greet2();
@@ -41,3 +41,10 @@ console.log(obj2);
 
 // 2. Can't be used as Constructor 
   // -> arrow function can not be used to create object directly from it 
+
+// -------
+// Binding of 'this' For regular function 
+// 1) normal invocation -> global object 
+// 2) inside class -> instance of class 
+// 3) with new keyword -> newly created object 
+// 4) within object -> current object 

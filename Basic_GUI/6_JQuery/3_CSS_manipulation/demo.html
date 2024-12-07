@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>CSS with JQuery Demo</title>
+    <style>
+        .bgColors{
+            background-color: blue;
+            color: white;
+        }
+
+        .primHeading{
+            font-size: 25rem;
+        }
+    </style>
+</head>
+<body>
+    <div>Navneet</div>
+    <div class="bgColors">Thakor</div>
+
+    <button id="addClass">addClass</button>
+    <button id="removeClass">removeClass</button>
+    <script>
+        $('#removeClass').click(function(){
+            // $('div').first().addClass('bgColors')
+            // $('div').eq(1).removeClass('primHeading');
+            // $('div').last().toggleClass('bgColors primHeading');
+
+            console.log($('div').first().css('color'))
+        })
+    </script>
+</body>
+</html>
