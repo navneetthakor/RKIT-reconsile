@@ -11,32 +11,38 @@
     <button>Get data</button>
 
     <script>
-        $('button').click(function(){
-            // $('div').load('https://api.github.com/users/navneetthakor', function(responseTxt, statusTxt, xhr){
-            //     console.log(responseTxt);
-            //     console.log(statusTxt);
-            //     console.log(xhr);
-            // })
+              $('button').click(function(){
+                  // $('div').load('https://api.github.com/users/navneetthakor', function(responseTxt, statusTxt, xhr){
+                  //     console.log(responseTxt);
+                  //     console.log(statusTxt);
+                  //     console.log(xhr);
+                  // })
 
-            // $.get('https://api.github.com/users/1235415845kghjj44gjhg', function(data, status){
-            //     console.log(data);
-            //     console.log(status);
-            //     $('div').text(data);
-            // })
+                  $.get('https://api.github.com/users/1235415845kghjj44gjhg', function(data, status){
+                      console.log(data);
+                      console.log(status);
+                      $('div').text(data);
+                  }).fail(function(jqXHR, textStatus, errorThrown) {
+                      console.error(jqXHR); //XMLHttpRequest object
+                      
+                      //string describing the type of error that occurred.
+                      console.error(textStatus); 
+                      console.error(errorThrown); 
+                    })
 
-            $.ajax({
-                type: 'GET',
-                url:'https://api.github.com/users/1235415845kghjj44gjhg',
-                success: function(response){
-                    console.log(response);
-                    $('div').text(response);
-                },
-                error: function (xhr, status, error) {
-                  console.log(status)
-                  console.log(error)
-                },
-            })
-        })
+                  // $.ajax({
+                  //     type: 'GET',
+                  //     url:'https://api.github.com/users/1235415845kghjj44gjhg',
+                  //     success: function(response){
+                  //         console.log(response);
+                  //         $('div').text(response);
+                  //     },
+                  //     error: function (xhr, status, error) {
+                  //       console.log(status)
+                  //       console.log(error)
+                  //     },
+                  // })
+              })
     </script>
   </body>
 </html>
