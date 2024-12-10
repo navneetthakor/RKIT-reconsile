@@ -27,13 +27,30 @@
       console.log(divs);
       divs.click(function () {
         // divs.hide(this) // that we did in our custom JQuery
-        $(this).hide()
+        $(this).hide();
       });
 
-      $('div:first').mouseenter(function(){
-        const me = $(this)
-        me.css('border-color','green')
+      $("div:first").mouseenter(function () {
+        const me = $(this);
+        me.css("border-color", "green");
+      });
+
+      const elements = $("div");
+      $.map(elements,function(value,index){
+        console.log(value,index)
       })
+      elements.map(function(index,value){
+        console.log(value,index)
+      })
+
+      //elements.map(function (i,ele) {
+      //     console.log(i,ele)
+      //     return $(this).text(); // Get the text content of each <div>
+      //   })
+      // const ele2 = elements
+      //   .toArray(); // Convert jQuery object to a plain array
+      // console.log(elements);
+      // console.log(ele2);
     </script>
   </body>
 </html>
