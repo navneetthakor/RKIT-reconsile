@@ -19,17 +19,19 @@
     1) $(selector).action(function(){})
         -> where action is the event in our case.
         -> For an example:
+*/
             $('div').click(function(){
                 // write code here
             });
 
-    2) $(selector).action()
-        -> this not attaches any event handler to the elements
-            instead it programatically fires the event (here action is event)
-        -> For an example:
+/* 
+2) $(selector).action()
+-> this not attaches any event handler to the elements
+instead it programatically fires the event (here action is event)
+-> For an example:
+*/
             $('div').click(); 
 
-*/
 
 
 //'on()' method
@@ -46,6 +48,7 @@
         click: function(){
             // code here
         },
+        
 
         mouseenter: function() {
             // code here

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>Click below button to load data</div>
     <button>Get data</button>
 
@@ -18,7 +18,7 @@
             //     console.log(xhr);
             // })
 
-            // $.get('https://api.github.com/users/navneetthakor', function(data, status){
+            // $.get('https://api.github.com/users/1235415845kghjj44gjhg', function(data, status){
             //     console.log(data);
             //     console.log(status);
             //     $('div').text(data);
@@ -26,13 +26,17 @@
 
             $.ajax({
                 type: 'GET',
-                url:'https://api.github.com/users/navneetthakor',
+                url:'https://api.github.com/users/1235415845kghjj44gjhg',
                 success: function(response){
                     console.log(response);
                     $('div').text(response);
-                }
+                },
+                error: function (xhr, status, error) {
+                  console.log(status)
+                  console.log(error)
+                },
             })
         })
     </script>
-</body>
+  </body>
 </html>

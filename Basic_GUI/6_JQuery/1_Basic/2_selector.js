@@ -29,8 +29,8 @@ $('div > p')
 $('div p:first') // select the first p element
 
 9) select element with particular attribute
-$([href]) // all elements with 'href' attribute
-$(a[href = '_blank']) // all 'a' elements with href value set as '_blank'
+$("[href]") // all elements with 'href' attribute
+$("a[href = '_blank']") // all 'a' elements with href value set as '_blank'
 
 etc..
 */
