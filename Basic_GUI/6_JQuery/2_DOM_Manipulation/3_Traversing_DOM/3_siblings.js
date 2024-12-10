@@ -42,4 +42,4 @@
 // -> returns all the previous sibling elements between selected and specified element 
 // Example: 
     // i) $(selector).prevUntil()
-    $('div').prevUntil();
+    $('div').prevUntil('div');

@@ -55,4 +55,6 @@ instead it programatically fires the event (here action is event)
         }
     })
 
+    //3) off event 
+    // priority of order events
 
