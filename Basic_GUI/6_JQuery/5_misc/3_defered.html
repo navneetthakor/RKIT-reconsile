@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deferred</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body></body>
+  <script>
+      let deferred = $.Deferred();
+      setTimeout(() => {
+        let flag = false;
+        if (flag) {
+          deferred.resolve("Dererred resolved.");
+        } else {
+          deferred.reject("Dererred rejected.");
+        }
+      }, 2000);
+
+    deferred.done((result) => console.log(result));
+    deferred.fail((error) => console.error(error));
+    deferred.always(() => {
+        console.log("this method will always run");
+      });
+  </script>
+</html>
