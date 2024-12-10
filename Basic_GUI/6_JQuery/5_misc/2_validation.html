@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include the jQuery Validation Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <title>JQuery | Validation</title>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      id="myForm"
+      class="d-flex border border-1 m-3 p-3 container flex-column"
+    >
+      <div class="d-flex align-items-center gap-3 mb-2">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="d-flex align-items-center gap-3 mb-2">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      $(document).ready(function () {
+        $("#myForm").validate({
+          rules: {
+            name: {
+              required: true,
+              minlength: 5,
+            },
+            email: {
+              required: true,
+              email: true,
+            },
+          },
+          messages: {
+            name: {
+              required: "Please enter your name",
+              minlength: "Your name must be at least 3 characters long",
+            },
+            email: {
+              required: "Please enter your email",
+              email: "Please enter a valid email address",
+            },
+          },
+          submitHandler: function (form) {
+            // Form is valid, submit it
+            form.submit();
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- it adds .error class to labels which displays errors  -->
+ <!-- all inputs which have error they also have .error class  -->

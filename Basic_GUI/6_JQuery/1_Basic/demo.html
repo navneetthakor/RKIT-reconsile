@@ -35,7 +35,7 @@
         me.css("border-color", "green");
       });
 
-      const elements = $("div");
+      let elements = $("div");
       $.map(elements,function(value,index){
         console.log(value,index)
       })
@@ -43,7 +43,7 @@
         console.log(value,index)
       })
 
-      //elements.map(function (i,ele) {
+      //elements = elements.map(function (i,ele) {
       //     console.log(i,ele)
       //     return $(this).text(); // Get the text content of each <div>
       //   })
