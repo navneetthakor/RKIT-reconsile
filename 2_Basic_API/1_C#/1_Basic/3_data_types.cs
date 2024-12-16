@@ -1,5 +1,5 @@
 using System;
-//Data types -----
+// most used Data types -----
 /*
 Data_Type	Size	    Description
 int	        4 bytes	    Stores whole numbers from -2,147,483,648 to 2,147,483,647
@@ -31,7 +31,20 @@ float x2 = 120.5F;
 //-> other methods are 
 //ToInt16(), ToString(), ToInt64(), ToDouble() etc... 
 
-//-> this type casting is very useful in C#, becuase to take input from user we have to use 
-Console.ReadLine();
-//which always returns String
-//therfore type conversion becomes very important in this language 
+//---------
+
+
+//All the data tyeps 
+
+
+/*
+'Category '         'Data Types'
+Value Types	        byte, sbyte, short, ushort, int, uint, long, ulong, float, double, decimal, bool, char
+Reference Types	    string, object
+Special Types	    void, pointers (in unsafe code)
+Nullable Types	    Nullable<T>, T?
+Enum Types	        enum
+Struct Types        struct
+Array Types         Arrays(e.g., int[], string[], float[])
+*/
+
