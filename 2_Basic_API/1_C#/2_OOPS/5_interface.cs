@@ -1,8 +1,7 @@
-using Interface;
 using System;
 
 /*
- * content about : Interface
+ * content about : Interface, inherite class + multiple interfaces
  */
 
 //interface : complete abstract class 
