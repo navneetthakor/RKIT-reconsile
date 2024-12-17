@@ -70,3 +70,5 @@ namespace Inheritance
         
     }
 }
+
+//class with keyword 'sealed' can be inherited further 
