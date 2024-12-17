@@ -84,6 +84,6 @@ namespace MethodOverriding2
 //pitfalls:
 //BaseClass: virtual, DerivedClass: none -> method hidding 
 //BaseClass: virtual, DerivedClass: override -> Method overriding
-//BaseClass: none, DerivedClass: none -> base method hidding 
+//BaseClass: none, DerivedClass: none -> method hidding 
 //BaseClass: none, DerivedClass: override -> compilation error
 
