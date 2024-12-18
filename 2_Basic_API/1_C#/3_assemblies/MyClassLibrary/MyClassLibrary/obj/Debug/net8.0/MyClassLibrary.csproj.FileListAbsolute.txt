@@ -1,0 +1,12 @@
+D:\1\rkit\reconsile\2_Basic_API\1_C#\3_assemblies\MyClassLibrary\MyClassLibrary\bin\Debug\net8.0\MyClassLibrary.deps.json
+D:\1\rkit\reconsile\2_Basic_API\1_C#\3_assemblies\MyClassLibrary\MyClassLibrary\bin\Debug\net8.0\MyClassLibrary.dll
+D:\1\rkit\reconsile\2_Basic_API\1_C#\3_assemblies\MyClassLibrary\MyClassLibrary\bin\Debug\net8.0\MyClassLibrary.pdb
+D:\1\rkit\reconsile\2_Basic_API\1_C#\3_assemblies\MyClassLibrary\MyClassLibrary\obj\Debug\net8.0\MyClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\1\rkit\reconsile\2_Basic_API\1_C#\3_assemblies\MyClassLibrary\MyClassLibrary\obj\Debug\net8.0\MyClassLibrary.AssemblyInfoInputs.cache
+D:\1\rkit\reconsile\2_Basic_API\1_C#\3_assemblies\MyClassLibrary\MyClassLibrary\obj\Debug\net8.0\MyClassLibrary.AssemblyInfo.cs
+D:\1\rkit\reconsile\2_Basic_API\1_C#\3_assemblies\MyClassLibrary\MyClassLibrary\obj\Debug\net8.0\MyClassLibrary.csproj.CoreCompileInputs.cache
+D:\1\rkit\reconsile\2_Basic_API\1_C#\3_assemblies\MyClassLibrary\MyClassLibrary\obj\Debug\net8.0\MyClassLibrary.sourcelink.json
+D:\1\rkit\reconsile\2_Basic_API\1_C#\3_assemblies\MyClassLibrary\MyClassLibrary\obj\Debug\net8.0\MyClassLibrary.dll
+D:\1\rkit\reconsile\2_Basic_API\1_C#\3_assemblies\MyClassLibrary\MyClassLibrary\obj\Debug\net8.0\refint\MyClassLibrary.dll
+D:\1\rkit\reconsile\2_Basic_API\1_C#\3_assemblies\MyClassLibrary\MyClassLibrary\obj\Debug\net8.0\MyClassLibrary.pdb
+D:\1\rkit\reconsile\2_Basic_API\1_C#\3_assemblies\MyClassLibrary\MyClassLibrary\obj\Debug\net8.0\ref\MyClassLibrary.dll
