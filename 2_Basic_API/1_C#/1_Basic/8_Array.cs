@@ -31,7 +31,7 @@ Console.WriteLine();
 //1) Rectangular Arrays 
 //-> it creates tabular array, where each row and columns have same size;
 int[,] num = { { 1, 2, 3 }, { 4, 5, 6 } };  // work fine
-                                            //int[,] num2 = { { 1, 2, 3 }, { 1, 5 } }; // thorws error: size of arrays is not same 
+       //int[,] num2 = { { 1, 2, 3 }, { 1, 5 } }; // thorws error: size of arrays is not same 
 
 //-> it stores array in single contiguous block of memory (row major)
 //-> for num: 1, 2, 3, 4, 5, 6, 7, 8
@@ -85,6 +85,7 @@ Console.WriteLine(Array.IndexOf(cars, "BMW", 3));
 //-> returns -1 if element is not found 
 
 //6) GetLength(dimention)
-Console.WriteLine(jagNum.GetLength(0)); // returns number or rows
-    //-> returns length of dimention of multidimentional array 
-    //-> applicable to both rectangular and jagged arrays 
+Console.WriteLine(num.GetLength(0)); // returns number or rows
+Console.WriteLine(num.GetLength(1)); // returns number or columns
+//-> returns length of dimention of multidimentional array 
+//-> applicable to both rectangular and jagged arrays 

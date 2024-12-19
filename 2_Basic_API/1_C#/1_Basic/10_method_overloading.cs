@@ -25,7 +25,7 @@ namespace MethodOverloading
             Console.WriteLine($"My age is {age}.");
         }
 
-        //throw error: return type can't perform method overloading
+        //return type can't contribute to method overloading
         //error CS0111: Type 'Program' already defines a member called 'Hello' with the same parameter types
         static int Hello(int age)
         {
