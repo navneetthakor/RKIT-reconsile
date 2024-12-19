@@ -4,13 +4,20 @@ using System.Collections.Generic;
 //Queue: first in first out (FIFO)
 
 
+// behind the scene
+/*
+-> intenaly uses array to store items 
+-> circular buffer (front and rear pointer mechanism) is used to improve time complexity and
+avoid shifting of elements.
+-> if internal array runns out of space, new array allocated -> copy old items -> size double
+ */
 namespace ConsoleApp1._2_generics
 {
     internal class _3_Queue
     {
         static void Main(string[] args)
         {
-            Queue<int> q = new Queue<int>()
+            Queue<int> q = new Queue<int>();
 
             //to add values 
             q.Enqueue(1);   // O(1)
