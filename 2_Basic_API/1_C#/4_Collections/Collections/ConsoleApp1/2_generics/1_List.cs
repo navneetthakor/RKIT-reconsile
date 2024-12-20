@@ -29,13 +29,13 @@ namespace ConsoleApp1._2_generics
             // it has all the method as ArrayList has
             // difference is data_type change (object -> specific)
 
-            list.Insert(0, 31);      // params: index, T
-            list.Remove(1);      //params: T [ removes first occurence of T]
-            list.RemoveAt(0);    // params: index
-            list.Contains(1);    // params: T [bool return]
-            list.Clear();    // makes list empty
-            list.IndexOf(1); //params: T [first occurence from lhs, -1 if not found]
-            //and many more 
+            list.Insert(0, 31);      // params: index, T    O(n)
+            list.Remove(1);      //params: T [ removes first occurence of T]    O(n)
+            list.RemoveAt(0);    // params: index   O(n)
+            list.Contains(1);    // params: T [bool return] O(n)
+            list.Clear();    // makes list empty    O(1)    [directly resets internal array and count]
+            list.IndexOf(1); //params: T [first occurence from lhs, -1 if not found]    O(n)
+            //and many more like sort (nlogn), ToArray (n), Reverse (n)
         }
     }
 }
