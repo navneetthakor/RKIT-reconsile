@@ -9,7 +9,7 @@ using System.Data;
 
 namespace MyDataTble
 {
-    class DataTableDemo
+    class Program
     {
         static void Main(string[] args)
         {
