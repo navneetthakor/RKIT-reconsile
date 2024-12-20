@@ -14,7 +14,7 @@ namespace MyMethods
             Console.WriteLine(sum);
             sum = MySum(5); // use of default params
             Console.WriteLine(sum);
-            sum = MySub(b: 5, a: 10); // use of named args
+            sum = MySub(b: 5, a: 10); // use of named args         
             Console.WriteLine(sum);
             
             MyRef(ref sum);

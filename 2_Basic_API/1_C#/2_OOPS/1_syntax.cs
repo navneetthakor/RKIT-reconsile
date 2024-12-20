@@ -17,8 +17,8 @@ namespace OOPS
     - public : from any class
     - protected : same class and derived classes
     - internal : own assembly
-    - protected internal :
-    - private protected : 
+    - protected internal : own assembly and and derived class outside of assembly
+    - private protected : in same class and derived class but within same assembly
     */
 
     //Default behaviours 
