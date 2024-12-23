@@ -17,6 +17,7 @@ namespace ConsoleApp1._2_generics
         static void Main(string[] args)
         {
             Stack<int> stack = new Stack<int>();
+            //stack.Add(11);    // convert to ICollection and then use it
             stack.Push(1);
             stack.Push(42);
             stack.Push(43); // best & avg: O(1) , worst: O(n) due to resizing

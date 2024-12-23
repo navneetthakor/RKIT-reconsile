@@ -1,0 +1,5 @@
+D:\1\rkit\reconsile\2_Basic_API\1_C#\4_Collections\Collections\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+D:\1\rkit\reconsile\2_Basic_API\1_C#\4_Collections\Collections\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.AssemblyInfoInputs.cache
+D:\1\rkit\reconsile\2_Basic_API\1_C#\4_Collections\Collections\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.AssemblyInfo.cs
+D:\1\rkit\reconsile\2_Basic_API\1_C#\4_Collections\Collections\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\1\rkit\reconsile\2_Basic_API\1_C#\4_Collections\Collections\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.sourcelink.json

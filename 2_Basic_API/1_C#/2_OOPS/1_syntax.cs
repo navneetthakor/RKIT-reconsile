@@ -28,7 +28,7 @@ namespace OOPS
     class Animal
     {
         public string name;
-        private int age;
+        private in t age;
 
         //constructor 
         //if we not specify constructor then C# create defualt constructor for us 

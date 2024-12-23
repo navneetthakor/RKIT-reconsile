@@ -85,7 +85,8 @@ Console.WriteLine(Array.IndexOf(cars, "BMW", 3));
 //-> returns -1 if element is not found 
 
 //6) GetLength(dimention)
-Console.WriteLine(num.GetLength(0)); // returns number or rows
-Console.WriteLine(num.GetLength(1)); // returns number or columns
+Console.WriteLine("rows : " + num.GetLength(1)); // returns number or rows
+Console.WriteLine("cols : " + num.GetLength(1)); // returns number or columns
 //-> returns length of dimention of multidimentional array 
-//-> applicable to both rectangular and jagged arrays 
+//-> applicable to both rectangular and jagged arrays (only one dimention in jagged array)
+Console.WriteLine("cols : " + jagNum.GetLength(1)); // throws runtime error.

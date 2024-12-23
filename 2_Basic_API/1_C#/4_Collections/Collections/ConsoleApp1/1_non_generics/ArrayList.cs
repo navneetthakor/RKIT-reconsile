@@ -19,6 +19,7 @@ namespace ConsoleApp1._1_non_generics
             // methods
             lst.Add(1);     // params: object
             lst.Add("navneet");
+            Console.WriteLine(lst[0]);
 
             lst.Insert(0, 31);      // params: index, object
             lst.Remove(1);      //params: object [ removes first occurence of object]
