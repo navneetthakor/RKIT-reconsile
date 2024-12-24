@@ -21,7 +21,8 @@ namespace MyException
 		{
 			try
 			{
-				int turn = Convert.ToInt32(Console.ReadLine());
+                #region try block
+                int turn = Convert.ToInt32(Console.ReadLine());
 
 				if (turn == 0)
 				{
@@ -35,8 +36,10 @@ namespace MyException
 				}
 
 				Console.WriteLine("try completed\n");
-			}
-			catch (Exception e)
+                #endregion try block
+            }
+
+            catch (Exception e)
 			{
 				Console.WriteLine(e.Message);
 				Console.WriteLine("catch completed\n");

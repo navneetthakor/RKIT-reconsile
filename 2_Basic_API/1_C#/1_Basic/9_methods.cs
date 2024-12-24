@@ -77,3 +77,5 @@ namespace MyMethods
 //6) in arguments 
     //-> to prevent mutability, means 'in' variable can't be modified inside function
     //-> same as reference variable, initialization is required before passing to method 
+
+//7) params : see it

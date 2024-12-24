@@ -72,3 +72,6 @@ namespace Inheritance
 }
 
 //class with keyword 'sealed' can be inherited further 
+
+//abstract, static, sealed,  class  (4 types)
+//public , private, internal, protected, protected internal, private protected  

@@ -28,7 +28,7 @@ namespace OOPS
     class Animal
     {
         public string name;
-        private in t age;
+        private int age;
 
         //constructor 
         //if we not specify constructor then C# create defualt constructor for us 
@@ -44,6 +44,8 @@ namespace OOPS
             this.name = name;
             this.age = 18;
         }
+
+        //5 times of constructors : see static and copy constructor 
 
         //getter - setter for private fields 
         public int Age

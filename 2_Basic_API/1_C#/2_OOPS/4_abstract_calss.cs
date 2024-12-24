@@ -18,6 +18,7 @@ namespace AbstractCalss
 {
     abstract class Base
     {
+        //add virtual keyword here 
         public abstract string Speak();
         public void MyType()
         {

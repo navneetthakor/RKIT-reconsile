@@ -13,6 +13,7 @@ namespace MethodOverloading
             MyMethod(123);
             MyMethod("nk", 1);
             MyMethod(10L, 25);
+            MyMethod(true, "nk");
         }
 
         static void Hello(string name)
@@ -27,10 +28,10 @@ namespace MethodOverloading
 
         //return type can't contribute to method overloading
         //error CS0111: Type 'Program' already defines a member called 'Hello' with the same parameter types
-        static int Hello(int age)
-        {
-            Console.WriteLine($"My age is {age}.");
-        }
+        //static int Hello(int age)
+        //{
+        //    Console.WriteLine($"My age is {age}.");
+        //}
 
         //Methods are called overloaded iff:
         //they differes in number of params, types of params, order of params or any combination of this three
