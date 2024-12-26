@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
                 InMemoryDatabase.Users.Add(newUser);
 
                 //creating corresponding notes list
-                InMemoryDatabase.Notes.Add(new List<Note>());
+                InMemoryDatabase.Notes.Add(newUser.UserId,new List<Note>());
 
                 //returning status 
                 return Ok(newUser);

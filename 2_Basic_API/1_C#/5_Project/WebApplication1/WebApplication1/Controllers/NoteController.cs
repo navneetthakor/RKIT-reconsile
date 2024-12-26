@@ -15,7 +15,7 @@ namespace WebApplication1.Controllers
     {
         [HttpPost]
         [Route("note/addNote")]
-        public IHttpActionResult addNote(string Email, ReqNote reqNote)
+        public IHttpActionResult AddNote(string Email, ReqNote reqNote)
         {
             //checked if user exists or not with same email
              User user = InMemoryDatabase.Users.Find(u => u.Email == Email);
@@ -25,11 +25,80 @@ namespace WebApplication1.Controllers
             }
 
             //add note 
-            Note newNote = new Note(InMemoryDatabase.Notes[user.UserId].Count, reqNote.Title, reqNote.Description);
+            Note newNote = new Note(InMemoryDatabase.NoteCounter, reqNote.Title, reqNote.Description);
             InMemoryDatabase.Notes[user.UserId].Add(newNote);
 
-            return Ok(InMemoryDatabase.Notes[user.UserId]);
+            //increment NoteCounter 
+            InMemoryDatabase.NoteCounter++;
+
+            return Ok(newNote);
            
+        }
+
+        [HttpGet]
+        [Route("note/getAllNotes")]
+        public IHttpActionResult GetAllNotes(string Email)
+        {
+            //checked if user exists or not with same email
+            User user = InMemoryDatabase.Users.Find(u => u.Email == Email);
+            if (user == null)
+            {
+                return BadRequest("User with given Email not exists");
+            }
+
+            return Ok(InMemoryDatabase.Notes[user.UserId]);
+        }
+
+        [HttpDelete]
+        [Route("note/deleteNote")]
+        public IHttpActionResult DeleteNote(string Email, int NoteId)
+        {
+            //checked if user exists or not with same email
+            User user = InMemoryDatabase.Users.Find(u => u.Email == Email);
+            if (user == null)
+            {
+                return BadRequest("User with given Email not exists");
+            }
+
+            //check note with given id exists or not 
+            Note note = InMemoryDatabase.Notes[user.UserId].Find(n =>  n.NoteId == NoteId);
+            if (note == null)
+            {
+                return BadRequest("Note with given NoteId not exist");
+            }
+
+            //all safe to perform remove operation 
+            InMemoryDatabase.Notes[user.UserId].Remove(note);
+                // - internally remove method uses 'Equals' method to compare
+
+            return Ok(note);
+
+        }
+
+        [HttpPut]
+        [Route("note/updateNote")]
+        public IHttpActionResult UpdateNote(string Email, int NoteId, ReqNote reqNote)
+        {
+            //checked if user exists or not with same email
+            User user = InMemoryDatabase.Users.Find(u => u.Email == Email);
+            if (user == null)
+            {
+                return BadRequest("User with given Email not exists");
+            }
+
+            //check note with given id exists or not 
+            Note note = InMemoryDatabase.Notes[user.UserId].Find(n => n.NoteId == NoteId);
+            if (note == null)
+            {
+                return BadRequest("Note with given NoteId not exist");
+            }
+            
+            //perform updation
+            note.Title = reqNote.Title;
+            note.Description = reqNote.Description;
+
+            return Ok(note);
+
         }
     }
 }

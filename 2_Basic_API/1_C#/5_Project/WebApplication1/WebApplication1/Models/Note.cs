@@ -16,5 +16,6 @@ namespace WebApplication1.Models
             Title = title; 
             Description = description;
         }
+
     }
 }

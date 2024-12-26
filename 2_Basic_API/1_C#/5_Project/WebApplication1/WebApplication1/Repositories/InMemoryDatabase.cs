@@ -9,6 +9,7 @@ namespace WebApplication1.Repositories
     public class InMemoryDatabase
     {
         public static List<User>   Users { get; set; } = new List<User>();
-        public static List<List<Note>> Notes { get; set; } = new List<List<Note>>();
+        public static Dictionary<int,List<Note>> Notes { get; set; } = new Dictionary<int, List<Note>>();
+        public static int NoteCounter { get; set; } = 0;
     }
 }
