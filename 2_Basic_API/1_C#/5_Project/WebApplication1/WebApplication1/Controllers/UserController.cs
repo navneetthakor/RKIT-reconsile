@@ -14,7 +14,7 @@ namespace WebApplication1.Controllers
   
         public class UserController : ApiController
         {
-        [HttpPost]
+            [HttpPost]
             [Route("user/createUser")]
             public IHttpActionResult CreateUser(ReqUser reqUser)
             {

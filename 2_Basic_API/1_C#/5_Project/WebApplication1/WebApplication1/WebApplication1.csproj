@@ -167,6 +167,7 @@
     <Compile Include="Models\ReqNote.cs" />
     <Compile Include="Models\ReqUser.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="primeNumbers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\InMemoryDatabase.cs" />
   </ItemGroup>
