@@ -23,7 +23,7 @@ CREATE TABLE project_info (
 );
 
 CREATE TABLE industry_guide (
-    eid INT PRIMARY KEY,                            -- Industry Guide (Foreign Key to professor)
+    eid INT PRIMARY KEY,                -- Industry Guide ID
     fname VARCHAR(100),                 -- First Name
     lname VARCHAR(100),					-- Last Name
     email VARCHAR(100),                 -- Email
@@ -32,7 +32,7 @@ CREATE TABLE industry_guide (
 );
 
 CREATE TABLE industry_guide_mob(
-    eid INT,                            -- Industry Guide (Foreign Key to industry_guide)
+    eid INT,                            -- Industry Guide ID (Foreign Key to industry_guide)
     mobile VARCHAR(10),                 -- Mobile Number
     PRIMARY KEY (eid, mobile),
     FOREIGN KEY (eid) REFERENCES industry_guide(eid)
