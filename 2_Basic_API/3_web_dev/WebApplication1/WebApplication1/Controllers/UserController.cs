@@ -25,9 +25,12 @@ namespace WebApplication1.Controllers
                 }
 
                 //addding user
-                User newUser = new User(InMemoryDatabase.Users.Count, reqUser.Name, reqUser.Email, reqUser.Password, reqUser.MobileNumber);
+                User newUser = new User(InMemoryDatabase.UserCounter, reqUser.Name, reqUser.Email, reqUser.Password, reqUser.MobileNumber);
                 InMemoryDatabase.Users.Add(newUser);
 
+                //increment user counter 
+                InMemoryDatabase.UserCounter++;
+             
                 //creating corresponding notes list
                 InMemoryDatabase.Notes.Add(newUser.UserId,new List<Note>());
 
