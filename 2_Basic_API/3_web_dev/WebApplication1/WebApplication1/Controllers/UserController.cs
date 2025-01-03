@@ -37,6 +37,30 @@ namespace WebApplication1.Controllers
                 //returning status 
                 return Ok(newUser);
             }
+
+            [HttpDelete]
+            [Route("user/DeleteUser")]
+            public IHttpActionResult DeleteUser(string Email)
+            {
+            //checked if user exists or not with same email
+            User user = InMemoryDatabase.Users.Find(u => u.Email == Email);
+            if (user == null)
+            {
+                return BadRequest("User with given email not exists");
+            }
+
+            //all safe to remove user 
+            bool isDeleted = InMemoryDatabase.Users.Remove(user) ? InMemoryDatabase.Notes.Remove(user.UserId) : false;
+
+            if (isDeleted) 
+            {
+                return Ok(user); 
+            } else 
+            {
+                return BadRequest("Internal server error : not able to delete currently, please try later"); 
+            }
+
+            }
         }
     }
 
