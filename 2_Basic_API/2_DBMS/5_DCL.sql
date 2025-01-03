@@ -12,10 +12,14 @@ CREATE USER 'nk2'@'localhost' IDENTIFIED BY 'nk2@1234';
 CREATE USER 'nk3'@'localhost' IDENTIFIED BY 'nk3@1234';
 
 # 3) Grant
+--	Grant option : to provide ability to grant privileges to other users
+-- it is cascade : if x have granted privilages to -> y 
+-- and then if someone revokes privillages from x,
+--  then automaticaly it would be removed from y
 
 GRANT ALL PRIVILEGES
 ON fsep_model.*
-TO 'nk'@'localhost';
+TO 'nk'@'localhost' with grant option;
 
 GRANT SELECT, INSERT
 ON fsep_model.*

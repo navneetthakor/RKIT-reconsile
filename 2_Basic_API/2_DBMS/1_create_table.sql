@@ -1,3 +1,4 @@
+use fsep_model;
 CREATE TABLE company (
     cid INT PRIMARY KEY,                -- Company ID
     name VARCHAR(200)                   -- Company Name
