@@ -37,7 +37,7 @@ username text
 insert into Hello values (1, "navneet");
 commit;
 
-# 2) rollback :p to undo all the changes made by the currentt transaction
+# 2) rollback : to undo all the changes made by the currentt transaction
 begin;
 create table Hello(
 id int primary key,

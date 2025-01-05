@@ -62,7 +62,7 @@ add constraint   foreign key (id) references Hello2(id);
 alter table Hello2
 drop foreign key fk_constraint_name;
 
-	show create table my_Hello;
+	-- show create table my_Hello;
     
 -- change table name
 alter table Hello
