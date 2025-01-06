@@ -45,8 +45,18 @@ namespace WebApplication1.Controllers
 
             [HttpDelete]
             [Route("user/DeleteUser")]
-            public IHttpActionResult DeleteUser(string Email)
+            [Obsolete]
+            public IHttpActionResult DeleteUser()
             {
+
+            //check wheather given token is valid or not 
+            string Email = null;
+            string token = Request.Headers.Authorization.Parameter;
+            if (!JWT.ValidateJwtToken(token, out Email))
+            {
+                return BadRequest("Token is not valid");
+            }
+
             //checked if user exists or not with same email
             User user = InMemoryDatabase.Users.Find(u => u.Email == Email);
             if (user == null)

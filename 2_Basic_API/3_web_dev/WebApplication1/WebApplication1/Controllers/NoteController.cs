@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebApplication1.Helper_Classes;
+
 
 //custom imports 
 using WebApplication1.Models;
@@ -15,8 +18,17 @@ namespace WebApplication1.Controllers
     {
         [HttpPost]
         [Route("note/addNote")]
-        public IHttpActionResult AddNote(string Email, ReqNote reqNote)
+        [Obsolete]
+        public IHttpActionResult AddNote( ReqNote reqNote)
         {
+            //check wheather given token is valid or not 
+            string Email = null;
+            string token = Request.Headers.Authorization?.Parameter;
+            if (token == null || !JWT.ValidateJwtToken(token, out Email))
+            {
+                return BadRequest("Token is not valid");
+            }
+
             //checked if user exists or not with same email
              User user = InMemoryDatabase.Users.Find(u => u.Email == Email);
             if (user == null)
@@ -37,8 +49,17 @@ namespace WebApplication1.Controllers
 
         [HttpGet]
         [Route("note/getAllNotes")]
-        public IHttpActionResult GetAllNotes(string Email)
+        [Obsolete]
+        public IHttpActionResult GetAllNotes()
         {
+            //check wheather given token is valid or not 
+            string Email = null;
+            string token = Request.Headers.Authorization.Parameter;
+            if (!JWT.ValidateJwtToken(token, out Email))
+            {
+                return BadRequest("Token is not valid");
+            }
+
             //checked if user exists or not with same email
             User user = InMemoryDatabase.Users.Find(u => u.Email == Email);
             if (user == null)
@@ -51,8 +72,17 @@ namespace WebApplication1.Controllers
 
         [HttpDelete]
         [Route("note/deleteNote")]
-        public IHttpActionResult DeleteNote(string Email, int NoteId)
+        [Obsolete]
+        public IHttpActionResult DeleteNote( int NoteId)
         {
+            //check wheather given token is valid or not 
+            string Email = null;
+            string token = Request.Headers.Authorization.Parameter;
+            if (!JWT.ValidateJwtToken(token, out Email))
+            {
+                return BadRequest("Token is not valid");
+            }
+
             //checked if user exists or not with same email
             User user = InMemoryDatabase.Users.Find(u => u.Email == Email);
             if (user == null)
@@ -77,8 +107,17 @@ namespace WebApplication1.Controllers
 
         [HttpPut]
         [Route("note/updateNote")]
-        public IHttpActionResult UpdateNote(string Email, int NoteId, ReqNote reqNote)
+        [Obsolete]
+        public IHttpActionResult UpdateNote(int NoteId, ReqNote reqNote)
         {
+            //check wheather given token is valid or not 
+            string Email = null;
+            string token = Request.Headers.Authorization.Parameter;
+            if (!JWT.ValidateJwtToken(token, out Email))
+            {
+                return BadRequest("Token is not valid");
+            }
+
             //checked if user exists or not with same email
             User user = InMemoryDatabase.Users.Find(u => u.Email == Email);
             if (user == null)
