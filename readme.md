@@ -143,3 +143,16 @@ to create dynamic website.
         - Non-readable form
  
 dataset, constraint, convert utc to contry time
+
+---
+Advance API
+---
+
+# Debugging with visual studio
+## breakpoints
+    1) normal breakpoint
+        - execution will be stop at this location
+    2) Conditional breakpoint
+        - execution will be stop if and only if it meets defined criteria
+            i) condition on expressions
+            ii) condition on hit_counts ( for loops )
