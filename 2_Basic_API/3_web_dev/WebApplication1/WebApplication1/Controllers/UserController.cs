@@ -8,6 +8,7 @@ using System.Web.Http;
 //custom imports 
 using WebApplication1.Models;
 using WebApplication1.Repositories;
+using WebApplication1.Helper_Classes;
 
 namespace WebApplication1.Controllers
 {
@@ -34,8 +35,12 @@ namespace WebApplication1.Controllers
                 //creating corresponding notes list
                 InMemoryDatabase.Notes.Add(newUser.UserId,new List<Note>());
 
+                //creating token 
+                string token = JWT.GenerateJwtToken(newUser.Email);
+
                 //returning status 
-                return Ok(newUser);
+                object[] returnValues = new object[] { newUser, token};
+                return Ok(returnValues);
             }
 
             [HttpDelete]
