@@ -18,7 +18,6 @@ namespace WebApplication1.Controllers
     {
         [HttpPost]
         [Route("note/addNote")]
-        [Obsolete]
         public IHttpActionResult AddNote( ReqNote reqNote)
         {
             //check wheather given token is valid or not 
@@ -49,12 +48,11 @@ namespace WebApplication1.Controllers
 
         [HttpGet]
         [Route("note/getAllNotes")]
-        [Obsolete]
         public IHttpActionResult GetAllNotes()
         {
             //check wheather given token is valid or not 
             string Email = null;
-            string token = Request.Headers.Authorization.Parameter;
+            string token = Request.Headers.Authorization?.Parameter;
             if (!JWT.ValidateJwtToken(token, out Email))
             {
                 return BadRequest("Token is not valid");
@@ -72,7 +70,6 @@ namespace WebApplication1.Controllers
 
         [HttpDelete]
         [Route("note/deleteNote")]
-        [Obsolete]
         public IHttpActionResult DeleteNote( int NoteId)
         {
             //check wheather given token is valid or not 
@@ -107,7 +104,6 @@ namespace WebApplication1.Controllers
 
         [HttpPut]
         [Route("note/updateNote")]
-        [Obsolete]
         public IHttpActionResult UpdateNote(int NoteId, ReqNote reqNote)
         {
             //check wheather given token is valid or not 

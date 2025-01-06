@@ -45,7 +45,6 @@ namespace WebApplication1.Controllers
 
             [HttpDelete]
             [Route("user/DeleteUser")]
-            [Obsolete]
             public IHttpActionResult DeleteUser()
             {
 

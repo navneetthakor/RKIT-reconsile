@@ -408,3 +408,5 @@ C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.IdentityModel.Tokens.Jwt.xml
