@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace WebApplication1.Helper_Classes
 {
@@ -42,7 +44,6 @@ namespace WebApplication1.Helper_Classes
             return token;
         }
 
-        [Obsolete]
         public static bool ValidateJwtToken(string token, out string email)
         {
             email = null;
@@ -63,16 +64,14 @@ namespace WebApplication1.Helper_Classes
                 IssuerSigningKey = securityKey
             };
 
-            JsonWebTokenHandler handler = new JsonWebTokenHandler();
+            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
 
             try
             {
-                TokenValidationResult result = handler.ValidateToken(token, validationParameters);
-                if (result.IsValid)
-                {
-                    email = Convert.ToString(result.Claims["email"]);
-                    return true;
-                }
+                SecurityToken validatedToken;
+                ClaimsPrincipal result = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+                email =Convert.ToString(result.FindFirst("email"));
+                return true;
             }
             catch (Exception ex)
             {
