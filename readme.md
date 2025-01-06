@@ -156,3 +156,14 @@ Advance API
         - execution will be stop if and only if it meets defined criteria
             i) condition on expressions
             ii) condition on hit_counts ( for loops )
+    3) Tracepoint
+        - to display some information
+        - it will not break the execution of program
+    4) Temporory breakpoint
+        - only break ones
+    5) Dependent breakpoint
+        - depends on another breakpoints to break the execu8tion of the program.
+        - from 2 to 5 all can be added by right clicking in the blank area.
+    6) function breakpoint
+        - by using name of the function
+        - from topbar choose debug -> add breakpoint -> functional breakpoint
