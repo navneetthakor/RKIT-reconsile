@@ -1,0 +1,15 @@
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\bin\Debug\net6.0\Advance_api_debug.exe
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\bin\Debug\net6.0\Advance_api_debug.deps.json
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\bin\Debug\net6.0\Advance_api_debug.runtimeconfig.json
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\bin\Debug\net6.0\Advance_api_debug.dll
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\bin\Debug\net6.0\Advance_api_debug.pdb
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\obj\Debug\net6.0\Advance_api_debug.csproj.AssemblyReference.cache
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\obj\Debug\net6.0\Advance_api_debug.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\obj\Debug\net6.0\Advance_api_debug.AssemblyInfoInputs.cache
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\obj\Debug\net6.0\Advance_api_debug.AssemblyInfo.cs
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\obj\Debug\net6.0\Advance_api_debug.csproj.CoreCompileInputs.cache
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\obj\Debug\net6.0\Advance_api_debug.dll
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\obj\Debug\net6.0\refint\Advance_api_debug.dll
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\obj\Debug\net6.0\Advance_api_debug.pdb
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\obj\Debug\net6.0\Advance_api_debug.genruntimeconfig.cache
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\1_Debugging\Advance_api_debug\Advance_api_debug\obj\Debug\net6.0\ref\Advance_api_debug.dll

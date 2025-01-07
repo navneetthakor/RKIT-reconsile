@@ -38,9 +38,14 @@ namespace MyPrims
         }
     }
 
+
+}
+/*
+namespace MyPrime2
+{
     public class PrimeInRange
     {
-        static void Main2(string[] args)
+        static void Main(string[] args)
         {
             //-> for range of prime numbers we could use sieve of erathosthenes algorithm 
             //-> only check for sqrt(limit) numbers to mark in range 
@@ -48,16 +53,16 @@ namespace MyPrims
 
             int n = Convert.ToInt32(Console.ReadLine());
 
-            bool[] isPrimes = new bool[n+1];  // default value: false
+            bool[] isPrimes = new bool[n + 1];  // default value: false
             isPrimes[0] = isPrimes[1] = true; // 0 - we not use, 1 - not a prime
 
             int upperBound = Convert.ToInt32(Math.Ceiling(Math.Sqrt(n)));
 
             for (int i = 2; i <= upperBound; i++)
             {
-                for (int j = i*2; j <= n; j += i)
+                for (int j = i * 2; j <= n; j += i)
                 {
-                    if ( j%i == 0 )
+                    if (j % i == 0)
                     {
                         isPrimes[j] = true;
                     }
@@ -74,7 +79,8 @@ namespace MyPrims
 
         }
     }
-
-    // there are other probabilistic algorithms are there for very large nubmers 
-    //like : miller - Rabin test (we studied in Information Security Subject)
 }
+*/
+
+// there are other probabilistic algorithms are there for very large nubmers 
+//like : miller - Rabin test (we studied in Information Security Subject)

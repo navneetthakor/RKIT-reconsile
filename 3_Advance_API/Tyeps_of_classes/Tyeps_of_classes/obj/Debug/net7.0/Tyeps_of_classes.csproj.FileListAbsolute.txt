@@ -1,0 +1,15 @@
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\Tyeps_of_classes.csproj.AssemblyReference.cache
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\Tyeps_of_classes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\Tyeps_of_classes.AssemblyInfoInputs.cache
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\Tyeps_of_classes.AssemblyInfo.cs
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\Tyeps_of_classes.csproj.CoreCompileInputs.cache
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\bin\Debug\net7.0\Tyeps_of_classes.exe
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\bin\Debug\net7.0\Tyeps_of_classes.deps.json
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\bin\Debug\net7.0\Tyeps_of_classes.runtimeconfig.json
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\bin\Debug\net7.0\Tyeps_of_classes.dll
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\bin\Debug\net7.0\Tyeps_of_classes.pdb
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\Tyeps_of_classes.dll
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\refint\Tyeps_of_classes.dll
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\Tyeps_of_classes.pdb
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\Tyeps_of_classes.genruntimeconfig.cache
+C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\ref\Tyeps_of_classes.dll
