@@ -28,6 +28,7 @@ namespace AdvanceAPI.File_System.File_Info
             //methods ---- 
             FileStream openfile = fileInfo.Open(FileMode.Append); // return 'FileStream' object
             fileInfo.Refresh(); // to referse state of file
+               
             
         }
     }
