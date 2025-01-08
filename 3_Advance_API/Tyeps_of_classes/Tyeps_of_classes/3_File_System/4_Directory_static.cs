@@ -15,7 +15,7 @@ such as creating, reading, writing, deleting, and checking if a file exists.
 
 namespace AdvanceAPI.File_System.Directory_static
 {
-    internal class test
+    internal class Tester
     {
         public static void TestNow()
         {

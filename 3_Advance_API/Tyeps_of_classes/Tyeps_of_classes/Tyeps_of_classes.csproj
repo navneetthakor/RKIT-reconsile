@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="3_File_System\StreamClasses\" />
+  </ItemGroup>
+
 </Project>
