@@ -39,6 +39,9 @@ namespace AdvanceAPI.File_System.Directory_Info
             //returns array of fileInfo for each file  for current level only
             FileInfo[] fileInfoArr = directoryInfo.GetFiles();
 
+            //filter at current level 
+            fileInfoArr = directoryInfo.GetFiles("Na*t.{txt,c}");
+
             //returns file from each subdirector too 
             fileInfoArr = directoryInfo.GetFiles("*", SearchOption.AllDirectories);
             //-> params: search_pattern, serach_option 
