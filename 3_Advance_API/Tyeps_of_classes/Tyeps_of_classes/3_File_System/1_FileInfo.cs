@@ -13,6 +13,7 @@ namespace AdvanceAPI.File_System.File_Info
         {
             // give absolute path, otherwise it will run into the trouble
             FileInfo fileInfo = new FileInfo("C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\3_Advance_API\\Tyeps_of_classes\\Tyeps_of_classes\\3_File_System\\sample.txt");
+                //-> it can through several exception so make sure that file path is correct, and user haver writes 
 
             //attributes ----
             Console.WriteLine(fileInfo.FullName); // C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\bin\Debug\net7.0\sample.txt
@@ -26,9 +27,28 @@ namespace AdvanceAPI.File_System.File_Info
             Console.WriteLine(fileInfo.Directory); // C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\3_File_System
 
             //methods ---- 
-            FileStream openfile = fileInfo.Open(FileMode.Append); // return 'FileStream' object
-            fileInfo.Refresh(); // to referse state of file
-               
+            //1) create : Creates a new file or overwrites an existing file if it already exists.
+            FileStream fs = fileInfo.Create();
+
+            //2) open: opens file represented by file_info object with specified access
+            fs = fileInfo.Open(FileMode.Append, FileAccess.Read, FileShare.None); // return 'FileStream' object
+                //-> params: mode, access, share ( type of access that other objects can have onb this file)
+
+            //3) refresh : resets the metadata of the file.
+            fileInfo.Refresh(); // return : none
+
+            //4) CopyTo : copy the current file to the new location
+            fileInfo.CopyTo("C:\\Users\\navneetkumar.t\\source\\repos");
+            //-> params: destination_location
+            //-> it can through several exceptions 
+            //i) UnauthorizedAccessException : when current user not have write access on destination location
+            //ii) DirectoryNotFoundException : when any directory mentioned in the path not found
+            //iii) IOException : related to any IO issue
+            //etc ...
+
+            //5) MoveTo : moves current file to destination location
+            fileInfo.MoveTo("C:\\Users\\navneetkumar.t\\source\\repos");
+                //-> it can through all the above exceptions 
             
         }
     }
