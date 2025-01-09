@@ -17,7 +17,7 @@ namespace WebApplication1.Controllers
         {
             [HttpPost]
             [Route("user/createUser")]
-            public IHttpActionResult CreateUser(ReqUser reqUser)
+        public IHttpActionResult CreateUser(ReqUser reqUser)
             {
                 //checked if user exists or not with same email
                 if (InMemoryDatabase.Users.Any(u => u.Email == reqUser.Email))

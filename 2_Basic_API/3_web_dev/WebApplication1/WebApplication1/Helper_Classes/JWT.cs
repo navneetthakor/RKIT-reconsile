@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Diagnostics;
 
 namespace WebApplication1.Helper_Classes
 {
@@ -40,7 +41,8 @@ namespace WebApplication1.Helper_Classes
                 Issuer = "my_notes",
                 Audience = "my_notes"
             });
-
+            Debug.WriteLine("Email1 : " +  email);
+            Debug.WriteLine("token : " + token);
             return token;
         }
 
@@ -70,7 +72,8 @@ namespace WebApplication1.Helper_Classes
             {
                 SecurityToken validatedToken;
                 ClaimsPrincipal result = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
-                email =Convert.ToString(result.FindFirst("email"));
+                email = Convert.ToString(result.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
+                Debug.WriteLine("hello : " + result.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
                 return true;
             }
             catch (Exception ex)

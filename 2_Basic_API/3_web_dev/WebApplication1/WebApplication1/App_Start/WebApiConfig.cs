@@ -14,7 +14,7 @@ namespace WebApplication1
 
             //configuring cors 
             //global cors configuration (lowest priority)
-            EnableCorsAttribute globalCors = new EnableCorsAttribute("*", "*", "*");
+            EnableCorsAttribute globalCors = new EnableCorsAttribute("*", "*", "*"); // origin (host), header, Http_methods
             config.EnableCors(globalCors);
 
             //setting cors for specific domain (higher priority then globalCors)

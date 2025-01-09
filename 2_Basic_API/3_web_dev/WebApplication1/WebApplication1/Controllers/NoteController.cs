@@ -23,6 +23,7 @@ namespace WebApplication1.Controllers
             //check wheather given token is valid or not 
             string Email = null;
             string token = Request.Headers.Authorization?.Parameter;
+            Debug.WriteLine("token : " + token);
             if (token == null || !JWT.ValidateJwtToken(token, out Email))
             {
                 return BadRequest("Token is not valid");
@@ -32,6 +33,7 @@ namespace WebApplication1.Controllers
              User user = InMemoryDatabase.Users.Find(u => u.Email == Email);
             if (user == null)
             {
+                Debug.WriteLine("Email");
                 return BadRequest("User with given Email not exists");
             }
 
@@ -48,11 +50,13 @@ namespace WebApplication1.Controllers
 
         [HttpGet]
         [Route("note/getAllNotes")]
+        [CacheFilter]
         public IHttpActionResult GetAllNotes()
         {
             //check wheather given token is valid or not 
             string Email = null;
             string token = Request.Headers.Authorization?.Parameter;
+            
             if (!JWT.ValidateJwtToken(token, out Email))
             {
                 return BadRequest("Token is not valid");
@@ -62,6 +66,7 @@ namespace WebApplication1.Controllers
             User user = InMemoryDatabase.Users.Find(u => u.Email == Email);
             if (user == null)
             {
+
                 return BadRequest("User with given Email not exists");
             }
 

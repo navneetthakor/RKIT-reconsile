@@ -352,6 +352,7 @@ C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\Newtonsoft.Json.dll
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\Swashbuckle.Core.dll
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.Buffers.dll
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.Memory.dll
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.Net.Http.Formatting.dll
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.Numerics.Vectors.dll
@@ -382,6 +383,7 @@ C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\Newtonsoft.Json.Bson.pdb
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\Newtonsoft.Json.Bson.xml
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.Buffers.xml
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.Memory.xml
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.Net.Http.Formatting.xml
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.Numerics.Vectors.xml
@@ -408,5 +410,3 @@ C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\2_Basic_API\3_web_dev\WebApplication1\WebApplication1\bin\System.IdentityModel.Tokens.Jwt.xml
