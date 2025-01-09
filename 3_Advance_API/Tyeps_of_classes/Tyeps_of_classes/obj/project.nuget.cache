@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1Abkyl0rhkBlAEnhE0puBJo3LnZHaXcerAdncqnUzQUddEfS1YAWjFZT/ytdYTIXant1fpp/GjEE5T3tu8P3cQ==",
+  "dgSpecHash": "2EsWa9gOID5t6J+RLlcSiHQaeBeB4hUH1hYhg7ANUBF+IhlpsX240hyThe3YG7nagwuhTWs5efdsE8o4kuk1Eg==",
   "success": true,
   "projectFilePath": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\3_Advance_API\\Tyeps_of_classes\\Tyeps_of_classes\\Tyeps_of_classes.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\navneetkumar.t\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

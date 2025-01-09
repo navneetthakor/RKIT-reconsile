@@ -14,7 +14,11 @@ namespace AdvanceAPI.Main
             //AdvanceAPI.File_System.Directory_Info.Tester.TestNow();
             //AdvanceAPI.File_System.Directory_static.Tester.TestNow();
             //AdvanceAPI.File_System.Stream.File_Stream.Tester.TestNow();
-            AdvanceAPI.File_System.Stream.Stream_Reader.Tester.TestNow();
+            //AdvanceAPI.File_System.Stream.Stream_Reader.Tester.TestNow();
+            //AdvanceAPI.File_System.Stream.Stream_Writer.Tester.TestNow();
+
+            //data serialization ----
+            AdvanceAPI.Data_Serialization.Tester.TestNow();
 
         }
     }

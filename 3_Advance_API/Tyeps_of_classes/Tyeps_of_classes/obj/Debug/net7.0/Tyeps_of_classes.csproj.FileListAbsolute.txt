@@ -13,3 +13,5 @@ C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\
 C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\Tyeps_of_classes.pdb
 C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\Tyeps_of_classes.genruntimeconfig.cache
 C:\Users\navneetkumar.t\Source\Repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\ref\Tyeps_of_classes.dll
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Tyeps_of_classes\Tyeps_of_classes\obj\Debug\net7.0\Tyeps_of_classes.csproj.CopyComplete
