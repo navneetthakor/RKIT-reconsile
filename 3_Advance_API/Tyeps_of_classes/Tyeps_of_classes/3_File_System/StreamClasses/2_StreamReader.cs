@@ -28,14 +28,34 @@ namespace AdvanceAPI.File_System.Stream.Stream_Reader
                 Console.WriteLine(line);
                 Console.WriteLine();
             }
+            sr.Close();
 
             //2) Read() : Reads the next character, returns '-1' when reaches EOF
+            sr = new StreamReader(pathLocal);
             int? charValue;
             while ((charValue = sr.Read()) != -1)
             {
                 Console.Write((char)charValue);
             }
 
+            //3) ReadToEnd : To read entire content 
+            sr = new StreamReader(pathLocal);
+            line = sr.ReadToEnd();
+            Console.WriteLine(line);
+
+            //4) Peek : simillar to 'Read' but only difference is, this is not consuming character
+            Console.WriteLine(sr.Peek());
+            sr.Close();
+    
+            //--------------------------------------- 
+            //-> Although StreamReader provides efficient way to read from file, but where we loss conrol
+            //over setting byte pointer as this file not have byte level control
+
+            //-> So, solution fo this is
+            //- create FileStream object (other then append mode)
+            //- now pass this object to StreamReader class\
+            //- whenever you need to change position at that moment
+            //use FileStream object to do that
         }
     }
 }
