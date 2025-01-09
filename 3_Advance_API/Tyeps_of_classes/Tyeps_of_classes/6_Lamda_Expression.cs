@@ -8,6 +8,7 @@ namespace AdvanceAPI.Lamda_Expression
 {
     internal class Tester
     {
+
         public static void TestNow()
         {
             // Lamda-Expression is basically shorthand for writting anonymous functions
@@ -53,7 +54,7 @@ namespace AdvanceAPI.Lamda_Expression
 
             //3) Predicate 
             Predicate<int> lmd4 = n => n == 10;
-
+           
         }
     }
 }
