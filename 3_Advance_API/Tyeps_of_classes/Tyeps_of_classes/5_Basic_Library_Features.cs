@@ -32,7 +32,7 @@ namespace AdvanceAPI.BLF
             Console.WriteLine(enUs.DateTimeFormat.ShortDatePattern); // M/d/yyyy
 
 
-            // Example of System.Net namespace  -> enables network based communication.
+            // 2) System.Net namespace : enables network based communication.
             WebClient webClient = new WebClient();
             string githubPage = webClient.DownloadString("https://www.github.com/navneetthakor");
             Console.WriteLine("Github Page : " + githubPage.Substring(0, 500));
