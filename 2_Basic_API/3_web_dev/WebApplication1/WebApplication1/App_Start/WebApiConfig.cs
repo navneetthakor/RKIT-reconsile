@@ -31,6 +31,12 @@ namespace WebApplication1
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            //config.Routes.MapHttpRoute(
+            //    name: "version2",
+            //    routeTemplate:"api/v2/{contorller}/{id}",
+            //    defaults: new { id = RouteParameter.Optional }
+            // );
         }
     }
 }

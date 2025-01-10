@@ -11,11 +11,19 @@ namespace WebApplication1.Helper_Classes
 {
     public class JWT
     {
-        private static string SecretKey { get; set; } = "tonystarkismyrolemodelasheisoneofgeniusinthetechworldaccordingtome";
+        /// <summary>
+        /// JWT structure: 
+        /// <Header>.<Payload>.<Signature>
+        /// 
+        /// - header and payload (calims) just encoded in Base64URI
+        /// - signature : created by singing header and payload with secret key. 
+        /// Signature = HMACSHA256(EncodedHeader + "." + EncodedPayload, SecretKey)
+        /// </summary>
+        private static string mySecret { get; set; } = "tonystarkismyrolemodelasheisoneofgeniusinthetechworldaccordingtome";
         public static string GenerateJwtToken(string email)
         {
             // Create a security key and signing credentials
-            byte[] key = Encoding.UTF8.GetBytes(JWT.SecretKey);
+            byte[] key = Encoding.UTF8.GetBytes(JWT.mySecret);
             SymmetricSecurityKey securityKey = new SymmetricSecurityKey(key);
             SigningCredentials credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
@@ -23,7 +31,6 @@ namespace WebApplication1.Helper_Classes
             Dictionary<string,Object> claims = new Dictionary<string, object>
         {
             { "email", email },
-            { "jti", Guid.NewGuid().ToString() }, // Unique Token ID
             { "iat", DateTimeOffset.UtcNow.ToUnixTimeSeconds() }, // Issued At
             { "exp", DateTimeOffset.UtcNow.AddMonths(3).ToUnixTimeSeconds() } // Expiration
         };
@@ -34,7 +41,6 @@ namespace WebApplication1.Helper_Classes
             // Create the token
             string token = handler.CreateToken(new SecurityTokenDescriptor
             {
-                Subject = null, // No ClaimsIdentity required for custom claims
                 Claims = claims,
                 Expires = DateTime.UtcNow.AddMonths(3),
                 SigningCredentials = credentials,
@@ -50,9 +56,9 @@ namespace WebApplication1.Helper_Classes
         {
             email = null;
 
-            //we requires only secretKey as informaion about hashing algorithm is already,
+            //we requires only mySecret as informaion about hashing algorithm is already,
             //present inside the header of the token
-            byte[] key = Encoding.UTF8.GetBytes(JWT.SecretKey);
+            byte[] key = Encoding.UTF8.GetBytes(JWT.mySecret);
             SymmetricSecurityKey securityKey = new SymmetricSecurityKey(key);
 
             TokenValidationParameters validationParameters = new TokenValidationParameters
