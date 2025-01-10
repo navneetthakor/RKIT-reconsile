@@ -24,3 +24,12 @@ select
 	sid as student_id, s.fname as student_fname, s.lname as student_lname
 from 
 	student as s;
+    
+    
+-- --------- Index --------------
+create index student_emails on student(email);
+
+show index from student;
+select * from student;
+
+drop index student_emails on student;

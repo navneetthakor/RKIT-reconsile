@@ -20,7 +20,9 @@ namespace AdvanceAPI.Main
             //data serialization ----
             //AdvanceAPI.Data_Serialization.Tester.TestNow();
 
-            AdvanceAPI.BLF.Tester.TestNow();
+            //AdvanceAPI.BLF.Tester.TestNow();
+
+            AdvanceAPI.Extension_Method.Tester.TestNow();
 
         }
     }
