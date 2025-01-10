@@ -22,7 +22,9 @@ namespace AdvanceAPI.Main
 
             //AdvanceAPI.BLF.Tester.TestNow();
 
-            AdvanceAPI.Extension_Method.Tester.TestNow();
+            //AdvanceAPI.Extension_Method.Tester.TestNow();
+
+            AdvanceAPI.Dynamic_Type.Tester.TestNow();
 
         }
     }
