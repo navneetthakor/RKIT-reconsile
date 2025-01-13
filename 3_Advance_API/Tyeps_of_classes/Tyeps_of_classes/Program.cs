@@ -24,7 +24,11 @@ namespace AdvanceAPI.Main
 
             //AdvanceAPI.Extension_Method.Tester.TestNow();
 
-            AdvanceAPI.Dynamic_Type.Tester.TestNow();
+            //AdvanceAPI.Dynamic_Type.Tester.TestNow();
+
+            //LINQ --- 
+            AdvanceAPI.LINQ.Linq_On_List.Tester.TestNow();
+
 
         }
     }
