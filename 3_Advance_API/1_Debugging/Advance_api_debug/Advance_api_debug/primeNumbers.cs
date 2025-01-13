@@ -35,6 +35,13 @@ namespace MyPrims
             {
                 Console.WriteLine("Not a prime");
             }
+
+#if DEBUG
+            Console.WriteLine("Debug mode");
+#else
+            Console.WriteLine("Reales mode");
+#endif
+
         }
     }
 
