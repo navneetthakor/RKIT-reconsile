@@ -18,8 +18,8 @@ namespace WebApplication1
             config.EnableCors(globalCors);
 
             //setting cors for specific domain (higher priority then globalCors)
-            //EnableCorsAttribute localCors = new EnableCorsAttribute("https://localhost:44300/", "*", "GET");
-            //config.EnableCors(localCors);
+            EnableCorsAttribute localCors = new EnableCorsAttribute("https://localhost:44300/", "*", "GET");
+            config.EnableCors(localCors);
 
             // other is action and controller level cors
 
