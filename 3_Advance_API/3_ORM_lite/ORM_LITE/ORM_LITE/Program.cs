@@ -11,8 +11,13 @@ public class Program
 
         using (var db = DatabaseService.GetDbConnection())
         {
-            db.CreateTableIfNotExists<User>();
+            db.CreateTableIfNotExists<POCOAEWP01>();
+            db.CreateTableIfNotExists<POCOAEWP02>();
             Console.WriteLine("Table created successfully.");
         }
     }
 }
+
+
+
+
