@@ -77,7 +77,7 @@ namespace AdvanceAPI.Data_Serialization
             using(StringReader strr = new StringReader(xml))
             {
                 if (strr == null) return;
-                Person? xmlPerson = (Person)xmls.Deserialize(strr);
+                Person? xmlPerson = (Person?)xmls.Deserialize(strr);
                 Console.WriteLine(xmlPerson);
             }
         }
