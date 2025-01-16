@@ -4,17 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ORM_LITE.Models
+namespace ORM_LITE.Business_Logic.BLClasses
 {
-    internal class DtoToPoco
+    internal class WriterLogic
     {
-
     }
 }
-
-
-
-
-
-
-
