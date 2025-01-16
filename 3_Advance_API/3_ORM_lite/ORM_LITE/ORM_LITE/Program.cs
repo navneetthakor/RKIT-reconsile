@@ -1,6 +1,7 @@
 ﻿using System;
 using ServiceStack.OrmLite;
 using ORM_LITE.Models;
+using ORM_LITE.Models.POCOs;
 
 public class Program
 {

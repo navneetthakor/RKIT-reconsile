@@ -12,9 +12,4 @@
     <PackageReference Include="ServiceStack.OrmLite.MySqlConnector" Version="8.5.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="POCOs\" />
-  </ItemGroup>
-
 </Project>
