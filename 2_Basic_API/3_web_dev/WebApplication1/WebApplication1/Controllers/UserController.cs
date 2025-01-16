@@ -15,31 +15,31 @@ namespace WebApplication1.Controllers
   
         public class UserController : ApiController
         {
-            [HttpPost]
-            [Route("user/createUser")]
+        [HttpPost]
+        [Route("user/createUser")]
         public IHttpActionResult CreateUser(ReqUser reqUser)
+        {
+            //checked if user exists or not with same email
+            if (InMemoryDatabase.Users.Any(u => u.Email == reqUser.Email))
             {
-                //checked if user exists or not with same email
-                if (InMemoryDatabase.Users.Any(u => u.Email == reqUser.Email))
-                {
-                    return BadRequest("User with same email already exists");
-                }
+                return BadRequest("User with same email already exists");
+            }
 
-                //addding user
-                User newUser = new User(InMemoryDatabase.UserCounter, reqUser.Name, reqUser.Email, reqUser.Password, reqUser.MobileNumber);
-                InMemoryDatabase.Users.Add(newUser);
+            //addding user
+            User newUser = new User(InMemoryDatabase.UserCounter, reqUser.Name, reqUser.Email, reqUser.Password, reqUser.MobileNumber);
+            InMemoryDatabase.Users.Add(newUser);
 
-                //increment user counter 
-                InMemoryDatabase.UserCounter++;
-             
-                //creating corresponding notes list
-                InMemoryDatabase.Notes.Add(newUser.UserId,new List<Note>());
+            //increment user counter 
+            InMemoryDatabase.UserCounter++;
 
-                //creating token 
-                string token = JWT.GenerateJwtToken(newUser.Email);
+            //creating corresponding notes list
+            InMemoryDatabase.Notes.Add(newUser.UserId, new List<Note>());
 
-                //returning status 
-                object[] returnValues = new object[] { newUser, token};
+            //creating token 
+            string token = JWT.GenerateJwtToken(newUser.Email);
+
+            //returning status 
+            object[] returnValues = new object[] { newUser, new {TOKEN = token} };
                 return Ok(returnValues);
             }
 

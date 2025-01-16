@@ -50,7 +50,7 @@ namespace WebApplication1.Controllers
 
         [HttpGet]
         [Route("note/getAllNotes")]
-        [CacheFilter]
+        [Cache]
         public IHttpActionResult GetAllNotes()
         {
             //check wheather given token is valid or not 
