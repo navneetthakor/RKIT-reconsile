@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -10,6 +10,11 @@
   <ItemGroup>
     <PackageReference Include="ServiceStack.OrmLite.MySql" Version="8.5.2" />
     <PackageReference Include="ServiceStack.OrmLite.MySqlConnector" Version="8.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\" />
+    <Folder Include="POCOs\" />
   </ItemGroup>
 
 </Project>

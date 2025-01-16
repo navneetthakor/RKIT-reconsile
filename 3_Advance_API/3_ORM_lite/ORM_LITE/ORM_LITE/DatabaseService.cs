@@ -16,7 +16,7 @@ namespace ORM_LITE.Models
         public static IDbConnection GetDbConnection()
         {
             var dbFactory = new OrmLiteConnectionFactory(connectionString, MySqlDialect.Provider);
-            return dbFactory.Open();
+            return dbFactory.OpenDbConnection();
         }
     }
 }
