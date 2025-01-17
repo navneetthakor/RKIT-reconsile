@@ -6,9 +6,9 @@ using ORM_LITE.Business_Logic.BLClasses;
 using ORM_LITE.Models.Enum;
 using ORM_LITE.Models.DTOs;
 
-public class Program
+public class Program2
 {
-    public static void Main(string[] args)
+    public static void Main2(string[] args)
     {
         /// <summary>
         /// Creating table  if not exist
@@ -21,74 +21,18 @@ public class Program
 
 
         ///<summary>
-        ///Iterative loop
+        /// adding writer
         /// </summary>
-        do
-        {
-            int input = 5;
-
-            Console.WriteLine("\n\n --- select approperiate option ---- ");
-            Console.WriteLine("1: AddWriter");
-            Console.WriteLine("2: AddBook");
-            Console.WriteLine("3: BookWithWriter");
-            Console.WriteLine("4: Exit");
-
-            input = Convert.ToInt32(Console.ReadLine());
-
-            switch(input)
-            {
-                case 1:
-                    AddWriter();
-                    break;
-                case 2:
-                    AddBook();
-                    break;
-                case 3:
-                    BookWithWriter();
-                    break;
-                case 4:
-                    return;
-                default:
-                    Console.WriteLine("Please provide appropriate input");
-                    break;
-            }
-
-        } while (true);
-
-
-        
-
-    }
-
-    /// <summary>
-    /// To add writer 
-    /// </summary>
-    private static void AddWriter()
-    {
-        Console.Write("Name : ");
-        string name = Console.ReadLine();
-
-        Console.Write("Password : ");
-        string password = Console.ReadLine();
-
-        Console.Write("Email : ");
-        string email = Console.ReadLine();
-
-        Console.Write("Phone :  ");
-        string phone = Console.ReadLine();
-
-        DTOAEWP01 dto = new DTOAEWP01()
-        {
-            P01102 = name,
-            P01103 = password,
-            P01104 = email,
-            P01105 = phone
-        };
-
         using (var db = DatabaseService.GetDbConnection())
         {
 
-            
+            DTOAEWP01 dto = new DTOAEWP01()
+            {
+                P01102 = "Navneet",
+                P01103 = "tonystark",
+                P01104 = "codewithnavneet@gmail.com",
+                P01105 = "6363636363"
+            };
             WriterLogic wl = new WriterLogic(dto, OperationType.A, db);
 
             //presave 
@@ -116,28 +60,18 @@ public class Program
             Console.WriteLine("Save");
         }
 
-    }
-
-    /// <summary>
-    /// To add book in database
-    /// </summary>
-    private static void AddBook()
-    {
-        Console.Write("Title : ");
-        string title = Console.ReadLine();
-
-        Console.Write("Writer Id : ");
-        int WriterId = Convert.ToInt32(Console.ReadLine());
-
-        DTOAEWP02 dto = new DTOAEWP02()
-        {
-            P02202 = title,
-            P02203 = WriterId
-        };
-
+        /// <summary>
+        /// Adding book
+        /// </summary>
         using (var db = DatabaseService.GetDbConnection())
         {
 
+            DTOAEWP02 dto = new DTOAEWP02()
+            {
+                P02202 = "Hello Baby",
+                P02203 = 1
+
+            };
             BookLogic bl = new BookLogic(dto, OperationType.A, db);
 
             //presave 
@@ -164,28 +98,20 @@ public class Program
             }
             Console.WriteLine("Save");
         }
-    }
 
-    /// <summary>
-    /// To display all the book of particular user
-    /// </summary>
-    private static void BookWithWriter()
-    {
-        Console.Write("Writer ID : ");
-        int WriterId = Convert.ToInt32(Console.ReadLine());
-
+        //fetching books by id of writer
         using (var db = DatabaseService.GetDbConnection())
         {
             WriterLogic wl = new WriterLogic(OperationType.R, db);
             BookLogic bl = new BookLogic(OperationType.R, db);
 
-            Response writerData = wl.GetData(WriterId);
+            Response writerData = wl.GetData(1);
             if (writerData.IsError)
             {
                 Console.WriteLine("ERROR : " + writerData.Message); return;
             }
 
-            Response allBooks = bl.GetAllBookByWriter(WriterId);
+            Response allBooks = bl.GetAllBookByWriter(1);
             if (writerData.IsError)
             {
                 Console.WriteLine("ERROR : " + writerData.Message); return;
@@ -199,7 +125,7 @@ public class Program
                 //Console.WriteLine("Book ID : " + b.P02201);
                 Console.WriteLine("Book title : " + b.P02202);
                 Console.WriteLine("Writer Name : " + writerData.Data.P01102);
-                Console.WriteLine();
+
             }
         }
 
