@@ -11,7 +11,7 @@ namespace ORM_LITE.Models
         /// <summary>
         /// if request issucessful and we have data to send
         /// </summary>
-        public Object Data { get; set; }
+        public dynamic Data { get; set; }
 
         /// <summary>
         /// if error then False otherwise true

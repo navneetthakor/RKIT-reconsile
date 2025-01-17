@@ -40,13 +40,13 @@ namespace System
             };
         }
 
-        internal static DTOAEWP03 ToDTO(this POCOAEWP02 pocoaewp02, POCOAEWP01 pocoaewp01)
+        internal static DTOAEWP03 ToDTO(this POCOAEWP02 pocoaewp02, DTOAEWP01 pocoaewp01)
         {
             return new DTOAEWP03()
             {
                 P02201 = pocoaewp02.P02F01,
                 P02202 = pocoaewp02.P02F02,
-                P01102 = pocoaewp01.P01F02
+                P01102 = pocoaewp01.P01102
             };
         }
     }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ORM_LITE.Models.POCOs
 {
-    internal class POCOAEWP01
+    public class POCOAEWP01
     {
         [PrimaryKey, Index, AutoIncrement]
         public int P01F01 { get; set; } // writerId

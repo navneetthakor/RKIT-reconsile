@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ORM_LITE.Models.DTOs
 {
-    internal class DTOAEWP02
+    public class DTOAEWP02
     {
         public string P02202 { get; set; } // name
 
