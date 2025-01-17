@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ORM_LITE.Models
 {
-    internal class Response
+    public class Response
     {
         /// <summary>
         /// if request issucessful and we have data to send
@@ -16,7 +16,7 @@ namespace ORM_LITE.Models
         /// <summary>
         /// if error then False otherwise true
         /// </summary>
-        public bool Status { get; set; } = true;
+        public bool IsError { get; set; } = false;
 
         /// <summary>
         /// Message which indicates outcome of this request

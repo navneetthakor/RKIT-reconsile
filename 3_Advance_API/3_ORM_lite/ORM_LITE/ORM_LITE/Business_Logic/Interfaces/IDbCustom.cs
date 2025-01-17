@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ORM_LITE.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,22 +16,19 @@ namespace ORM_LITE.Business_Logic.Interfaces
         /// <summary>
         /// It converts DTO to POCO
         /// </summary>
-        /// <param name="ErrorMessage"></param>
-        /// <returns>bool : to indicate success or failuer of a given action</returns>
-        bool PreSave(out string ErrorMessage);
+        /// <returns>Response : to indicate success or failuer of a given action</returns>
+        Response PreSave();
 
         /// <summary>
         /// to validate provided values
         /// </summary>
-        /// <param name="ErrorMessage"></param>
-        /// <returns>bool : to indicate success or failuer of a given action</returns>
-        bool validate(out string ErrorMessage);
+        /// <returns>Response : to indicate success or failuer of a given action</returns>
+        Response Validate();
 
         /// <summary>
         /// to save data in database
         /// </summary>
-        /// <param name="ErrorMessage"></param>
-        /// <returns>bool : to indiacate success or failuer of a given action</returns>
-        bool save(out string ErrorMessage);
+        /// <returns>Response : to indiacate success or failuer of a given action</returns>
+        Response Save();
     }
 }
