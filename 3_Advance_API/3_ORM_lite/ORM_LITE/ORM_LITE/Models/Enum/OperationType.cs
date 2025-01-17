@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ORM_LITE.Models.Enum
 {
-    enum OperationType
+    public enum OperationType
     {
         /// <summary>
         /// to add data

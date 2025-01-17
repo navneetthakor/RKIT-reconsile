@@ -9,7 +9,7 @@ namespace ORM_LITE.Models.DTOs
     /// <summary>
     /// This is regarding BookWithWriter
     /// </summary>
-    internal class DTOAEWP03
+    public class DTOAEWP03
     {
         public int P02201 { get; set; } // id of book
 

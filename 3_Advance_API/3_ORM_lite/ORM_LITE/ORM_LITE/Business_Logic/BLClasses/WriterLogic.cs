@@ -31,7 +31,7 @@ namespace ORM_LITE.Business_Logic.BLClasses
         /// to add object reference in DTOAEWP01
         /// </summary>
         /// <param name="dtoObj"></param>
-        WriterLogic(DTOAEWP01? dtoObj, OperationType type, IDbConnection dbConnection)
+        public WriterLogic(DTOAEWP01? dtoObj, OperationType type, IDbConnection dbConnection)
         {
             _pocoObj = null;
             _dtoObj = dtoObj;
@@ -42,7 +42,7 @@ namespace ORM_LITE.Business_Logic.BLClasses
         /// <summary>
         /// Default construtor : in case of we just want to read a data.
         /// </summary>
-        WriterLogic(OperationType type, IDbConnection dbConnection) 
+        public WriterLogic(OperationType type, IDbConnection dbConnection) 
         {
             _pocoObj = null;
             _dtoObj = null;
@@ -67,7 +67,7 @@ namespace ORM_LITE.Business_Logic.BLClasses
                 if (_dtoObj == null) throw new Exception("DTO object is null");
 
                 // converting to Poco
-                this._pocoObj = _dtoObj?.ToPOCO();
+                this._pocoObj = _dtoObj.ToPOCO();
 
                 return response;
             }
@@ -85,7 +85,7 @@ namespace ORM_LITE.Business_Logic.BLClasses
             Response response = new Response();
             try
             {
-                // check is this operation other than 'Add'
+                // check is this operation other than 'Add' || P01F01 is not empty
                 if (_pocoObj.P01F01 == 0 && _type != OperationType.A)
                 {
                     throw new Exception("You must pass WriterId");
@@ -125,10 +125,47 @@ namespace ORM_LITE.Business_Logic.BLClasses
                         return response;
 
                     default:
-                        throw new Exception("Non proper operation type")
-                }
+                        throw new Exception("Non proper operation type");
+                };
             }
             catch(Exception e)
+            {
+                response.Message = e.Message;
+                response.IsError = true;
+                return response;
+            }
+        }
+
+        
+        public Response GetData(int id)
+        {
+            Response response = new Response();
+            try
+            {
+
+            response.Data = _dbConnection.SingleById<POCOAEWP01>(id).ToDTO();
+            return response;
+            }
+            catch(Exception e)
+            {
+                response.Message = e.Message;
+                response.IsError = true;
+                return response;
+            }
+        }
+
+        public Response DeleteWriter(int id)
+        {
+            Response response = new Response();
+            try
+            {
+
+                DTOAEWP01 selectedPocoaewp01 = _dbConnection.SingleById<POCOAEWP01>(id).ToDTO();
+                response.Data = selectedPocoaewp01;
+                _dbConnection.Delete(selectedPocoaewp01);
+                return response;
+            }
+            catch (Exception e)
             {
                 response.Message = e.Message;
                 response.IsError = true;
