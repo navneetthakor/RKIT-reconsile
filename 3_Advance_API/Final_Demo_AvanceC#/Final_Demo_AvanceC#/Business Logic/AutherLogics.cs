@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Final_Demo_AvanceCSharp.Services
+namespace Final_Demo_AvanceCSharp.Business_Logic
 {
-    internal class MailService
+    internal class AutherLogics
     {
     }
 }

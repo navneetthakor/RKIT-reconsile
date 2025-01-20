@@ -10,7 +10,10 @@
 
   <ItemGroup>
     <Folder Include="Modals\" />
-    <Folder Include="Business Logic\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
   </ItemGroup>
 
 </Project>
