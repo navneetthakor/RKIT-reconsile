@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,10 +25,21 @@ namespace AdvanceAPI.Dynamic_Type
             Console.WriteLine(anjan + "\n\n");
 
 
-            /*
-             *The object assigned to a dynamic variable may implement the IDynamicMetaObjectProvider interface, which provides more control over how dynamic behavior works.
-                A well-known class that implements this interface is ExpandoObject. It allows you to add properties, methods, and events dynamically at runtime.
-            */
+            //ExpandObject -- can add properties or methods dynamically
+            dynamic nk = new ExpandoObject();
+            Console.WriteLine(nk.GetType());
+            Console.WriteLine(nk + "\n\n");
+
+            try
+            {
+                Console.WriteLine(nk.name);
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            nk.name = " Navneet";
+            Console.WriteLine(nk.name);
 
         }
     }
