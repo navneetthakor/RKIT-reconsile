@@ -27,7 +27,11 @@ namespace AdvanceAPI.Main
             //AdvanceAPI.Dynamic_Type.Tester.TestNow();
 
             //LINQ --- 
-            AdvanceAPI.LINQ.Linq_On_List.Tester.TestNow();
+            //AdvanceAPI.LINQ.Linq_On_List.Tester.TestNow();
+
+            //Security_Cryptography ---
+            //Security_Cryptography.AES.Tester.TestNow();
+            Security_Cryptography.DesAlgo.Tester.TestNow();
 
 
         }

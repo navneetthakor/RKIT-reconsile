@@ -1,42 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
-namespace AdvanceAPI.Security_Cryptography.AES
+namespace AdvanceAPI.Security_Cryptography.DesAlgo
 {
     internal class Tester
     {
         public static void TestNow()
         {
-            // Create a 16-byte (128-bit) key using RandomNumberGenerator
-            byte[] key = new byte[16];
-            byte[] iv = new byte[16]; // CBC mode
-            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+            
+           
+            using (DES outerDes = DES.Create())
             {
-                // Fill the byte array with random values
-                rng.GetBytes(key); 
-                rng.GetBytes(iv);
-            }
-            string encrpytedStr = Tester.Encrypt("Hello RKIT TEAM", key, iv);
+                outerDes.GenerateKey();
+                outerDes.GenerateIV();
+            string encrpytedStr = Tester.Encrypt("Hello RKIT TEAM", outerDes.Key, outerDes.IV);
             Console.WriteLine(encrpytedStr);
-            Console.WriteLine(Tester.Decrypt(encrpytedStr, key, iv));
+            Console.WriteLine(Tester.Decrypt(encrpytedStr, outerDes.Key, outerDes.IV));
+            }
         }
 
-        // Encrypts the plaintext using AES algorithm
+        // Encrypts the plaintext using DES algorithm
         private static string Encrypt(string plainText, byte[] key, byte[] iv)
         {
             string encString = "";
-            using (Aes aes = Aes.Create())
+            using (DES des = DES.Create())
             {
                 //initializing required structure 
-                aes.Key = key;
-                aes.IV = iv;
+                des.Key = key;
+                des.IV = iv;
 
                 //creating encryptor 
-                ICryptoTransform encriptor = aes.CreateEncryptor();
+                ICryptoTransform encriptor = des.CreateEncryptor();
 
 
                 // cryptostream requirs undrlying stream to write encrited data
@@ -71,20 +69,20 @@ namespace AdvanceAPI.Security_Cryptography.AES
         {
             string plainText = "";
 
-            using (Aes aes = Aes.Create())
+            using (DES des = DES.Create())
             {
                 //initializing required structure 
-                aes.Key = key;
-                aes.IV = iv;
+                des.Key = key;
+                des.IV = iv;
 
                 //creating encryptor 
-                ICryptoTransform decriptor = aes.CreateDecryptor();
+                ICryptoTransform decriptor = des.CreateDecryptor();
 
                 using (MemoryStream mst = new MemoryStream(Convert.FromBase64String(cipherText)))
                 {
-                    using(CryptoStream cst = new CryptoStream(mst,decriptor, CryptoStreamMode.Read))
+                    using (CryptoStream cst = new CryptoStream(mst, decriptor, CryptoStreamMode.Read))
                     {
-                        using(StreamReader sr = new StreamReader(cst))
+                        using (StreamReader sr = new StreamReader(cst))
                         {
                             plainText = sr.ReadToEnd();
                         }
@@ -92,7 +90,7 @@ namespace AdvanceAPI.Security_Cryptography.AES
                 }
 
 
-            return plainText;
+                return plainText;
             }
 
         }
