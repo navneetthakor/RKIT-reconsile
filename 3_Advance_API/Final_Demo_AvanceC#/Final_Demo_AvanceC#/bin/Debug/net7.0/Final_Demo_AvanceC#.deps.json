@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Final_Demo_AvanceC#/1.0.0": {
+        "runtime": {
+          "Final_Demo_AvanceC#.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Final_Demo_AvanceC#/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

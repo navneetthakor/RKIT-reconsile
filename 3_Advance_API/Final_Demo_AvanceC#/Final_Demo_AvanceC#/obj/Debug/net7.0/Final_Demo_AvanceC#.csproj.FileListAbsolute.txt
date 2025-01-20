@@ -1,0 +1,15 @@
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\bin\Debug\net7.0\Final_Demo_AvanceC#.exe
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\bin\Debug\net7.0\Final_Demo_AvanceC#.deps.json
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\bin\Debug\net7.0\Final_Demo_AvanceC#.runtimeconfig.json
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\bin\Debug\net7.0\Final_Demo_AvanceC#.dll
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\bin\Debug\net7.0\Final_Demo_AvanceC#.pdb
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\obj\Debug\net7.0\Final_Demo_AvanceC#.csproj.AssemblyReference.cache
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\obj\Debug\net7.0\Final_Demo_AvanceC#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\obj\Debug\net7.0\Final_Demo_AvanceC#.AssemblyInfoInputs.cache
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\obj\Debug\net7.0\Final_Demo_AvanceC#.AssemblyInfo.cs
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\obj\Debug\net7.0\Final_Demo_AvanceC#.csproj.CoreCompileInputs.cache
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\obj\Debug\net7.0\Final_Demo_AvanceC#.dll
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\obj\Debug\net7.0\refint\Final_Demo_AvanceC#.dll
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\obj\Debug\net7.0\Final_Demo_AvanceC#.pdb
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\obj\Debug\net7.0\Final_Demo_AvanceC#.genruntimeconfig.cache
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\3_Advance_API\Final_Demo_AvanceC#\Final_Demo_AvanceC#\obj\Debug\net7.0\ref\Final_Demo_AvanceC#.dll
