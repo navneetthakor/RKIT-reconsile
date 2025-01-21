@@ -221,6 +221,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper_Classes\CacheAttribute.cs" />
+    <Compile Include="Helper_Classes\OprationAttribute.cs" />
     <Compile Include="Helper_Classes\JWT.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\ReqNote.cs" />

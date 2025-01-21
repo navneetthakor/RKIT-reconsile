@@ -2,7 +2,7 @@ using System.Web.Http;
 using WebActivatorEx;
 using WebApplication1;
 using Swashbuckle.Application;
-
+using WebApplication1.Helper_Classes;
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
 namespace WebApplication1
@@ -61,7 +61,7 @@ namespace WebApplication1
                         //c.BasicAuth("basic")
                         //    .Description("Basic HTTP Authentication");
                         //
-						// NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
+                        // NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
                         //c.ApiKey("apiKey")
                         //    .Description("API Key Authentication")
                         //    .Name("apiKey")
@@ -151,7 +151,8 @@ namespace WebApplication1
                         // Operation filters.
                         //
                         //c.OperationFilter<AddDefaultResponse>();
-                        //
+                        c.OperationFilter<Helper_Classes.OprationAttribute>();
+                        
                         // If you've defined an OAuth2 flow as described above, you could use a custom filter
                         // to inspect some attribute on each action and infer which (if any) OAuth2 scopes are required
                         // to execute the operation
@@ -248,7 +249,7 @@ namespace WebApplication1
                         // If your API supports ApiKey, you can override the default values.
                         // "apiKeyIn" can either be "query" or "header"
                         //
-                        //c.EnableApiKeySupport("apiKey", "header");
+                        c.EnableApiKeySupport("apiKey", "header");
                     });
         }
     }

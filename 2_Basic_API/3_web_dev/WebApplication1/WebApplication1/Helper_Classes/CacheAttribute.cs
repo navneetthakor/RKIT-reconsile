@@ -14,7 +14,8 @@ namespace WebApplication1.Helper_Classes
             {
                 MaxAge = TimeSpan.FromSeconds(1000),
                 MustRevalidate = true,
-                Public = true
+                Public = false, // tells no intermediate should case this resource
+                Private = true, // tells that message response is indented for end user only (no intermediate cache)
             };
         }
     }
