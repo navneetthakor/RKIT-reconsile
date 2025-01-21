@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\1\\rkit\\reconsile\\3_Advance_API\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#.csproj": {}
+    "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\3_Advance_API\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#.csproj": {}
   },
   "projects": {
-    "D:\\1\\rkit\\reconsile\\3_Advance_API\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#.csproj": {
+    "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\3_Advance_API\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\1\\rkit\\reconsile\\3_Advance_API\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#.csproj",
+        "projectUniqueName": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\3_Advance_API\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#.csproj",
         "projectName": "Final_Demo_AvanceC#",
-        "projectPath": "D:\\1\\rkit\\reconsile\\3_Advance_API\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\1\\rkit\\reconsile\\3_Advance_API\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#\\obj\\",
+        "projectPath": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\3_Advance_API\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#.csproj",
+        "packagesPath": "C:\\Users\\navneetkumar.t\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\3_Advance_API\\Final_Demo_AvanceC#\\Final_Demo_AvanceC#\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\navneetkumar.t\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,13 +34,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net7.0": {
@@ -53,6 +43,18 @@
             "DotNetEnv": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "ServiceStack.OrmLite.MySql": {
+              "target": "Package",
+              "version": "[8.5.2, )"
+            },
+            "ServiceStack.OrmLite.MySqlConnector": {
+              "target": "Package",
+              "version": "[8.5.2, )"
             }
           },
           "imports": [
@@ -71,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

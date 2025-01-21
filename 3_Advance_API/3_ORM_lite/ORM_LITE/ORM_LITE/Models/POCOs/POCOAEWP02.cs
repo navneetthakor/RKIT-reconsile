@@ -18,6 +18,6 @@ namespace ORM_LITE.Models.POCOs
 
         [ForeignKey(type: typeof(POCOAEWP01), OnDelete = "CASCADE")]
         public int P02F03 { get; set; } // writer id
-
+    
     }
 }
