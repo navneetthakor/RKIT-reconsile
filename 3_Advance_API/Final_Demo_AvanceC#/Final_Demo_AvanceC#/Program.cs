@@ -40,13 +40,21 @@ class Program
             Console.WriteLine("\n\n");
             adm.GetAllBooks();
 
+            // Author logic ----
             FDAP01 fdap01 = new FDAP01() { A01F01 = 2 };
             AuthorLogics atl = new AuthorLogics(db, fdap01);
 
-            DTOFDAP03 dtofdap03 = new DTOFDAP03() { A03F02 = "hhh", A03F03 = "hhh" };
-            Response rs = atl.PreSave(dtofdap03);
-            if(!rs.IsError) rs = atl.ValidateOnSave(OppEnum.A);
-            if (!rs.IsError) rs = atl.Save(OppEnum.A);
+            // add book
+            //FDAP03 fdap03 = new FDAP03() { A03F02 = "Hello", A03F03 = "hhh" };
+            //Response rs = atl.PreSave(fdap03, OppEnum.A);
+            //if(!rs.IsError) rs = atl.ValidateOnSave(OppEnum.A);
+            //if (!rs.IsError) rs = atl.Save(OppEnum.A);
+
+            // update book
+            FDAP03 fdap03 = new FDAP03() { A03F01 = 17, A03F02 = "NkTheBoss", A03F03 = "nk" };
+            Response rs = atl.PreSave(fdap03, OppEnum.U);
+            if (!rs.IsError) rs = atl.ValidateOnSave(OppEnum.U);
+            if (!rs.IsError) rs = atl.Save(OppEnum.U);
 
             Console.WriteLine("\n\n");
             adm.GetAllBooks();

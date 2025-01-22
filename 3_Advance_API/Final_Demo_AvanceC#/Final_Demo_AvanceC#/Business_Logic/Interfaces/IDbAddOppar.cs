@@ -16,7 +16,7 @@ namespace Final_Demo_AvanceCSharp.Business_Logic.Interfaces
         /// It converts DTO to POCO
         /// </summary>
         /// <returns>Response : to indicate success or failuer of a given action</returns>
-        Response PreSave(DTOFDAP03 _dtofdap03);
+        Response PreSave(FDAP03 fdap03, OppEnum AOU);
 
         /// <summary>
         /// to validate provided values

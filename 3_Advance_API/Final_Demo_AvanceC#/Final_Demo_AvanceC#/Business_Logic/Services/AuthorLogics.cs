@@ -25,15 +25,20 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
         /// </summary>
         /// <param name="dtofdap03">input dto that we are getting</param>
         /// <returns>Response object</returns>
-        public Response PreSave(DTOFDAP03 dtofdap03)
+        public Response PreSave(FDAP03 fdap03, OppEnum AOU)
         {
             Response response = new Response();
             try
             {
                 _fdap03 = new FDAP03();
-                _fdap03.A03F02 = dtofdap03.A03F02; // title of book
-                _fdap03.A03F03 = dtofdap03.A03F03; // desc of book
-                _fdap03.A03F04 = _fdap01.A01F01; // id of author
+
+                    _fdap03.A03F02 = fdap03.A03F02; // title of book
+                    _fdap03.A03F03 = fdap03.A03F03; // desc of book
+                    _fdap03.A03F04 = _fdap01.A01F01; // id of author
+                if(AOU == OppEnum.U)
+                {
+                    _fdap03.A03F01 = fdap03.A03F01;
+                }
                 response.Message = "Presave done";
                 return response;
             }
@@ -70,7 +75,7 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
                 {
                     // checking with id becasue use can't update id
                     //List<FDAP03> lst = _dbConnection.Select<FDAP03>($"select * from fdap03 where A03F01 = {_fdap03.A03F01} and A03F04 = {_fdap01.A01F03}");
-                    List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F02 == _fdap03.A03F02 && x.A03F04 == _fdap01.A01F01);
+                    List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F01 == _fdap03.A03F01 && x.A03F04 == _fdap01.A01F01);
                     if (lst.Count == 0) throw new Exception("Book with given id not exists for current Author");
                 }
                 response.Message = "Presave done";
@@ -93,13 +98,13 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
                 if (AOU == OppEnum.A)
                 {
                     var result = _dbConnection.Insert<FDAP03>(_fdap03);
-                    if (result != 1) throw new Exception("Book with same title exists for current Author");
+                    if (result == 0) throw new Exception("Book with same title exists for current Author");
                 }
                 else
                 {
                     // checking with id becasue use can't update id
-                    List<FDAP03> lst = _dbConnection.Select<FDAP03>($"select * from fdap03 where A03F01 = {_fdap03.A03F01} and A03F04 = {_fdap01.A01F03}");
-                    if (lst.Count == 0) throw new Exception("Book with given id not exists for current Author");
+                    var result = _dbConnection.Update<FDAP03>(_fdap03);
+                    if (result == 0) throw new Exception("Book with given id not exists for current Author");
                 }
                 response.Message = "Presave done";
                 return response;
