@@ -6,7 +6,7 @@ using Final_Demo_AvanceCSharp.Modals.Enums;
 using Final_Demo_AvanceCSharp.Utilitlies;
 using ServiceStack.OrmLite;
 using System;
-using Final_Demo_AvanceCSharp.Modals.DTOs;
+
 
 class Program
 {
@@ -23,7 +23,8 @@ class Program
             db.CreateTableIfNotExists<FDAP02>();
             db.CreateTableIfNotExists<FDAP03>();
 
-            AdminLogics adm = new AdminLogics(db);
+            FDAP01 fdap01 = new FDAP01() { A01F01 = 1 };
+            AdminLogics adm = new AdminLogics(db, fdap01);
             //Response rs = adm.GetAllAuthors();
 
             //Console.WriteLine("\n\n");
@@ -41,31 +42,38 @@ class Program
             adm.GetAllBooks();
 
             // Author logic ----
-            FDAP01 fdap01 = new FDAP01() { A01F01 = 2 };
-            AuthorLogics atl = new AuthorLogics(db, fdap01);
+            FDAP01 fdap011 = new FDAP01() { A01F01 = 2 };
+            AuthorLogics atl = new AuthorLogics(db, fdap011);
 
-            // add book
+            // add book --
             //FDAP03 fdap03 = new FDAP03() { A03F02 = "Hello", A03F03 = "hhh" };
             //Response rs = atl.PreSave(fdap03, OppEnum.A);
             //if (!rs.IsError) rs = atl.ValidateOnSave(OppEnum.A);
             //if (!rs.IsError) rs = atl.Save(OppEnum.A);
 
-            // update book
+            // update book ---
             //FDAP03 fdap03 = new FDAP03() { A03F01 = 17, A03F02 = "NkTheBoss", A03F03 = "nk" };
             //Response rs = atl.PreSave(fdap03, OppEnum.U);
             //if (!rs.IsError) rs = atl.ValidateOnSave(OppEnum.U);
             //if (!rs.IsError) rs = atl.Save(OppEnum.U);
 
-            Console.WriteLine("\n\n");
-            adm.GetAllBooks();
+            //Console.WriteLine("\n\n");
+            //adm.GetAllBooks();
 
-            // delete book
+            // delete book ---
             //rs = atl.PreDelete(16);
             //if (!rs.IsError) rs = atl.ValidateOnDelete();
             //if (!rs.IsError) rs = atl.Delete();
 
             //Console.WriteLine("\n\n");
             //adm.GetAllBooks();
+
+            // read books ---
+            Console.WriteLine("\n\n");
+            Response rs = atl.GetAllBooks();
+
+            // change password --
+
         }
 
 

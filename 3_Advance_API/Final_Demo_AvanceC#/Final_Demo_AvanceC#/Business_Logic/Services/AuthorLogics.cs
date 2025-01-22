@@ -90,6 +90,11 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
             }
         }
 
+        /// <summary>
+        /// This method finally saves updates to the database
+        /// </summary>
+        /// <param name="AOU">Add or Update</param>
+        /// <returns>Response object</returns>
         public Response Save(OppEnum AOU)
         {
             Response response = new Response();
@@ -119,7 +124,11 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
         }
 
         // Delete operation related ---------------
-
+        /// <summary>
+        /// PreDelete performs transformation from Dto (or non POcoc) to Poco
+        /// </summary>
+        /// <param name="id">id of book that Auther wants to delete (his own book only)</param>
+        /// <returns>Response Object</returns>
         public Response PreDelete(int id)
         {
             Response response = new Response();
@@ -140,6 +149,10 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
             }
         }
 
+        /// <summary>
+        /// Performs validation checks that corresponding book exists in Database which Author wants to delete.
+        /// </summary>
+        /// <returns>Response Object</returns>
         public Response ValidateOnDelete()
         {
             Response response = new Response();
@@ -160,6 +173,10 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
             }
         }
 
+        /// <summary>
+        /// This method finally deletes the entry from Database 
+        /// </summary>
+        /// <returns></returns>
         public Response Delete()
         {
             Response response = new Response();
@@ -179,5 +196,49 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
                 return response;
             }
         }
+
+
+        public Response GetAllBooks()
+        {
+            Response response = new Response();
+            try
+            {
+                List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F04 == _fdap01.A01F01);
+
+                // Define the column headers
+                string[] headers = { "Book_id", "Book_title", "Book_desc" };
+
+                // Calculate the maximum width for each column
+                int[] columnWidths = { 15, 20, 50};
+
+                // Print the header row
+                PrintUtility.PrintHeader(headers, columnWidths);
+
+                lst.ForEach(x =>
+                {
+                    string[] rowValues = {
+                            $"{x.A03F01}",
+                            x.A03F02,
+                            x.A03F03,
+                        };
+
+                    PrintUtility.PrintRow(rowValues, columnWidths);
+                });
+                    
+
+                response.Data = lst;
+                response.Message = "PreDelete done";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.IsError = true;
+                response.Message = ex.Message;
+                Console.WriteLine("Exception : " + ex.Message);
+                return response;
+            }
+        }
+
+
     }
 }

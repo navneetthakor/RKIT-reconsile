@@ -12,12 +12,14 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
     internal class AdminLogics : IDbDeleteAdmin
     {
         private IDbConnection _dbConnection;
+        private FDAP01 _admin;
         private FDAP01 _fdap01;
         private FDAP03 _fdap03;
 
-        public AdminLogics(IDbConnection dbConnection)
+        public AdminLogics(IDbConnection dbConnection, FDAP01 admin)
         {
             _dbConnection = dbConnection;
+            _admin = admin;
         }
 
         /// <summary>
@@ -139,11 +141,11 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
                 string[] headers = { "Author_id", "Author_name", "Book_id", "Bookd_title", "Book_desc" };
 
                 // Calculate the maximum width for each column
-                int[] columnWidths = {15,15, 15, 20, 20, 50 };
+                int[] columnWidths = {15,15, 15, 20, 50 };
 
                 // Print the header row
-                PrintRow(headers, columnWidths);
-                Console.WriteLine(new string('-', columnWidths.Sum() + (headers.Length - 1) * 3)); // separator line
+                PrintUtility.PrintHeader(headers, columnWidths);
+                
 
                 foreach (dynamic x in (IEnumerable<Object>)response.Data)
                 {
@@ -155,7 +157,7 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
                             x.b.A03F03
                         };
 
-                    PrintRow(rowValues, columnWidths);
+                    PrintUtility.PrintRow(rowValues, columnWidths);
                 }
 
                 response.Message = "All books are Fetched";
@@ -189,8 +191,8 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
                 int[] columnWidths = { 15, 15, 15, 15 };
 
                 // Print the header row
-                PrintRow(headers, columnWidths);
-                Console.WriteLine(new string('-', columnWidths.Sum() + (headers.Length - 1) * 3)); // separator line
+                PrintUtility.PrintHeader(headers, columnWidths);
+
                 foreach (dynamic x in (IEnumerable<Object>)response.Data)
                 {
                     string[] rowValues = {
@@ -200,7 +202,7 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
                             x.a.A01F05
                         };
 
-                    PrintRow(rowValues, columnWidths);
+                    PrintUtility.PrintRow(rowValues, columnWidths);
                 }
 
                 response.Message = "All Authors are Fetched";
@@ -213,16 +215,6 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
                 Console.WriteLine("Exception : " + ex.Message);
                 return response;
             }
-        }
-
-        // Helper method to print a single row
-        public static void PrintRow(string[] rowValues, int[] columnWidths)
-        {
-            for (int i = 0; i < rowValues.Length; i++)
-            {
-                Console.Write(rowValues[i].PadRight(columnWidths[i]) + " | ");
-            }
-            Console.WriteLine();
         }
 
 
