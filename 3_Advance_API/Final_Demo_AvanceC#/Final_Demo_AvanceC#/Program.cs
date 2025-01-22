@@ -47,17 +47,25 @@ class Program
             // add book
             //FDAP03 fdap03 = new FDAP03() { A03F02 = "Hello", A03F03 = "hhh" };
             //Response rs = atl.PreSave(fdap03, OppEnum.A);
-            //if(!rs.IsError) rs = atl.ValidateOnSave(OppEnum.A);
+            //if (!rs.IsError) rs = atl.ValidateOnSave(OppEnum.A);
             //if (!rs.IsError) rs = atl.Save(OppEnum.A);
 
             // update book
-            FDAP03 fdap03 = new FDAP03() { A03F01 = 17, A03F02 = "NkTheBoss", A03F03 = "nk" };
-            Response rs = atl.PreSave(fdap03, OppEnum.U);
-            if (!rs.IsError) rs = atl.ValidateOnSave(OppEnum.U);
-            if (!rs.IsError) rs = atl.Save(OppEnum.U);
+            //FDAP03 fdap03 = new FDAP03() { A03F01 = 17, A03F02 = "NkTheBoss", A03F03 = "nk" };
+            //Response rs = atl.PreSave(fdap03, OppEnum.U);
+            //if (!rs.IsError) rs = atl.ValidateOnSave(OppEnum.U);
+            //if (!rs.IsError) rs = atl.Save(OppEnum.U);
 
             Console.WriteLine("\n\n");
             adm.GetAllBooks();
+
+            // delete book
+            //rs = atl.PreDelete(16);
+            //if (!rs.IsError) rs = atl.ValidateOnDelete();
+            //if (!rs.IsError) rs = atl.Delete();
+
+            //Console.WriteLine("\n\n");
+            //adm.GetAllBooks();
         }
 
 

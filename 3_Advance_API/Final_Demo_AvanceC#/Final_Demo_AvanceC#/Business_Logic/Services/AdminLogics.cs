@@ -9,7 +9,7 @@ using ServiceStack.OrmLite;
 
 namespace Final_Demo_AvanceCSharp.Business_Logic
 {
-    internal class AdminLogics : IDbDeleteOppar
+    internal class AdminLogics : IDbDeleteAdmin
     {
         private IDbConnection _dbConnection;
         private FDAP01 _fdap01;

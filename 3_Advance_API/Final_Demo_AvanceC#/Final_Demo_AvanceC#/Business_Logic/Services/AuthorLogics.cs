@@ -9,7 +9,7 @@ using ServiceStack.OrmLite;
 
 namespace Final_Demo_AvanceCSharp.Business_Logic
 {
-    internal class AuthorLogics : IDbAddOppar
+    internal class AuthorLogics : IDbAddOppar, IDbDeleteOppar
     {
         private IDbConnection _dbConnection;
         private FDAP03 _fdap03;
@@ -107,6 +107,68 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
                     if (result == 0) throw new Exception("Book with given id not exists for current Author");
                 }
                 response.Message = "Presave done";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.IsError = true;
+                response.Message = ex.Message;
+                Console.WriteLine("Exception : " + ex.Message);
+                return response;
+            }
+        }
+
+        // Delete operation related ---------------
+
+        public Response PreDelete(int id)
+        {
+            Response response = new Response();
+            try
+            {
+                _fdap03 = new FDAP03();
+                _fdap03.A03F01 = id;
+
+                response.Message = "PreDelete done";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.IsError = true;
+                response.Message = ex.Message;
+                Console.WriteLine("Exception : " + ex.Message);
+                return response;
+            }
+        }
+
+        public Response ValidateOnDelete()
+        {
+            Response response = new Response();
+            try
+            {
+                List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F01 == _fdap03.A03F01 && x.A03F04 == _fdap01.A01F01);
+                if (lst.Count == 0) throw new Exception("Book with given id not exists for current Author");
+
+                response.Message = "ValidateOnDelete done";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.IsError = true;
+                response.Message = ex.Message;
+                Console.WriteLine("Exception : " + ex.Message);
+                return response;
+            }
+        }
+
+        public Response Delete()
+        {
+            Response response = new Response();
+            try
+            {
+                int result = _dbConnection.DeleteById<FDAP03>(_fdap03.A03F01);
+                if(result != 1) throw new Exception("Book is not deleted. Some internal error on DBMS side");
+
+                response.Message = "PreDelete done";
                 return response;
             }
             catch (Exception ex)
