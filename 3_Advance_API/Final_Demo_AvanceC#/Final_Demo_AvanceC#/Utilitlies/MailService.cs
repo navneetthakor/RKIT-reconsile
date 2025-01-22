@@ -4,7 +4,7 @@ using System.Net;
 using System.Security.Cryptography;
 
 
-namespace Final_Demo_AvanceCSharp.Utilities
+namespace Final_Demo_AvanceCSharp.Utilitlies
 {
     internal class MailService
     {

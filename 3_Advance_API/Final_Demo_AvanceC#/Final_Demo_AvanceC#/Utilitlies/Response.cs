@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Final_Demo_AvanceCSharp.Utilities
+namespace Final_Demo_AvanceCSharp.Utilitlies
 {
     public class Response
     {
         /// <summary>
         /// if request issucessful and we have data to send
         /// </summary>
-        public dynamic Data { get; set; }
+        public dynamic Data { get; set; } = "";
 
         /// <summary>
         /// if error then False otherwise true

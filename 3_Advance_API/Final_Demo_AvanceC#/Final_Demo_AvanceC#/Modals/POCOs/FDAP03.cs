@@ -9,7 +9,7 @@ namespace Final_Demo_AvanceCSharp.Modals.POCOs
     /// </summary>
     public class FDAP03
     {
-        [Index]
+        [Index, PrimaryKey, AutoIncrement]
         public int A03F01 { get; set; }  // id
 
         public string A03F02 { get; set; } // title
@@ -17,6 +17,6 @@ namespace Final_Demo_AvanceCSharp.Modals.POCOs
         public string A03F03 { get; set; } // description
 
         [ForeignKey(type: typeof(FDAP01), OnDelete = "CASCADE")]
-        public string A03F04 { get; set; } // author id
+        public int A03F04 { get; set; } // author id
     }
 }

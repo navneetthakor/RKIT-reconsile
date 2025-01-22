@@ -4,7 +4,7 @@ using ServiceStack.DataAnnotations;
 using System;
 
 
-namespace Final_Demo_AvanceC_.Modals.DTOs
+namespace Final_Demo_AvanceCSharp.Modals.DTOs
 {
     public class DTOFDAP03
     {
