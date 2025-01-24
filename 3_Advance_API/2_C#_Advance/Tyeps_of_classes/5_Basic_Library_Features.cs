@@ -18,7 +18,7 @@ namespace AdvanceAPI.BLF
             //- Collection 
             //- Collection.Generic
             //- Data
-            //- Liq (upcoming)
+            //- Linq (upcoming)
             //- IO 
 
 

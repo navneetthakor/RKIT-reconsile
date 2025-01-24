@@ -12,7 +12,7 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
     internal class AdminLogics : IDbDeleteAdmin
     {
         private IDbConnection _dbConnection;
-        private FDAP01 _admin;
+        public FDAP01 _admin; // temporory public
         private FDAP01 _fdap01;
         private FDAP03 _fdap03;
 

@@ -16,6 +16,7 @@ namespace Final_Demo_AvanceCSharp.Utilitlies
         {
             SenderEmail = email;
             SenderPassword = password;
+            Console.WriteLine("Email : " + SenderEmail);
         }
 
         public bool VarifyEmail(string receiverEmail)

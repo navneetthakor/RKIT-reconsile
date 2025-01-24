@@ -24,4 +24,4 @@ delete from fdap03
 where A03F01 != 0 && A03F02 = "hhh";
 
 select * from fdap03;
-    
+

@@ -19,11 +19,11 @@ namespace AdvanceAPI.File_System.Stream.File_Stream
 
             //Constructor ---- 
             //FileStream(string path, FileMode mode, FileAccess? access, FileShare? share)
-            FileStream fs = new FileStream("F:\\Navneetkumar_421\\Hello\\sample.txt", FileMode.Open, FileAccess.Read, FileShare.None);
+            FileStream fs = new FileStream("F:\\Navneetkumar_421\\Hello\\sample.txt", FileMode.Open, FileAccess.Read, FileShare.Read);
 
             //Methods ----
             //1) Read(byte[] array, int offset, int count)
-            //offset: from where to start writing the data
+            //offset: from where to start writing the data in byte array
             //count : maximum number of bytes to write in array
             byte[] byteArr = new byte[10];
             fs.Read(byteArr, 0, 10);

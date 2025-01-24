@@ -53,7 +53,7 @@ namespace AdvanceAPI.File_System.Stream.Stream_Reader
 
             //-> So, solution fo this is
             //- create FileStream object (other then append mode)
-            //- now pass this object to StreamReader class\
+            //- now pass this object to StreamReader class
             //- whenever you need to change position at that moment
             //use FileStream object to do that
         }
