@@ -1,0 +1,6 @@
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\MyDotNetCore\MyDotNetCore\obj\Debug\net5.0\MyDotNetCore.csproj.AssemblyReference.cache
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\MyDotNetCore\MyDotNetCore\obj\Debug\net5.0\MyDotNetCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\MyDotNetCore\MyDotNetCore\obj\Debug\net5.0\MyDotNetCore.AssemblyInfoInputs.cache
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\MyDotNetCore\MyDotNetCore\obj\Debug\net5.0\MyDotNetCore.AssemblyInfo.cs
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\MyDotNetCore\MyDotNetCore\obj\Debug\net5.0\MyDotNetCore.csproj.CoreCompileInputs.cache
+C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\MyDotNetCore\MyDotNetCore\obj\Debug\net5.0\MyDotNetCore.MvcApplicationPartsAssemblyInfo.cache
