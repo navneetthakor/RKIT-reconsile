@@ -20,6 +20,33 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
             _fdap01 = fdap01;
         }
 
+        public static Response RegisterAuthor(FDAP01 user, IDbConnection db)
+        {
+            Response response = new Response();
+            //check user with same email exists or not 
+            bool isUserAxists = db.Exists<FDAP01>(x => x.A01F03 == user.A01F03);
+            if (isUserAxists) {
+                response.Message = "User with same email already exists";
+                response.IsError = true;
+                return response;
+            }
+
+            bool Authersaved = db.Save(user);
+            if (Authersaved)
+            {
+                db.Insert<FDAP02>(new FDAP02(){ A02F01 = user.A01F01, A02F02 = A02F01Values.Author });
+            }
+            else
+            {
+                response.Message = "Internal server error while registering user";
+                response.IsError = true;
+                return response;
+            }
+
+            response.Message = "User registration successful";
+            return response;
+        }
+
         /// <summary>
         /// Presave for : adding or updating entry in the database
         /// </summary>
@@ -212,6 +239,7 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
                 int[] columnWidths = { 15, 20, 50};
 
                 // Print the header row
+                Console.WriteLine("\n\n");
                 PrintUtility.PrintHeader(headers, columnWidths);
 
                 lst.ForEach(x =>
@@ -224,7 +252,7 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
 
                     PrintUtility.PrintRow(rowValues, columnWidths);
                 });
-                    
+                Console.WriteLine("\n\n");
 
                 response.Data = lst;
                 response.Message = "PreDelete done";

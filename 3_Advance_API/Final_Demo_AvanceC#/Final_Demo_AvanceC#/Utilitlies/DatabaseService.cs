@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Final_Demo_AvanceCSharp.Models
+namespace Final_Demo_AvanceCSharp.Utilitlies
 {
     internal class DatabaseService
     {

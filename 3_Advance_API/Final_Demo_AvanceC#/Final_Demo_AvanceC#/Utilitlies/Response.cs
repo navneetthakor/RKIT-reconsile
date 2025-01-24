@@ -11,7 +11,7 @@ namespace Final_Demo_AvanceCSharp.Utilitlies
         /// <summary>
         /// if request issucessful and we have data to send
         /// </summary>
-        public dynamic Data { get; set; } = "";
+        public dynamic Data { get; set; } = new { };
 
         /// <summary>
         /// if error then False otherwise true
