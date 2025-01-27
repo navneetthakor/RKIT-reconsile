@@ -117,7 +117,7 @@ using System.Threading.Tasks;
 class Program
 {
     private static readonly HttpClient _httpClient = new HttpClient();
-    private static readonly string _url = "https://www.notion.com/"; // Replace with your IP or URL
+    private static readonly string _url = "https://www.rkitsoftware.com/"; // Replace with your IP or URL
     private static readonly TimeSpan _interval = TimeSpan.FromSeconds(3);
     private static Timer _timer;
 
