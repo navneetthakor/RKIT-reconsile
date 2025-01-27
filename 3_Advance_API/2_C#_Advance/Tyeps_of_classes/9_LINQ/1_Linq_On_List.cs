@@ -1,9 +1,4 @@
 ﻿using AdvanceAPI.LINQ.DataWearHouse;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdvanceAPI.LINQ.Linq_On_List
 {
@@ -135,9 +130,9 @@ namespace AdvanceAPI.LINQ.Linq_On_List
             //});
 
 
-            //------------------------------------------------------------------------------------
-            /// <summary>
-            /// Below methods may not have direct relation with any wel-known sql kewywords
+            //--------------------------------------------------------
+            /// ----------------------------
+            /// <summary>Below methods may not have direct relation with any wel-known sql kewywords
             /// </summary>
             Employee eTemp = new Employee("Navneet", 46000, 21, GenderEnum.Male);
 
@@ -200,8 +195,6 @@ namespace AdvanceAPI.LINQ.Linq_On_List
             //-> it doesn't modify colleciton but, creates a reversed view
             //employees.Reverse();
 
-            //12) DefaultIfEmpty -------------->>>>>>>><<<<<<<<<<<<
-            //-> returns
 
             //13) Range ---->
             //-> generates a sequence of integers in a specified range 
