@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "yz6AMqu3XfVxtqc2x2E5zC2xx0htmF3PpXYcWAPiXcvhxbwaQalehDIhTOGwHBqIeR71qapvDBJ9HJV4eOvysQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\4_DotNet_Core\\2_ProjectDI\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\navneetkumar.t\\.nuget\\packages\\microsoft.openapi\\1.6.22\\microsoft.openapi.1.6.22.nupkg.sha512",
+    "C:\\Users\\navneetkumar.t\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\7.2.0\\swashbuckle.aspnetcore.swagger.7.2.0.nupkg.sha512",
+    "C:\\Users\\navneetkumar.t\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\7.2.0\\swashbuckle.aspnetcore.swaggergen.7.2.0.nupkg.sha512",
+    "C:\\Users\\navneetkumar.t\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\7.2.0\\swashbuckle.aspnetcore.swaggerui.7.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}
