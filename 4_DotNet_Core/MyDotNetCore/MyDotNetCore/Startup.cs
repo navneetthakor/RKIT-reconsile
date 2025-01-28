@@ -4,7 +4,7 @@ namespace DemoProject
 {
 
     /// <summary>
-    /// Class responsible for configuring the application during startup.
+    /// Class responsible for configuring the application during startup. 
     /// </summary>
     public class Startup
     {
