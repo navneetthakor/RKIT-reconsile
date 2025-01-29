@@ -1,7 +1,7 @@
 // Priority of event-handlers 
-// 1. addEventListener
-// 2. on (property of js)
-// 3. html attribute (like onclick)
+// 3. addEventListener
+// 2. on (property of js) (it can ovrride inline)
+// 1. html attribute (like onclick)
 
 // Execution of event handlers
 // ->It has three phases
