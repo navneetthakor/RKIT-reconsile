@@ -32,6 +32,11 @@
                 app.UseSwaggerUI();
             }
 
+            //calling 
+            //app.UseRouting();
+            //is not necessory 
+
+
             // Redirect HTTP requests to HTTPS
             app.UseHttpsRedirection();
 
