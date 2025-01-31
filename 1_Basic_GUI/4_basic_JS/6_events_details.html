@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 onclick="MyFunc(event)"> Hello </h1>
+    <script>
+        function MyFunc(event){
+            console.log("inline function.");
+        }
+
+        function MyFunc2(event){
+            console.log("on-js attribute function.");
+        }
+
+        function MyFunc3(event){
+            console.log("event listener function.");
+        }
+
+        document.getElementsByTagName("h1")[0].addEventListener("click", MyFunc3)
+        // document.getElementsByTagName("h1")[0].onclick = MyFunc2;
+    </script>
+</body>
+</html>
