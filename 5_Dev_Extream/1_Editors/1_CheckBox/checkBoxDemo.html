@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+      <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ 
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+ 
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+<body>
+    <div id="check-box-container" ></div>
+
+    <script defer>
+        $(function(){
+            $("#check-box-container").dxCheckBox({
+                // options (propterties) ----- (*)
+                value: null, // true (checked), false (unchecked), undefined or null (indeterminate)
+                text: "IsDeveloper", // label
+                hint : "choose this option if you are developer!", // pop-up
+                iconSize: 50, // only size of checkbox will change, no effect on label
+                accessKey: "a", // to set focus, default: undefined
+                focusStateEnabled: true, // controls accessKey behaviour default : true
+                disabled: false, // default : false
+                height: '20rem', 
+                width: '20rem',
+                    // - for height  and width
+                    // - data type : number, string, function
+                    // - only the size of container will be affected
+                readOnly: true, // default: false
+                tabIndex: 2,
+                visible: true, // by defualt : true
+                // -- validation related things left
+
+
+                // for single event handler
+                onValueChanged: function(event){
+                    if(event.value) console.log("Checkbox selected");
+                    else console.log("checkbox unselected");
+                },
+            });
+
+            // if we requried to attached multiple event handlers 
+            const valueChangedHandler1 = function (e) {
+                const previousValue = e.previousValue;
+                const newValue = e.value;
+                // First handler of the "valueChanged" event
+            };
+ 
+            const valueChangedHandler2 = function (e) {
+                const previousValue = e.previousValue;
+                const newValue = e.value;
+                // Second handler of the "valueChanged" event
+            };
+
+            $("#check-box-container").dxCheckBox("instance")
+            .on("valueChanged", valueChangedHandler1) // more of jquery method
+            .on("valueChanged", valueChangedHandler2);
+            })
+
+            // to add key listener
+            function registerKeyHandlers () {
+                const checkBox = $("#checkBoxContainer").dxCheckBox("instance");
+                checkBox.registerKeyHandler("backspace", function(e) {          
+                    // The argument "e" contains information on the event
+                });
+                checkBox.registerKeyHandler("space", function(e) {
+                    // ...
+                });
+            }
+
+            // methods ----- (*)
+            $("#check-box-container").dxCheckBox('instance')
+                beginUpdate() //Prevents the UI component from refreshing until the endUpdate() method is called.
+                .dispose() // disposes all the resources allocated
+                .remove() // removes element from DOM
+                .element() // returns container element for current widget
+                .instance() // returns instance of ui component (widget)
+                .off(eventname) // detach all event handlers
+                .option() // get all UI properties
+                .option(optionname) // value of a single property.
+                .option(optionname, optionvalue) // update a single property.
+                .repaint() // repaints UI compontent without reloading data.
+                .reset() // resets thye vlaue property to the default value.
+                registerKeyHandler(key,handler)
+                    // function to be executed when specific key will be press
+
+    </script>
+</body>
+</html>

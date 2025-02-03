@@ -1,4 +1,7 @@
-﻿namespace WebApplication1
+﻿using Microsoft.AspNetCore.Diagnostics;
+using System.Net;
+
+namespace WebApplication1
 {
     /// <summary>
     /// Class responsible for configuring the application during startup. 
@@ -30,7 +33,41 @@
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                app.UseDeveloperExceptionPage(
+                   new DeveloperExceptionPageOptions
+                   {
+                       SourceCodeLineCount = 10
+                   });
             }
+            else
+            {
+                app.UseExceptionHandler(
+                   options =>
+                   {
+                       options.Run(
+                           async context =>
+                           {
+                               context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                               var ex = context.Features.Get<IExceptionHandlerFeature>();
+                               if (ex != null)
+                               {
+                                   await context.Response.WriteAsync(ex.Error.Message);
+                               }
+                           }
+                    );
+                   });
+
+
+
+
+
+
+            }
+
+            //calling 
+            //app.UseRouting();
+            //is not necessory 
+
 
             // Redirect HTTP requests to HTTPS
             app.UseHttpsRedirection();

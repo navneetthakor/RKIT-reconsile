@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DateBox Demo | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+
+<body>
+    <div id="date-box-container"></div>
+
+    <script defer>
+        $("#date-box-container").dxDateBox({
+            // Options (Properties) ---- (*)
+            acceptCustomValue: true, //if false : only picker can used to select date and  (we can't write in inputbox)
+            activeStateEnabled: true, // didn't get the actual meaning
+            type: "datetime",  // defulat: 'date'
+            applyButtonText: "Navneet", // default : 'OK'
+            cancelButtonText: "No Cancellation",
+            pickerType: "calendar", // othervalues : 'calendar', rollers
+            // // buttons: [],  //important
+            adaptivityEnabled: true, // true -> displays compact representations on small screens like mobile
+            applyValueMode: "useButtons", // 'useButtons -> end user can apply and cancel using buttons',
+            // 'instantly -> default -> applies the selected value immediately after user cliecks -> not work when pickerType => "rollers" or type => "datetime"'
+            // calenderoptions -> left 
+            dateOutOfRangeMessage: "Please select value in range",
+            value: new Date(),
+
+            // disabledDates: [
+            //     new Date("02/05/2025"),
+            //     new Date("02/08/2025")
+            // ],
+            // or function : return true for dates which should be disabled
+            disabledDates: function (args) {
+                const dayOfWeek = args.date.getDay();
+                const month = args.date.getMonth();
+                const isWeekend = args.view === "month" && (dayOfWeek === 0 || dayOfWeek === 6);
+                const isMarch = (args.view === "year" || args.view === "month") && month === 2;
+
+                return isWeekend || isMarch;
+            },
+
+            displayFormat: 'dd-MM-yyyy HH:mm', // not working
+            useMaskBehavior: true, // provides changing values using arrows etc..
+            hint: "select appropriate date",
+            invalidDateMessage: "Invalid input",
+            isValid: true,
+
+            max: new Date(),
+            min: new Date(2000, 0, 1),
+
+            // A function that is executed when the UI component loses focus after the text field's content was changed using the keyboard.
+            onChange: (event) =>{
+                console.log(event);
+                console.log(event.value);
+            },
+
+            // A function that is executed when the UI component's content is ready and each time the content is changed.
+            onContentReady: (ele) => {
+                console.log(ele);
+                // ele has : component, and element 
+            },
+
+            //A function that is executed when the UI component's input has been copied.
+            onCopy: (event) => {
+                alert("copied successfully");
+                console.log("copied ", event); // proper event object (Clipboardevent)
+            },
+
+            onDisposing: (ele) => {
+                console.log("disposing", ele);
+                // ele has : component, and element
+            },
+
+            onFocusIn : (event) => {
+                console.log("onFocusIn", ele);
+            },
+
+            onFocusOut : (event) => {
+                console.log("onFocusIn", ele);
+            },
+
+            readOnly: false,
+
+            tabIndex: 0,
+
+            // validation related left 
+            // validationError, validationMessageMode, validationStatus
+
+            valueChangeEvent: (event) => {
+                console.log("valueChangeEvent", ele);
+            },
+
+            visible: true,
+
+        })
+
+        $('#date-box-container').dxDateBox("instance").dispose();
+
+    </script>
+</body>
+
+</html>
