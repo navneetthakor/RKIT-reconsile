@@ -13,16 +13,16 @@ myName(); //calling function
 // see below
 
 // ------ it will give error -------------
-// function greet(){
-//     this.greetmsg = "Namste";
-//     function greet2(){
-//         console.log(this)
-//         this.name = "nk";
-//     }
-//     greet2();
-// }
-// const obj = new greet();
-// console.log(obj);
+function greet(){
+    this.greetmsg = "Namste";
+    function greet2(){
+        console.log(this)
+        this.name = "nk";
+    }
+    greet2();
+}
+const obj = new greet();
+console.log(obj);
     // -> in normal mode obj will not have 'name' property -> internal function's this is global this
     // -> we can use 'call' method to pass current execution context to overcome this problem 
 

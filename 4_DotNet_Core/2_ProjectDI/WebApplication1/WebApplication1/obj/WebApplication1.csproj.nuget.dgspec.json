@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\4_DotNet_Core\\2_ProjectDI\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
+    "C:\\Users\\navneetkumar.t\\Source\\Repos\\navneetthakor\\RKIT-reconsile\\4_DotNet_Core\\2_ProjectDI\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\4_DotNet_Core\\2_ProjectDI\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
+    "C:\\Users\\navneetkumar.t\\Source\\Repos\\navneetthakor\\RKIT-reconsile\\4_DotNet_Core\\2_ProjectDI\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\4_DotNet_Core\\2_ProjectDI\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\navneetkumar.t\\Source\\Repos\\navneetthakor\\RKIT-reconsile\\4_DotNet_Core\\2_ProjectDI\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\4_DotNet_Core\\2_ProjectDI\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "C:\\Users\\navneetkumar.t\\Source\\Repos\\navneetthakor\\RKIT-reconsile\\4_DotNet_Core\\2_ProjectDI\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\navneetkumar.t\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\4_DotNet_Core\\2_ProjectDI\\WebApplication1\\WebApplication1\\obj\\",
+        "outputPath": "C:\\Users\\navneetkumar.t\\Source\\Repos\\navneetthakor\\RKIT-reconsile\\4_DotNet_Core\\2_ProjectDI\\WebApplication1\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\navneetkumar.t\\AppData\\Roaming\\NuGet\\NuGet.Config",
