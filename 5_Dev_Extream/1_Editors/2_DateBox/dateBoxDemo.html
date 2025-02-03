@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDN setup | DevExtream</title>
+    <title>DateBox Demo | DevExtream</title>
 
       <!-- ... -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -21,7 +21,15 @@
 
     <script defer>
         $("#date-box-container").dxDateBox({
-            
+            // Options (Properties) ---- (*)
+            acceptCustomValue: false, //if false : only picker can used to select date and time
+            activeStateEnabled: true, // didn't get the actual meaning
+            type: "datetime",  // defulat: 'date'
+            applyButtonText : "Navneet", // default : 'OK'
+            pickerType: "rollers", // default : 'callender'
+            buttons: [] //important
+
+
         })
 
     </script>
