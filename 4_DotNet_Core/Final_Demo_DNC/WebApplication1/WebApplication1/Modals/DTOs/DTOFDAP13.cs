@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Final_Demo_AvanceCSharp.Modals.DTOs
+namespace WebApplication1.Modals.DTOs
 {
     public class DTOFDAP13
     {

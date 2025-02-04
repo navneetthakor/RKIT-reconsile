@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Final_Demo_AvanceCSharp.Utilitlies
+namespace WebApplication1.Utilitlies
 {
     internal interface IDatabaseService
     {

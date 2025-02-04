@@ -1,9 +1,9 @@
-﻿using Final_Demo_AvanceCSharp.Modals.Enums;
-using Final_Demo_AvanceCSharp.Utilitlies;
+﻿using WebApplication1.Modals.Enums;
+using WebApplication1.Utilitlies;
 using System;
 
 
-namespace Final_Demo_AvanceCSharp.Business_Logic.Interfaces
+namespace WebApplication1.Business_Logic.Interfaces
 {
     internal interface IDbDeleteAdmin
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Final_Demo_AvanceCSharp.Modals.Enums
+namespace WebApplication1.Modals.Enums
 {
     public enum WOBEnum
     {

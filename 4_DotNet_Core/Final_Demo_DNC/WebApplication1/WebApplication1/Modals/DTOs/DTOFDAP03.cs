@@ -1,10 +1,10 @@
-﻿using Final_Demo_AvanceCSharp.Modals.POCOs;
+﻿using WebApplication1.Modals.POCOs;
 using Newtonsoft.Json;
 using ServiceStack.DataAnnotations;
 using System;
 
 
-namespace Final_Demo_AvanceCSharp.Modals.DTOs
+namespace WebApplication1.Modals.DTOs
 {
     public class DTOFDAP03
     {

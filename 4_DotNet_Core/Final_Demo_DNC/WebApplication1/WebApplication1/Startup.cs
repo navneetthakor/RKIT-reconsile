@@ -1,13 +1,8 @@
-﻿using Final_Demo_AvanceCSharp.Utilitlies;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.IdentityModel.Tokens;
-using ServiceStack;
+﻿using Microsoft.AspNetCore.Diagnostics;
 using System.Net;
-using System.Text;
+using WebApplication1.Utilitlies;
 
-namespace Final_Demo_AvanceCSharp
+namespace WebApplication1
 {
     /// <summary>
     /// Class responsible for configuring the application during startup. 
@@ -26,24 +21,10 @@ namespace Final_Demo_AvanceCSharp
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = false,  // You can set these to true if you are using an issuer
-                    ValidateAudience = false,
-                    ValidateLifetime = true,
-                    ClockSkew = TimeSpan.Zero,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtSettings:SecretKey"]))
-                };
-            });
-
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
-            services.TryAddTransient<IDatabaseService, DatabaseService>();
-
+            //services.AddTransient<IDatabaseService, DatabaseService>();
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
@@ -52,44 +33,23 @@ namespace Final_Demo_AvanceCSharp
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
-                app.UseDeveloperExceptionPage(
-                   new DeveloperExceptionPageOptions
-                   {
-                       SourceCodeLineCount = 10
-                   });
-            }
-            else
-            {
-                app.UseExceptionHandler(
-                   options =>
-                   {
-                       options.Run(
-                           async context =>
-                           {
-                               context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                               var ex = context.Features.Get<IExceptionHandlerFeature>();
-                               if (ex != null)
-                               {
-                                   await context.Response.WriteAsync(ex.Error.Message);
-                               }
-                           }
-                    );
-                   });
 
             }
 
+            //calling 
+            app.UseRouting();
+            //is not necessory 
+
+            app.MapGet("/", () => "Hello World!");
 
             // Redirect HTTP requests to HTTPS
             app.UseHttpsRedirection();
-
-            app.UseAuthentication();
-            app.UseAuthorization();
 
             // Map incoming requests to controller actions
             app.MapControllers();
 
             // End the request pipeline 
-            app.Run();
+            //app.Run();
         }
     }
 }

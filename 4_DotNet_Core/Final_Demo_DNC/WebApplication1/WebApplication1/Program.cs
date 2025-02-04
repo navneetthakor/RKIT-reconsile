@@ -1,7 +1,5 @@
-
-
 //creating builder object 
-using Final_Demo_AvanceCSharp;
+using WebApplication1;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,4 +13,4 @@ startup.Configure(app, builder.Environment);
 
 app.MapGet("/", () => "Hello World!");
 
-app.Run();
+//app.Run();

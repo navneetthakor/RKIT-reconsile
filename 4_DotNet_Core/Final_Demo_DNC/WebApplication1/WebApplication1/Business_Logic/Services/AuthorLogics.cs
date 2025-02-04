@@ -1,13 +1,13 @@
-﻿using Final_Demo_AvanceCSharp.Business_Logic.Interfaces;
-using Final_Demo_AvanceCSharp.Modals.POCOs;
-using Final_Demo_AvanceCSharp.Utilitlies;
+﻿using WebApplication1.Business_Logic.Interfaces;
+using WebApplication1.Modals.POCOs;
+using WebApplication1.Utilitlies;
 using System.Data;
 using System;
-using Final_Demo_AvanceCSharp.Modals.DTOs;
-using Final_Demo_AvanceCSharp.Modals.Enums;
+using WebApplication1.Modals.DTOs;
+using WebApplication1.Modals.Enums;
 using ServiceStack.OrmLite;
 
-namespace Final_Demo_AvanceCSharp.Business_Logic
+namespace WebApplication1.Business_Logic.Services
 {
     internal class AuthorLogics : IDbAddOppar, IDbDeleteOppar
     {
@@ -25,7 +25,8 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
             Response response = new Response();
             //check user with same email exists or not 
             bool isUserAxists = db.Exists<FDAP01>(x => x.A01F03 == user.A01F03);
-            if (isUserAxists) {
+            if (isUserAxists)
+            {
                 response.Message = "User with same email already exists";
                 response.IsError = true;
                 return response;
@@ -34,7 +35,7 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
             bool Authersaved = db.Save(user);
             if (Authersaved)
             {
-                db.Insert<FDAP02>(new FDAP02(){ A02F01 = user.A01F01, A02F02 = A02F01Values.Author });
+                db.Insert(new FDAP02() { A02F01 = user.A01F01, A02F02 = A02F01Values.Author });
             }
             else
             {
@@ -59,10 +60,10 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
             {
                 _fdap03 = new FDAP03();
 
-                    _fdap03.A03F02 = fdap03.A03F02; // title of book
-                    _fdap03.A03F03 = fdap03.A03F03; // desc of book
-                    _fdap03.A03F04 = _fdap01.A01F01; // id of author
-                if(AOU == OppEnum.U)
+                _fdap03.A03F02 = fdap03.A03F02; // title of book
+                _fdap03.A03F03 = fdap03.A03F03; // desc of book
+                _fdap03.A03F04 = _fdap01.A01F01; // id of author
+                if (AOU == OppEnum.U)
                 {
                     _fdap03.A03F01 = fdap03.A03F01;
                 }
@@ -129,13 +130,13 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
             {
                 if (AOU == OppEnum.A)
                 {
-                    var result = _dbConnection.Insert<FDAP03>(_fdap03);
+                    var result = _dbConnection.Insert(_fdap03);
                     if (result == 0) throw new Exception("Book with same title exists for current Author");
                 }
                 else
                 {
                     // checking with id becasue use can't update id
-                    var result = _dbConnection.Update<FDAP03>(_fdap03);
+                    var result = _dbConnection.Update(_fdap03);
                     if (result == 0) throw new Exception("Book with given id not exists for current Author");
                 }
                 response.Message = "Presave done";
@@ -210,7 +211,7 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
             try
             {
                 int result = _dbConnection.DeleteById<FDAP03>(_fdap03.A03F01);
-                if(result != 1) throw new Exception("Book is not deleted. Some internal error on DBMS side");
+                if (result != 1) throw new Exception("Book is not deleted. Some internal error on DBMS side");
 
                 response.Message = "PreDelete done";
                 return response;
@@ -231,28 +232,6 @@ namespace Final_Demo_AvanceCSharp.Business_Logic
             try
             {
                 List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F04 == _fdap01.A01F01);
-
-                // Define the column headers
-                string[] headers = { "Book_id", "Book_title", "Book_desc" };
-
-                // Calculate the maximum width for each column
-                int[] columnWidths = { 15, 20, 50};
-
-                // Print the header row
-                Console.WriteLine("\n\n");
-                PrintUtility.PrintHeader(headers, columnWidths);
-
-                lst.ForEach(x =>
-                {
-                    string[] rowValues = {
-                            $"{x.A03F01}",
-                            x.A03F02,
-                            x.A03F03,
-                        };
-
-                    PrintUtility.PrintRow(rowValues, columnWidths);
-                });
-                Console.WriteLine("\n\n");
 
                 response.Data = lst;
                 response.Message = "PreDelete done";

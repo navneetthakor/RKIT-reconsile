@@ -1,54 +1,34 @@
-﻿using Final_Demo_AvanceCSharp.Modals.POCOs;
-using Final_Demo_AvanceCSharp.Utilitlies;
+﻿using WebApplication1.Utilitlies;
 using Microsoft.AspNetCore.Mvc;
-using ServiceStack;
-using ServiceStack.OrmLite;
 using System.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using WebApplication1.Business_Logic.Services;
 
-namespace WebApplication1.Controllers
+namespace WebApplication1.Controller
 {
-    [Microsoft.AspNetCore.Components.Route("api/admin/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
-    internal class AdminController : ControllerBase
+    public class AdminController : ControllerBase
     {
-        private IDbConnection _connection;
-        public AdminController(IDatabaseService db)
-        {
-            _connection = db.db;
-        }
+        //private IDbConnection _connection;
+        //public AdminController()
+        //{
+        //    _connection = db.db;
+        //}
 
         [HttpPost]
         [Route("Login")]
-        public Response AdminLogin(string email, string password)
+        public Response AdminLogin(IDbConnection db, string email, string password)
         {
-            Response response = new Response();
             try
             {
-
-                FDAP01? currentUser = _connection.Single<FDAP01>(x => x.A01F03 == email);
-                if (currentUser == null)
-                {
-                    response.IsError = true;
-                    response.Message = "Admin with given email not exists";
-                    response.StatusCode = MyStatusCodes.Unauthorized;
-                    return response;
-                }
-
-                FDAP02 isItAdmin = _connection.Single<FDAP02>(x => x.A02F01 == currentUser.A01F01);
-                if (isItAdmin.A02F02 != 0 || currentUser.A01F04 != password)
-                {
-                    response.IsError = true;
-                    response.Message = "Password is not valid or You are not admin";
-                    response.StatusCode = MyStatusCodes.Unauthorized;
-                    return response;
-                }
-
-
-
+                AdminLogics al = new AdminLogics(db, null);
+                Response resposne = al.Login(email, password);
+                return resposne;
             }
             catch (Exception ex)
             {
+                Response response = new Response();
                 response.IsError = true;
                 response.Message = ex.Message;
                 response.StatusCode = MyStatusCodes.Internal_server_Error;

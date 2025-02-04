@@ -2,7 +2,7 @@
 using System;
 
 
-namespace Final_Demo_AvanceCSharp.Modals.DTOs
+namespace WebApplication1.Modals.DTOs
 {
     public class DTOFDAP11
     {

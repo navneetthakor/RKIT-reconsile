@@ -1,10 +1,10 @@
 ﻿using System;
-using Final_Demo_AvanceCSharp.Modals.DTOs;
-using Final_Demo_AvanceCSharp.Modals.Enums;
-using Final_Demo_AvanceCSharp.Modals.POCOs;
-using Final_Demo_AvanceCSharp.Utilitlies;
+using WebApplication1.Modals.DTOs;
+using WebApplication1.Modals.Enums;
+using WebApplication1.Modals.POCOs;
+using WebApplication1.Utilitlies;
 
-namespace Final_Demo_AvanceCSharp.Business_Logic.Interfaces
+namespace WebApplication1.Business_Logic.Interfaces
 {
     /// <summary>
     /// This interface defines essential methods that all the classes 

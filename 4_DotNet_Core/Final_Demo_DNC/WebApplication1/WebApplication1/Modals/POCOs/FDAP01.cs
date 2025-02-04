@@ -2,7 +2,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Final_Demo_AvanceCSharp.Modals.POCOs
+namespace WebApplication1.Modals.POCOs
 {
     /// <summary>
     /// POCO class for : User

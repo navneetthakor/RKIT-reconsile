@@ -1,12 +1,12 @@
-﻿using Final_Demo_AvanceCSharp.Modals.Enums;
-using Final_Demo_AvanceCSharp.Utilitlies;
+﻿using WebApplication1.Modals.Enums;
+using WebApplication1.Utilitlies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Final_Demo_AvanceCSharp.Business_Logic.Interfaces
+namespace WebApplication1.Business_Logic.Interfaces
 {
     internal interface IDbDeleteOppar
     {

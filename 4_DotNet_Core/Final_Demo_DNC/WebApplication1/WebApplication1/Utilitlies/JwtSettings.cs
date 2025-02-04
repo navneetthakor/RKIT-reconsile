@@ -1,4 +1,4 @@
-﻿namespace Final_Demo_AvanceCSharp.Utilitlies
+﻿namespace WebApplication1.Utilitlies
 {
     public class JwtSettings
     {

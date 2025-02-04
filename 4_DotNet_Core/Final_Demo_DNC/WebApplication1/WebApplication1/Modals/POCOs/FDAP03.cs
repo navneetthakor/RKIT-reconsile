@@ -2,7 +2,7 @@
 using System;
 
 
-namespace Final_Demo_AvanceCSharp.Modals.POCOs
+namespace WebApplication1.Modals.POCOs
 {
     /// <summary>
     /// Book : poco class
