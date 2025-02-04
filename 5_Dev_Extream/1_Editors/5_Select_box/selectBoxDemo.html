@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+
+<body>
+    <div id="select-box-demo1"></div>
+    <div style="margin-top: 2rem;" id="select-box-demo2"></div>
+
+    <script defer>
+        let list = ["Navneet", "Rohanshu", "Meet", "Rahul"];
+        $("#select-box-demo1").dxSelectBox({
+            // array of items to be displayed
+            items: list,
+            inputArr: {
+                'aria-label': 'Simple Product'
+            },
+            placeholder: 'Choose Product',
+            value: list[0],
+            showClearButton: true, // to allow removal
+        });
+
+        const productList = [
+                { id: 1, name: "Option 1" },
+                { id: 2, name: "Hello" },
+                { id: 3, name: "bay" },
+                { id: 3, name: "bey" },
+                { id: 3, name: "beyy" }
+            ];
+
+        $("#select-box-demo2").dxSelectBox({
+            // type and search functionallity 
+            acceptCustomValue: true,// default: false
+            searchEnabled: true, // defualt: false
+            minSearchLength: 0, // default: 0
+            //1 - all list will not be displayed
+            //0 - whole list will be displayed
+
+            placeholder: "choose from below",
+
+            accessKey: 'b',
+
+            dataSource: productList,
+            // The field to use as the value
+            valueExpr: "id",
+
+            // The field to display in the dropdown
+            // it can be function too
+            displayExpr: "name",
+
+            // seed value 
+            value: 1,
+
+            // whether to render the drop-down field's content when it is displayed. 
+            // If false, the content is rendered immediately.
+            deferRendering: true, // defualt: true
+
+            disable: true, // default: false
+
+            // pop-up on hover 
+            hint: "select option",
+
+            // default behaviour of drop down editior 
+            opened: true, // default : false
+
+            // others 
+            // inputAttr,
+            // elementAttr,
+            // height,
+            // width,
+
+            // allow user to add custom item 
+            acceptCustomValue: true, // defualt false
+            onCustomItemCreating: (data) => {
+                console.log("customItem creation : ", data);
+                if (!data.text) {
+                    data.customItem = null;
+                    return;
+                }
+                const newItem = {
+                    id: 31,
+                    name: data.text,
+                };
+
+                productList.push(newItem);
+                data.customItem= newItem;
+                data.component.option("value",newItem.id);
+            },
+
+            // when user performs selection
+            onSelectionChanged: (event) => {
+                console.log("onSelectionChanged", event);
+            },
+
+            onValueChanged: (event) => {
+                console.log("onValueChanged", event);
+            },
+
+            //executed once the drop-down editor is closed.
+            onClosed: (ele) => {
+                console.log("onclosed", ele);
+            },
+
+            // executed when a list item is clicked or tapped.
+            onItemClick: (ele) => {
+                console.log("onItemClick", ele);
+            }
+
+            // other methods 
+            // onChange,    // keybord
+            // onContentReady,
+            // onCopy,
+            // onCut,
+            // onDisposing,
+            // onEnterKey
+            // onFocusIn
+            // onFocusOut
+            // onInput  // while UI component have focus
+            // onOptionChanged,
+            // onPaste,
+
+        });
+
+        // methods ------ (*)
+        // same as previous objects 
+
+
+        //1. explore dataSource in depth ok 
+        // 2. displayValue (what it mean)
+        // 3. dropDownButtonTemplate
+        // 4. dropDownOptions
+        // 5. itemTemplate
+    </script>
+</body>
+
+</html>

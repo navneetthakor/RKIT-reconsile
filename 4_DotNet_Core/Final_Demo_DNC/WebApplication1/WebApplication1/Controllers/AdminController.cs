@@ -1,81 +1,60 @@
-﻿using Final_Demo_AvanceCSharp.Business_Logic;
-using Final_Demo_AvanceCSharp.Modals.Enums;
-using Final_Demo_AvanceCSharp.Modals.POCOs;
-using System;
+﻿using Final_Demo_AvanceCSharp.Modals.POCOs;
+using Final_Demo_AvanceCSharp.Utilitlies;
+using Microsoft.AspNetCore.Mvc;
+using ServiceStack;
+using ServiceStack.OrmLite;
 using System.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-
-namespace Final_Demo_AvanceC_.Controllers
+namespace WebApplication1.Controllers
 {
-    internal class AdminController
+    [Microsoft.AspNetCore.Components.Route("api/admin/[controller]")]
+    [ApiController]
+    internal class AdminController : ControllerBase
     {
-        private AdminLogics atl;
-        private IDbConnection _db;
-
-        public void MainEvent(IDbConnection db, FDAP01 fdap01)
+        private IDbConnection _connection;
+        public AdminController(IDatabaseService db)
         {
-            atl = new AdminLogics(db, fdap01);
-            _db = db;
+            _connection = db.db;
+        }
 
-            while (true)
+        [HttpPost]
+        [Route("Login")]
+        public Response AdminLogin(string email, string password)
+        {
+            Response response = new Response();
+            try
             {
 
-                Console.WriteLine("\n\nSelect the operation : ");
-                Console.WriteLine("1. Delete Book");
-                Console.WriteLine("2. Delete Author");
-                Console.WriteLine("3. Get All Authors");
-                Console.WriteLine("4. Get All Books");
-                Console.WriteLine("5. Exit");
-
-
-                int opCode = Convert.ToInt32(Console.ReadLine());
-                switch (opCode)
+                FDAP01? currentUser = _connection.Single<FDAP01>(x => x.A01F03 == email);
+                if (currentUser == null)
                 {
-                    case 1:
-                        this.DeleteBook();
-                        break;
-
-                    case 2:
-                        this.DeleteAuthor();
-                        break;
-
-                    case 3:
-                        atl.GetAllAuthors();
-                        break;
-                    case 4:
-                        atl.GetAllBooks();
-                        break;
-
-                    case 5:
-                        return;
-                    default:
-                        Console.WriteLine("\nSelect appropriate option\n");
-                        break;
+                    response.IsError = true;
+                    response.Message = "Admin with given email not exists";
+                    response.StatusCode = MyStatusCodes.Unauthorized;
+                    return response;
                 }
+
+                FDAP02 isItAdmin = _connection.Single<FDAP02>(x => x.A02F01 == currentUser.A01F01);
+                if (isItAdmin.A02F02 != 0 || currentUser.A01F04 != password)
+                {
+                    response.IsError = true;
+                    response.Message = "Password is not valid or You are not admin";
+                    response.StatusCode = MyStatusCodes.Unauthorized;
+                    return response;
+                }
+
+
+
             }
-
+            catch (Exception ex)
+            {
+                response.IsError = true;
+                response.Message = ex.Message;
+                response.StatusCode = MyStatusCodes.Internal_server_Error;
+                return response;
+            }
         }
 
-        private void DeleteBook()
-        {
-            FDAP03 newBook = new FDAP03();
-            Console.Write("Enter Id of Book : ");
-            newBook.A03F01 = Convert.ToInt32(Console.ReadLine());
-
-            atl.PreDelete(newBook.A03F01, WOBEnum.Book);
-            atl.ValidateOnDelete(WOBEnum.Book);
-            atl.Delete(WOBEnum.Book);
-        }
-
-        private void DeleteAuthor()
-        {
-            FDAP03 newBook = new FDAP03();
-            Console.Write("Enter Id of Author : ");
-            newBook.A03F01 = Convert.ToInt32(Console.ReadLine());
-
-            atl.PreDelete(newBook.A03F01, WOBEnum.Author);
-            atl.ValidateOnDelete(WOBEnum.Author);
-            atl.Delete(WOBEnum.Author);
-        }
     }
 }

@@ -10,13 +10,14 @@ using System.Threading.Tasks;
 
 namespace Final_Demo_AvanceCSharp.Utilitlies
 {
-    internal class DatabaseService
+    internal class DatabaseService : IDatabaseService
     {
-        private static string connectionString = "Server=localhost;Database=nk_advanceCS_full_demo;User=Admin;Password=gs@123;";
-        public static IDbConnection GetDbConnection()
+        private string connectionString { get; } = "Server=localhost;Database=nk_advanceCS_full_demo;User=Admin;Password=gs@123;";
+        public IDbConnection db { get; set; }
+        public DatabaseService()
         {
             var dbFactory = new OrmLiteConnectionFactory(connectionString, MySqlDialect.Provider);
-            return dbFactory.OpenDbConnection();
+            db = dbFactory.OpenDbConnection();
         }
     }
 }

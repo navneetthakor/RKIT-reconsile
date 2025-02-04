@@ -23,6 +23,13 @@ namespace Final_Demo_AvanceCSharp.Utilitlies
         /// </summary>
         public string Message { get; set; } = "";
 
+        public MyStatusCodes StatusCode { get; set; }
+    }
 
+    public enum MyStatusCodes
+    {
+        Internal_server_Error = 500,
+        Unauthorized=400,
+        Success=200,
     }
 }
