@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+
+<body>
+    <!-- The NumberBox is a UI component that displays a numeric value and allows a user to modify it by typing in a value, and incrementing or decrementing it using the keyboard or mouse. -->
+    <div id="number-box-container"></div>
+
+    <script defer>
+        console.log("Hello")
+        $('#number-box-container').dxNumberBox({
+            // ONLY 'value' property is necessory
+            value: 20,
+            min: 16,
+            max: 100,
+
+            showSpinButtons: true, // arrow controll
+            step: 15, // to change by (on every arrow click)
+
+            accessKey: 'b',
+            disabled: false,
+
+            // adds attribute to the container element (div in our case)
+            elementAttr: {
+                class: 'nk'
+            },
+
+            // to add attribute to the main element (numberbox in our case)
+            inputAttr:{
+                id: "nk-Ka-Button"
+            },
+            format: '$#00.00',
+
+            height:'2.5rem', // it's own height
+            width: '30vw', // it's own width
+            hint: "enter value",
+
+            // executed when the UI component loses focus after the text field's content was changed using the keyboard.
+            onChanged: (event) => {},
+            
+            // after whole value is changed (throgh button, finished typing etc.) 
+            onValueChanged: (event) => {
+                console.log("onValueChange", event.value);
+            },
+
+            // for every single write in numberbox
+            onInput: (event) => {
+                console.log("onInput", event);
+            },
+
+            onOptionChanged: (event) => {
+                console.log("option changed", event)
+            },
+
+            onDisposing: (ele) => {
+                console.log("disposing", event)
+            },
+
+            // placeholder,
+            // readOnly 
+            showClearButton: true,
+            showSpinButtons: true,
+            // onContentReady
+            // onCopy
+            // onCut
+            // onPaste
+            // onDisposing
+            // onEnterKey //executed when the Enter key has been pressed while the UI component is focused.
+            // onInput //executed each time the UI component's input is changed while the UI component is focused.
+
+
+        });
+
+
+        // methods ---------- (*)
+        let instance = $("#number-box-container").dxNumberBox("instance")
+        
+        // instance.focus();
+        // instance.blur();
+
+        // returns root element (our container)
+        // console.log(instance.element());
+
+        // returns instance of numberBox
+        console.log(instance.instance());
+
+        // disposes resources -> executes onDisposing event
+        // instance.dispose();
+
+        // remove element from DOM + calls onDisposing event
+        // directly apply to the jquery object without creating it's intance
+        // $("#number-box-container").remove();
+
+        // other methods ---
+        // off(eventName, eventHandler),
+        // off(eventName), // remove all handlers for given eventname
+        // on(eventName, eventHandler),
+        // on(handlers),  handlers: { "eventName1": handler1, "eventName2": handler2, ...}
+        // registerKeyHandler(key, handler)
+        // option, // to access any option
+        console.log(instance.option("min"));
+
+        // set option 
+        instance.option("min", 50);
+
+        // ----- Not understood -------
+        // 1. getInstance 
+
+    </script>
+</body>
+
+</html>
