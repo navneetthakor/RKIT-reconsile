@@ -21,10 +21,11 @@ namespace WebApplication1
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
-            //services.AddTransient<IDatabaseService, DatabaseService>();
+            services.AddTransient<IDatabaseService, DatabaseService>();
+            
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
@@ -49,7 +50,7 @@ namespace WebApplication1
             app.MapControllers();
 
             // End the request pipeline 
-            //app.Run();
+            app.Run();
         }
     }
 }

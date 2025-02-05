@@ -10,19 +10,19 @@ namespace WebApplication1.Controller
     [ApiController]
     public class AdminController : ControllerBase
     {
-        //private IDbConnection _connection;
-        //public AdminController()
-        //{
-        //    _connection = db.db;
-        //}
+        private IDbConnection _connection;
+        public AdminController(IDatabaseService db)
+        {
+            _connection = db.db;
+        }
 
         [HttpPost]
         [Route("Login")]
-        public Response AdminLogin(IDbConnection db, string email, string password)
+        public Response AdminLogin(string email, string password)
         {
             try
             {
-                AdminLogics al = new AdminLogics(db, null);
+                AdminLogics al = new AdminLogics(_connection, null);
                 Response resposne = al.Login(email, password);
                 return resposne;
             }

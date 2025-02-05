@@ -9,6 +9,7 @@
       "WebApplication1/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.20",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "7.0.20",
           "Newtonsoft.Json": "13.0.3",
           "ServiceStack.OrmLite": "8.5.2",
           "ServiceStack.OrmLite.MySql": "8.5.2",
@@ -72,6 +73,31 @@
         },
         "runtime": {
           "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "assemblyVersion": "7.0.20.0",
+            "fileVersion": "7.0.2024.26907"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.JsonPatch/7.0.20": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.JsonPatch.dll": {
+            "assemblyVersion": "7.0.20.0",
+            "fileVersion": "7.0.2024.26907"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson/7.0.20": {
+        "dependencies": {
+          "Microsoft.AspNetCore.JsonPatch": "7.0.20",
+          "Newtonsoft.Json": "13.0.3",
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {
             "assemblyVersion": "7.0.20.0",
             "fileVersion": "7.0.2024.26907"
           }
@@ -275,6 +301,17 @@
           "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
             "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.2.22727"
           }
         }
       },
@@ -777,6 +814,20 @@
       "path": "microsoft.aspnetcore.authentication.jwtbearer/7.0.20",
       "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.7.0.20.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.JsonPatch/7.0.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FXvO8oYcSuDEbyX51VU5AQRhLQGPPpCOXLpmF4GGWRrEEE2+dLzvkgDvCRODRuEDLVIAOQosEfhiBRyh20Id5A==",
+      "path": "microsoft.aspnetcore.jsonpatch/7.0.20",
+      "hashPath": "microsoft.aspnetcore.jsonpatch.7.0.20.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.NewtonsoftJson/7.0.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-l5ARvFKH/y6FT6sCpCDmlUlSG7kvvuUOiwvzaUN2EDJnx47XpCQKLARmAwr/omB1wlQiJA8gOCsdsV8KIZnz/A==",
+      "path": "microsoft.aspnetcore.mvc.newtonsoftjson/7.0.20",
+      "hashPath": "microsoft.aspnetcore.mvc.newtonsoftjson.7.0.20.nupkg.sha512"
+    },
     "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
       "type": "package",
       "serviceable": true,
@@ -902,6 +953,13 @@
       "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
     },
     "ServiceStack.Common/8.5.2": {
       "type": "package",

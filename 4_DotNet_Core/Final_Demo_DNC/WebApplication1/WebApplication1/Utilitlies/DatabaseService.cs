@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Utilitlies
 {
-    internal class DatabaseService : IDatabaseService
+    public class DatabaseService : IDatabaseService
     {
         private string connectionString { get; } = "Server=localhost;Database=nk_advanceCS_full_demo;User=Admin;Password=gs@123;";
         public IDbConnection db { get; set; }

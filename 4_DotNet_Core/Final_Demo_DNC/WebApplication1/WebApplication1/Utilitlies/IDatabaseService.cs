@@ -2,7 +2,7 @@
 
 namespace WebApplication1.Utilitlies
 {
-    internal interface IDatabaseService
+    public interface IDatabaseService
     {
         IDbConnection db { get; set; }
     }

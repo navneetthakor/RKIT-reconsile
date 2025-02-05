@@ -48,6 +48,24 @@ namespace WebApplication1.Business_Logic.Services
             response.Message = "Admin Login completed";
             response.StatusCode = MyStatusCodes.Success;
             response.Data = currentUser;
+
+            // Create a new DataTable object
+            DataTable table = new DataTable("SampleTable");
+
+            // Add columns to the DataTable
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Name", typeof(string));
+            table.Columns.Add("Age", typeof(int));
+            table.Columns.Add("City", typeof(string));
+
+            // Add dummy data rows
+            table.Rows.Add(1, "John Doe", 28, "New York");
+            table.Rows.Add(2, "Jane Smith", 34, "Los Angeles");
+            table.Rows.Add(3, "Sam Johnson", 22, "Chicago");
+            table.Rows.Add(4, "Anna Lee", 45, "San Francisco");
+            table.Rows.Add(5, "Peter Brown", 30, "Miami");
+
+            response.Data = table;
             return response;
 
         }
