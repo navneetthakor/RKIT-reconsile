@@ -13,4 +13,4 @@ startup.Configure(app, builder.Environment);
 
 app.MapGet("/", () => "Hello World!");
 
-//app.Run();
+app.Run();

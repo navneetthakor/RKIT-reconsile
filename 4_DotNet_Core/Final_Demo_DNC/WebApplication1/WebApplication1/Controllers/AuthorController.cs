@@ -1,28 +1,31 @@
-﻿using WebApplication1.Utilitlies;
+﻿
+using WebApplication1.Utilitlies;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using WebApplication1.Business_Logic.Services;
 using WebApplication1.Modals.Enums;
+using WebApplication1.Modals.POCOs;
+using WebApplication1.Modals.DTOs;
 
 namespace WebApplication1.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdminController : ControllerBase
+    public class AuthorController : ControllerBase
     {
         private IDbConnection _connection;
-        public AdminController(IDatabaseService db)
+        public AuthorController(IDatabaseService db)
         {
             _connection = db.db;
         }
 
         [HttpPost]
         [Route("Login")]
-        public Response AdminLogin(string email, string password)
+        public Response AuthorLogin(string email, string password)
         {
             try
             {
-                AdminLogics al = new AdminLogics(_connection, null);
+                AuthorLogics al = new AuthorLogics(_connection, null);
                 Response resposne = al.Login(email, password);
                 return resposne;
             }
@@ -36,30 +39,19 @@ namespace WebApplication1.Controller
             }
         }
 
-        [HttpGet]
-        [Route("GetAllAuthors")]
-        public Response GetAllAuthors()
+        [HttpPost]
+        [Route("AuthorRegister")]
+        public Response AuthorRegister([FromBody] FDAP01 fdap01)
         {
-            Response response = new Response();
             try
             {
-                AdminLogics al = new AdminLogics(_connection, null);
-
-                    Response result = al.IsAdmin(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
-                if (result.IsError)
-                {
-                    response.IsError = true;
-                    response.Message = "you are not admin";
-                    response.StatusCode = MyStatusCodes.Unauthorized;
-                    return response;
-                }
-
-                response = al.GetAllAuthors();
-                response.StatusCode = MyStatusCodes.Success;
-                return response;
+                AuthorLogics al = new AuthorLogics(_connection, null);
+                Response resposne = al.RegisterAuthor(fdap01);
+                return resposne;
             }
             catch (Exception ex)
             {
+                Response response = new Response();
                 response.IsError = true;
                 response.Message = ex.Message;
                 response.StatusCode = MyStatusCodes.Internal_server_Error;
@@ -74,9 +66,9 @@ namespace WebApplication1.Controller
             Response response = new Response();
             try
             {
-                AdminLogics al = new AdminLogics(_connection, null);
+                AuthorLogics al = new AuthorLogics(_connection, null);
 
-                Response result = al.IsAdmin(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
+                Response result = al.IsAuthor(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
                 if (result.IsError)
                 {
                     response.IsError = true;
@@ -85,48 +77,7 @@ namespace WebApplication1.Controller
                     return response;
                 }
 
-                response = al.GetAllBooks();
-                response.StatusCode = MyStatusCodes.Success;
-                return response;
-            }
-            catch (Exception ex)
-            {
-                response.IsError = true;
-                response.Message = ex.Message;
-                response.StatusCode = MyStatusCodes.Internal_server_Error;
-                return response;
-            }
-        }
-
-        [HttpDelete]
-        [Route("DeleteAuthor")]
-        public Response DeleteAuthor(int Author_id)
-        {
-            Response response = new Response();
-            try
-            {
-                AdminLogics al = new AdminLogics(_connection, null);
-
-                Response result = al.IsAdmin(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
-                if (result.IsError)
-                {
-                    response.IsError = true;
-                    response.Message = "you are not admin";
-                    response.StatusCode = MyStatusCodes.Unauthorized;
-                    return response;
-                }
-
-                result = al.PreDelete(Author_id, WOBEnum.Author);
-                if (result.IsError) throw new Exception(result.Message);
-
-                result = al.ValidateOnDelete(WOBEnum.Author);
-                if (result.IsError) throw new Exception(result.Message);
-
-                result = al.Delete(WOBEnum.Author);
-                if (result.IsError) throw new Exception(result.Message);
-
-                response.Data = 1;
-                response.Message = result.Message;
+                response = al.GetAllBooks(result.Data.A01F01);
                 response.StatusCode = MyStatusCodes.Success;
                 return response;
             }
@@ -147,9 +98,9 @@ namespace WebApplication1.Controller
             Response response = new Response();
             try
             {
-                AdminLogics al = new AdminLogics(_connection, null);
+                AuthorLogics al = new AuthorLogics(_connection, null);
 
-                Response result = al.IsAdmin(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
+                Response result = al.IsAuthor(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
                 if (result.IsError)
                 {
                     response.IsError = true;
@@ -158,13 +109,54 @@ namespace WebApplication1.Controller
                     return response;
                 }
 
-                result = al.PreDelete(Book_id, WOBEnum.Book);
+                result = al.PreDelete(Book_id);
                 if (result.IsError) throw new Exception(result.Message);
 
-                result = al.ValidateOnDelete(WOBEnum.Book);
+                result = al.ValidateOnDelete(result.Data.A01F01);
                 if (result.IsError) throw new Exception(result.Message);
 
-                result = al.Delete(WOBEnum.Book);
+                result = al.Delete();
+                if (result.IsError) throw new Exception(result.Message);
+
+                response.Data = 1;
+                response.Message = result.Message;
+                response.StatusCode = MyStatusCodes.Success;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.IsError = true;
+                response.Message = ex.Message;
+                response.StatusCode = MyStatusCodes.Internal_server_Error;
+                return response;
+            }
+        }
+
+        [HttpDelete]
+        [Route("AddBook")]
+        public Response AddBook(FDAP03 fdap03)
+        {
+            Response response = new Response();
+            try
+            {
+                AuthorLogics al = new AuthorLogics(_connection, null);
+
+                Response result = al.IsAuthor(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
+                if (result.IsError)
+                {
+                    response.IsError = true;
+                    response.Message = "you are not Author";
+                    response.StatusCode = MyStatusCodes.Unauthorized;
+                    return response;
+                }
+
+                result = al.PreSave(fdap03, OppEnum.A);
+                if (result.IsError) throw new Exception(result.Message);
+
+                result = al.ValidateOnSave(OppEnum.U);
+                if (result.IsError) throw new Exception(result.Message);
+
+                result = al.Save(OppEnum.A);
                 if (result.IsError) throw new Exception(result.Message);
 
                 response.Data = 1;

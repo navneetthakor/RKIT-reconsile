@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.OpenApi.Models;
 using System.Net;
 using WebApplication1.Utilitlies;
 
@@ -25,7 +26,34 @@ namespace WebApplication1
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             services.AddTransient<IDatabaseService, DatabaseService>();
-            
+            services.AddSwaggerGen(c =>
+            {
+                // Add API key definition to Swagger
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Description = "Provide the API key in the header"
+                });
+
+                // Add security requirement to require the API key
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                 {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] {}
+                    }
+                 });
+            });
+
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
@@ -40,6 +68,8 @@ namespace WebApplication1
             //calling 
             app.UseRouting();
             //is not necessory 
+
+            app.UseMiddleware<JwtMiddleware>();
 
             app.MapGet("/", () => "Hello World!");
 

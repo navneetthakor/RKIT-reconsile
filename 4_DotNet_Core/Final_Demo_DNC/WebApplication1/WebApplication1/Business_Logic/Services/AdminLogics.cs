@@ -7,6 +7,8 @@ using WebApplication1.Modals.POCOs;
 using WebApplication1.Utilitlies;
 using ServiceStack;
 using ServiceStack.OrmLite;
+using WebApplication1.Helper_Classes;
+using WebApplication1.Modals.DTOs;
 
 namespace WebApplication1.Business_Logic.Services
 {
@@ -45,31 +47,60 @@ namespace WebApplication1.Business_Logic.Services
                 return response;
             }
 
+            //creating token 
+            string token = JWT.GenerateJwtToken(currentUser.A01F03);
+
+            // dto conversion
+            DTOFDAP11 returnUSer = new DTOFDAP11()
+            {
+                A01F01 = currentUser.A01F01,
+                A01F02 = currentUser.A01F02,
+                A01F03 = currentUser.A01F03,
+                A01F05 = currentUser.A01F05,
+            };
+
             response.Message = "Admin Login completed";
             response.StatusCode = MyStatusCodes.Success;
-            response.Data = currentUser;
-
-            // Create a new DataTable object
-            DataTable table = new DataTable("SampleTable");
-
-            // Add columns to the DataTable
-            table.Columns.Add("ID", typeof(int));
-            table.Columns.Add("Name", typeof(string));
-            table.Columns.Add("Age", typeof(int));
-            table.Columns.Add("City", typeof(string));
-
-            // Add dummy data rows
-            table.Rows.Add(1, "John Doe", 28, "New York");
-            table.Rows.Add(2, "Jane Smith", 34, "Los Angeles");
-            table.Rows.Add(3, "Sam Johnson", 22, "Chicago");
-            table.Rows.Add(4, "Anna Lee", 45, "San Francisco");
-            table.Rows.Add(5, "Peter Brown", 30, "Miami");
-
-            response.Data = table;
+            response.Data = new { user = returnUSer, token = token };
+            //response.Data = table;
             return response;
 
         }
 
+        public Response IsAdmin(string email)
+        {
+            Response response = new Response();
+            try
+            {
+                FDAP01? currentUser = _dbConnection.Single<FDAP01>(x => x.A01F03 == email);
+                if (currentUser == null)
+                {
+                    response.IsError = true;
+                    response.Message = "Admin with given email not exists";
+                    response.StatusCode = MyStatusCodes.Unauthorized;
+                    return response;
+                }
+
+                FDAP02? nextUser = _dbConnection.Single<FDAP02>(x => x.A02F01 == currentUser.A01F01);
+                if (nextUser.A02F02 != 0)
+                {
+                    response.IsError = true;
+                    response.Message = "You are not admin";
+                    response.StatusCode = MyStatusCodes.Unauthorized;
+                    return response;
+                }
+                response.Message = "Admin verified";
+                return response;
+
+            }
+            catch (Exception ex)
+            {
+                response.IsError = true;
+                response.Message = ex.Message;
+                Console.WriteLine("Exception : " + ex.Message);
+                return response;
+            }
+        }
 
         /// <summary>
         /// Predelete method creates corresponding POCO class for given 

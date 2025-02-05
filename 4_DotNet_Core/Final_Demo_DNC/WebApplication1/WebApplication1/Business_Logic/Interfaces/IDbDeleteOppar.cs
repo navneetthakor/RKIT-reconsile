@@ -20,7 +20,7 @@ namespace WebApplication1.Business_Logic.Interfaces
         /// to validate provided values
         /// </summary>
         /// <returns>Response : to indicate success or failuer of a given action</returns>
-        Response ValidateOnDelete();
+        Response ValidateOnDelete(int Author_id);
 
         /// <summary>
         /// to save data in database

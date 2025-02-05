@@ -6,6 +6,7 @@ using System;
 using WebApplication1.Modals.DTOs;
 using WebApplication1.Modals.Enums;
 using ServiceStack.OrmLite;
+using WebApplication1.Helper_Classes;
 
 namespace WebApplication1.Business_Logic.Services
 {
@@ -20,11 +21,11 @@ namespace WebApplication1.Business_Logic.Services
             _fdap01 = fdap01;
         }
 
-        public static Response RegisterAuthor(FDAP01 user, IDbConnection db)
+        public Response RegisterAuthor(FDAP01 user)
         {
             Response response = new Response();
             //check user with same email exists or not 
-            bool isUserAxists = db.Exists<FDAP01>(x => x.A01F03 == user.A01F03);
+            bool isUserAxists = _dbConnection.Exists<FDAP01>(x => x.A01F03 == user.A01F03);
             if (isUserAxists)
             {
                 response.Message = "User with same email already exists";
@@ -32,10 +33,10 @@ namespace WebApplication1.Business_Logic.Services
                 return response;
             }
 
-            bool Authersaved = db.Save(user);
+            bool Authersaved = _dbConnection.Save(user);
             if (Authersaved)
             {
-                db.Insert(new FDAP02() { A02F01 = user.A01F01, A02F02 = A02F01Values.Author });
+                _dbConnection.Insert(new FDAP02() { A02F01 = user.A01F01, A02F02 = A02F01Values.Author },true);
             }
             else
             {
@@ -44,8 +45,81 @@ namespace WebApplication1.Business_Logic.Services
                 return response;
             }
 
+            //creating token 
+            string token = JWT.GenerateJwtToken(user.A01F03);
+
+            // dto conversion
+            DTOFDAP11 returnUSer = new DTOFDAP11()
+            {
+                A01F01 = user.A01F01,
+                A01F02 = user.A01F02,
+                A01F03 = user.A01F03,
+                A01F05 = user.A01F05,
+            };
+
             response.Message = "User registration successful";
             return response;
+        }
+
+        public Response Login(string email, string password)
+        {
+            Response response = new Response();
+
+            FDAP01? currentUser = _dbConnection.Single<FDAP01>(x => x.A01F03 == email);
+            if (currentUser == null)
+            {
+                response.IsError = true;
+                response.Message = "user with given email not exists";
+                response.StatusCode = MyStatusCodes.Unauthorized;
+                return response;
+            }
+
+            //creating token 
+            string token = JWT.GenerateJwtToken(currentUser.A01F03);
+
+            // dto conversion
+            DTOFDAP11 returnUSer = new DTOFDAP11()
+            {
+                A01F01 = currentUser.A01F01,
+                A01F02 = currentUser.A01F02,
+                A01F03 = currentUser.A01F03,
+                A01F05 = currentUser.A01F05,
+            };
+
+            response.Message = "user Login completed";
+            response.StatusCode = MyStatusCodes.Success;
+            response.Data = new { user = returnUSer, token = token };
+            //response.Data = table;
+            return response;
+
+        }
+
+        public Response IsAuthor(string email)
+        {
+            Response response = new Response();
+            try
+            {
+                FDAP01? currentUser = _dbConnection.Single<FDAP01>(x => x.A01F03 == email);
+                if (currentUser == null)
+                {
+                    response.IsError = true;
+                    response.Message = "Admin with given email not exists";
+                    response.StatusCode = MyStatusCodes.Unauthorized;
+                    return response;
+                }
+
+                response.Data = currentUser;
+                response.Message = $"User verified : {currentUser.A01F01}";
+                return response;
+
+            }
+            catch (Exception ex)
+            {
+                response.IsError = true;
+                response.Message = ex.Message;
+                Console.WriteLine("Exception : " + ex.Message);
+                return response;
+            }
         }
 
         /// <summary>
@@ -181,12 +255,12 @@ namespace WebApplication1.Business_Logic.Services
         /// Performs validation checks that corresponding book exists in Database which Author wants to delete.
         /// </summary>
         /// <returns>Response Object</returns>
-        public Response ValidateOnDelete()
+        public Response ValidateOnDelete(int Author_id)
         {
             Response response = new Response();
             try
             {
-                List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F01 == _fdap03.A03F01 && x.A03F04 == _fdap01.A01F01);
+                List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F01 == _fdap03.A03F01 && x.A03F04 == Author_id);
                 if (lst.Count == 0) throw new Exception("Book with given id not exists for current Author");
 
                 response.Message = "ValidateOnDelete done";
@@ -226,12 +300,12 @@ namespace WebApplication1.Business_Logic.Services
         }
 
 
-        public Response GetAllBooks()
+        public Response GetAllBooks(int Author_id)
         {
             Response response = new Response();
             try
             {
-                List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F04 == _fdap01.A01F01);
+                List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F04 == Author_id);
 
                 response.Data = lst;
                 response.Message = "PreDelete done";
