@@ -21,6 +21,14 @@ namespace WebApplication1.Controllers
             _prodRepo.AddProd(title);
             return Ok(_prodRepo.lstProd);
         }
+
+        [Route("CheckError")]
+        [HttpGet]
+        public IActionResult CheckError()
+        {
+            throw new Exception("CheckError");
+            return Ok("done");
+        }
     }
 }
 

@@ -14,10 +14,6 @@ namespace WebApplication1
         public IConfiguration Configuration { get; set; }
 
         public Startup(IConfiguration configuration)
-
-
-
-
         {
             Configuration = configuration;
         }
@@ -37,36 +33,15 @@ namespace WebApplication1
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
-                app.UseDeveloperExceptionPage(
-                   new DeveloperExceptionPageOptions
-                   {
-                       SourceCodeLineCount = 10
-                   });
+                app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler(
-                   options =>
-                   {
-                       options.Run(
-                           async context =>
-                           {
-                               context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                               var ex = context.Features.Get<IExceptionHandlerFeature>();
-                               if (ex != null)
-                               {
-                                   await context.Response.WriteAsync(ex.Error.Message);
-                               }
-                           }
-                    );
-                   });
-
-
-
-
-
-
+                app.UseExceptionHandler("/Error");
+                app.UseHsts();
             }
+
+            app.UseStatusCodePages();
 
             //calling 
             //app.UseRouting();
