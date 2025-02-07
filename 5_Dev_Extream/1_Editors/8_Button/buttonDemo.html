@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+      <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ 
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+ 
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+    <style>
+        .buttons_container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .header_container{
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <section id="section1">
+        <div class="header_container">
+            <h1>Contained Buttons</h1>
+        </div>
+        <div class="buttons_container">
+            <div id="button-demo1"></div>
+            <div id="button-demo2"></div>
+            <div id="button-demo3"></div>
+            <div id="button-demo4"></div>
+        </div>
+    </section>
+
+    <section id="section2">
+        <div class="header_container">
+            <h1>Text Buttons</h1>
+        </div>
+        <div class="buttons_container">
+            <div id="button-demo5"></div>
+            <div id="button-demo6"></div>
+            <div id="button-demo7"></div>
+            <div id="button-demo8"></div>
+        </div>
+    </section>
+
+    <section id="section3">
+        <div class="header_container">
+            <h1>Outlined Buttons</h1>
+        </div>
+        <div class="buttons_container">
+            <div id="button-demo9"></div>
+            <div id="button-demo10"></div>
+            <div id="button-demo11"></div>
+            <div id="button-demo12"></div>
+        </div>
+    </section>
+
+    <section id="section4">
+        <div class="header_container">
+            <h1>Experiment section</h1>
+        </div>
+        <div class="buttons_container">
+            <div id="button-demo13"></div>
+            <div id="button-demo14"></div>
+        </div>
+    </section>
+
+    <script defer>
+        $(function() {
+            // contiained button section ------
+            $('#button-demo1').dxButton({
+                text: 'contained',
+                type: 'normal',
+                stylingMode: 'contained' // default : contained
+            });
+
+            $('#button-demo2').dxButton({
+                text: 'contained',
+                type: 'danger',
+                stylingMode: 'contained' // default : contained
+            })
+            $('#button-demo3').dxButton({
+                text: 'contained',
+                type: 'success',
+                stylingMode: 'contained' // default : contained
+            })
+            $('#button-demo4').dxButton({
+                text: 'contained',
+                type: 'default',
+                stylingMode: 'contained' // default : contained
+            })
+
+            // Text buttons section -----
+            $('#button-demo5').dxButton({
+                text: 'contained',
+                type: 'normal',
+                stylingMode: 'text' // default : contained
+            });
+
+            $('#button-demo6').dxButton({
+                text: 'contained',
+                type: 'danger',
+                stylingMode: 'text' // default : contained
+            })
+            $('#button-demo7').dxButton({
+                text: 'contained',
+                type: 'success',
+                stylingMode: 'text' // default : contained
+            })
+            $('#button-demo8').dxButton({
+                text: 'contained',
+                type: 'default',
+                stylingMode: 'text' // default : contained
+            })
+
+            // outlined buttons section -----
+            $('#button-demo9').dxButton({
+                text: 'contained',
+                type: 'normal',
+                stylingMode: 'outlined' // default : contained
+            });
+
+            $('#button-demo10').dxButton({
+                text: 'contained',
+                type: 'danger',
+                stylingMode: 'outlined' // default : contained
+            })
+            $('#button-demo11').dxButton({
+                text: 'contained',
+                type: 'success',
+                stylingMode: 'outlined' // default : contained
+            })
+            $('#button-demo12').dxButton({
+                text: 'contained',
+                type: 'default',
+                stylingMode: 'outlined' // default : contained
+            })
+
+
+
+            /*
+            * Experiment section
+            */
+           $("#button-demo13").dxButton({
+                text: 'experiment1',
+                type: 'default',
+                hint: 'Experiment with width',
+                width: '15rem',
+                tabIndex: 1,
+
+                onClick: (e) => {
+                    alert("width, hint, tabIndex")
+                }
+           });
+           $("#button-demo14").dxButton({
+                text: 'experiment2',
+                type: 'default',
+                hint: 'Experiment with height',
+                height: '10rem',
+                tabIndex:2,
+                // visible: false, // default: true
+
+                onClick: (e) => {
+                    alert("height, hint, tabIndex");
+                    console.log("ok");
+                }
+
+                // events -----
+                // onOptionChange, 
+                // onInitialized,
+                // onDisposing,
+                // onContentReady,
+
+           });
+
+
+        });
+        // remianing portion ---
+    </script>
+</body>
+</html>
