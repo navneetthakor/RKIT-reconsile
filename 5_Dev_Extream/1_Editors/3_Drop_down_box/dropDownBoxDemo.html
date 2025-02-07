@@ -3,32 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDN setup | DevExtream</title>
+    <title>CDN setup | DevExtreme</title>
 
-      <!-- ... -->
+    <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
- 
+
     <!-- DevExtreme theme -->
     <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
- 
+
     <!-- DevExtreme library -->
     <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
-    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
-    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
 </head>
 <body>
-    <div id="drop-down-box-container"></div>
+    <div id="drop-down-box-container" style="margin-top: 2rem;"></div>
+    <div id="drop-down-box-container2" style="margin-top: 5rem;"></div>
+    <div id="drop-down-box-container3" style="margin-top: 5rem;"></div>
 
     <script defer>
-        $("#drop-down-box-container").dxDropDownBox({
-            // options
-            acceptCustomValue: false,
-            accessKey: 'b',
-            // contentTemplate: , //(left)
+        $(function() {
+            // simple list ---------------------------------
+            let list = ["Navneet", "Rohanshu", "Meet"]; // Array of items
 
-            // items or datasource (specify only one)
-            dataSource: ["nk", "mj", "rb"],
+            $("#drop-down-box-container").dxDropDownBox({
+                // Set the access key for the dropdown (alt + b to focus)
+                accessKey: 'b',
+
+                // The list of items to be shown in the dropdown
+                items: list, 
+
+                // Set default value to the first item in the list
+                value: list[0],
+
+                placeholder: "Select a name", // Placeholder text when no selection is made
+                contentTemplate: function(e) {
+                    return $('<div>').dxList({
+                        dataSource: list,
+                        displayExpr: function(item) {
+                            return item; // Display each item as a string (directly)
+                        },
+                        selectionMode: 'single',
+                        onSelectionChanged: function(args) {
+                            const instance = $("#drop-down-box-container").dxDropDownBox('instance');
+                            instance.option('value', args.addedItems[0]);
+                            instance.option('opened',false);
+                            console.log(instance.option('value'));
+                        }
+                    });
+                },
+
+
+                elementAttr: {
+                    class: "nk",
+                } ,
+                inputAttr: {
+                    id : "dropDownBox1",
+                },
+
+                hint: "name selecter",
+                height: "6rem",
+                width: "10rem",
+            });
+
+            // complex list ------------------------------------------------------------------------
+            const list2 = [
+                { id: 1, name: "Option 1" },
+                { id: 2, name: "Hello" },
+                { id: 3, name: "temp" },
+                { id: 4, name: "ese hi" },
+                { id: 5, name: "last option" }
+            ]
+
+            $("#drop-down-box-container2").dxDropDownBox({
+                // The list of items to be shown in the dropdown
+                dataSource: list2, 
+                placeholder: "Complex List",
+                // Set default value to the first item in the list
+                valueExpr : "id",
+                displayExpr : "name",
+
+                contentTemplate: function(e) {
+                    return $('<div>').dxList({
+                        dataSource: list2,
+                        valueExpr : "id",
+                        displayExpr: function(item) {
+                            return item.name; // Display each item as a string (directly)
+                        },
+                        selectionMode: 'single',
+                        onSelectionChanged: function(args) {
+                            const instance = $("#drop-down-box-container2").dxDropDownBox('instance');
+                            instance.option('value', args.addedItems[0].id);
+                            instance.option('opened',false);
+                            console.log(instance.option('value'));
+                        }
+                    });
+                }
+            });
+
+            // editable dropdownbox
+            $("#drop-down-box-container3").dxDropDownBox({
+                // Set the access key for the dropdown (alt + b to focus)
+                accessKey: 'b',
+
+                // The list of items to be shown in the dropdown
+                items: list, 
+
+                contentTemplate: function(e) {
+                    return $('<div>').dxList({
+                        dataSource: list,
+                        displayExpr: function(item) {
+                            return item; // Display each item as a string (directly)
+                        },
+                        selectionMode: 'single',
+                        onSelectionChanged: function(args) {
+                            const instance = $("#drop-down-box-container3").dxDropDownBox('instance');
+                            instance.option('value', args.addedItems[0]);
+                            instance.option('opened',false);
+                            console.log(instance.option('value'));
+                        }
+                    });
+                },
+
+                acceptCustomValue:true,
+                
+
+                elementAttr: {
+                    class: "nk",
+                } ,
+                inputAttr: {
+                    id : "dropDownBox1",
+                },
+
+                hint: "name selecter",
+                placeholder : "Editable"
+            });
+            
         });
+        // left items
+        //1. integration of Datagrid 
     </script>
 </body>
 </html>

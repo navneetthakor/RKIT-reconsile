@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+
+<body style="background-color: rgb(18, 12, 102);">
+    <div id="text-area-demo1" style="margin-top: 3rem;"></div>
+    <div id="text-area-demo2" style="margin-top: 3rem;"></div>
+    <div id="text-area-demo3" style="margin-top: 3rem;"></div>
+    <div id="text-area-demo4" style="margin-top: 3rem;"></div>
+
+    <script defer>
+        $(function (params) {
+            $("#text-area-demo1").dxTextArea({
+                accessKey: 'a',
+                width: '10rem',
+                value: 'Navneet',
+
+                // dynamic height (not width)
+                autoResizeEnabled: true,
+                
+                // causing backgroung change
+                // maxHeight: 3,
+
+                // properties added to container div
+                elementAttr: {
+                    class: 'nk_addded'
+                },
+                
+                inputAttr:{
+                    id: 'text-area-1'
+                },
+                
+                // max character that can be added 
+                maxLength: 10,
+
+                // other methods ---
+                // onChange,
+                // onContentReady,
+                // onCopy,
+                // onCut, 
+                // onDisposing, // remove method and dispose method calls it automatically
+                // onEnterKey, 
+                // onFocusIn, 
+                // onFocusOut, 
+                // onKeyDown,
+                // onKeyUp,
+                // onOptionChanged,
+                // onPaste, 
+                // onValueChanged,
+
+                onChange: (e) =>{
+                    console.log("Value changed");
+                },
+                onInitialized: (e)=>{
+                    console.log("initialization completed : ");
+                },
+
+                hint: "Hint is working over here",
+                spellcheck: false, // default : true
+
+                
+            });
+            
+            $("#text-area-demo2").dxTextArea({
+                accessKey: 'b',
+                autoResizeEnabled: true,
+                disabled: true,
+                placeholder: 'Disabled Text Area',
+                hint: "This text area is disabled"
+            });
+
+            $("#text-area-demo3").dxTextArea({
+                accessKey: 'c',
+                autoResizeEnabled: true,
+                disabled: true,
+                value: 'Readonly Text area',
+                hint: "This text area is readOnly",
+                readOnly: true,
+            });
+            $("#text-area-demo4").dxTextArea({
+                visible: false,
+            });
+        })
+
+        // things left 
+        // 1. valueChangeEvent 
+    </script>
+</body>
+
+</html>

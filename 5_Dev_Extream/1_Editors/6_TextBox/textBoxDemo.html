@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+
+<body>
+    <!-- The TextBox is a UI component that enables a user to enter and edit a single line of text. -->
+    <div id="text-box-demo" style="margin-top: 3rem;"></div>
+    <div id="text-box-demo1" style="margin-top: 3rem;"></div>
+    <div id="text-box-demo2" style="margin-top: 3rem;"></div>
+    <div id="text-box-demo3" style="margin-top: 3rem;"></div>
+
+
+    <script defer>
+        $(() => {
+            $('#text-box-demo').dxTextBox({
+                tabIndex:4, 
+                accessKey: 'a',
+                placeholder: "Enter Your full Name.",
+
+                elementAttr: {
+                    class: 'textbox Container'
+                },
+                inputAttr: {
+                    id: 'MainTextBox',
+                },
+
+                height: '6rem',
+                width: '10rem',
+
+            })
+
+            $("#text-box-demo1").dxTextBox({
+                placeholder: "disabled",
+                disabled: true,
+                accessKey: 'd', // won't work
+                tabIndex:2, // won't work
+                hint: 'This textbox is disabled!!'
+            })
+
+            $("#text-box-demo2").dxTextBox({
+                accessKey: 'm',
+                hint: 'This textbox is Masked!',
+                mask: '00/00/0000',
+                tabIndex:1,
+            });
+
+            //button is not working
+            $("#text-box-demo3").dxTextBox({
+                mode: 'password',
+                tabIndex: 3,
+                buttons: [{
+                    name: 'password',
+                    location: 'after',
+                    options: {
+                        icon: 'eye', // Correct icon name
+                        stylingMode: 'text', // Style the button as text (no background)
+                        onClick() {
+                            const textBoxInstance = $("#text-box-demo3").dxTextBox('instance'); // Get the instance
+                            const currentMode = textBoxInstance.option('mode');
+                            textBoxInstance.option('mode', currentMode === 'text' ? 'password' : 'text'); // Toggle password visibility
+                        },
+                    },
+                }]
+            });
+
+        });
+    </script>
+</body>
+
+</html>
