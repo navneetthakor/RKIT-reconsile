@@ -72,6 +72,16 @@
             $('#password1').dxTextBox({
                 placeholder: 'enter Password',
                 mode: 'password',
+            }).dxValidator({
+                validationRules:[{
+                    type: 'required',
+                    message: 'Password is required'
+                },{
+                    type: 'stringLength',
+                    min:4,
+                    max:6,
+                    message: "length of password must be between 4 to 6"
+                }]
             })
 
             // password 2
@@ -83,6 +93,7 @@
                     type: 'compare',
                     comparisonTarget() {
                         const password = $('#password1').dxTextBox('instance');
+                        console.log(password.option('value'));
                         if (password) {
                             return password.option('value');
                         }
@@ -113,8 +124,10 @@
 
 
             $('#myform').submit((e) => {
-                // e.preventDefault();
-                console.log("form submission to the first level");
+                e.preventDefault();
+                alert("form submission to the first level");
+                $('#myform')[0].reset();
+                $('#checkbox1')[0].reset();
             });
 
             $("#button").dxButton({
