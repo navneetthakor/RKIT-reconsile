@@ -46,6 +46,7 @@
             <div id="password1"></div>
             <div id="password2"></div>
             <div id="checkbox1"></div>
+            <div id="datebox1"></div>
             <div id="button" style="margin:auto 2rem;"></div>
         </form>
     </div>
@@ -121,7 +122,19 @@
                 }]
             })
 
-
+            $('#dateBox1').dxDateBox({
+                type: 'date',
+                acceptCustomValue:true,
+                displayFormat: 'dd/MM/yyyy',
+            }).dxValidator({
+                validationRules:[{
+                    type: 'required',
+                    message: 'date is required'
+                },{
+                    type: 'range',
+                    min: new Date().setDate(10/10/2023)
+                }]
+            })
 
             $('#myform').submit((e) => {
                 e.preventDefault();
