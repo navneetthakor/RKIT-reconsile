@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 0.5px solid black;
+            height: 50vh;
+            margin-top: 7rem;
+            width: 30rem;
+            border-radius: 8px;
+            box-shadow: 0px 20px 20px black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form id="myform" action="/">
+            <div id="email" style="margin-bottom: 2rem;"></div>
+            <div id="password1"></div>
+            <div id="password2"></div>
+            <div id="checkbox1"></div>
+            <div id="button" style="margin:auto 2rem;"></div>
+        </form>
+    </div>
+
+    <script defer>
+        document.body.style.height = window.innerHeight;
+        $(function () {
+
+            // email
+            $("#email").dxTextBox({
+                placeholder: 'Enter Email',
+                width: '10rem'
+            }).dxValidator({
+                validationRules: [{
+                    type: 'required',
+                    message: 'Email is required',
+                }, {
+                    type: 'email',
+                    message: 'Email is invalid',
+                },]
+            });
+
+            // password 1
+            $('#password1').dxTextBox({
+                placeholder: 'enter Password',
+                mode: 'password',
+            })
+
+            // password 2
+            $('#password2').dxTextBox({
+                placeholder: 'enter Password',
+                mode: 'text',
+            }).dxValidator({
+                validationRules: [{
+                    type: 'compare',
+                    comparisonTarget() {
+                        const password = $('#password1').dxTextBox('instance');
+                        if (password) {
+                            return password.option('value');
+                        }
+                        return null;
+                    },
+                    message: "'Password' and 'Confirm Password' do not match.",
+                },
+                {
+                    type: 'required',
+                    message: 'Confirm Password is required',
+                }],
+            });
+
+            $('#checkbox1').dxCheckBox({
+                text: 'click here'
+            }).dxValidator({
+                height: '10rem',
+                validationRules:[{
+                    type: 'compare',
+                    comparisonTarget: () => true,
+                    message: 'checkbox clicked is compulsory'
+                },{
+                    type: 'required',
+                    message: 'checkbox clicked is compulsory'
+                }]
+            })
+
+
+
+            $('#myform').submit((e) => {
+                // e.preventDefault();
+                console.log("form submission to the first level");
+            });
+
+            $("#button").dxButton({
+                text: "submit",
+                type: 'default',
+                useSubmitBehavior: true,
+            });
+        })
+
+    </script>
+</body>
+
+</html>
