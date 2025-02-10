@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.OpenApi.Models;
+using Nlog.Web;
 using System.Net;
 using WebApplication1.Utilitlies;
 
@@ -54,6 +55,10 @@ namespace WebApplication1
                  });
             });
 
+            // nlogger related setup
+            var logPath = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
+            NLog.GlobalDiagnosticsContext.Set("LogDirectory", logPath);
+
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
@@ -65,6 +70,9 @@ namespace WebApplication1
 
             }
 
+            // nlogger middleware
+            app.UseNLog();
+            
             //calling 
             app.UseRouting();
             //is not necessory 
