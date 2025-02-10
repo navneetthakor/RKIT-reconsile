@@ -1,0 +1,85 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\10_validator\\validatorDemo.html",
+      "PackagePath": "staticwebassets\\10_validator\\validatorDemo.html"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\11_Radio_button\\radioButtonDemo.html",
+      "PackagePath": "staticwebassets\\11_Radio_button\\radioButtonDemo.html"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\12_Demo_Editors\\index.html",
+      "PackagePath": "staticwebassets\\12_Demo_Editors\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\1_CheckBox\\DevExDemo.js",
+      "PackagePath": "staticwebassets\\1_CheckBox\\DevExDemo.js"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\1_CheckBox\\checkBoxDemo.html",
+      "PackagePath": "staticwebassets\\1_CheckBox\\checkBoxDemo.html"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\2_DateBox\\DevExInitial.js",
+      "PackagePath": "staticwebassets\\2_DateBox\\DevExInitial.js"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\2_DateBox\\dateBoxDemo.html",
+      "PackagePath": "staticwebassets\\2_DateBox\\dateBoxDemo.html"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\3_Drop_down_box\\DevExInitials.js",
+      "PackagePath": "staticwebassets\\3_Drop_down_box\\DevExInitials.js"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\3_Drop_down_box\\dropDownBoxDemo.html",
+      "PackagePath": "staticwebassets\\3_Drop_down_box\\dropDownBoxDemo.html"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\4_NumberBox\\numberBoxDemo.html",
+      "PackagePath": "staticwebassets\\4_NumberBox\\numberBoxDemo.html"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\5_Select_box\\selectBoxDemo.html",
+      "PackagePath": "staticwebassets\\5_Select_box\\selectBoxDemo.html"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\6_TextBox\\textBoxDemo.html",
+      "PackagePath": "staticwebassets\\6_TextBox\\textBoxDemo.html"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\7_Text_area\\textAreaDemo.html",
+      "PackagePath": "staticwebassets\\7_Text_area\\textAreaDemo.html"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\8_Button\\buttonDemo.html",
+      "PackagePath": "staticwebassets\\8_Button\\buttonDemo.html"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\9_File_uploder\\ShauryaRefernceFile.js",
+      "PackagePath": "staticwebassets\\9_File_uploder\\ShauryaRefernceFile.js"
+    },
+    {
+      "Id": "C:\\Users\\navneetkumar.t\\source\\repos\\navneetthakor\\RKIT-reconsile\\5_Dev_Extream\\1_Editors\\Editors_in_VS\\Editors_in_VS\\wwwroot\\9_File_uploder\\fileUploderDemo.html",
+      "PackagePath": "staticwebassets\\9_File_uploder\\fileUploderDemo.html"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Editors_in_VS.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Editors_in_VS.props",
+      "PackagePath": "build\\Editors_in_VS.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Editors_in_VS.props",
+      "PackagePath": "buildMultiTargeting\\Editors_in_VS.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Editors_in_VS.props",
+      "PackagePath": "buildTransitive\\Editors_in_VS.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
