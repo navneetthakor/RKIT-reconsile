@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+    <style>
+        .radioBtnContainer {
+            margin: 2rem 10rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="radioBtnContainer" id="radio-button-demo1"></div>
+    <div class="radioBtnContainer" id="radio-button-demo2"></div>
+    <div class="radioBtnContainer" id="radio-button-demo3"></div>
+
+    <script>
+        $(() => {
+            let listOfOptions = ['Navneet', 'Meet', 'Rohanshu'];
+
+            // default tab
+            $('#radio-button-demo1').dxRadioGroup({
+                accessKey: 'b',
+                items: listOfOptions,
+                value: listOfOptions[0]
+            })
+
+            // horizontal tab
+            $('#radio-button-demo2').dxRadioGroup({
+                accessKey: 'b',
+                items: listOfOptions,
+                value: listOfOptions[0],
+                layout: 'horizontal',
+                disabled: true
+            })
+
+            // horizontal tab
+            $('#radio-button-demo3').dxRadioGroup({
+                accessKey: 'b',
+                items: listOfOptions,
+                value: listOfOptions[0],
+                layout: 'horizontal',
+
+                elementAtrr: {
+                    class: 'nks_class'
+                },
+
+                inputAttr: {
+                    id: 'radio_button_3'
+                },
+
+                height: '10rem', // height of container not inner element
+                width: '7rem',  // width of container not inner element
+                hint: 'u Can\'t See Me',
+                readOnly: false, // default : false
+                tabIndex: 1,
+                visible: true, // defualt: true,
+                
+                // defualt: valid
+                // 'pending' is not working
+                validationStatus: 'invalid',
+
+                // events 
+                // onContentReady, 
+                // onDisposing,
+                // onInitialized,
+                // onOptionChanged,
+
+                onValueChanged: (e) => console.log("value changed : " + e.value),
+
+            })
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>
