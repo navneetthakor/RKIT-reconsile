@@ -1,0 +1,171 @@
+2025-02-10 11:10:04.4711 | DEBUG | Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider 
+2025-02-10 11:10:04.7452 | DEBUG | Hosting starting 
+2025-02-10 11:10:05.3620 | DEBUG | Loaded hosting startup assembly WebApplication1 
+2025-02-10 11:10:05.3620 | DEBUG | Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh 
+2025-02-10 11:10:05.3620 | DEBUG | Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net 
+2025-02-10 11:10:05.3620 | DEBUG | Hosting started 
+2025-02-10 11:10:05.4843 | DEBUG | Connection id "0HNA9ILFL9SS0" received FIN. 
+2025-02-10 11:10:05.4865 | DEBUG | Connection id "0HNA9ILFL9SS1" received FIN. 
+2025-02-10 11:10:05.4865 | DEBUG | Connection id "0HNA9ILFL9SS0" accepted. 
+2025-02-10 11:10:05.4865 | DEBUG | Connection id "0HNA9ILFL9SS1" accepted. 
+2025-02-10 11:10:05.5053 | DEBUG | Connection id "0HNA9ILFL9SS1" started. 
+2025-02-10 11:10:05.5053 | DEBUG | Connection id "0HNA9ILFL9SS0" started. 
+2025-02-10 11:10:05.5547 | DEBUG | Connection id "0HNA9ILFL9SS0" sending FIN because: "The client closed the connection." 
+2025-02-10 11:10:05.5547 | DEBUG | Connection id "0HNA9ILFL9SS1" sending FIN because: "The client closed the connection." 
+2025-02-10 11:10:05.5712 | DEBUG | Connection id "0HNA9ILFL9SS0" disconnecting. 
+2025-02-10 11:10:05.5712 | DEBUG | Connection id "0HNA9ILFL9SS1" disconnecting. 
+2025-02-10 11:10:05.5799 | DEBUG | Connection id "0HNA9ILFL9SS1" stopped. 
+2025-02-10 11:10:05.5799 | DEBUG | Connection id "0HNA9ILFL9SS0" stopped. 
+2025-02-10 11:10:06.0962 | DEBUG | Connection id "0HNA9ILFL9SS2" accepted. 
+2025-02-10 11:10:06.0962 | DEBUG | Connection id "0HNA9ILFL9SS2" started. 
+2025-02-10 11:10:06.1298 | DEBUG | Connection id "0HNA9ILFL9SS3" accepted. 
+2025-02-10 11:10:06.1298 | DEBUG | Connection id "0HNA9ILFL9SS3" started. 
+2025-02-10 11:10:06.2241 | DEBUG | Wildcard detected, all requests with hosts will be allowed. 
+2025-02-10 11:10:06.2612 | DEBUG | The request path  does not match the path filter 
+2025-02-10 11:10:06.3464 | DEBUG | 1 candidate(s) found for the request path '/' 
+2025-02-10 11:10:06.3464 | DEBUG | Request matched endpoint 'HTTP: GET /' 
+2025-02-10 11:10:06.4106 | DEBUG | Connection id "0HNA9ILFL9SS2" completed keep alive response. 
+2025-02-10 11:10:06.6783 | DEBUG | The request path  does not match the path filter 
+2025-02-10 11:10:06.6783 | DEBUG | No candidates found for the request path '/favicon.ico' 
+2025-02-10 11:10:06.6783 | DEBUG | Request did not match any endpoints 
+2025-02-10 11:10:06.6783 | DEBUG | Connection id "0HNA9ILFL9SS2" completed keep alive response. 
+2025-02-10 11:10:07.6134 | DEBUG | Connection id "0HNA9ILFL9SS3" received FIN. 
+2025-02-10 11:10:07.6134 | DEBUG | Connection id "0HNA9ILFL9SS2" received FIN. 
+2025-02-10 11:10:07.6134 | DEBUG | Connection id "0HNA9ILFL9SS3" sending FIN because: "The client closed the connection." 
+2025-02-10 11:10:07.6134 | DEBUG | Connection id "0HNA9ILFL9SS2" sending FIN because: "The client closed the connection." 
+2025-02-10 11:10:07.6134 | DEBUG | Connection id "0HNA9ILFL9SS3" disconnecting. 
+2025-02-10 11:10:07.6134 | DEBUG | Connection id "0HNA9ILFL9SS2" disconnecting. 
+2025-02-10 11:10:07.6134 | DEBUG | Connection id "0HNA9ILFL9SS2" stopped. 
+2025-02-10 11:10:07.6134 | DEBUG | Connection id "0HNA9ILFL9SS3" stopped. 
+2025-02-10 11:11:32.4114 | DEBUG | Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider 
+2025-02-10 11:11:32.5923 | DEBUG | Hosting starting 
+2025-02-10 11:11:32.8109 | DEBUG | Loaded hosting startup assembly WebApplication1 
+2025-02-10 11:11:32.8109 | DEBUG | Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh 
+2025-02-10 11:11:32.8109 | DEBUG | Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net 
+2025-02-10 11:11:32.8144 | DEBUG | Hosting started 
+2025-02-10 11:11:33.1546 | DEBUG | Connection id "0HNA9IM9PCLEF" received FIN. 
+2025-02-10 11:11:33.1624 | DEBUG | Connection id "0HNA9IM9PCLEF" accepted. 
+2025-02-10 11:11:33.1624 | DEBUG | Connection id "0HNA9IM9PCLEF" started. 
+2025-02-10 11:11:33.1797 | DEBUG | Connection id "0HNA9IM9PCLEF" sending FIN because: "The client closed the connection." 
+2025-02-10 11:11:33.1797 | DEBUG | Connection id "0HNA9IM9PCLEF" disconnecting. 
+2025-02-10 11:11:33.1797 | DEBUG | Connection id "0HNA9IM9PCLEF" stopped. 
+2025-02-10 11:11:33.6196 | DEBUG | Connection id "0HNA9IM9PCLEG" accepted. 
+2025-02-10 11:11:33.6196 | DEBUG | Connection id "0HNA9IM9PCLEH" accepted. 
+2025-02-10 11:11:33.6196 | DEBUG | Connection id "0HNA9IM9PCLEG" started. 
+2025-02-10 11:11:33.6196 | DEBUG | Connection id "0HNA9IM9PCLEH" started. 
+2025-02-10 11:11:33.7152 | DEBUG | Wildcard detected, all requests with hosts will be allowed. 
+2025-02-10 11:11:33.7409 | DEBUG | The request path  does not match the path filter 
+2025-02-10 11:11:33.7935 | DEBUG | 1 candidate(s) found for the request path '/' 
+2025-02-10 11:11:33.7935 | DEBUG | Request matched endpoint 'HTTP: GET /' 
+2025-02-10 11:11:33.8217 | DEBUG | Connection id "0HNA9IM9PCLEG" completed keep alive response. 
+2025-02-10 11:11:34.0018 | DEBUG | The request path  does not match the path filter 
+2025-02-10 11:11:34.0018 | DEBUG | No candidates found for the request path '/favicon.ico' 
+2025-02-10 11:11:34.0018 | DEBUG | Request did not match any endpoints 
+2025-02-10 11:11:34.0018 | DEBUG | Connection id "0HNA9IM9PCLEG" completed keep alive response. 
+2025-02-10 11:11:35.1530 | DEBUG | Connection id "0HNA9IM9PCLEH" received FIN. 
+2025-02-10 11:11:35.1530 | DEBUG | Connection id "0HNA9IM9PCLEG" received FIN. 
+2025-02-10 11:11:35.1530 | DEBUG | Connection id "0HNA9IM9PCLEH" sending FIN because: "The client closed the connection." 
+2025-02-10 11:11:35.1530 | DEBUG | Connection id "0HNA9IM9PCLEG" sending FIN because: "The client closed the connection." 
+2025-02-10 11:11:35.1530 | DEBUG | Connection id "0HNA9IM9PCLEH" disconnecting. 
+2025-02-10 11:11:35.1530 | DEBUG | Connection id "0HNA9IM9PCLEG" disconnecting. 
+2025-02-10 11:11:35.1632 | DEBUG | Connection id "0HNA9IM9PCLEH" stopped. 
+2025-02-10 11:11:35.1632 | DEBUG | Connection id "0HNA9IM9PCLEG" stopped. 
+2025-02-10 11:13:03.5989 | DEBUG | Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider 
+2025-02-10 11:13:03.7335 | DEBUG | Hosting starting 
+2025-02-10 11:13:04.0932 | DEBUG | Loaded hosting startup assembly WebApplication1 
+2025-02-10 11:13:04.0932 | DEBUG | Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh 
+2025-02-10 11:13:04.0932 | DEBUG | Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net 
+2025-02-10 11:13:04.0985 | DEBUG | Hosting started 
+2025-02-10 11:13:04.5649 | DEBUG | Connection id "0HNA9IN514R12" accepted. 
+2025-02-10 11:13:04.5649 | DEBUG | Connection id "0HNA9IN514R12" started. 
+2025-02-10 11:13:04.5649 | DEBUG | Connection id "0HNA9IN514R12" received FIN. 
+2025-02-10 11:13:04.5807 | DEBUG | Connection id "0HNA9IN514R12" sending FIN because: "The client closed the connection." 
+2025-02-10 11:13:04.5807 | DEBUG | Connection id "0HNA9IN514R12" disconnecting. 
+2025-02-10 11:13:04.5807 | DEBUG | Connection id "0HNA9IN514R12" stopped. 
+2025-02-10 11:13:05.1784 | DEBUG | Connection id "0HNA9IN514R13" accepted. 
+2025-02-10 11:13:05.2030 | DEBUG | Connection id "0HNA9IN514R13" started. 
+2025-02-10 11:13:05.2084 | DEBUG | Connection id "0HNA9IN514R14" accepted. 
+2025-02-10 11:13:05.2084 | DEBUG | Connection id "0HNA9IN514R14" started. 
+2025-02-10 11:13:05.3625 | DEBUG | Wildcard detected, all requests with hosts will be allowed. 
+2025-02-10 11:13:05.4002 | DEBUG | The request path  does not match the path filter 
+2025-02-10 11:13:05.4598 | DEBUG | 1 candidate(s) found for the request path '/' 
+2025-02-10 11:13:05.4598 | DEBUG | Request matched endpoint 'HTTP: GET /' 
+2025-02-10 11:13:05.4893 | DEBUG | Connection id "0HNA9IN514R14" completed keep alive response. 
+2025-02-10 11:13:05.8022 | DEBUG | The request path  does not match the path filter 
+2025-02-10 11:13:05.8022 | DEBUG | No candidates found for the request path '/favicon.ico' 
+2025-02-10 11:13:05.8022 | DEBUG | Request did not match any endpoints 
+2025-02-10 11:13:05.8022 | DEBUG | Connection id "0HNA9IN514R14" completed keep alive response. 
+2025-02-10 11:13:06.6653 | DEBUG | Connection id "0HNA9IN514R14" received FIN. 
+2025-02-10 11:13:06.6653 | DEBUG | Connection id "0HNA9IN514R13" received FIN. 
+2025-02-10 11:13:06.6653 | DEBUG | Connection id "0HNA9IN514R13" sending FIN because: "The client closed the connection." 
+2025-02-10 11:13:06.6653 | DEBUG | Connection id "0HNA9IN514R14" sending FIN because: "The client closed the connection." 
+2025-02-10 11:13:06.6653 | DEBUG | Connection id "0HNA9IN514R13" disconnecting. 
+2025-02-10 11:13:06.6653 | DEBUG | Connection id "0HNA9IN514R14" disconnecting. 
+2025-02-10 11:13:06.6760 | DEBUG | Connection id "0HNA9IN514R13" stopped. 
+2025-02-10 11:13:06.6760 | DEBUG | Connection id "0HNA9IN514R14" stopped. 
+2025-02-10 11:13:17.6532 | DEBUG | Connection id "0HNA9IN514R15" accepted. 
+2025-02-10 11:13:17.6532 | DEBUG | Connection id "0HNA9IN514R15" started. 
+2025-02-10 11:13:17.7879 | DEBUG | Response markup is scheduled to include browser refresh script injection. 
+2025-02-10 11:13:17.8851 | DEBUG | Response markup was updated to include browser refresh script injection. 
+2025-02-10 11:13:17.8851 | DEBUG | Connection id "0HNA9IN514R15" completed keep alive response. 
+2025-02-10 11:13:17.8851 | DEBUG | Connection id "0HNA9IN514R15" completed keep alive response. 
+2025-02-10 11:13:17.8931 | DEBUG | Connection id "0HNA9IN514R15" completed keep alive response. 
+2025-02-10 11:13:17.9311 | DEBUG | Connection id "0HNA9IN514R15" completed keep alive response. 
+2025-02-10 11:13:18.3619 | DEBUG | Connection id "0HNA9IN514R15" completed keep alive response. 
+2025-02-10 11:14:19.8004 | DEBUG | The request path  does not match the path filter 
+2025-02-10 11:14:19.8004 | DEBUG | 1 candidate(s) found for the request path '/api/Admin/GetAllAuthors' 
+2025-02-10 11:14:19.8216 | DEBUG | Endpoint 'WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1)' with route pattern 'api/Admin/GetAllAuthors' is valid for the request path '/api/Admin/GetAllAuthors' 
+2025-02-10 11:14:19.8216 | DEBUG | Request matched endpoint 'WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1)' 
+2025-02-10 11:14:19.8470 | DEBUG | Execution plan of authorization filters (in the following order): None 
+2025-02-10 11:14:19.8470 | DEBUG | Execution plan of resource filters (in the following order): None 
+2025-02-10 11:14:19.8470 | DEBUG | Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2025-02-10 11:14:19.8470 | DEBUG | Execution plan of exception filters (in the following order): None 
+2025-02-10 11:14:19.8470 | DEBUG | Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2025-02-10 11:14:19.8470 | DEBUG | Executing controller factory for controller WebApplication1.Controller.AdminController (WebApplication1) 
+2025-02-10 11:14:21.5217 | DEBUG | Executed controller factory for controller WebApplication1.Controller.AdminController (WebApplication1) 
+2025-02-10 11:14:21.6318 | DEBUG | List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter 
+2025-02-10 11:14:21.6318 | DEBUG | Attempting to select an output formatter based on Accept header 'text/plain'. 
+2025-02-10 11:14:21.6318 | DEBUG | Could not find an output formatter based on content negotiation. Accepted types were (text/plain) 
+2025-02-10 11:14:21.6318 | DEBUG | Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2025-02-10 11:14:21.6318 | DEBUG | Attempting to select the first formatter in the output formatters list which can write the result. 
+2025-02-10 11:14:21.6318 | DEBUG | Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response. 
+2025-02-10 11:14:21.7847 | DEBUG | Connection id "0HNA9IN514R15" completed keep alive response. 
+2025-02-10 11:15:25.7694 | DEBUG | Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider 
+2025-02-10 11:15:25.8991 | DEBUG | Hosting starting 
+2025-02-10 11:15:26.1311 | DEBUG | Loaded hosting startup assembly WebApplication1 
+2025-02-10 11:15:26.1311 | DEBUG | Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh 
+2025-02-10 11:15:26.1311 | DEBUG | Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net 
+2025-02-10 11:15:26.1311 | DEBUG | Hosting started 
+2025-02-10 11:15:26.6335 | DEBUG | Connection id "0HNA9IOFBTM7F" received FIN. 
+2025-02-10 11:15:26.6335 | DEBUG | Connection id "0HNA9IOFBTM7E" accepted. 
+2025-02-10 11:15:26.6335 | DEBUG | Connection id "0HNA9IOFBTM7E" received FIN. 
+2025-02-10 11:15:26.6335 | DEBUG | Connection id "0HNA9IOFBTM7G" accepted. 
+2025-02-10 11:15:26.6335 | DEBUG | Connection id "0HNA9IOFBTM7E" started. 
+2025-02-10 11:15:26.6335 | DEBUG | Connection id "0HNA9IOFBTM7G" started. 
+2025-02-10 11:15:26.6645 | DEBUG | Connection id "0HNA9IOFBTM7E" sending FIN because: "The client closed the connection." 
+2025-02-10 11:15:26.6645 | DEBUG | Connection id "0HNA9IOFBTM7G" sending FIN because: "The client closed the connection." 
+2025-02-10 11:15:26.6645 | DEBUG | Connection id "0HNA9IOFBTM7G" disconnecting. 
+2025-02-10 11:15:26.6645 | DEBUG | Connection id "0HNA9IOFBTM7E" disconnecting. 
+2025-02-10 11:15:26.6645 | DEBUG | Connection id "0HNA9IOFBTM7E" stopped. 
+2025-02-10 11:15:26.6645 | DEBUG | Connection id "0HNA9IOFBTM7G" stopped. 
+2025-02-10 11:15:27.2046 | DEBUG | Connection id "0HNA9IOFBTM7I" accepted. 
+2025-02-10 11:15:27.2116 | DEBUG | Connection id "0HNA9IOFBTM7I" started. 
+2025-02-10 11:15:27.2243 | DEBUG | Connection id "0HNA9IOFBTM7J" accepted. 
+2025-02-10 11:15:27.2243 | DEBUG | Connection id "0HNA9IOFBTM7J" started. 
+2025-02-10 11:15:27.3284 | DEBUG | Wildcard detected, all requests with hosts will be allowed. 
+2025-02-10 11:15:27.3619 | DEBUG | The request path  does not match the path filter 
+2025-02-10 11:15:27.4186 | DEBUG | 1 candidate(s) found for the request path '/' 
+2025-02-10 11:15:27.4186 | DEBUG | Request matched endpoint 'HTTP: GET /' 
+2025-02-10 11:15:27.4515 | DEBUG | Connection id "0HNA9IOFBTM7I" completed keep alive response. 
+2025-02-10 11:15:27.6348 | DEBUG | The request path  does not match the path filter 
+2025-02-10 11:15:27.6348 | DEBUG | No candidates found for the request path '/favicon.ico' 
+2025-02-10 11:15:27.6348 | DEBUG | Request did not match any endpoints 
+2025-02-10 11:15:27.6348 | DEBUG | Connection id "0HNA9IOFBTM7I" completed keep alive response. 
+2025-02-10 11:15:28.7114 | DEBUG | Connection id "0HNA9IOFBTM7J" received FIN. 
+2025-02-10 11:15:28.7114 | DEBUG | Connection id "0HNA9IOFBTM7I" received FIN. 
+2025-02-10 11:15:28.7114 | DEBUG | Connection id "0HNA9IOFBTM7I" sending FIN because: "The client closed the connection." 
+2025-02-10 11:15:28.7114 | DEBUG | Connection id "0HNA9IOFBTM7J" sending FIN because: "The client closed the connection." 
+2025-02-10 11:15:28.7114 | DEBUG | Connection id "0HNA9IOFBTM7J" disconnecting. 
+2025-02-10 11:15:28.7114 | DEBUG | Connection id "0HNA9IOFBTM7I" disconnecting. 
+2025-02-10 11:15:28.7114 | DEBUG | Connection id "0HNA9IOFBTM7I" stopped. 
+2025-02-10 11:15:28.7114 | DEBUG | Connection id "0HNA9IOFBTM7J" stopped. 

@@ -1,0 +1,59 @@
+2025-02-10 11:10:05.3533 | INFO | Now listening on: http://localhost:5276 
+2025-02-10 11:10:05.3620 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-02-10 11:10:05.3620 | INFO | Hosting environment: Development 
+2025-02-10 11:10:05.3620 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1 
+2025-02-10 11:10:06.1852 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - - 
+2025-02-10 11:10:06.3464 | INFO | Executing endpoint 'HTTP: GET /' 
+2025-02-10 11:10:06.4056 | INFO | Executed endpoint 'HTTP: GET /' 
+2025-02-10 11:10:06.4106 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 200 - text/plain;+charset=utf-8 229.7376ms 
+2025-02-10 11:10:06.6783 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/favicon.ico - - 
+2025-02-10 11:10:06.6783 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/favicon.ico - - - 404 0 - 5.3081ms 
+2025-02-10 11:11:32.8109 | INFO | Now listening on: http://localhost:5276 
+2025-02-10 11:11:32.8109 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-02-10 11:11:32.8144 | INFO | Hosting environment: Development 
+2025-02-10 11:11:32.8144 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1 
+2025-02-10 11:11:33.6810 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - - 
+2025-02-10 11:11:33.7988 | INFO | Executing endpoint 'HTTP: GET /' 
+2025-02-10 11:11:33.8217 | INFO | Executed endpoint 'HTTP: GET /' 
+2025-02-10 11:11:33.8217 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 200 - text/plain;+charset=utf-8 147.6019ms 
+2025-02-10 11:11:33.9995 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/favicon.ico - - 
+2025-02-10 11:11:34.0018 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/favicon.ico - - - 404 0 - 3.7782ms 
+2025-02-10 11:13:04.0932 | INFO | Now listening on: http://localhost:5276 
+2025-02-10 11:13:04.0932 | INFO | Application started. Press Ctrl+C to shut down. 
+2025-02-10 11:13:04.0985 | INFO | Hosting environment: Development 
+2025-02-10 11:13:04.0985 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1 
+2025-02-10 11:13:05.2946 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - - 
+2025-02-10 11:13:05.4598 | INFO | Executing endpoint 'HTTP: GET /' 
+2025-02-10 11:13:05.4893 | INFO | Executed endpoint 'HTTP: GET /' 
+2025-02-10 11:13:05.4893 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 200 - text/plain;+charset=utf-8 208.4559ms 
+2025-02-10 11:13:05.8022 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/favicon.ico - - 
+2025-02-10 11:13:05.8022 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/favicon.ico - - - 404 0 - 4.7739ms 
+2025-02-10 11:13:17.6532 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - - 
+2025-02-10 11:13:17.8851 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 230.2863ms 
+2025-02-10 11:13:17.8851 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - - 
+2025-02-10 11:13:17.8851 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 1.4415ms 
+2025-02-10 11:13:17.8931 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - 
+2025-02-10 11:13:17.8931 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 2.3997ms 
+2025-02-10 11:13:17.8931 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - 
+2025-02-10 11:13:17.9311 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.1431ms 
+2025-02-10 11:13:18.1334 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - 
+2025-02-10 11:13:18.3619 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 228.6067ms 
+2025-02-10 11:14:19.7777 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllAuthors - - 
+2025-02-10 11:14:19.8216 | INFO | Executing endpoint 'WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1)' 
+2025-02-10 11:14:19.8454 | INFO | Route matched with {action = "GetAllAuthors", controller = "Admin"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllAuthors() on controller WebApplication1.Controller.AdminController (WebApplication1). 
+2025-02-10 11:14:21.5217 | INFO | Executing action method WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1) - Validation state: Valid 
+2025-02-10 11:14:21.6318 | INFO | Executed action method WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 101.6548ms. 
+2025-02-10 11:14:21.6318 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'. 
+2025-02-10 11:14:21.7847 | INFO | Executed action WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1) in 1934.1463ms 
+2025-02-10 11:14:21.7847 | INFO | Executed endpoint 'WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1)' 
+2025-02-10 11:14:21.7847 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllAuthors - - - 200 73 application/json;+charset=utf-8 2008.1064ms 
+2025-02-10 11:15:26.1311 | INFO | Now listening on: http://localhost:5276  | Exception: 
+2025-02-10 11:15:26.1311 | INFO | Application started. Press Ctrl+C to shut down.  | Exception: 
+2025-02-10 11:15:26.1311 | INFO | Hosting environment: Development  | Exception: 
+2025-02-10 11:15:26.1311 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  | Exception: 
+2025-02-10 11:15:27.2883 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  | Exception: 
+2025-02-10 11:15:27.4186 | INFO | Executing endpoint 'HTTP: GET /'  | Exception: 
+2025-02-10 11:15:27.4515 | INFO | Executed endpoint 'HTTP: GET /'  | Exception: 
+2025-02-10 11:15:27.4515 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 200 - text/plain;+charset=utf-8 170.2258ms  | Exception: 
+2025-02-10 11:15:27.6348 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/favicon.ico - -  | Exception: 
+2025-02-10 11:15:27.6348 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/favicon.ico - - - 404 0 - 3.3295ms  | Exception: 

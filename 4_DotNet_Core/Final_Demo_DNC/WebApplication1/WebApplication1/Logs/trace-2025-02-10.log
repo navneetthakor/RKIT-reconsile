@@ -1,0 +1,26 @@
+2025-02-10 11:10:06.2241 | TRACE | All hosts are allowed. 
+2025-02-10 11:10:06.6783 | TRACE | All hosts are allowed. 
+2025-02-10 11:11:33.7152 | TRACE | All hosts are allowed. 
+2025-02-10 11:11:33.9995 | TRACE | All hosts are allowed. 
+2025-02-10 11:13:05.3625 | TRACE | All hosts are allowed. 
+2025-02-10 11:13:05.8022 | TRACE | All hosts are allowed. 
+2025-02-10 11:13:17.6532 | TRACE | All hosts are allowed. 
+2025-02-10 11:13:17.8851 | TRACE | All hosts are allowed. 
+2025-02-10 11:13:18.1334 | TRACE | All hosts are allowed. 
+2025-02-10 11:14:19.8004 | TRACE | All hosts are allowed. 
+2025-02-10 11:14:21.5217 | TRACE | Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2025-02-10 11:14:21.5217 | TRACE | Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2025-02-10 11:14:21.5217 | TRACE | Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2025-02-10 11:14:21.5217 | TRACE | Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2025-02-10 11:14:21.6318 | TRACE | Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2025-02-10 11:14:21.6318 | TRACE | Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2025-02-10 11:14:21.6318 | TRACE | Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2025-02-10 11:14:21.6318 | TRACE | Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2025-02-10 11:14:21.6318 | TRACE | Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2025-02-10 11:14:21.6318 | TRACE | Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2025-02-10 11:14:21.6318 | TRACE | Before executing action result Microsoft.AspNetCore.Mvc.ObjectResult. 
+2025-02-10 11:14:21.7814 | TRACE | After executing action result Microsoft.AspNetCore.Mvc.ObjectResult. 
+2025-02-10 11:14:21.7814 | TRACE | Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2025-02-10 11:14:21.7814 | TRACE | Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2025-02-10 11:15:27.3284 | TRACE | All hosts are allowed. 
+2025-02-10 11:15:27.6348 | TRACE | All hosts are allowed. 
