@@ -1,13 +1,12 @@
 //creating builder object 
 using WebApplication1;
 using NLog.Web;
-using NLog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Set the Global Diagnostics Context (GDC) for LogDirectory
 var logDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
-GlobalDiagnosticsContext.Set("LogDirectory", logDirectory);
+NLog.GlobalDiagnosticsContext.Set("LogDirectory", logDirectory);
 
 // Automatically load NLog configuration from the "nlog.config" file
 builder.Logging.ClearProviders().AddNLog("nlog.config");

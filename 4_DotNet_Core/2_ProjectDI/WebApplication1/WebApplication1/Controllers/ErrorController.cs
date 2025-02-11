@@ -19,6 +19,8 @@ namespace WebApplication1.Controllers
             HttpContext.Features.Get<IExceptionHandlerFeature>()!;
 
             return Problem(title: exceptionHandlerFeature.Error.Message);
+            //return Problem(title: "some Error occured");
+
         }
 
     }

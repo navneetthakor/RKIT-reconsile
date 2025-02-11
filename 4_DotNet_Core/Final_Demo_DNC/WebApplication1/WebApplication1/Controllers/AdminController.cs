@@ -18,12 +18,13 @@ namespace WebApplication1.Controller
 
         [HttpPost]
         [Route("Login")]
-        public Response AdminLogin(string email, string password)
+        public Response AdminLogin(ILogger<AdminController> logger ,string email, string password)
         {
             try
             {
                 AdminLogics al = new AdminLogics(_connection, null);
                 Response resposne = al.Login(email, password);
+                logger.LogInformation("Admin loggin event");
                 return resposne;
             }
             catch (Exception ex)

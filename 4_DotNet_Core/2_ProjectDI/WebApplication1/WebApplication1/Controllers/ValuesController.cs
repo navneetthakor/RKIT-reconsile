@@ -26,7 +26,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public IActionResult CheckError()
         {
-            throw new Exception("CheckError");
+            throw new Exception("my Sample Error");
             return Ok("done");
         }
     }

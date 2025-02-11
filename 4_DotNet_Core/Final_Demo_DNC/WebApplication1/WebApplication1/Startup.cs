@@ -65,7 +65,7 @@ namespace WebApplication1
                 app.UseSwaggerUI();
 
             }
-            
+
             //calling 
             app.UseRouting();
             //is not necessory 
