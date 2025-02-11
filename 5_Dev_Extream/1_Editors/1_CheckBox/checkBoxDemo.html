@@ -21,12 +21,15 @@
 
     <script defer>
         $(function(){
+           
             $("#check-box-container").dxCheckBox({
                 // options (propterties) ----- (*)
-                value: null, // true (checked), false (unchecked), undefined or null (indeterminate)
+                dataField: 'as01101',
+                source: saveModal,
+                value: true, // true (checked), false (unchecked), undefined or null (indeterminate)
                 text: "IsDeveloper", // label
                 hint : "choose this option if you are developer!", // pop-up
-                iconSize: 50, // only size of checkbox will change, no effect on label
+                iconSize: 100, // only size of checkbox will change, no effect on label
                 accessKey: "a", // to set focus, default: undefined
                 focusStateEnabled: true, // controls accessKey behaviour default : true
                 disabled: false, // default : false
@@ -35,7 +38,7 @@
                     // - for height  and width
                     // - data type : number, string, function
                     // - only the size of container will be affected
-                readOnly: true, // default: false
+                readOnly: false, // default: false
                 tabIndex: 2,
                 visible: true, // by defualt : true
                 // -- validation related things left
@@ -45,8 +48,11 @@
                 onValueChanged: function(event){
                     if(event.value) console.log("Checkbox selected");
                     else console.log("checkbox unselected");
+                    console.log(event);
                 },
             });
+            $('#check-box-container').dxCheckBox('instance').reset();
+            console.log($('#check-box-container').dxCheckBox('instance').option());
 
             // if we requried to attached multiple event handlers 
             const valueChangedHandler1 = function (e) {
@@ -71,27 +77,31 @@
                 const checkBox = $("#checkBoxContainer").dxCheckBox("instance");
                 checkBox.registerKeyHandler("backspace", function(e) {          
                     // The argument "e" contains information on the event
+                    
                 });
                 checkBox.registerKeyHandler("space", function(e) {
                     // ...
+                    
                 });
             }
 
+            // $('#check-box-container').dxCheckBox('instance').option('width','10rem');
+
             // methods ----- (*)
-            $("#check-box-container").dxCheckBox('instance')
-                beginUpdate() //Prevents the UI component from refreshing until the endUpdate() method is called.
-                .dispose() // disposes all the resources allocated
-                .remove() // removes element from DOM
-                .element() // returns container element for current widget
-                .instance() // returns instance of ui component (widget)
-                .off(eventname) // detach all event handlers
-                .option() // get all UI properties
-                .option(optionname) // value of a single property.
-                .option(optionname, optionvalue) // update a single property.
-                .repaint() // repaints UI compontent without reloading data.
-                .reset() // resets thye vlaue property to the default value.
-                registerKeyHandler(key,handler)
-                    // function to be executed when specific key will be press
+            // $("#check-box-container").dxCheckBox('instance').
+            //     beginUpdate() //Prevents the UI component from refreshing until the endUpdate() method is called.
+            //     .dispose() // disposes all the resources allocated
+            //     .remove() // removes element from DOM
+            //     .element() // returns container element for current widget
+            //     .instance() // returns instance of ui component (widget)
+            //     .off(eventname) // detach all event handlers
+            //     .option() // get all UI properties
+            //     .option(optionname) // value of a single property.
+            //     .option(optionname, optionvalue) // update a single property.
+            //     .repaint() // repaints UI compontent without reloading data.
+            //     .reset() // resets thye vlaue property to the default value.
+            //     registerKeyHandler(key,handler)
+            //         function to be executed when specific key will be press
 
     </script>
 </body>

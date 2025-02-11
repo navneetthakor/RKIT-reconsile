@@ -1,0 +1,117 @@
+<!-- The CustomStore enables you to implement custom data access logic for consuming data from any source. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+      <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ 
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+ 
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+<body>
+    <div id="customStore"></div>
+    <script defer>
+      $(()=>{
+
+        // in-memory memory data source ----
+        let inMemoryData = [
+          {id: 31, name: 'navneet'},
+          {id: 24, name: 'Meet'},
+          {id: 33, name: 'Rohanshu'},
+        ];
+
+        let store = new DevExpress.data.CustomStore({
+          key: 'id',
+
+          // to load data from source 
+          load: (options)=>{
+            let result = $.Deferred();
+
+            // load data
+            let loadedData = inMemoryData;
+
+            //resolve data
+            result.resolve(inMemoryData);
+
+            // return promise 
+            return  result.promise();
+          },
+
+          // to insert data in (client + server)
+          insert: (value) => {
+            let result = $.Deferred();
+
+            // insert data in data source
+            inMemoryData.push(value);
+
+            // resolve inserted objecct
+            result.resolve(value);
+
+            // return promise
+            return result.promise();
+          },
+
+          // to update data in (client + server)
+          update: (value) => {
+            let result = $.Deferred();
+
+            // update data in data source -- O(n)
+            inMemoryData.forEach((localValue,index,array) => {
+              if(localValue.id == value.id){
+                 array[index].name = value.name;
+              }
+            })
+
+            // resolve updated objecct
+            result.resolve(value);
+
+            // return promise
+            return result.promise();
+          },
+
+          // remove data
+          remove: (value) => {
+            let result = $.Deferred();
+
+            // update data in data source -- O(n)
+            inMemoryData = inMemoryData.filter((localValu))
+
+            // resolve updated objecct
+            result.resolve(value);
+
+            // return promise
+            return result.promise();
+          }
+
+        });
+
+        // inserting data
+        store.insert({id: 4, name: 'janki'})
+          .done((data) => console.log("inserted data : ", data.id))
+          .fail((e) => console.log("insert fail : ", e));
+
+        // updating data
+        store.update({id: 4, name: 'JN'})
+          .done((data) => console.log("inserted data : ", data.id))
+          .fail((e) => console.log("insert fail : ", e));
+
+        // widget to use costomeStore
+        $('#customStore').dxSelectBox({
+          dataSource: store,
+          valueExpr: 'id',
+          displayExpr: 'name',
+        });
+
+      })
+    </script>
+</body>
+</html>

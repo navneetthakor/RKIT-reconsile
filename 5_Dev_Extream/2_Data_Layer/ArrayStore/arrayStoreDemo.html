@@ -1,0 +1,139 @@
+<!--
+    Key Features of ArrayStore:
+    -> Local Data Management: 
+        It allows you to handle local arrays of objects, providing the ability to perform CRUD (Create, Read, Update, Delete)
+        operations on data.
+    -> Easy Integration: You can integrate it easily with DevExtreme controls, like 
+        DataGrid, List, or TreeList, to manage the data displayed in those controls.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+
+<body>
+
+    <div id="selectBox">
+
+    </div>
+
+    <script defer>
+        $(() => {
+
+            let prods = [
+                { id: 1, name: 'Navneet' },
+                { id: 2, name: 'Rohanshu' },
+                { id: 3, name: 'Meet' },
+            ];
+
+            let store = new DevExpress.data.ArrayStore({
+                key: 'id',
+                data: prods,
+
+                //useful for onPush method
+                reshapeOnPush: true, //default: false
+
+                // methods 
+                errorHandler: function (error) {
+                    console.log(error.message);
+                },
+
+                // key : undefined here
+                onInserting: (value, key) => {
+                    console.log('value : ', value, ', Key :', key);
+                },
+
+                onInserted: (value, key) => {
+                    console.log('value : ', value, ', Key :', key);
+                },
+
+                // other methods ---
+                // onLoaded,
+                // onLoading,
+                // onModified,
+                // onModifying,
+                // onRemoving,
+                // OnRemoved,
+                // onUpdating,
+                // onUpdated,
+
+                // function executed before changes are pushed to the store.
+                onPush: (changes) => {
+                    console.log("changes : ", changes);
+                }
+            })
+
+            // ----------------------Methods ------
+            // adding data 
+            store.insert({ id: 4, name: 'priya' })
+                .done((data, key) => {
+                    console.log('inserted successfully : ', data, key);
+                })
+                .fail((e) => {
+                    console.log("insert E : ", e);
+                });
+
+            // updating data
+            store.update(1, { id: 1, name: "Navneet kumar" })
+                .done((data, key) => console.log("updating", data, key))
+                .fail((e) => console.log("update E : ", e));
+
+            // get total items count
+            store.totalCount()
+                .done(function (count) {
+                    console.log("count", count);
+                })
+                .fail((e) => console.log("totalCount E : ", e));
+
+            // removing item
+            store.remove(2)
+                .done((key) => console.log("removing : ", key))
+                .fail((e) => console.log("removing E : ", e));
+
+            // push data
+            store.push([{ type: 'insert', data: { id: 5, name: 'janki' } }]);
+
+            // load data 
+            store.load()
+                .done(function (data) {
+                    console.log("load :",data);
+                })
+                .fail(function (error) {
+                    console.log("load-E :", error);
+                });
+
+            //get key (for string values : case-in sensitive checking)
+            console.log("key : ", store.keyOf({id:5, name:'janki'}));
+
+            // ---------- select box --------------
+            $('#selectBox').dxSelectBox({
+                dataSource: store,
+                valueExpr: 'id',
+                displayExpr: 'name',
+
+                // allowing cutom values and searching functionality
+                acceptCustomValue: true,
+                searchEnabled: true,
+
+            })
+        })
+    </script>
+</body>
+
+</html>
