@@ -1,117 +1,157 @@
 <!-- The CustomStore enables you to implement custom data access logic for consuming data from any source. -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDN setup | DevExtream</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDN setup | DevExtream</title>
 
-      <!-- ... -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
- 
-    <!-- DevExtreme theme -->
-    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
- 
-    <!-- DevExtreme library -->
-    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
-    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
-    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+  <!-- ... -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- DevExtreme theme -->
+  <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+  <!-- DevExtreme library -->
+  <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+  <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+  <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
 </head>
+
 <body>
-    <div id="customStore"></div>
-    <script defer>
-      $(()=>{
+  <div id="customStore"></div>
+  <script defer>
+    $(() => {
 
-        // in-memory memory data source ----
-        let inMemoryData = [
-          {id: 31, name: 'navneet'},
-          {id: 24, name: 'Meet'},
-          {id: 33, name: 'Rohanshu'},
-        ];
+      // in-memory memory data source ----
+      let inMemoryData = [
+        { id: 31, name: 'navneet' },
+        { id: 24, name: 'Meet' },
+        { id: 33, name: 'Rohanshu' },
+      ];
 
-        let store = new DevExpress.data.CustomStore({
-          key: 'id',
+      let store = new DevExpress.data.CustomStore({
+        key: 'id',
 
-          // to load data from source 
-          load: (options)=>{
-            let result = $.Deferred();
+        loadMode: 'processed', // default: 'processed', other: 'raw'
 
-            // load data
-            let loadedData = inMemoryData;
+        // to load data from source 
+        load: (options) => {
+          let result = $.Deferred();
 
-            //resolve data
-            result.resolve(inMemoryData);
+          // load data
+          let loadedData = inMemoryData;
 
-            // return promise 
-            return  result.promise();
-          },
+          //resolve data
+          result.resolve(inMemoryData);
 
-          // to insert data in (client + server)
-          insert: (value) => {
-            let result = $.Deferred();
+          // return promise 
+          return result.promise();
+        },
 
-            // insert data in data source
-            inMemoryData.push(value);
+        // to insert data in (client + server)
+        insert: (value) => {
+          let result = $.Deferred();
 
-            // resolve inserted objecct
-            result.resolve(value);
+          // insert data in data source
+          inMemoryData.push(value);
 
-            // return promise
-            return result.promise();
-          },
+          // resolve inserted objecct
+          result.resolve(value);
 
-          // to update data in (client + server)
-          update: (value) => {
-            let result = $.Deferred();
+          // return promise
+          return result.promise();
+        },
 
-            // update data in data source -- O(n)
-            inMemoryData.forEach((localValue,index,array) => {
-              if(localValue.id == value.id){
-                 array[index].name = value.name;
-              }
-            })
+        // to update data in (client + server)
+        update: (value) => {
+          let result = $.Deferred();
 
-            // resolve updated objecct
-            result.resolve(value);
+          // update data in data source -- O(n)
+          inMemoryData.forEach((localValue, index, array) => {
+            if (localValue.id == value.id) {
+              array[index].name = value.name;
+            }
+          })
 
-            // return promise
-            return result.promise();
-          },
+          // resolve updated objecct
+          result.resolve(value);
 
-          // remove data
-          remove: (value) => {
-            let result = $.Deferred();
+          // return promise
+          return result.promise();
+        },
 
-            // update data in data source -- O(n)
-            inMemoryData = inMemoryData.filter((localValu))
+        // remove data
+        remove: (myValue) => {
+          let result = $.Deferred();
 
-            // resolve updated objecct
-            result.resolve(value);
+          // update data in data source -- O(n)
+          inMemoryData = inMemoryData.filter((localValue) => localValue.id != myValue)
 
-            // return promise
-            return result.promise();
-          }
+          // resolve updated objecct
+          result.resolve(myValue);
 
-        });
+          // return promise
+          return result.promise();
+        },
 
-        // inserting data
-        store.insert({id: 4, name: 'janki'})
-          .done((data) => console.log("inserted data : ", data.id))
-          .fail((e) => console.log("insert fail : ", e));
+        byKey: (key) => {
+          let result = $.Deferred();
+          //find data to return
+          let dataToReturn = inMemoryData.find((v, index, arr) => v.id == key);
 
-        // updating data
-        store.update({id: 4, name: 'JN'})
-          .done((data) => console.log("inserted data : ", data.id))
-          .fail((e) => console.log("insert fail : ", e));
+          // resolve data 
+          result.resolve(dataToReturn);
 
-        // widget to use costomeStore
-        $('#customStore').dxSelectBox({
-          dataSource: store,
-          valueExpr: 'id',
-          displayExpr: 'name',
-        });
+          // return promise
+          return result.promise();
+        },
 
-      })
-    </script>
+        errorHandler: function (error) {
+          console.log(error.message);
+        },
+
+        // all other methods that we have seen already in 'ArrayStore'
+        // onInserting,
+        // onInserted,
+        // onupdating,
+        // onUpdated,
+        // onRemoving,
+        // onRemoved,
+        // onPush, 
+
+      });
+
+      // inserting data
+      store.insert({ id: 4, name: 'janki' })
+        .done((data, key) => console.log("inserted data : ", data, key))
+        .fail((e) => console.log("insert fail : ", e));
+
+      // updating data
+      store.update({ id: 4, name: 'JN' })
+        .done((data, key) => console.log("update data : ", data))
+        .fail((e) => console.log("insert fail : ", e));
+
+      store.remove(4)
+        .done((key) => console.log("removed data : ", key))
+        .fail((e) => console.log("insert fail : ", e));
+
+
+      // get item by it's 'key'
+      store.byKey(24)
+        .done((data) => console.log("byKey's data : ", data))
+        .fail((e) => console.log(e));
+
+      // widget to use costomeStore
+      $('#customStore').dxSelectBox({
+        dataSource: store,
+        valueExpr: 'id',
+        displayExpr: 'name',
+      });
+
+    })
+  </script>
 </body>
+
 </html>
