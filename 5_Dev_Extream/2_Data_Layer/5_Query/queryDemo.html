@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+
+<body>
+    <script>
+        let originalArray = [
+            { id: 31, name: 'navneet' },
+            { id: 24, name: 'Meet' },
+            { id: 33, name: 'Rohanshu' },
+        ];
+
+        /*
+        * Aggregate(seed, step, finalize)
+        */
+        // iterate over each item, 'accum' will pushed internally
+        let step1 = (accum, currentData) => accum + currentData.id;
+        // apply when all the data is processed.
+        let finalize1 = (total) => total * 1000;
+        //calling them
+        DevExpress.data.query(originalArray)
+            .aggregate(0, step1, finalize1) // seed, step_function, finalize_function
+            .done((data) => console.log("aggregate result1 : ", data));
+
+        /*
+        *   Aggregate(step)
+        */
+        // seed value -> seed value will initialize with first item value
+        //    finalize -> omitted 
+        DevExpress.data.query(originalArray)
+            .aggregate(step1) // seed, step_function, finalize_function
+            .done((data) => console.log("aggregate result2 : ", data));
+
+        /*
+        *   avg()
+        */
+        DevExpress.data.query(originalArray)
+            .avg('id') // feild name : id
+            .done((data) => console.log("avg result : ", data));
+
+        /*
+        *   count()
+        */
+        DevExpress.data.query(originalArray)
+            .count() // feild name : id
+            .done((data) => console.log("count result : ", data));
+
+        /*
+        *   filter()
+        */
+        (DevExpress.data.query(originalArray)
+            // returns query transformed data
+            .filter(['id', '=', 31])
+            // convet to arrya
+            .toArray())
+            .forEach(element => {
+                console.log(element.id, element.name)
+            });
+
+        /*
+        *   max()
+        */
+        DevExpress.data.query(originalArray)
+            .max('id') // feild name : id
+            .done((data) => console.log("max result : ", data));
+
+        /*
+        *   min()
+        */
+        DevExpress.data.query(originalArray)
+            .min('id') // feild name : id
+            .done((data) => console.log("min result : ", data));
+
+        /*
+        *   sortBy(getter,desc)
+        */
+        let sortedArray1 = DevExpress.data.query(originalArray)
+            .sortBy('id', false) // field_name, desc: false (default)
+            .toArray();
+
+        let sortedArray2 = DevExpress.data.query(originalArray)
+            .sortBy('id', true) 
+            .toArray();
+
+        console.log("\n\nsorted data : \n")
+        sortedArray1.forEach(ele => console.log(ele.id, ele.name));
+
+
+        /*
+        *   sum()
+        */
+        DevExpress.data.query(originalArray)
+            .sum('id') // feild name : id
+            .done((data) => console.log("\nsum result : ", data));
+
+    </script>
+</body>
+
+</html>
