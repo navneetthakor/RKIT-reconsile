@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ 
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+ 
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+<body>
+    <div id="data-source-demo"></div>
+
+    <script defer>
+        $(()=>{
+
+
+        // The DataSource is an object that provides an API for processing data from an underlying store.
+        let products = [
+            {id:40, name: 'Raag', group: 2},
+            {id:31, name: 'Navneet', group: 1},
+            {id:24, name: 'Meet', group: 2},
+            {id:33, name: 'Rohanshu', group: 1},
+        ]
+
+        let dataSource = new DevExpress.data.DataSource({
+            store: products,
+            type: 'array',
+
+            // filtering ---
+            // filter: [
+            //     ['group','=',1],
+            //     'and',
+            //     ['id','>',30]
+            // ],
+
+            //scrolling effect for select 
+            // will not work if group is set
+            // paginate: true,
+            // pageSize: 1,
+
+            group: {selector: 'group'},
+
+            // to modify look of item in UI 
+            map: (item) => {
+                console.log('hello');
+                return {
+                    name: `Mr. ${item.name}`
+                }
+            },
+
+            //other ---
+            // select, // selects fields from incoming data
+            sort: {
+                selector: 'id',
+                desc: true,
+            }
+        })
+        
+
+        $('#data-source-demo').dxSelectBox({
+            dataSource: dataSource,
+            displayExpr: 'name',
+            valueExpr: 'id',
+            placeholder: 'Select your name',
+            grouped:true,
+        })
+    })
+    </script>
+</body>
+</html>
