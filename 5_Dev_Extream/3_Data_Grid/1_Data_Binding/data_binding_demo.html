@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+
+<body>
+    <div id="Simple_array"></div>
+    <div id="ajax_data" style="margin-top: 3rem;"></div>
+    <script defer>
+        let prods = [
+            { id: 1, name: 'Navneet', position: 'Developer' },
+            { id: 2, name: 'Rohanshu', position: 'Developer' },
+            { id: 3, name: 'Meet', position: 'Developer' },
+            { id: 4, name: 'XYZ', position: 'HR' },
+        ];
+
+        let store = new DevExpress.data.ArrayStore({
+            key: 'id',
+            data: prods,
+        })
+
+        $("#Simple_array").dxDataGrid({
+            dataSource: store,
+            columns: [
+                { dataField: "id", caption: "ID No." },
+                { dataField: "name", caption: "Name" },
+                { dataField: "position", caption: "Position" }
+            ],
+            showRowLines: false,
+            showBorders: true,
+        });
+
+        // ajax requested data ---
+        // in-memory memory data source ----
+        let inMemoryData = [
+            { id: 31, name: 'navneet' },
+            { id: 24, name: 'Meet' },
+            { id: 33, name: 'Rohanshu' },
+        ];
+
+        let store2 = new DevExpress.data.CustomStore({
+            key: 'id',
+            loadMode: 'processed',
+
+            // to load data from source 
+            load: (options) => {
+                let result = $.Deferred();
+
+                // load data
+                let loadedData = inMemoryData;
+
+                //resolve data
+                result.resolve(inMemoryData);
+
+                // return promise 
+                return result.promise();
+            },
+
+        });
+
+        $("#ajax_data").dxDataGrid({
+            dataSource: store2,
+            columns: [
+                { dataField: "id", caption: "ID No." },
+                { dataField: "name", caption: "Name" },
+            ],
+            showRowLines: true,
+            showBorders: true,
+            alignment: 'left',
+        });
+
+
+    </script>
+</body>
+
+</html>
