@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+
+<body>
+
+    <div id="paging_demo"></div>
+
+    <script defer>
+        $(() => {
+            /*
+            * Paging : it used to load data in partitions,
+            * -> it is enabled by default,
+            * -> we can control it via 'paging' object.
+            */
+            let prods = [
+                { id: 1, name: 'Navneet', position: 'Developer' },
+                { id: 2, name: 'Rohanshu', position: 'Developer' },
+                { id: 3, name: 'Meet', position: 'Developer' },
+                { id: 4, name: 'XYZ', position: 'HR' },
+            ];
+
+            let store = new DevExpress.data.ArrayStore({
+                key: 'id',
+                data: prods,
+            })
+
+            $("#paging_demo").dxDataGrid({
+                dataSource: store,
+                columns: [
+                    { dataField: "id", caption: "ID No." },
+                    { dataField: "name", caption: "Name" },
+                    { dataField: "position", caption: "Position" }
+                ],
+                showRowLines: true,
+                showBorders: true,
+
+                paging: {
+
+                    // number of rows per page
+                    pageSize: 2,
+
+                    // page number (starts from 0), it shows second page
+                    // if we provide page number out of range then it will show end page
+                    pageIndex: 1,
+
+                    // desides whether paging should be applied or not
+                    enabled: true, // default: true
+                },
+
+                /*
+                * pager : provides control over table to user.
+                */
+                pager: {
+                    // provides left and right arrow around page number 
+                    // to move on to the other page
+                    showNavigationButtons: true, // default: false
+
+                    // enables user to select page size
+                    showPageSizeSelector: true, // default: false
+
+                    // provide page sizes that user can choose from (optional)
+                    allowedPageSizes: [1, 2, 3],
+
+                    showInfo: true,
+                    infoText: "Page {0}. Total: {1} ({2} items)"
+                },
+
+            });
+
+            /*
+            * some methods on it.
+            */
+           // 1) pageCount : number of page counts
+           console.log( 'pageCount : ' ,$("#paging_demo").dxDataGrid('instance').pageCount());
+
+           // 2) pageIndex : get the current page index
+           console.log( 'pageIndex : ' ,$("#paging_demo").dxDataGrid('instance').pageIndex())
+
+           // 3) pageIndex(index) : go to the specific page
+           $("#paging_demo").dxDataGrid('instance').pageIndex(0);
+
+           // 2) pageSize : get the current page size
+           console.log( 'pageIndex : ' ,$("#paging_demo").dxDataGrid('instance').pageSize())
+
+           // 3) pageSize(index) : set page size
+           $("#paging_demo").dxDataGrid('instance').pageSize(1);
+
+
+
+
+           
+        });
+
+    </script>
+
+</body>
+
+</html>

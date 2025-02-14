@@ -35,12 +35,17 @@
         })
 
         $("#Simple_array").dxDataGrid({
+            //provide data source
             dataSource: store,
+
+            // columns related setting
             columns: [
                 { dataField: "id", caption: "ID No." },
                 { dataField: "name", caption: "Name" },
                 { dataField: "position", caption: "Position" }
             ],
+
+            // just for decoration
             showRowLines: false,
             showBorders: true,
         });
