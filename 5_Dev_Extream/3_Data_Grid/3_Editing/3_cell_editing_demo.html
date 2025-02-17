@@ -97,17 +97,18 @@
                 pager: {
                     showNavigationButtons: true,
                     showPageSizeSelector: true, 
+                    allowedPageSizes: [1, 2, 3],
                     showInfo: true,
                     infoText: "Page {0}. Total: {1} ({2} items)"
                 },
 
                 // editing objec facilitates us to add settings
                 editing: {
-                    // specifies editing mode
-                    // - row, cell, batch, form, popup
-
-                    // here we can perform bulk operations
-                    mode: 'batch',
+                    // In the cell mode, a user edits data cell by cell.
+                    // Changes are saved once a cell loses the focus, or discarded if a user presses Esc.
+                    // An added row is saved only when the focus is shifted from it.
+                    // Choose this mode if any changes should be saved to the data source immediately.
+                    mode: 'cell',
                     
                     // facilitates adding
                     allowAdding: true,
@@ -120,7 +121,7 @@
 
                     // delete action triggers confirmation popup
                     // this property used to control that
-                    confirmDelete: false, //shaileshkumar.makwana1@hfcbank.com, dhruvi, 
+                    confirmDelete: false, 
                 },
 
                 // we can set additing attributes at column level too.
@@ -131,6 +132,10 @@
                     { dataField: "position", caption: "Position" }
                 ],
 
+                /*
+                * Events: events that takes place while modifying datagrid
+                */
+
                 //let if we want to stop this operations then 
                 onRowUpdating: (e) => {
                     // to cancel further processing 
@@ -139,7 +144,7 @@
                     // to abort edit mode
                     e.component.cancelEditData();
                 },
-                
+
             });
 
 

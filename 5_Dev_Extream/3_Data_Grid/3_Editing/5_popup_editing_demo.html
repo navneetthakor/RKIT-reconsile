@@ -97,17 +97,16 @@
                 pager: {
                     showNavigationButtons: true,
                     showPageSizeSelector: true, 
+                    allowedPageSizes: [1, 2, 3],
                     showInfo: true,
                     infoText: "Page {0}. Total: {1} ({2} items)"
                 },
 
                 // editing objec facilitates us to add settings
                 editing: {
-                    // specifies editing mode
-                    // - row, cell, batch, form, popup
-
-                    // here we can perform bulk operations
-                    mode: 'batch',
+                    // open ups new pop window whjich have form like structure3
+                    // where it provides cancel aqnd save control 
+                    mode: 'popup',
                     
                     // facilitates adding
                     allowAdding: true,
@@ -120,26 +119,24 @@
 
                     // delete action triggers confirmation popup
                     // this property used to control that
-                    confirmDelete: false, //shaileshkumar.makwana1@hfcbank.com, dhruvi, 
+                    confirmDelete: true, 
+
+                    popup: {
+                        title: 'My Popup',
+                        showTitle: true,// default: false
+                        // width,
+                        // height,
+                    }
                 },
 
                 // we can set additing attributes at column level too.
                 // allowEditing : default is true, if set to false -> user can't edit it.
                 columns: [
-                    { dataField: "id", caption: "ID No.", allowEditing: false },
+                    { dataField: "id", caption: "ID No." },
                     { dataField: "name", caption: "Name" },
                     { dataField: "position", caption: "Position" }
                 ],
 
-                //let if we want to stop this operations then 
-                onRowUpdating: (e) => {
-                    // to cancel further processing 
-                    e.cancel = true;
-
-                    // to abort edit mode
-                    e.component.cancelEditData();
-                },
-                
             });
 
 
