@@ -37,6 +37,9 @@
                     allowDeleting: true
                 },
 
+                // to reduce unnecessory repaint of cells.
+                repaintChangesOnly: true,
+                
                 // Common events for all editing modes
                 onEditingStart: function(e) {
                     console.log("Editing started for record: ", e);
