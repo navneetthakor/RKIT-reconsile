@@ -1,116 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDN setup | DevExtream</title>
 
-      <!-- ... -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
- 
-    <!-- DevExtreme theme -->
-    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
- 
-    <!-- DevExtreme library -->
-    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
-    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
-    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
-    <style>
-      .file_uploader_container{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-      }
-      /* .dx-fileuploader-input-wrapper{
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDN setup | DevExtream</title>
+
+  <!-- ... -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- DevExtreme theme -->
+  <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+  <!-- DevExtreme library -->
+  <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+  <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+  <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+  <style>
+    .file_uploader_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* .dx-fileuploader-input-wrapper{
           display: flex;
           align-items: center;
           justify-content: center;
       } */
-      .header_container{
-          margin-top: 2rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-      }
+    .header_container {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   </style>
 </head>
+
 <body>
-    <section id="section1">
-      <div class="header_container">
-        <h1>Default Behaviour</h1>
-      </div>
-      <div class="file_uploader_container">
-        <div id="file-uploader-demo1" class="file_uploader"></div>
-      </div>
-    </section>
-    
-    <section id="section2">
-      <div class="header_container">
-        <h1>Multiple file upload</h1>
-      </div>
-      <div class="file_uploader_container">
-        <div id="file-uploader-demo2" class="file_uploader"></div>
-      </div>
-    </section>
+  <section id="section1">
+    <div class="header_container">
+      <h1>Default Behaviour</h1>
+    </div>
+    <div class="file_uploader_container">
+      <div id="file-uploader-demo1" class="file_uploader"></div>
+    </div>
+  </section>
 
-    <section id="section3">
-      <div class="header_container">
-        <h1>specific type of file</h1>
-      </div>
-      <div class="file_uploader_container">
-        <div id="file-uploader-demo3" class="file_uploader"></div>
-      </div>
-    </section>
+  <section id="section2">
+    <div class="header_container">
+      <h1>Multiple file upload</h1>
+    </div>
+    <div class="file_uploader_container">
+      <div id="file-uploader-demo2" class="file_uploader"></div>
+    </div>
+  </section>
 
-    <section id="section3">
-      <div class="header_container">
-        <h1>Restrictions on file size</h1>
-      </div>
-      <div class="file_uploader_container">
-        <div id="file-uploader-demo4" class="file_uploader"></div>
-      </div>
-    </section>
+  <section id="section3">
+    <div class="header_container">
+      <h1>specific type of file</h1>
+    </div>
+    <div class="file_uploader_container">
+      <div id="file-uploader-demo3" class="file_uploader"></div>
+    </div>
+  </section>
 
-    <script defer>
-      $(function(){
-        // default bahaviour
-        $('#file-uploader-demo1').dxFileUploader({
-          // URL to which files are uploaded
-          uploadUrl: "https://js.devexpress.com/Demos/NetCore/FileUploader/Upload",
-        });
+  <section id="section3">
+    <div class="header_container">
+      <h1>Restrictions on file size</h1>
+    </div>
+    <div class="file_uploader_container">
+      <div id="file-uploader-demo4" class="file_uploader"></div>
+    </div>
+  </section>
+
+  <script defer>
+    $(function () {
+      // default bahaviour
+      $('#file-uploader-demo1').dxFileUploader({
+        // URL to which files are uploaded
+        uploadUrl: "https://js.devexpress.com/Demos/NetCore/FileUploader/Upload",
+      });
 
 
-        // multiple file upload
-        $('#file-uploader-demo2').dxFileUploader({
-          // allow multiple file upload
-          multiple: true,
-          // URL to which files are uploaded
-          uploadUrl: "https://js.devexpress.com/Demos/NetCore/FileUploader/Upload",
-        });
+      // multiple file upload
+      $('#file-uploader-demo2').dxFileUploader({
+        // allow multiple file upload
+        multiple: true,
+        // URL to which files are uploaded
+        uploadUrl: "https://js.devexpress.com/Demos/NetCore/FileUploader/Upload",
+      });
 
-        //specific file upload
-        $('#file-uploader-demo3').dxFileUploader({
-          // URL to which files are uploaded
-          uploadUrl: "https://js.devexpress.com/Demos/NetCore/FileUploader/Upload",
-          // accept: '.jpeg'
-          // accept: ['.jpeg', '.pdf'],
-          accept: 'image/*',
-          accessKey: 'b', // directly clicks on the 'select file' upload
-          allowCanceling: false
-        });
+      //specific file upload
+      $('#file-uploader-demo3').dxFileUploader({
+        // URL to which files are uploaded
+        uploadUrl: "https://js.devexpress.com/Demos/NetCore/FileUploader/Upload",
+        // accept: '.jpeg'
+        // accept: ['.jpeg', '.pdf'],
+        accept: 'image/*',
+        accessKey: 'b', // directly clicks on the 'select file' upload
+        allowCanceling: false
+      });
 
-        //restrictions on size
-        $('#file-uploader-demo4').dxFileUploader({
-          // URL to which files are uploaded
-          uploadUrl: "https://js.devexpress.com/Demos/NetCore/FileUploader/Upload",
-          // accept: '.jpeg'
-          maxFileSize: 10000,
-          invalidMaxFileSizeMessage: "File size is too large",
-          uploadMode: 'useButtons', // default: 'instant'; other: 'useForm', 'useButtons'
-        });
-        
+      //restrictions on size
+      $('#file-uploader-demo4').dxFileUploader({
+        // URL to which files are uploaded
+        multiple:true,
+        uploadUrl: "https://js.devexpress.com/Demos/NetCore/FileUploader/Upload",
+        // accept: '.jpeg'
+        // maxFileSize: 100000,
+        invalidMaxFileSizeMessage: "File size is too large",
+        uploadMode: 'useButtons', // default: 'instant'; other: 'useForm', 'useButtons'
 
-      })
-    </script>
+        // events ---- 
+        onBeforeSend: function (e) {
+          console.log("Preparing to upload:", e.file);
+          console.log("Upload Info");
+        },
+
+        onFilesUploaded: function (e) {
+            console.log("Files uploaded:");
+        },
+
+        onProgress: function (e) {
+            let percentage = Math.round((e.bytesLoaded / e.bytesTotal) * 100);
+            console.log("Upload Progress:", percentage + "%");
+        },
+
+        onUploadAborted: function (e) {
+            console.log("Upload aborted:");
+        },
+
+        onUploaded: function (e) {
+            console.log("Upload completed successfully:");
+        },
+
+        onUploadError: function (e) {
+            console.log("Error during upload:");
+        },
+
+        onUploadStarted: function (e) {
+            console.log("Upload started:");
+        },
+      });
+
+
+    })
+  </script>
 </body>
+
 </html>
