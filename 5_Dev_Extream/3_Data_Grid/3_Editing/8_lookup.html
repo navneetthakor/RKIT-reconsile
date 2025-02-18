@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+      <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ 
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+ 
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+<body>
+    <div id="lookup_demo"></div>
+    
+    <script defer>
+        $(() => {
+            // data
+            let seedData = [
+                {
+                    id: 1,
+                    name: 'navneet',
+                    company: 1,
+                    branch: 1
+                },
+                {
+                    id: 2,
+                    name: 'Rahul',
+                    company: 2,
+                    branch: 1
+                },
+                {
+                    id: 3,
+                    name: 'yash khokhar',
+                    company: 1,
+                    branch: 2
+                },
+                {
+                    id: 4,
+                    name: 'Geeta',
+                    company: 2,
+                    branch: 3
+                },
+                {
+                    id: 5,
+                    name: 'vidhi',
+                    company: 3,
+                    branch: 4
+                },
+            ];
+
+            let companies= [
+                {
+                    id: 1,
+                    name: 'rkit'
+                },
+                {
+                    id: 2,
+                    name: 'social pilot'
+                },
+                {
+                    id: 3,
+                    name: 'cipla'
+                },
+                {
+                    id: 4,
+                    name: 'simform'
+                } ];
+
+            let branche_location= [
+                {
+                    id: 1,
+                    name: 'ahemdabad',
+                    companies: [1,2,4]
+                },
+                {
+                    id: 2,
+                    name: 'rajkot',
+                    companies: [1]
+                },
+                {
+                    id: 3,
+                    name: 'mumbai',
+                    companies: [2,4]
+                },
+                {
+                    id: 4,
+                    name: 'pune',
+                    companies: [3]
+                } ];
+
+            $('#lookup_demo').dxDataGrid({
+                dataSource: seedData,
+
+                showBorderLines: true,
+
+                editing:{
+                    mode: 'row',
+                    allowAdding: true,
+                    allowUpdating: true,
+                    allowDeleting: true,
+                },
+
+                columns: [
+                    {
+                        dataField: 'id',
+                        caption: 'ID',
+                        allowUpdating: false,
+                        ValidationRules: [{
+                            type: 'required',
+                            message:"id required"
+                        },{
+                            type: 'numeric',
+                            message: 'id must be of numeric type'
+                        }]
+                    },
+                    {
+                        dataField: 'name',
+                        caption: 'Name',
+                    },
+                    {
+                        dataField: 'company',
+                        caption: 'Company',
+                        SetCellValue(rowData, value){
+                            rowData.company = value;
+                            rowData.branch = null
+                        },
+                        lookup:{
+                            dataSource: companies,
+                            valueExpr: 'id',
+                            displayExpr: 'name'
+                        }
+                    },
+                    {
+                        dataField: 'branch',
+                        caption: 'Branch',
+                        SetCellValue(rowData, value){
+                            rowData.Branch = value;
+                        },
+                        lookup: {
+                            dataSource(options){
+                                console.log(options)
+                                return {
+                                    store: branche_location,
+                                    filter: options.data? ['companies', 'in', options.data.company] : null,
+                                }
+                            },
+                            valueExpr: 'id',
+                            displayExpr: 'name'
+                        }
+                    }
+                ],
+
+
+            })
+        })
+    </script>
+</body>
+</html>
