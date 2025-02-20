@@ -108,14 +108,13 @@
         multiple:true,
         uploadUrl: "https://js.devexpress.com/Demos/NetCore/FileUploader/Upload",
         // accept: '.jpeg'
-        // maxFileSize: 100000,
+        // maxFileSize: 1000,
         invalidMaxFileSizeMessage: "File size is too large",
         uploadMode: 'useButtons', // default: 'instant'; other: 'useForm', 'useButtons'
 
         // events ---- 
         onBeforeSend: function (e) {
           console.log("Preparing to upload:", e.file);
-          console.log("Upload Info");
         },
 
         onFilesUploaded: function (e) {

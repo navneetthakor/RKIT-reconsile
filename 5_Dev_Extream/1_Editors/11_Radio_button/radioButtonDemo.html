@@ -26,7 +26,7 @@
 <body>
     <div class="radioBtnContainer" id="radio-button-demo1"></div>
     <div class="radioBtnContainer" id="radio-button-demo2"></div>
-    <div class="radioBtnContainer" id="radio-button-demo3"></div>
+    <div class="radioBtnContainer" id="radio-button-demo3" style="border: 2px solid red;"></div>
 
     <script>
         $(() => {
@@ -48,7 +48,7 @@
                 disabled: true
             })
 
-            // horizontal tab
+            // horizontal tab2
             $('#radio-button-demo3').dxRadioGroup({
                 accessKey: 'b',
                 items: listOfOptions,
@@ -72,9 +72,10 @@
                 
                 // defualt: valid
                 // 'pending' is not working
+                // values: valid, invalid, pending
                 validationStatus: 'invalid',
 
-                // events 
+                // events ---
                 // onContentReady, 
                 // onDisposing,
                 // onInitialized,

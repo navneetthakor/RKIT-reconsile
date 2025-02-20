@@ -15,10 +15,7 @@ body{
     background-color: rgb(255, 249, 241);
     /* background-color: rgb(218, 206, 192); */
     /* background: transparent; */
-    box-shadow: 3px 3px 50px whitesmoke;
-}
-#mainContainer > div{
-    
+    box-shadow: 3px 3px 50px rgb(0, 0, 0);
 }
 
 .freedom{

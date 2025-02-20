@@ -37,7 +37,7 @@
             box-shadow: 0px 20px 20px black;
         }
 
-        form > div {
+        form>div {
             margin-top: 0.5rem;
         }
     </style>
@@ -80,13 +80,13 @@
                 placeholder: 'enter Password',
                 mode: 'password',
             }).dxValidator({
-                validationRules:[{
+                validationRules: [{
                     type: 'required',
                     message: 'Password is required'
-                },{
+                }, {
                     type: 'stringLength',
-                    min:4,
-                    max:6,
+                    min: 4,
+                    max: 6,
                     message: "length of password must be between 4 to 6"
                 }]
             })
@@ -99,12 +99,9 @@
                 validationRules: [{
                     type: 'compare',
                     comparisonTarget() {
-                        const password = $('#password1').dxTextBox('instance');
-                        console.log(password.option('value'));
-                        if (password) {
-                            return password.option('value');
-                        }
-                        return null;
+                        const passwordWidget = $('#password1').dxTextBox('instance');
+                        console.log(passwordWidget.option('value'));
+                        return passwordWidget.option('value');
                     },
                     message: "'Password' and 'Confirm Password' do not match.",
                 },
@@ -118,11 +115,11 @@
                 text: 'click here'
             }).dxValidator({
                 height: '3rem',
-                validationRules:[{
+                validationRules: [{
                     type: 'compare',
                     comparisonTarget: () => true,
                     message: 'checkbox clicked is compulsory'
-                },{
+                }, {
                     type: 'required',
                     message: 'checkbox clicked is compulsory'
                 }]
@@ -131,10 +128,17 @@
             $('#eid').dxTextBox({
                 placeholder: "EID",
             }).dxValidator({
-                validationRules:[{
+                validationRules: [{
+                    type: 'custom',
+                    message: "employee id must be > 400",
+                    validationCallback: (e) => {
+                        console.log(e);
+                        return e.value >= 400;
+                    },
+                }, {
                     type: 'numeric',
                     message: "eid must be of the type of numeric"
-                },{
+                }, {
                     type: 'required',
                     message: 'employee clicked is compulsory'
                 }]
@@ -143,13 +147,16 @@
             $('#eid1').dxTextBox({
                 placeholder: "confirm EID",
             }).dxValidator({
-                validationRules:[{
-                    type: 'custom',
-                    message: "employee id must be > 400",
-                    validationCallback: (e) => e.value > 400,
-                },{
+                validationRules: [{
                     type: 'required',
                     message: 'employee clicked is compulsory'
+                }, {
+                    type: 'compare',
+                    comparisonTarget: () => {
+                        const eidWidget = $('#eid').dxTextBox('instance');
+                        console.log(eidWidget.option('value'));
+                        return eidWidget.option('value');
+                    },
                 }]
             })
 
