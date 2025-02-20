@@ -141,6 +141,13 @@
                 stylingMode: 'contained',
                 useSubmitBehavior: true,
             });
+
+            $('#myForm').submit((e) => {
+                e.preventDefault();
+                alert("form submited");
+
+                $('#myForm')[0].reset();
+            })
         })
     </script>
 </body>

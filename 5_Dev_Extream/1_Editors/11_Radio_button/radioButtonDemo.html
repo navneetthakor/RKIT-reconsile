@@ -45,7 +45,8 @@
                 items: listOfOptions,
                 value: listOfOptions[0],
                 layout: 'horizontal',
-                disabled: true
+                // disabled: true,
+                readOnly: true,
             })
 
             // horizontal tab2
@@ -73,7 +74,7 @@
                 // defualt: valid
                 // 'pending' is not working
                 // values: valid, invalid, pending
-                validationStatus: 'invalid',
+                validationStatus: 'valid',
 
                 // events ---
                 // onContentReady, 
