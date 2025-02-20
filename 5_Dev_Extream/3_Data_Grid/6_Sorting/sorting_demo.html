@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+
+<body>
+    <div id="sorting_demo"></div>
+
+    <script defer>
+        // Editing allows user to add, update and/or delete data in datagrid
+        $(() => {
+            let prods = [
+                { id: 1, name: 'Navneet', position: 'Developer' },
+                { id: 2, name: 'Rohanshu', position: 'Developer' },
+                { id: 3, name: 'Meet', position: 'Developer' },
+                { id: 4, name: 'XYZ', position: 'HR' },
+                { id: 11, name: 'Navneet', position: 'Developer' },
+                { id: 21, name: 'Rohanshu', position: 'Developer' },
+                { id: 31, name: 'Meet', position: 'Developer' },
+                { id: 41, name: 'XYZ', position: 'HR' },
+                { id: 12, name: 'Navneet', position: 'Developer' },
+                { id: 22, name: 'Rohanshu', position: 'Developer' },
+                { id: 32, name: 'Meet', position: 'Developer' },
+                { id: 43, name: 'XYZ', position: 'HR' },
+                { id: 13, name: 'Navneet', position: 'Developer' },
+                { id: 23, name: 'Rohanshu', position: 'Developer' },
+                { id: 33, name: 'Meet', position: 'Developer' },
+                { id: 42, name: 'XYZ', position: 'HR' },
+                { id: 14, name: 'Navneet', position: 'Developer' },
+                { id: 24, name: 'Rohanshu', position: 'Developer' },
+                { id: 34, name: 'Meet', position: 'Developer' },
+                { id: 44, name: 'XYZ', position: 'HR' },
+                { id: 15, name: 'Navneet', position: 'Developer' },
+                { id: 25, name: 'Rohanshu', position: 'Developer' },
+                { id: 35, name: 'Meet', position: 'Developer' },
+                { id: 45, name: 'XYZ', position: 'HR' },
+                { id: 16, name: 'Navneet', position: 'Developer' },
+                { id: 26, name: 'Rohanshu', position: 'Developer' },
+                { id: 36, name: 'Meet', position: 'Developer' },
+                { id: 46, name: 'XYZ', position: 'HR' },
+                { id: 17, name: 'Navneet', position: 'Developer' },
+                { id: 27, name: 'Rohanshu', position: 'Developer' },
+                { id: 37, name: 'Meet', position: 'Developer' },
+                { id: 47, name: 'XYZ', position: 'HR' },
+                { id: 18, name: 'Navneet', position: 'Developer' },
+                { id: 28, name: 'Rohanshu', position: 'Developer' },
+                { id: 38, name: 'Meet', position: 'Developer' },
+                { id: 48, name: 'XYZ', position: 'HR' },
+                { id: 19, name: 'Navneet', position: 'Developer' },
+                { id: 29, name: 'Rohanshu', position: 'Developer' },
+                { id: 39, name: 'Meet', position: 'Developer' },
+                { id: 49, name: 'XYZ', position: 'HR' },
+                { id: 10, name: 'Navneet', position: 'Developer' },
+                { id: 20, name: 'Rohanshu', position: 'Developer' },
+                { id: 30, name: 'Meet', position: 'Developer' },
+                { id: 40, name: 'XYZ', position: 'HR' },
+                { id: 111, name: 'Navneet', position: 'Developer' },
+                { id: 211, name: 'Rohanshu', position: 'Developer' },
+                { id: 311, name: 'Meet', position: 'Developer' },
+                { id: 411, name: 'XYZ', position: 'HR' },
+                { id: 122, name: 'Navneet', position: 'Developer' },
+                { id: 222, name: 'Rohanshu', position: 'Developer' },
+                { id: 322, name: 'Meet', position: 'Developer' },
+                { id: 422, name: 'XYZ', position: 'HR' },
+            ];
+
+            let store = new DevExpress.data.ArrayStore({
+                key: 'id',
+                data: prods,
+            });
+
+
+            $("#sorting_demo").dxDataGrid({
+                dataSource: store,
+
+                showRowLines: true,
+                showBorders: true,
+
+                paging: {
+                    pageSize: 10,
+                    pageIndex: 1,
+                    enabled: true,
+                },
+
+                pager: {
+                    showNavigationButtons: true,
+                    showPageSizeSelector: true,
+                    showInfo: true,
+                },
+
+                columns: [
+                    {
+                        dataField: "id",
+                        caption: "ID No.",
+                    },
+                    {
+                        dataField: "name",
+                        caption: "Name",
+
+                        // initial sorting order 
+                        sortIndex: 2,
+                        sortOrder: "desc"
+                    },
+                    {
+                        dataField: "position",
+                        caption: "Position",
+
+                        // sorting control at column level
+                        allowSorting: false, // default : true
+
+                        // initial sorting
+                        sortIndex: 0,
+                        sortOrder: "asc"
+                    }],
+
+                /*
+                * sorting
+                */
+                sorting: {
+                    // default: 'single', other values: multiple, none
+                    // disable sorting: use 'none'
+                    mode: 'multiple',
+                }
+            });
+
+            /*
+            * clearing sorting 
+            */
+            let dataGrid = $("#sorting_demo").dxDataGrid("instance");
+
+            // on specific column (--- Not working ---)
+            dataGrid.columnOption("Name", "sortIndex", undefined);
+
+            // on whole datagrid
+            dataGrid.clearSorting();
+        })
+    </script>
+</body>
+
+</html>

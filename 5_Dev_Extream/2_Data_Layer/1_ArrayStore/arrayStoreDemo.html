@@ -112,15 +112,23 @@
             // load data 
             store.load()
                 .done(function (data) {
-                    console.log("load :",data);
+                    console.log("load :", data);
                 })
                 .fail(function (error) {
                     console.log("load-E :", error);
                 });
 
             //get key (for string values : case-in sensitive checking)
-            console.log("key : ", store.keyOf({id:5, name:'janki'}));
+            console.log("key : ", store.keyOf({ id: 5, name: 'janki' }));
 
+            //get element by key
+            store.byKey(5)
+                .done(function (data) {
+                    console.log("byKey :", data);
+                })
+                .fail(function (error) {
+                    console.log("byKey-E :", error);
+                });
             // ---------- select box --------------
             $('#selectBox').dxSelectBox({
                 dataSource: store,
