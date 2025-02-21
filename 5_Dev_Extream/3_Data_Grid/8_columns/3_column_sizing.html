@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+    <style>
+        .my-class {
+            height: 20px;
+            width: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- defualt one  -->
+    <div id="column_sizing"></div>
+
+    <script defer>
+        $(() => {
+
+            let seedData = [
+                { id: 31, name: 'Navneet', Batch: 'B' },
+                { id: 33, name: 'Rohanshu', Batch: 'B' },
+                { id: 24, name: 'Meet', Batch: 'A' },
+                { id: 27, name: 'Jay', Batch: 'A' },
+            ];
+
+            let store = new DevExpress.data.ArrayStore({
+                key: 'id',
+                data: seedData
+            });
+
+
+            $('#column_sizing').dxDataGrid({
+                dataSource: store,
+                showBorders: true,
+                showRowLines: true,
+                allowColumnReordering: true,
+                columnChooser: {
+                    enabled: true,
+                },
+
+                // minimum width for all the columns 
+                columnMinWidth: 300,
+
+
+                // we are selecting few columns
+                columns: [
+                    {
+                        dataField: 'id',
+
+                        // min width for individual
+                        minWidth: 800,
+                    },
+                    {
+                        // fixed width 
+                        width: 800,
+                        dataField: 'name'
+                    },
+                    {
+                        dataField: 'Batch'
+                    },
+                ],
+
+                // giving control to user to resize column -----
+                allowColumnResizing: true,
+        
+                // nextColumn, widget (both are producing same effect)
+                columnResizingMode: 'nextColumn', 
+
+                // to fix column either left or right, irrespective of how much we horizontally scroll menu.
+                columnFixing:{
+                    enabled: true
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

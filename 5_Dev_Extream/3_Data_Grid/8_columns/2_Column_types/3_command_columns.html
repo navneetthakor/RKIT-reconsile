@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+    <style>
+        .my-class{
+            height: 20px;
+            width: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- defualt one  -->
+    <div id="adaptive_command_column"></div>
+    <div id="selection_command_column"></div>
+    <div id="button_command_column"></div>
+
+    <script defer>
+        $(() => {
+
+            let seedData = [
+                { id: 31, name: 'Navneet', Batch: 'B' },
+                { id: 33, name: 'Rohanshu', Batch: 'B' },
+                { id: 24, name: 'Meet', Batch: 'A' },
+                { id: 27, name: 'Jay', Batch: 'A' },
+            ];
+
+            let store = new DevExpress.data.ArrayStore({
+                key: 'id',
+                data: seedData
+            });
+
+            /*
+            * adaptive_column: when content not fit in the given width 
+            *           it hides remainng columns and show just three dots. And upon clicking on them it open ups full window.
+            */
+            $('#adaptive_command_column').dxDataGrid({
+                dataSource: store,
+                showBorders: true,
+                showRowLines: true,
+                allowColumnReordering: true,
+                columnChooser: {
+                    enabled: true,
+                },
+
+
+                // column hiding for adaptive to work 
+                columnHidingEnabled: true,
+
+                // we are selecting few columns
+                columns: [
+                    {
+                        dataField: 'id',
+                        width: 800,
+                    },
+                    {
+                        width: 700,
+                        dataField: 'name'
+                    },
+                    {
+                        dataField: 'Batch'
+                    }, {
+                        // we can set hidePriority to each cell : 0 (beign hiest priority)
+                        type: "adaptive",
+                        width: 50,
+                    },
+                ],
+            });
+
+
+            /*
+            * selection_column: checkbox for selection 
+            */
+            $('#selection_command_column').dxDataGrid({
+                dataSource: store,
+                showBorders: true,
+                showRowLines: true,
+                allowColumnReordering: true,
+                columnChooser: {
+                    enabled: true,
+                },
+
+
+                // this configuration required 
+                selection: {
+                    mode: 'multiple'
+                },
+
+                // we are selecting few columns
+                columns: [
+                    {
+                        dataField: 'id',
+                    },
+                    {
+                        dataField: 'name'
+                    },
+                    {
+                        type: "selection",
+                    },
+                    {
+                        dataField: 'Batch'
+                    },
+                ],
+            });
+
+            /*
+            * button_column: shows buttons that performs some actions
+            */
+            $('#selection_command_column').dxDataGrid({
+                dataSource: store,
+                showBorders: true,
+                showRowLines: true,
+                allowColumnReordering: true,
+                columnChooser: {
+                    enabled: true,
+                },
+
+
+                // this configuration required 
+                selection: {
+                    mode: 'multiple'
+                },
+
+                // we are selecting few columns
+                columns: [
+                    {
+                        dataField: 'id',
+                    },
+                    {
+                        dataField: 'name'
+                    },
+                    {
+                        dataField: 'Batch'
+                    }, {
+                        type: "buttons",
+                        buttons: [{
+                            text: 'save',
+                            icon: './diskette.png',
+                            cssClass: "my-class",
+                            onClick: (e) => alert('save button clicked')
+                        }],
+                        width: 100,
+                    }
+                ],
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+</head>
+
+<body>
+    <!-- defualt one  -->
+    <div id="data_column_demo"></div>
+
+    <script defer>
+        $(() => {
+
+            let seedData = [
+                { id: 31, name: 'Navneet', Batch: 'B' },
+                { id: 33, name: 'Rohanshu', Batch: 'B' },
+                { id: 24, name: 'Meet', Batch: 'A' },
+                { id: 27, name: 'Jay', Batch: 'A' },
+            ]
+
+            let store = new DevExpress.data.ArrayStore({
+                key: 'id',
+                data: seedData
+            })
+
+            /*
+            * Data_column: by default created for each column 
+            */
+            $('#data_column_demo').dxDataGrid({
+                dataSource: store,
+                showBorders: true,
+                showRowLines: true,
+
+                // drag and drop columns
+                allowColumnReordering: true,
+
+                // column choosr : temporory hide some columns
+                columnChooser: {
+                    enabled: true,
+                },
+
+                // we are selecting few columns
+                columns: [
+                    {
+                        dataField: 'id',
+                        caption: 'ID',
+                        width: 100,
+                        format: {
+                            type: 'decimal',
+                            // other possible values : 
+                            //Accepted Values: 'billions' | 'currency' | 'day' | 'decimal' | 'exponential' | 'fixedPoint' | 'largeNumber' | 'longDate' | 'longTime' | 'millions' | 'millisecond' | 'month' | 'monthAndDay' | 'monthAndYear' | 'percent' | 'quarter' | 'quarterAndYear' | 'shortDate' | 'shortTime' | 'thousands' | 'trillions' | 'year' | 'dayOfWeek' | 'hour' | 'longDateLongTime' | 'minute' | 'second' | 'shortDateShortTime'
+                        },
+                        sortOrder: 'asc',
+                        
+                        // generally we not specify it explicityly but,
+                        // situations like date written in string format -> we should do it 
+                        dataType: 'int',
+                    }, {
+                        dataField: 'name'
+                    },
+                    {
+                        dataField: 'batch'
+                    }
+                ],
+
+            })
+        })
+    </script>
+</body>
+
+</html>
