@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+    <style>
+        .my-class {
+            height: 20px;
+            width: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- defualt one  -->
+    <div id="column_sizing"></div>
+
+    <script defer>
+        $(() => {
+
+            let seedData = [
+                { id: 31, name: 'Navneet', Batch: 'B' },
+                { id: 33, name: 'Rohanshu', Batch: 'B' },
+                { id: 24, name: 'Meet', Batch: 'A' },
+                { id: 27, name: 'Jay', Batch: 'A' },
+            ];
+
+            let store = new DevExpress.data.ArrayStore({
+                key: 'id',
+                data: seedData
+            });
+
+
+            $('#column_sizing').dxDataGrid({
+                dataSource: store,
+                showBorders: true,
+                showRowLines: true,
+                allowColumnReordering: true,
+                columnChooser: {
+                    enabled: true,
+                },
+
+
+                // we are selecting few columns
+                columns: [
+                    {
+                        dataField: 'id',
+                    },
+                    {
+                        dataField: 'name'
+                    },
+                    {
+                        dataField: 'Batch',
+                    },
+                ],
+                
+                // to control toolbar desplayed for datagrid
+                toolbar: {
+
+                    // if 'items' array is defined then those settings which are described in this array
+                    // only those settings will be displayed 
+                    // -> don't forgot to any important control 
+                    items: [
+                        'columnChooserButton',
+                        {
+                            location: 'before',
+                            locateInMenu: 'auto',
+                            widget: 'dxSelectBox',
+                            options: {
+                                width: 200,
+                                items: [{
+                                    value: 'Batch',
+                                    text: 'Grouping by Batch',
+                                }, {
+                                    value: 'name',
+                                    text: 'Grouping by Name',
+                                },{
+                                    value: 'clear',
+                                    text: 'Clear grouping'
+                                }],
+                                displayExpr: 'text',
+                                valueExpr: 'value',
+                                value: 'Batch',
+                                onValueChanged(e) {
+                                    const dataGrid = $('#column_sizing').dxDataGrid('instance');
+                                    dataGrid.clearGrouping();
+                                    if(e.value === 'clear') return;
+                                    dataGrid.columnOption(e.value, 'groupIndex', 0);
+                                },
+                                onInitialized: () => {
+                                    const dataGrid = $('#column_sizing').dxDataGrid('instance');
+                                    dataGrid.clearGrouping();
+                                    dataGrid.columnOption('Batch', 'groupIndex', 0);
+                                }
+                            },
+                        },
+                    ],
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>
