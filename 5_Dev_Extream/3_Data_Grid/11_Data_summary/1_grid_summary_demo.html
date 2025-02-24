@@ -14,6 +14,8 @@
 
     <!-- DevExtreme library -->
     <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
     <style>
         .my-class {
             height: 20px;
@@ -47,32 +49,12 @@
                 dataSource: store,
                 showBorders: true,
                 showRowLines: true,
-
-                // this options should not be enabled,
-                // as rowTemplate is not synchronized with them 
                 allowColumnReordering: true,
                 columnChooser: {
                     enabled: true,
                 },
 
-
-                // have higher priority (compare to columns)
-                rowTemplate: function (container, item) {
-                    // container : grid container
-                    // item: devExtreme object
-                    var data = item.data,
-                        markup = "<tbody class='dx-row'>" +
-                            "<tr>" +
-                            "<td>" + data.id + "</td>" +
-                            "<td>" + data.name + "</td>" +
-                            "<td>" + data.Batch + "</td>" +
-                            "</tr>" +
-                            "</tbody>";
-                    container.append(markup);
-                },
-
-
-
+                
             });
 
         });
