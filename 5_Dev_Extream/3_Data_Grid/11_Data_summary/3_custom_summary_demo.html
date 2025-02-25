@@ -54,25 +54,46 @@
                     enabled: true,
                 },
 
-                // To display total summaries, populate the summary.totalItems array with configuration objects. Each object should specify a column that supplies data for summary calculation and a summaryType—an aggregate function that should be applied to this data.
-
+                selection: {
+                    mode: 'multiple',
+                },
+                selectedRowKeys: [31],
+                onSelectionChanged(e) {
+                    e.component.refresh(true);
+                },
                 summary: {
-                    // totalItems: an array of objects, each of which contains at least 
-                    // two fields: column and summaryType. 
-                    totalItems: [{
-                        // which column will provide data
-                        column: 'id',
 
-                        // which aggregate function will apply on them.
-                        summaryType: 'count',
-                    }, {
-                        column: 'cpi',
-                        summaryType: 'sum',
-                        alignment: 'right'
+                    // just to see how it will look with group summary 
+                    totalItems: [{
+                        column: 'id',
+                        name: 'id',
+                        summaryType: 'custom',
+                        displayFormat: 'custom : {0}'
                     }],
+
+                    calculateCustomSummary: function (options) {
+                        if (options.name === "id") {
+                            // There are three phases: 'start', 'calculate', and 'finalize'
+                            if (options.summaryProcess === "start") {
+                                // Initialize your custom accumulator.
+                                options.totalValue = 0;
+                            }
+                            if (options.summaryProcess === "calculate") {
+                                // Called once per each data item.
+                                // Here, we add the value from the current row to our accumulator.
+                                console.log(options.value)
+                                if (options.component.isRowSelected(options.value)) {
+                                    // options.totalValue += options.value.id;
+                                    options.totalValue += 1;
+                                };
+                            }
+                        }
+                    }
                 },
 
-                // options for summary  : 
+                // options for summary  :
+                // alignByColumn : Boolean 
+                // showInGroupFooter : Boolean 
                 // column : string
                 // summaryType : string
                 // alignment : string
@@ -80,8 +101,8 @@
                 // customizeText : function
                 // showInColumn : string 
                 // displayFormat : string 
-                    // - {0} : summary value 
-                    // - {1} : parent caption (column caption) Available if the showInColumn property is specified. undefined otherwise
+                // - {0} : summary value 
+                // - {1} : parent caption (column caption) Available if the showInColumn property is specified. undefined otherwise
                 // summarytype : sum, min, max, avg, count, custom 
                 // valueFormat: string (configure fotmat object too. for better control over it) 
 

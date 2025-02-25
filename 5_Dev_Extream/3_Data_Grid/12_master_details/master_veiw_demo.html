@@ -54,22 +54,48 @@
                     enabled: true,
                 },
 
-                // To display total summaries, populate the summary.totalItems array with configuration objects. Each object should specify a column that supplies data for summary calculation and a summaryType—an aggregate function that should be applied to this data.
+                // right click on header
+                grouping: {
+                    // to enable grouping 
+                    contextMenuEnabled: true,
+
+                    // defualt: 'buttonClick'
+                    expandMode: 'rowClick',
+
+                    // prevent user from collapsing groupt
+                    // autoExpandAll: true,
+                    // allowCollapsing: false
+                },
 
                 summary: {
-                    // totalItems: an array of objects, each of which contains at least 
+                    // groupItems: an array of objects for group summary, each of which contains at least 
                     // two fields: column and summaryType. 
-                    totalItems: [{
+                    groupItems: [{
                         // which column will provide data
                         column: 'id',
 
                         // which aggregate function will apply on them.
                         summaryType: 'count',
+
+                        // enable this property otherwise result will be shown in group header
+                        showInGroupFooter: true
                     }, {
                         column: 'cpi',
                         summaryType: 'sum',
-                        alignment: 'right'
+                        alignment: 'right',
+                        showInGroupFooter: false, // default : false
+
+                        // usually needed if result is shown in header
+                        // as if alignByColumn : false -> result will be not a alligned with column 
+                        alignByColumn : true
+
                     }],
+
+                    // just to see how it will look with group summary 
+                    totalItems: [{
+                        column: 'id',
+                        summaryType: 'count'
+                    }]
                 },
 
                 // options for summary  : 
