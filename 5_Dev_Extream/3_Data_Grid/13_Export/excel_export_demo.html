@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+
+    <!-- excelJs  -->
+    <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js" integrity="sha256-fknaaFiOJQ27i7oZDSyqirN4fMAoS9odiy+AXE33Qsk=" crossorigin="anonymous"></script>
+
+     <!-- FileSaver.js (for file download functionality) -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <style>
+        .my-class {
+            height: 20px;
+            width: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- defualt one  -->
+    <div id="grid_summary"></div>
+
+    <script defer>
+        $(() => {
+
+            let seedData = [
+                { id: 31, name: 'Navneet', batch: 'B', cpi: 8.97 },
+                { id: 33, name: 'Rohanshu', batch: 'B', cpi: 9.5 },
+                { id: 24, name: 'Meet', batch: 'A', cpi: 8.5 },
+                { id: 27, name: 'Jay', batch: 'A', cpi: 8.0 },
+            ];
+
+            let store = new DevExpress.data.ArrayStore({
+                key: 'id',
+                data: seedData
+            });
+
+
+            $('#grid_summary').dxDataGrid({
+                dataSource: store,
+                showBorders: true,
+                showRowLines: true,
+
+                selection: {
+                    mode: 'multiple'
+                },
+
+                export: {
+                    enabled: true,
+                    formats: ['pdf', 'xlsx'],
+                    allowExportSelectedData: true,
+                },
+                onExporting(e) {
+                    const workbook = new ExcelJS.Workbook();
+                    const worksheet = workbook.addWorksheet('Students');
+
+                    DevExpress.excelExporter.exportDataGrid({
+                        component: e.component,
+                        worksheet,
+                        autoFilterEnabled: true,
+                    }).then(() => {
+                        workbook.xlsx.writeBuffer().then((buffer) => {
+                            saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'Students.xlsx');
+                        });
+                    });
+                    e.cancel = true; // to prevent default export of devextreme
+                },
+            });
+
+        });
+    </script>
+</body>
+
+</html>
