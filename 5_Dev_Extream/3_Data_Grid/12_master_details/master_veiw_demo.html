@@ -33,10 +33,10 @@
         $(() => {
 
             let seedData = [
-                { id: 31, name: 'Navneet', Batch: 'B', cpi: 8.97 },
-                { id: 33, name: 'Rohanshu', Batch: 'B', cpi: 9.5 },
-                { id: 24, name: 'Meet', Batch: 'A', cpi: 8.5 },
-                { id: 27, name: 'Jay', Batch: 'A', cpi: 8.0 },
+                { id: 31, name: 'Navneet', batch: 'B', cpi: 8.97 },
+                { id: 33, name: 'Rohanshu', batch: 'B', cpi: 9.5 },
+                { id: 24, name: 'Meet', batch: 'A', cpi: 8.5 },
+                { id: 27, name: 'Jay', batch: 'A', cpi: 8.0 },
             ];
 
             let store = new DevExpress.data.ArrayStore({
@@ -49,70 +49,34 @@
                 dataSource: store,
                 showBorders: true,
                 showRowLines: true,
-                allowColumnReordering: true,
-                columnChooser: {
+
+                columns: [{
+                    dataField: 'id'
+                }, {
+                    dataField: 'name'
+                }, {
+                    dataField: 'batch'
+                }],
+
+                // master view 
+                masterDetail: {
+                    // to enable masterDetail
                     enabled: true,
-                },
 
-                // right click on header
-                grouping: {
-                    // to enable grouping 
-                    contextMenuEnabled: true,
+                    // template to configure it
+                    template: (container, options) => {
+                        const data = options.data;
 
-                    // defualt: 'buttonClick'
-                    expandMode: 'rowClick',
-
-                    // prevent user from collapsing groupt
-                    // autoExpandAll: true,
-                    // allowCollapsing: false
-                },
-
-                summary: {
-                    // groupItems: an array of objects for group summary, each of which contains at least 
-                    // two fields: column and summaryType. 
-                    groupItems: [{
-                        // which column will provide data
-                        column: 'id',
-
-                        // which aggregate function will apply on them.
-                        summaryType: 'count',
-
-                        // enable this property otherwise result will be shown in group header
-                        showInGroupFooter: true
-                    }, {
-                        column: 'cpi',
-                        summaryType: 'sum',
-                        alignment: 'right',
-                        showInGroupFooter: false, // default : false
-
-                        // usually needed if result is shown in header
-                        // as if alignByColumn : false -> result will be not a alligned with column 
-                        alignByColumn : true
-
-                    }],
-
-                    // just to see how it will look with group summary 
-                    totalItems: [{
-                        column: 'id',
-                        summaryType: 'count'
-                    }]
-                },
-
-                // options for summary  : 
-                // column : string
-                // summaryType : string
-                // alignment : string
-                // cssClass : string
-                // customizeText : function
-                // showInColumn : string 
-                // displayFormat : string 
-                    // - {0} : summary value 
-                    // - {1} : parent caption (column caption) Available if the showInColumn property is specified. undefined otherwise
-                // summarytype : sum, min, max, avg, count, custom 
-                // valueFormat: string (configure fotmat object too. for better control over it) 
-
-
-
+                        $('<div>')
+                            .addClass('master-detail-caption')
+                            .text(`${data.name}'s info:`)
+                            .appendTo(container);
+                        
+                        $('<div>')
+                            .html(`${data.name}'s id no is ${data.id} and currently he is in batch ${data.batch}. He/She has ${data.cpi} cpi`)
+                            .appendTo(container)
+                    }
+                }
             });
 
         });
