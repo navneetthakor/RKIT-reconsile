@@ -53,6 +53,7 @@ namespace WebApplication1.Controllers
         [Cache]
         public IHttpActionResult GetAllNotes()
         {
+            Debug.WriteLine("Get all notes executed");
             //check wheather given token is valid or not 
             string Email = null;
             string token = Request.Headers.Authorization?.Parameter;
@@ -70,6 +71,11 @@ namespace WebApplication1.Controllers
                 return BadRequest("User with given Email not exists");
             }
 
+            foreach(var note in InMemoryDatabase.Notes[user.UserId])
+            {
+                Debug.WriteLine(note.NoteId);
+
+            }
             return Ok(InMemoryDatabase.Notes[user.UserId]);
         }
 

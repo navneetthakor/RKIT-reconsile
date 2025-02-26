@@ -12,11 +12,14 @@ using WebApplication1.Helper_Classes;
 
 namespace WebApplication1.Controllers
 {
-  
-        public class UserController : ApiController
-        {
+
+    public class UserController : ApiController
+    {
         [HttpPost]
         [Route("user/createUser")]
+        ///<summary>
+        ///api to create user
+        ///</summary>
         public IHttpActionResult CreateUser(ReqUser reqUser)
         {
             //checked if user exists or not with same email
@@ -39,14 +42,17 @@ namespace WebApplication1.Controllers
             string token = JWT.GenerateJwtToken(newUser.Email);
 
             //returning status 
-            object[] returnValues = new object[] { newUser, new {TOKEN = token} };
-                return Ok(returnValues);
-            }
+            object[] returnValues = new object[] { newUser, new { TOKEN = token } };
+            return Ok(returnValues);
+        }
 
-            [HttpDelete]
-            [Route("user/DeleteUser")]
-            public IHttpActionResult DeleteUser()
-            {
+        [HttpDelete]
+        [Route("user/DeleteUser")]
+        ///<summary>
+        ///api to delete user
+        ///</summary>
+        public IHttpActionResult DeleteUser()
+        {
 
             //check wheather given token is valid or not 
             string Email = null;
@@ -66,15 +72,16 @@ namespace WebApplication1.Controllers
             //all safe to remove user 
             bool isDeleted = InMemoryDatabase.Users.Remove(user) ? InMemoryDatabase.Notes.Remove(user.UserId) : false;
 
-            if (isDeleted) 
+            if (isDeleted)
             {
-                return Ok(user); 
-            } else 
+                return Ok(user);
+            }
+            else
             {
-                return BadRequest("Internal server error : not able to delete currently, please try later"); 
+                return BadRequest("Internal server error : not able to delete currently, please try later");
             }
 
-            }
         }
     }
+}
 

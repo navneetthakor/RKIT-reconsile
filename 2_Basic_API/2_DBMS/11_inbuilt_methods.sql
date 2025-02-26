@@ -34,4 +34,5 @@ select date_format(now(), '%b'); -- Jan
 select date_format(now(), '%j'); -- 010 (from 001 to 366)
 
 show create table student;
+use fsep_model;
 show table status where name = "student";

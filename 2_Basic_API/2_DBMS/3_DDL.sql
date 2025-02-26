@@ -2,7 +2,7 @@
 -- used to define and manage structure of the data. 
 -- Following are important queries related to DDL
 
-	-- use my_test_schema;
+	use my_test_schema;
 
 # 1) CREATE : We already seen it
 

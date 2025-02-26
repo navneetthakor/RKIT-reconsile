@@ -40,7 +40,7 @@ order by lname ASC, lname DESC;
 -- having is like 'where' clause for groups
 -- use for aggrigates
 select
-	count(*) as count
+	count(*) as count, branch_name
 from
 	student
 group by 

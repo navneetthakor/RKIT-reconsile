@@ -4,7 +4,7 @@
 # 1) inner join
 -- Q : list student with their corresponding company
 select
-	sid, fname, lname, name
+	sid, fname, lname, c.name as company_name
 from
 	student as s inner join company as c
 on

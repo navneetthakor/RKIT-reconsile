@@ -1,5 +1,5 @@
 -- Views : View = Saved Query
--- provides abstraction ans security
+-- provides abstraction and security
 -- updation of view is depends on what type of view it is
 
 # 1) create view

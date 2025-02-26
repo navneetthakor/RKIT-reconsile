@@ -21,6 +21,7 @@ class MyClass : IMyInterface
     public void Show()
     {
         Console.WriteLine("Public method of MyClass");
+            this.IMyInterface.Display();
     }
 }
 
@@ -37,7 +38,7 @@ class Program
 
         // Accessing the explicitly implemented method
         IMyInterface interfaceObj = obj;
-        interfaceObj.Display(); // Output: Explicitly implemented Display method
+        //interfaceObj.Display(); // Output: Explicitly implemented Display method
     }
 }
 
