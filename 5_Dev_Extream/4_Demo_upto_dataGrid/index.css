@@ -9,11 +9,16 @@ body{
 }
 
 #mainContainer1{
-    height: 80vh;
+    height: 70vh;
     border-radius: 10px;
     width: 55vw;
     background-color: rgb(255, 249, 241);
     box-shadow: 3px 3px 50px rgb(0, 0, 0);
+}
+
+#mc1_intro{
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgb(230, 111, 214);
 }
 
 .freedom{
@@ -66,8 +71,14 @@ custom{
 }
 
 #name_text_box{
-    border: 2px solid rgb(96, 120, 230);
-    font-size: large;
-    width: 10vw;
+    /* text-shadow: 2px 1.5px 20px rgb(96, 120, 230); */
+    text-shadow: 2px 1.5px 20px rgb(230, 111, 214), 2px 3px 20px rgb(108, 196, 236);
+    font-size: 1.7rem;
+    /* width: 10vw; */
     text-align: center;
+    font-weight: bold;
+}
+
+#back_button{
+    font-size: 1rem;
 }

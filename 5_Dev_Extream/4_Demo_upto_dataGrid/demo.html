@@ -28,7 +28,8 @@
     <div class="freedom" id="f3"></div>
     <div class="freedom" id="f4"></div>
 
-    <div class="container mt-5 border border-dark d-flex gap-2 flex-column d-none p-3" id="mainContainer1">
+    <div class="container mt-5 border border-dark d-flex gap-2 flex-column p-3" id="mainContainer1">
+        <div id="mc1_intro" class="d-flex justify-content-center align-items-center mt-4 mb-3 fs-2"> Welcom to Data Viper</div>
         <form id="myForm" action="/">
             <div class="mt-3">
                 <fieldset>
@@ -39,7 +40,7 @@
             </div>
             <div class="mt-3">
                 <fieldset>
-                    <legend class="fs-6">Number of records (&lt;60) <custom>*</custom>
+                    <legend class="fs-6">Maximum number of records to display (&lt;60) <custom>*</custom>
                         </custom> : </title>
                         <div id="num_of_record" class="container "></div>
                     </legend>
@@ -50,77 +51,16 @@
             <div id="submit_button" class="container border border-dark mt-3 mb-3"></div>
         </form>
     </div>
-    <div class="container mt-5 border border-dark d-flex gap-2 flex-column p-3" id="mainContainer2">
-        <div id="main2_header" class="container p-3 d-flex justify-content-space-around">
+    <div class="container mt-5 border border-dark d-flex gap-2 flex-column d-none p-3" id="mainContainer2">
+        <div id="main2_header" class="container p-3 d-flex justify-content-between">
             <div id="name_text_box"></div>
             <div id="back_button"></div>
         </div>
-        <div id="grid_demo"></div>
+        <div class="m-3" id="grid_demo"></div>
     </div>
 
 
-    <script>
-        $(() => {
-            $('#fname').dxTextBox({
-                tabIndex: 1,
-                placeholder: 'Keyur Adyaru',
-            }).dxValidator({
-                validationRules: [{
-                    type: 'required',
-                    message: 'trainer\'s name is required'
-                }]
-            });
-
-
-            $('#num_of_record').dxTextBox({
-                tabIndex: 5,
-                placeholder: 'xxx',
-            }).dxValidator({
-                validationRules: [{
-                    type: 'required',
-                    message: 'EID is required'
-                }, {
-                    type: 'numeric',
-                    message: "EID must be numeric"
-                }]
-            });
-
-            $('#you_agree_checkBox').dxCheckBox({
-                text: 'You are agree that your feedback is unbiased.'
-            }).dxValidator({
-                validationRules: [{
-                    type: 'required',
-                    message: 'you have to agree'
-                }]
-            })
-
-            $('#submit_button').dxButton({
-                width: '60%',
-                text: 'submit',
-                type: 'default',
-                stylingMode: 'contained',
-                useSubmitBehavior: true,
-            });
-
-            $('#myForm').submit((e) => {
-                e.preventDefault();
-                $('#myForm')[0].reset();
-                $('#mainContainer1').addClass('d-none');
-                $('#mainContainer2').removeClass('d-none');
-            })
-
-
-            //    -------  main2 -------
-            $('#name_text_box').dxTextBox({
-                text: "navneet",
-                readOnly: true,
-                align: 'center'
-            })
-
-            
-
-        })
-    </script>
+    <script src="./script.js" defer></script>
 </body>
 
 </html>
