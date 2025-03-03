@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+      <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ 
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+ 
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <style>
+        .load_indi_container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .header_container{
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <section id="section1">
+        <div class="header_container">
+            <h1>Default Load Indicatore</h1>
+        </div>
+        <div class="load_indi_container">
+            <div id="load_indicator1"></div>
+        </div>
+    </section>
+    
+    <section id="section2">
+        <div class="header_container">
+            <h1>Experiment Height and width</h1>
+        </div>
+        <div class="load_indi_container">
+            <div id="load_indicator2"></div>
+            <div id="load_indicator3"></div>
+            <div id="load_indicator4"></div>
+        </div>
+    </section>
+    
+    <section id="section3">
+        <div class="header_container">
+            <h1>Custom Icon</h1>
+        </div>
+        <div class="load_indi_container">
+            <div id="load_indicator5"></div>
+            <div id="load_indicator6"></div>
+            <div id="load_indicator7"></div>
+        </div>
+    </section>
+
+    <script defer>
+        /*
+        * Load Indicator:  notifying the viewer that a process is in progress.
+        */
+
+        // default load indicator
+        $('#load_indicator1').dxLoadIndicator({
+            visible: true,
+        });
+        
+        // Experiment Height and width
+        $('#load_indicator2').dxLoadIndicator({
+            visible: true,
+            height: '5rem'
+        });
+
+        $('#load_indicator3').dxLoadIndicator({
+            visible: true,
+            width: '5rem'
+        });
+
+        $('#load_indicator4').dxLoadIndicator({
+            visible: true,
+            height: '5rem',
+            width: '5rem'
+        });
+
+
+        // cutom icon 
+        $('#load_indicator5').dxLoadIndicator({
+            visible: true,
+            indicatorSrc: "https://js.devexpress.com/Content/data/loadingIcons/default.svg",
+        });
+        $('#load_indicator6').dxLoadIndicator({
+            visible: true,
+            indicatorSrc: "https://js.devexpress.com/Content/data/loadingIcons/rolling.svg",
+        });
+        $('#load_indicator7').dxLoadIndicator({
+            visible: true,
+            indicatorSrc: 'https://js.devexpress.com/Content/data/loadingIcons/ring.svg',
+        });
+
+    </script>
+</body>
+</html>
