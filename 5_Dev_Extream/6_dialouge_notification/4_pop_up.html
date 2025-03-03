@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop up | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+
+</head>
+
+<body>
+    <div id="pop_up"></div>
+
+    <script defer>
+        /*
+        * Popup displays content in a window that overlays the current view.
+        */
+
+        $(() => {
+
+            const myText = `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Penatibus et magnis dis parturient. Eget dolor morbi non arcu risus. Tristique magna sit amet purus gravida quis blandit.
+                Auctor urna nunc id cursus metus aliquam eleifend mi in. Tellus orci ac auctor augue mauris augue neque gravida. Nullam vehicula ipsum a arcu.
+                Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Cursus in hac habitasse platea dictumst. Egestas dui id ornare arcu.
+                Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim.</p>
+ 
+                <p>Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Neque volutpat ac tincidunt vitae semper quis lectus.
+                Sed sed risus pretium quam vulputate dignissim suspendisse in. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar.
+                Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Amet cursus sit amet dictum sit amet justo donec enim.
+                Vestibulum rhoncus est pellentesque elit ullamcorper. Id aliquet risus feugiat in ante metus dictum at.</p>`;
+
+
+            $('#pop_up').dxPopup({
+                visible: false,
+
+                // to add content in body of popup 
+                contentTemplate: () => {
+                    const content = $('<div />');
+                    content.append(myText);
+                    content.append(
+                        $("<div />").attr("id", "buttonContainer").dxButton({
+                            text: "Click me",
+                            onClick: function (e) {
+                                alert("Login successful.")
+                            }
+                        }));
+                    
+                    // add scrolling behaviour
+                    content.dxScrollView({
+                        height: "100%",
+                        width: "100%"
+                    });
+                    return content;
+                },
+
+                // title settings
+                title: 'My Pop_up',
+                showTitle: true, // default : true
+
+                // height and width setup
+                width: 500,
+                height: 500,
+                resizeEnabled: true, // user can reseize by dragging
+
+                // close when someone clicks outside of it
+                closeOnOutsideClick: true,
+
+                // position to display load panel
+                // Accepted Values: 'bottom' | 'center' | 'left' | 'left bottom' | 'left top' | 'right' | 'right bottom' | 'right top' | 'top'
+                position: 'center',
+
+                // drag and put anywhere on screen 
+                // we can change popup position using arrow keys (only if popup is under focus) if this property is set to true
+                dragEnabled: true, // default: true
+
+            });
+
+            // externally hide or show popup 
+            const popup = $('#pop_up').dxPopup('instance');
+            popup.show();
+            // popup.hide();
+
+        })
+
+
+    </script>
+
+</body>
+
+</html>
