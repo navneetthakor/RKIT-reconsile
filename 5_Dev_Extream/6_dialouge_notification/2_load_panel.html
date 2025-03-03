@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+      <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ 
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+ 
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <style>
+        .load_panel_container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .header_container{
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <section id="section1">
+        <div class="header_container">
+            <h1>Default Load Panel</h1>
+        </div>
+        <div class="load_panel_container">
+            <div id="load_panel" style="border: 2px solid red;"></div>
+        </div>
+    </section>
+
+    <script defer>
+        /*
+        * Load Indicator:  notifying the viewer that a process is in progress.
+        */
+
+        // default load indicator
+        $('#load_panel').dxLoadPanel({
+
+            // set visibility
+            visible:false,
+
+            // close when someone clicks outside of it
+            closeOnOutsideClick: true,
+
+            // to change indicator 
+            // for more detail visit ./1_loadIndicator.html
+            indicatorSrc: "https://js.devexpress.com/Content/data/loadingIcons/default.svg",
+
+            // displayed below indicatore
+            // defualt: Loading...
+            message: "Please, wait...",
+
+            // backgound of container becomes transparent if it changed to -> false
+            showPane: true,
+
+            //  color of rest of screen when load panel is active
+            shadingColor: "rgba(250, 0, 0, 0.2)", 
+
+            // height and width 
+            height: 200,
+            width: 200,
+
+            // delay in miliseconds
+            delay: 200,
+
+            // position to display load panel
+            // Accepted Values: 'bottom' | 'center' | 'left' | 'left bottom' | 'left top' | 'right' | 'right bottom' | 'right top' | 'top'
+            position: 'center',  
+
+
+            // events ------------ 
+            onShowing: (e) => console.log("showing : " + e),
+            onShown: (e) => console.log("shown : " + e),
+            onHiding: (e) => console.log("hidding : " + e),
+            onHidden: (e) => console.log("Hidden : " + e),
+        });
+
+        // externally show and hide the panel 
+        $('#load_panel').dxLoadPanel('show');
+        $('#load_panel').dxLoadPanel('hide');
+        $('#load_panel').dxLoadPanel('toggle',true);
+
+
+        
+    </script>
+</body>
+</html>
