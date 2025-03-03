@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop Over | DevExtream</title>
+
+    <!-- ... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+
+</head>
+
+<body>
+    <div id="pop_over">hello</div>
+    <div id="toTriggerEvent">do something with me</div>
+
+    <script defer>
+        /*
+        * pop over:  UI component that shows notifications within a box with an arrow pointing to a specified UI element.
+        */
+
+        $(() => {
+            $('#pop_over').dxPopover({
+                target: '#toTriggerEvent',
+                showEvent: 'dxclick', // 'dxhoverstart'
+                // hideEvent: 'dxhoverend',
+
+                // title of popover
+                title: "My Title",
+                showTitle: true,
+
+                // close button to close popover 
+                showCloseButton: true,
+
+                // can set height and width 
+                width: 500,
+
+                // toolbar in header
+                toolbarItems: [{
+                    widget: "dxButton",
+                    location: "after",
+                    options: {
+                        text: "alert",
+                        onClick: function () {
+                            alert("Helllo")
+                        }
+                    }
+                }],
+
+                // for shading 
+                shading: true,
+                shadingColor: "rgba(0, 0, 0, 0.2)",
+
+                // close when someone clicks outside of it
+                closeOnOutsideClick: true,
+
+                // position to display load panel
+                // Accepted Values: 'bottom' | 'center' | 'left' | 'left bottom' | 'left top' | 'right' | 'right bottom' | 'right top' | 'top'
+                position: 'bottom',
+            })
+
+        });
+    </script>
+</body>
+
+</html>
