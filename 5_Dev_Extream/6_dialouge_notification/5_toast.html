@@ -1,25 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toast | DevExtream</title>
 
-      <!-- ... -->
+    <!-- ... -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
- 
+
     <!-- DevExtreme theme -->
     <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
- 
+
     <!-- DevExtreme library -->
     <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
-    
+
 </head>
+
 <body>
-    <div id="toast"></div>
+    <div id="toast_overview"></div>
+    <div id="toast_with_button"></div>
 
     <script defer>
-        
+        $(() => {
+            $('#toast_overview').dxToast({
+                type: 'error',
+                message: 'error Message',
+                visible: true,
+                displayTime: 5000,
+
+                // configuring ways to close toast 
+                closeOnClick: true,
+                closeOnOutsideClick: true,
+                closeOnSwipe: true,
+
+                // position to display load panel
+                // Accepted Values: 'bottom' | 'center' | 'left' | 'left bottom' | 'left top' | 'right' | 'right bottom' | 'right top' | 'top'
+                position: 'bottom',
+            });
+
+            const types =  ['error', 'info', 'success', 'warning'];
+            $('#toast_with_button').dxButton({
+                type: 'default',
+                stylingMode: 'contained',
+                text: 'Click for Toast',
+                onClick: (e) => {
+                    // notify(options, type, displayTime)
+                    DevExpress.ui.notify(
+                        {
+                            message: "Button toast", 
+                            width: 270,
+                            position: {
+                                my: "top",
+                                at: "center",
+                                of: "#container"
+                            },
+                            // contentTemplate: (element) => {
+                            //     element.append('<p>You have a new message</p> &nbsp;');
+                            //     element.append('<i class="dx-icon-email icon-style"></i>');
+                            //     element.css('border', '2px solid red')
+                            //     element.css('color', 'black')
+                            // }
+                        },
+                        types[Math.floor(Math.random() * 4)],
+                        // 'custom',
+                        500
+                    )
+                }
+            });
+        })
     </script>
 </body>
+
 </html>
