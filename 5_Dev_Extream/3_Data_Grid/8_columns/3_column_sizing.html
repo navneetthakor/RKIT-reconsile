@@ -49,9 +49,13 @@
                 dataSource: store,
                 showBorders: true,
                 showRowLines: true,
+
                 allowColumnReordering: true,
+
+                // see property for initially hide
                 columnChooser: {
                     enabled: true,
+                    // see over here ---
                 },
 
                 // minimum width for all the columns 
@@ -72,7 +76,7 @@
                         dataField: 'name'
                     },
                     {
-                        dataField: 'Batch'
+                        dataField: 'Batch',
                     },
                 ],
 
