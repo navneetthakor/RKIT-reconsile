@@ -2,7 +2,7 @@
 $(() => {
     $('#fname').dxTextBox({
         tabIndex: 1,
-        placeholder: 'Keyur Adyaru',
+        placeholder: 'Navneet Kumar',
     }).dxValidator({
         validationRules: [{
             type: 'required',
