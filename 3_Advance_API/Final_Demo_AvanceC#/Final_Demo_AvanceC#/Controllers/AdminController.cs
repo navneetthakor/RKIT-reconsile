@@ -7,11 +7,20 @@ using System.Data;
 
 namespace Final_Demo_AvanceC_.Controllers
 {
+    /// <summary>
+    /// Admin controller controlls all the logic regarding 
+    /// processes that admin can control
+    /// </summary>
     internal class AdminController
     {
         private AdminLogics atl;
         private IDbConnection _db;
 
+        /// <summary>
+        /// Main entry point
+        /// </summary>
+        /// <param name="db"></param>
+        /// <param name="fdap01"></param>
         public void MainEvent(IDbConnection db, FDAP01 fdap01)
         {
             atl = new AdminLogics(db, fdap01);
@@ -56,6 +65,9 @@ namespace Final_Demo_AvanceC_.Controllers
 
         }
 
+        /// <summary>
+        /// provides functionallity to delete book
+        /// </summary>
         private void DeleteBook()
         {
             FDAP03 newBook = new FDAP03();
@@ -66,7 +78,10 @@ namespace Final_Demo_AvanceC_.Controllers
             atl.ValidateOnDelete(WOBEnum.Book);
             atl.Delete(WOBEnum.Book);
         }
-
+        
+        /// <summary>
+        /// to Delete Author
+        /// </summary>
         private void DeleteAuthor()
         {
             FDAP03 newBook = new FDAP03();

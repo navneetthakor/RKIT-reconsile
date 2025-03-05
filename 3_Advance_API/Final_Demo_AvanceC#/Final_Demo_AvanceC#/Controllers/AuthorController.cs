@@ -9,10 +9,20 @@ using System.Threading.Tasks;
 
 namespace Final_Demo_AvanceCSharp.Controllers
 {
+    /// <summary>
+    /// Admin controller controlls all the logic regarding 
+    /// processes that admin can control
+    /// </summary>
     internal class AuthorController
     {
         private AuthorLogics atl;
         private IDbConnection _db;
+
+        /// <summary>
+        /// main entry point to controller
+        /// </summary>
+        /// <param name="db"></param>
+        /// <param name="fdap01"></param>
         public void MainEvent(IDbConnection db, FDAP01 fdap01)
         {
             atl = new AuthorLogics(db, fdap01);
@@ -57,6 +67,9 @@ namespace Final_Demo_AvanceCSharp.Controllers
 
         }
 
+        /// <summary>
+        /// to  Add book
+        /// </summary>
         private void AddBook()
         {
             FDAP03 newBook = new FDAP03();
@@ -71,6 +84,9 @@ namespace Final_Demo_AvanceCSharp.Controllers
 
         }
 
+        /// <summary>
+        /// to update book
+        /// </summary>
         private void UpdateBook()
         {
             FDAP03 newBook = new FDAP03();
@@ -88,6 +104,10 @@ namespace Final_Demo_AvanceCSharp.Controllers
 
         }
 
+
+        /// <summary>
+        /// to Delete book
+        /// </summary>
         private void DeleteBook()
         {
             FDAP03 newBook = new FDAP03();
