@@ -42,8 +42,15 @@ namespace AdvanceAPI.Typs_of_classes
     {
         //public string hello; // throws compile time error
 
-        static public string hello = "hello team"; // we have to initilized it over here
-        //MyStatic() { } // error : static class cannot have constructor
+        static public string hello = "hello team"; // we have to initilized it over here if no static constructor is used
+        //MyStatic() { } // error : static class cannot have instance constructor
+        
+        // but it can have static constructor, which will run only once when first time class is accessed.
+        static MyStatic()
+        {
+            // can initialized static fields over here
+        }
+
 
         public static void HelloMethod()
         {
@@ -111,7 +118,6 @@ namespace AdvanceAPI.Typs_of_classes
         }
     }
 
-    //9) record class : find more things
 
     public class Tester
     {

@@ -10,13 +10,25 @@ namespace Final_Demo_AvanceCSharp.Modals.POCOs
     public class FDAP03
     {
         [Index, PrimaryKey, AutoIncrement]
-        public int A03F01 { get; set; }  // id
+        ///<summary>
+        ///Id
+        /// </summary>
+        public int A03F01 { get; set; }
 
-        public string A03F02 { get; set; } // title
+        ///<summary>
+        ///Title
+        /// </summary>
+        public string A03F02 { get; set; }
 
-        public string A03F03 { get; set; } // description
+        ///<summary>
+        ///Description
+        /// </summary>
+        public string A03F03 { get; set; }
 
         [ForeignKey(type: typeof(FDAP01), OnDelete = "CASCADE")]
-        public int A03F04 { get; set; } // author id
+        ///<summary>
+        ///Id_of_Author
+        /// </summary>
+        public int A03F04 { get; set; }
     }
 }

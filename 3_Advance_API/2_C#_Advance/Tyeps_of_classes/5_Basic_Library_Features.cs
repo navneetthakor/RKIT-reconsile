@@ -17,7 +17,6 @@ namespace AdvanceAPI.BLF
             //-> Majority of the BLs we already seen like 
             //- Collection 
             //- Collection.Generic
-            //- Data
             //- Linq (upcoming)
             //- IO 
 

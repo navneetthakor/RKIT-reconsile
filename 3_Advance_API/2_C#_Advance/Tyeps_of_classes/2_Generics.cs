@@ -20,7 +20,7 @@ namespace AdvanceAPI.Generics
     }
 
     //2) generic class 
-    class GenericClass <T>
+    class GenericClass <T> where T : struct // other : class, new(), someBaseClassName, someInteraceName
     {
         public T data_type;
         public GenericClass(T data_type) 

@@ -31,9 +31,9 @@ namespace DBWC
                     {
                         //adding values 
                         //cmd.Parameters.AddWithValue("@P01F01", 5);
-                        cmd.Parameters.AddWithValue("@P01F02", "Meet");
-                        cmd.Parameters.AddWithValue("@P01F03", "mJ2002");
-                        cmd.Parameters.AddWithValue("@P01F04", "meet@rkitsoftware.com");
+                        cmd.Parameters.AddWithValue("@P01F02", "Navneet");
+                        cmd.Parameters.AddWithValue("@P01F03", "nK2003");
+                        cmd.Parameters.AddWithValue("@P01F04", "Navneet@rkitsoftware.com");
                         cmd.Parameters.AddWithValue("@P01F05", "4595123685");
 
                         int affectedRows = cmd.ExecuteNonQuery();
@@ -49,8 +49,8 @@ namespace DBWC
                     string updateQuery = " update pocoaewp01 set P01F03 = @P01F03 where P01F02 = @P01F02";
                     using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
                     {
-                        cmd.Parameters.AddWithValue("@P01F03", "MJ1112003");
-                        cmd.Parameters.AddWithValue("@P01F02", "Meet");
+                        cmd.Parameters.AddWithValue("@P01F03", "NK28102003");
+                        cmd.Parameters.AddWithValue("@P01F02", "Navneet");
                         int affectedRows = cmd.ExecuteNonQuery();
                         Console.WriteLine("affectedRows : " + affectedRows);
                     }
@@ -64,7 +64,7 @@ namespace DBWC
                     string deleteQuery = "delete from pocoaewp01 where P01F02 = @P01F02";
                     using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
                     {
-                        cmd.Parameters.AddWithValue("@P01F02", "Meet");
+                        cmd.Parameters.AddWithValue("@P01F02", "Navneet");
                         int rowsAffected = cmd.ExecuteNonQuery();
                         Console.WriteLine($"{rowsAffected} row(s) deleted.");
                     }

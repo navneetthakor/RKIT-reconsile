@@ -50,9 +50,8 @@ namespace AdvanceAPI.Data_Serialization
             //-> other formats will through errors 
             //-> to handle this situation, we can use JsonSerializerSettings
             JsonSerializerSettings mySettings = new JsonSerializerSettings
-            {   Formatting = Formatting.Indented,
+            {
                 DateFormatString = "dd-MM-yyyy",
-                NullValueHandling = NullValueHandling.Ignore
             };
 
             string time = JsonConvert.SerializeObject(DateTime.Now, mySettings);

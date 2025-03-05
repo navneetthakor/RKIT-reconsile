@@ -10,17 +10,32 @@ namespace Final_Demo_AvanceCSharp.Modals.POCOs
     public class FDAP01
     {
         [PrimaryKey, AutoIncrement]
-        public int A01F01 { get; set; } // id
+        ///<summary>
+        ///Id
+        /// </summary>
+        public int A01F01 { get; set; }
 
-        public string A01F02 { get; set; } // name
+        ///<summary>
+        ///Name
+        /// </summary>
+        public string A01F02 { get; set; }
 
         [Unique, NotNull]
-        public string A01F03 { get; set; } // email
+        ///<summary>
+        ///Email
+        /// </summary>
+        public string A01F03 { get; set; }
 
-        public string A01F04 { get; set; } // password
+        ///<summary>
+        ///Password
+        /// </summary>
+        public string A01F04 { get; set; } 
 
         [StringLength(10)]
-        public string A01F05 { get; set; } // phone
+        ///<summary>
+        ///Phone
+        /// </summary>
+        public string A01F05 { get; set; }
 
     }
 }
