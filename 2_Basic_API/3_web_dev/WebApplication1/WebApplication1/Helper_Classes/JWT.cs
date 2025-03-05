@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Diagnostics;
+using System.Configuration;
 
 namespace WebApplication1.Helper_Classes
 {
@@ -19,7 +20,7 @@ namespace WebApplication1.Helper_Classes
         /// - signature : created by singing header and payload with secret key. 
         /// Signature = HMACSHA256(EncodedHeader + "." + EncodedPayload, SecretKey)
         /// </summary>
-        private static string mySecret { get; set; } = "tonystarkismyrolemodelasheisoneofgeniusinthetechworldaccordingtome";
+        private static string mySecret { get; set; } = ConfigurationManager.AppSettings["JwtSecretKey"];
         public static string GenerateJwtToken(string email)
         {
             // Create a security key and signing credentials

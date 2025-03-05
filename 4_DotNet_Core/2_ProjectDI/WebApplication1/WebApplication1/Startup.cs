@@ -44,9 +44,7 @@ namespace WebApplication1
             app.UseStatusCodePages();
 
             //calling 
-            //app.UseRouting();
-            //is not necessory 
-
+            app.UseRouting();
 
             // Redirect HTTP requests to HTTPS
             app.UseHttpsRedirection();

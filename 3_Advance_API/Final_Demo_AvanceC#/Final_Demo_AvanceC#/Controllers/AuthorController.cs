@@ -1,11 +1,6 @@
 ﻿using Final_Demo_AvanceCSharp.Business_Logic;
 using Final_Demo_AvanceCSharp.Modals.POCOs;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final_Demo_AvanceCSharp.Controllers
 {

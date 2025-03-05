@@ -6,6 +6,9 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    ///<summary>
+    /// uses signle product repo for read and write
+    /// </summary>
     public class ValuesController : ControllerBase
     {
         IProductRepo _prodRepo;
@@ -16,6 +19,9 @@ namespace WebApplication1.Controllers
 
         [Route("AddProduct")]
         [HttpPost]
+        /// <summary>
+        /// add product to product repo
+        /// </summary>
         public IActionResult AddProduct([FromBody] string title)
         {
             _prodRepo.AddProd(title);
@@ -24,10 +30,13 @@ namespace WebApplication1.Controllers
 
         [Route("CheckError")]
         [HttpGet]
+        ///<summary>
+        /// to throw error (used in exception handler page)
+        /// </summary>
         public IActionResult CheckError()
         {
             throw new Exception("my Sample Error");
-            return Ok("done");
+            //return Ok("done");
         }
     }
 }
@@ -36,6 +45,9 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    ///<summary>
+    /// uses multiple product repo for read and write
+    /// </summary>
     public class Values2Controller : ControllerBase
     {
         IProductRepo _prodRepo1;
@@ -48,6 +60,9 @@ namespace WebApplication1.Controllers
 
         [Route("AddProduct2")]
         [HttpPost]
+        ///<summary>
+        /// adding product to second repo
+        /// </summary>
         public IActionResult AddProduct([FromBody] string title)
         {
             _prodRepo1.AddProd(title);

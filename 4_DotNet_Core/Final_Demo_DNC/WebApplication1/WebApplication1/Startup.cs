@@ -72,8 +72,6 @@ namespace WebApplication1
 
             app.UseMiddleware<JwtMiddleware>();
 
-            app.MapGet("/", () => "Hello World!");
-
             // Redirect HTTP requests to HTTPS
             app.UseHttpsRedirection();
 

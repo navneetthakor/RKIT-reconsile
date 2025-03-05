@@ -16,7 +16,7 @@ namespace WebApplication1
             ///<summary>
             ///Persist for single request
             /// </summary>
-            service.AddScoped<IProductRepo, ProductRepo>();
+            //service.AddScoped<IProductRepo, ProductRepo>();
 
             ///<summary>
             ///provides new object whenever someone ask
@@ -29,8 +29,8 @@ namespace WebApplication1
             //otherwise they will just ignore it
 
             service.TryAddSingleton<IProductRepo, ProductRepo>();
-            service.TryAddScoped<IProductRepo, ProductRepo>();
-            service.TryAddTransient<IProductRepo, ProductRepo>();
+            //service.TryAddScoped<IProductRepo, ProductRepo>();
+            //service.TryAddTransient<IProductRepo, ProductRepo>();
         }
     }
 }

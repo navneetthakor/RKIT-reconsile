@@ -3,6 +3,9 @@ using System.Security.Claims;
 using WebApplication1.Helper_Classes;
 namespace WebApplication1.Utilitlies
 {
+    /// <summary>
+    /// JWT middleware : it checks for token in header of request
+    /// </summary>
     public class JwtMiddleware
     {
         private readonly RequestDelegate _next;
@@ -14,6 +17,11 @@ namespace WebApplication1.Utilitlies
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// it token is present, it attaches to the 'User' field of request
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task InvokeAsync(HttpContext context)
         {
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
