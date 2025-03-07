@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Repositories;
+using WebApplication1.Filters;
 
 namespace WebApplication1.Controllers
 {
@@ -19,6 +20,10 @@ namespace WebApplication1.Controllers
 
         [Route("AddProduct")]
         [HttpPost]
+        [CustomAuthorizationFilter]
+        [CustomResourceFilter]
+        [MyActionfilter]
+        [MyResultFilter]
         /// <summary>
         /// add product to product repo
         /// </summary>
