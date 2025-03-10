@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ 
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.1.3/css/dx.light.css">
+ 
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.1.3/js/dx.all.js"></script>
+ 
+    <title>Try</title>
+</head>
+ 
+<body>
+    <div id="grid"></div>
+</body>
+ 
+<script>
+    $(document).ready(function () {
+        var store = new DevExpress.data.CustomStore({
+            key: "id",
+            load: function (loadOptions) {
+                let skip = 2;
+                let take = 5;
+                let page = Math.floor(skip / take) + 1;
+                let d = $.Deferred();
+                $.ajax({
+                    url: `https://67b6b39807ba6e5908415d52.mockapi.io/api/dg-1/cars?page=${page}&limit=${take}`,
+                    method: "GET",
+                    dataType: "json"
+                }).done(function (data) {
+                    console.log("h;o", data);
+                   
+                    d.resolve({
+                        data: data,
+                        // totalCount: 100
+                    }); // Load all fields
+                }).fail(function (error) {
+                    d.reject("Data loading error: " + error.statusText);
+                });
+                return d.promise();
+            },
+            insert: function (values) {
+                let d = $.Deferred();
+                $.ajax({
+                    url: "https://67b6b39807ba6e5908415d52.mockapi.io/api/dg-1/cars/",
+                    method: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(values)
+                }).done(function (response) {
+                    d.resolve(response);
+                }).fail(function (error) {
+                    d.reject("Insert error: " + error.statusText);
+                });
+                return d.promise();
+            },
+            update: function (key, values) {
+                let d = $.Deferred();
+                $.ajax({
+                    url: `https://67b6b39807ba6e5908415d52.mockapi.io/api/dg-1/cars/${key}`,
+                    method: "PUT",
+                    contentType: "application/json",
+                    data: JSON.stringify(values)
+                }).done(function (response) {
+                    d.resolve(response);
+                }).fail(function (error) {
+                    d.reject("Update error: " + error.statusText);
+                });
+                return d.promise();
+            },
+            remove: function (key) {
+                let d = new $.Deferred();
+                $.ajax({
+                    url: `https://67b6b39807ba6e5908415d52.mockapi.io/api/dg-1/cars/${key}`,
+                    method: "DELETE"
+                }).done(function () {
+                    d.resolve();
+                }).fail(function (error) {
+                    d.reject("Delete error: " + error.statusText);
+                });
+                return d.promise();
+            },
+ 
+            byKey: function (key) {
+                let d = new $.Deferred();
+                $.get(`https://67b6b39807ba6e5908415d52.mockapi.io/api/dg-1/cars/${key}`)
+                    .done(function (dataItem) {
+                        d.resolve(dataItem);
+                    });
+                return d.promise();
+            },
+ 
+            // cacheRawData: true, // below raw is required
+            loadMode: "raw", // processed
+            errorHandler: function (error) {
+                console.log("ERROR\n", error.message);
+            },
+            onInserted: function (e) {
+                console.log("Data is inserted. ", e);
+            },
+            onInserting: function (e) {
+                console.log("Data is being inserting. ", e);
+            },
+            onLoaded: function (e) {
+                console.log("Data is loaded. ", e);
+            },
+            onLoading: function (e) {
+                console.log("Data is being loading. ", e);
+            },
+            onModified: function (e) {
+                console.log("Data is modified. ", e);
+            },
+            onModifying: function (e) {
+                console.log("Data is being modifying. ", e);
+            },
+            onModified: function (e) {
+                console.log("Data is being loading. ", e);
+            },
+            useDefaultSearch: true, // true for raw, false for processed bydefault
+            // onPush, removed, removing, updated, updating
+ 
+        });
+ 
+        $("#grid").dxDataGrid({
+            dataSource: store,
+            columnsAutoWidth: true,
+            columnHidingEnabled: true,
+            remoteOperations: { paging: true },
+            paging: {
+                pageSize: 5,
+                enabled: true,
+            },
+            searchPanel: {
+                visible: true,
+                highlightCaseSensitive: true
+            },
+            pager: {
+                showPageSizeSelector: true,
+                allowedPageSizes: [10, 20, 50],
+                showNavigationButtons: true
+            },
+            editing: {
+                mode: "popup",
+                allowAdding: true,
+                allowUpdating: true,
+                allowDeleting: true
+            },
+            columns: [
+                { dataField: "id", caption: "ID", allowEditing: false },
+                { dataField: "name", caption: "Name" },
+                { dataField: "email", caption: "Email" }
+            ],
+            onContentReady: function(e){
+                console.log("lll",e);
+               
+            }
+        });
+ 
+ 
+    });
+</script>
+ 
+</html>
+ 

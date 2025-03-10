@@ -140,15 +140,12 @@
                     {
                         dataField: 'branch',
                         caption: 'Branch',
-                        // SetCellValue(rowData, value){
-                        //     rowData.Branch = value;
-                        // },
                         lookup: {
                             dataSource(options){
                                 console.log(options.data)
                                 return {
                                     store: branche_location,
-                                    filter: options.data? ['company', 'in', options.data.companies] : null,
+                                    filter: options.data? ['company', 'includes', options.data.companies] : null,
                                 }
                             },
                             valueExpr: 'id',

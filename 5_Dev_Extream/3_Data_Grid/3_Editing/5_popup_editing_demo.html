@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CDN setup | DevExtream</title>
 
-      <!-- ... -->
+    <!-- ... -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
- 
+
     <!-- DevExtreme theme -->
     <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.15/css/dx.light.css">
- 
+
     <!-- DevExtreme library -->
     <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
     <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
     <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
 </head>
+
 <body>
     <div id="row_editing"></div>
 
@@ -84,19 +86,19 @@
 
             $("#row_editing").dxDataGrid({
                 dataSource: store,
-                
+
                 showRowLines: true,
                 showBorders: true,
 
                 paging: {
                     pageSize: 20,
                     pageIndex: 1,
-                    enabled: true, 
+                    enabled: true,
                 },
 
                 pager: {
                     showNavigationButtons: true,
-                    showPageSizeSelector: true, 
+                    showPageSizeSelector: true,
                     allowedPageSizes: [1, 2, 3],
                     showInfo: true,
                     infoText: "Page {0}. Total: {1} ({2} items)"
@@ -104,10 +106,10 @@
 
                 // editing objec facilitates us to add settings
                 editing: {
-                    // open ups new pop window whjich have form like structure3
+                    // open ups new pop window which have form like structure
                     // where it provides cancel aqnd save control 
                     mode: 'popup',
-                    
+
                     // facilitates adding
                     allowAdding: true,
 
@@ -119,7 +121,7 @@
 
                     // delete action triggers confirmation popup
                     // this property used to control that
-                    confirmDelete: true, 
+                    confirmDelete: true,
 
                     popup: {
                         title: 'My Popup',
@@ -143,4 +145,5 @@
         })
     </script>
 </body>
+
 </html>
