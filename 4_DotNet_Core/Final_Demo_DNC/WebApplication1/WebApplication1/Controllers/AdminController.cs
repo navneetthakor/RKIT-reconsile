@@ -8,16 +8,32 @@ namespace WebApplication1.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
+    ///<summary>
+    /// contains all controllers related to admin
+    /// </summary>
     public class AdminController : ControllerBase
     {
+        /// <summary>
+        /// for database connection
+        /// </summary>
         private IDbConnection _connection;
+
+
         public AdminController(IDatabaseService db)
         {
             _connection = db.db;
         }
 
+
         [HttpPost]
         [Route("Login")]
+        /// <summary>
+        /// for admin login
+        /// <paramref name="logger"> nlogger object </paramref>
+        /// <paramref name="email"> email </paramref>
+        /// <paramref name="password"> password </paramref>
+        /// <return>Response object</return>
+        /// </summary>
         public Response AdminLogin(ILogger<AdminController> logger ,string email, string password)
         {
             try

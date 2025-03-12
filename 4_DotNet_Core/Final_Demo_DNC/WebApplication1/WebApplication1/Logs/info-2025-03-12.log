@@ -1,0 +1,31 @@
+2025-03-12 12:49:46.8024 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 12:49:46.8051 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 12:49:46.8051 | INFO | Hosting environment: Development  
+2025-03-12 12:49:46.8051 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 12:49:49.3123 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 12:49:49.4368 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 128.0045ms  
+2025-03-12 12:50:16.5133 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 12:50:16.7917 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.css - -  
+2025-03-12 12:50:16.7917 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/swagger-ui.css - -  
+2025-03-12 12:50:16.7917 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/swagger-ui-bundle.js - -  
+2025-03-12 12:50:16.7917 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 12:50:16.8091 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 289.9800ms  
+2025-03-12 12:50:16.8091 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/swagger-ui-standalone-preset.js - -  
+2025-03-12 12:50:16.8091 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 15.2000ms  
+2025-03-12 12:50:16.8231 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 12:50:16.8231 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 12:50:16.8231 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.0897ms  
+2025-03-12 12:50:16.8634 | INFO | The file /index.css was not modified  
+2025-03-12 12:50:16.8634 | INFO | The file /swagger-ui-bundle.js was not modified  
+2025-03-12 12:50:16.8634 | INFO | The file /swagger-ui.css was not modified  
+2025-03-12 12:50:16.8634 | INFO | The file /swagger-ui-standalone-preset.js was not modified  
+2025-03-12 12:50:16.8684 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.css - - - 304 - text/css 73.9397ms  
+2025-03-12 12:50:16.8684 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/swagger-ui-standalone-preset.js - - - 304 - text/javascript 55.7108ms  
+2025-03-12 12:50:16.8684 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/swagger-ui-bundle.js - - - 304 - text/javascript 73.0530ms  
+2025-03-12 12:50:16.8684 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/swagger-ui.css - - - 304 - text/css 74.8674ms  
+2025-03-12 12:50:16.9107 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 87.9281ms  
+2025-03-12 12:50:17.1409 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 12:50:17.1659 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/favicon-32x32.png - -  
+2025-03-12 12:50:17.1659 | INFO | The file /favicon-32x32.png was not modified  
+2025-03-12 12:50:17.1659 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/favicon-32x32.png - - - 304 - image/png 0.9379ms  
+2025-03-12 12:50:17.4458 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 305.0827ms  

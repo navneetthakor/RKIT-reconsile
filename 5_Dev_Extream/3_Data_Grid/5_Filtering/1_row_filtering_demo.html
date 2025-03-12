@@ -134,10 +134,19 @@
                     visible: true,
 
                     // whent to apply filter
-                    // applyFilter: 'onClick' // default: 'auto' 
+                    applyFilter: 'onClick' // default: 'auto' 
                 },
 
+                // how to get filterd rows from current page only
+                onContentReady: function (e) {
+                    const gridInstance = e.component;
+                    const filteredRows = gridInstance.getVisibleRows().map(row => row.data);
+                    console.log("Filtered Rows: ", filteredRows);
+                }
+
             });
+
+
 
         })
     </script>
