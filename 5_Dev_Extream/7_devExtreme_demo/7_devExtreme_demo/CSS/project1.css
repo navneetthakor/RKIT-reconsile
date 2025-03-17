@@ -1,0 +1,59 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(51, 51, 117);
+}
+
+#mainContainer {
+    /* display: none !important; */
+    height: 80vh;
+    border-radius: 10px;
+    width: 55vw;
+    background-color: rgb(255, 249, 241);
+    /* background-color: rgb(218, 206, 192); */
+    /* background: transparent; */
+    box-shadow: 3px 3px 50px rgb(0, 0, 0);
+}
+
+.freedom {
+    background-color: aqua;
+    height: 40vh;
+    width: 40vh;
+    position: absolute;
+    z-index: -1;
+    filter: blur(220px);
+}
+
+#f2 {
+    background-color: rgb(21, 255, 0);
+    top: 0;
+    right: 0;
+}
+
+#f3 {
+    background-color: rgb(255, 0, 200);
+    bottom: 0;
+    left: 0;
+}
+
+#f4 {
+    background-color: rgb(93, 255, 228);
+    bottom: 0;
+    right: 0;
+}
+
+#submit_button {
+    margin-left: 10rem;
+}
+
+custom {
+    color: red;
+    font-size: 1.2rem;
+}
+
+#you_agree {
+    color: red;
+}

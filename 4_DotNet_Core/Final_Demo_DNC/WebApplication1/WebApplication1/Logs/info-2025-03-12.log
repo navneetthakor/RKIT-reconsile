@@ -29,3 +29,560 @@
 2025-03-12 12:50:17.1659 | INFO | The file /favicon-32x32.png was not modified  
 2025-03-12 12:50:17.1659 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/favicon-32x32.png - - - 304 - image/png 0.9379ms  
 2025-03-12 12:50:17.4458 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 305.0827ms  
+2025-03-12 15:08:26.9794 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 15:08:26.9794 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 15:08:26.9794 | INFO | Hosting environment: Development  
+2025-03-12 15:08:26.9794 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 15:08:27.9158 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 15:08:28.0876 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 176.4088ms  
+2025-03-12 15:08:38.5377 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 15:08:38.8137 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 15:08:38.8137 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 15:08:38.8137 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 15:08:38.8406 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 22.7059ms  
+2025-03-12 15:08:38.8406 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 29.1991ms  
+2025-03-12 15:08:38.8514 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 313.8963ms  
+2025-03-12 15:08:38.9165 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 96.6815ms  
+2025-03-12 15:08:39.0961 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 15:08:39.3284 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 232.4611ms  
+2025-03-12 15:10:13.3564 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Admin/Login?email=codewithnavneet%40gmail.com&password=1234 - 0  
+2025-03-12 15:10:13.3776 | INFO | Executing endpoint 'WebApplication1.Controller.AdminController.AdminLogin (WebApplication1)'  
+2025-03-12 15:10:13.4146 | INFO | Route matched with {action = "AdminLogin", controller = "Admin"}. Executing controller action with signature WebApplication1.Utilitlies.Response AdminLogin(Microsoft.Extensions.Logging.ILogger`1[WebApplication1.Controller.AdminController], System.String, System.String) on controller WebApplication1.Controller.AdminController (WebApplication1).  
+2025-03-12 15:10:15.2749 | INFO | Executing action method WebApplication1.Controller.AdminController.AdminLogin (WebApplication1) - Validation state: Valid  
+2025-03-12 15:10:15.5707 | INFO | Admin loggin event  
+2025-03-12 15:10:15.5752 | INFO | Executed action method WebApplication1.Controller.AdminController.AdminLogin (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 295.8773ms.  
+2025-03-12 15:10:15.5881 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 15:10:15.7614 | INFO | Executed action WebApplication1.Controller.AdminController.AdminLogin (WebApplication1) in 2339.5093ms  
+2025-03-12 15:10:15.7614 | INFO | Executed endpoint 'WebApplication1.Controller.AdminController.AdminLogin (WebApplication1)'  
+2025-03-12 15:10:15.7614 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Admin/Login?email=codewithnavneet%40gmail.com&password=1234 - 0 - 200 430 application/json;+charset=utf-8 2405.3054ms  
+2025-03-12 15:11:02.0423 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllAuthors - -  
+2025-03-12 15:11:02.1295 | INFO | Executing endpoint 'WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1)'  
+2025-03-12 15:11:02.1295 | INFO | Route matched with {action = "GetAllAuthors", controller = "Admin"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllAuthors() on controller WebApplication1.Controller.AdminController (WebApplication1).  
+2025-03-12 15:11:02.1683 | INFO | Executing action method WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1) - Validation state: Valid  
+2025-03-12 15:11:02.1852 | INFO | Executed action method WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 16.2715ms.  
+2025-03-12 15:11:02.1852 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 15:11:02.1989 | INFO | Executed action WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1) in 66.267ms  
+2025-03-12 15:11:02.1989 | INFO | Executed endpoint 'WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1)'  
+2025-03-12 15:11:02.1989 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllAuthors - - - 200 841 application/json;+charset=utf-8 157.1025ms  
+2025-03-12 15:12:10.3400 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllBooks - -  
+2025-03-12 15:12:10.3717 | INFO | Executing endpoint 'WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1)'  
+2025-03-12 15:12:10.3717 | INFO | Route matched with {action = "GetAllBooks", controller = "Admin"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks() on controller WebApplication1.Controller.AdminController (WebApplication1).  
+2025-03-12 15:12:10.4022 | INFO | Executing action method WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1) - Validation state: Valid  
+2025-03-12 15:12:10.4208 | INFO | Executed action method WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 18.3766ms.  
+2025-03-12 15:12:10.4208 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 15:12:10.4208 | INFO | Executed action WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1) in 52.276ms  
+2025-03-12 15:12:10.4208 | INFO | Executed endpoint 'WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1)'  
+2025-03-12 15:12:10.4208 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllBooks - - - 200 990 application/json;+charset=utf-8 85.7953ms  
+2025-03-12 15:14:40.2932 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 102  
+2025-03-12 15:14:40.3507 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:14:40.3718 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 15:14:40.5630 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 15:14:40.6043 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 233.1047ms  
+2025-03-12 15:14:40.6043 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:14:40.6043 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 102 - 400 374 application/problem+json;+charset=utf-8 311.7414ms  
+2025-03-12 15:15:39.8937 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 102  
+2025-03-12 15:15:39.9190 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:15:39.9190 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 15:15:40.0328 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 15:15:40.0328 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 117.0163ms  
+2025-03-12 15:15:40.0328 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:15:40.0328 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 102 - 400 374 application/problem+json;+charset=utf-8 143.0831ms  
+2025-03-12 15:15:48.2063 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 102  
+2025-03-12 15:15:48.2063 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:15:48.2063 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 15:15:48.2374 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 15:15:48.2374 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 26.9ms  
+2025-03-12 15:15:48.2374 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:15:48.2374 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 102 - 400 374 application/problem+json;+charset=utf-8 32.5036ms  
+2025-03-12 15:16:14.9129 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks - -  
+2025-03-12 15:16:14.9226 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 15:16:14.9226 | INFO | Route matched with {action = "GetAllBooks", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks() on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 15:16:14.9546 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) - Validation state: Valid  
+2025-03-12 15:16:15.0369 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 82.0585ms.  
+2025-03-12 15:16:15.0369 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 15:16:15.0369 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) in 112.3567ms  
+2025-03-12 15:16:15.0369 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 15:16:15.0369 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks - - - 200 71 application/json;+charset=utf-8 125.8562ms  
+2025-03-12 15:34:34.6090 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 15:34:34.6090 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 15:34:34.6090 | INFO | Hosting environment: Development  
+2025-03-12 15:34:34.6090 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 15:34:34.9700 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 15:34:35.0783 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 111.4207ms  
+2025-03-12 15:36:17.7267 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 15:36:17.9740 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 15:36:17.9766 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 15:36:17.9766 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 15:36:17.9766 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 254.1841ms  
+2025-03-12 15:36:17.9766 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 7.3870ms  
+2025-03-12 15:36:17.9766 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 8.1391ms  
+2025-03-12 15:36:18.0309 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 52.2669ms  
+2025-03-12 15:36:18.2635 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 15:36:18.4864 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 223.1396ms  
+2025-03-12 15:36:41.8599 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/Login?email=mj%40gmail.com&password=1234 - 0  
+2025-03-12 15:36:41.9033 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1)'  
+2025-03-12 15:36:41.9657 | INFO | Route matched with {action = "AuthorLogin", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorLogin(System.String, System.String) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 15:36:42.9300 | INFO | Executing action method WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1) - Validation state: Valid  
+2025-03-12 15:36:43.3715 | INFO | Executed action method WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 426.0474ms.  
+2025-03-12 15:36:43.3839 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 15:36:43.5779 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1) in 1609.7255ms  
+2025-03-12 15:36:43.5779 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1)'  
+2025-03-12 15:36:43.5779 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/Login?email=mj%40gmail.com&password=1234 - 0 - 200 396 application/json;+charset=utf-8 1723.1120ms  
+2025-03-12 15:37:03.3543 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks - -  
+2025-03-12 15:37:03.4484 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 15:37:03.4484 | INFO | Route matched with {action = "GetAllBooks", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks() on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 15:37:03.4864 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) - Validation state: Valid  
+2025-03-12 15:37:03.5864 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 99.5351ms.  
+2025-03-12 15:37:03.5864 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 15:37:03.5864 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) in 144.9534ms  
+2025-03-12 15:37:03.5864 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 15:37:03.5864 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks - - - 200 316 application/json;+charset=utf-8 242.2261ms  
+2025-03-12 15:37:54.8184 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 15:37:54.8184 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 15:37:54.8212 | INFO | Hosting environment: Development  
+2025-03-12 15:37:54.8212 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 15:37:55.4872 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 15:37:55.6041 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 121.0798ms  
+2025-03-12 15:37:59.2415 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 15:37:59.4891 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 248.5018ms  
+2025-03-12 15:37:59.4891 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 15:37:59.4947 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.5760ms  
+2025-03-12 15:37:59.4947 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 15:37:59.4947 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 2.6804ms  
+2025-03-12 15:37:59.4947 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 15:37:59.5394 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 35.4214ms  
+2025-03-12 15:37:59.7588 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 15:37:59.9651 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 206.4378ms  
+2025-03-12 15:38:29.7914 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks - -  
+2025-03-12 15:38:30.0198 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 15:38:30.0437 | INFO | Route matched with {action = "GetAllBooks", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks() on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 15:38:30.5800 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) - Validation state: Valid  
+2025-03-12 15:38:30.7767 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 188.1303ms.  
+2025-03-12 15:38:30.7767 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 15:38:30.9243 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) in 878.2724ms  
+2025-03-12 15:38:30.9243 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 15:38:30.9243 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks - - - 200 316 application/json;+charset=utf-8 1137.5342ms  
+2025-03-12 15:38:59.2211 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AddBook application/json-patch+json 72  
+2025-03-12 15:38:59.2444 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AddBook (WebApplication1)'  
+2025-03-12 15:38:59.2444 | INFO | Route matched with {action = "AddBook", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AddBook(WebApplication1.Modals.POCOs.FDAP03) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 15:38:59.4163 | INFO | Executing action method WebApplication1.Controller.AuthorController.AddBook (WebApplication1) - Validation state: Valid  
+2025-03-12 15:46:40.1195 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 15:46:40.1195 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 15:46:40.1195 | INFO | Hosting environment: Development  
+2025-03-12 15:46:40.1195 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 15:46:40.9876 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 15:46:41.0997 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 115.3264ms  
+2025-03-12 15:47:08.4521 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 15:47:08.4521 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 15:47:08.4521 | INFO | Hosting environment: Development  
+2025-03-12 15:47:08.4521 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 15:47:08.8677 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 15:47:08.9828 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 118.6084ms  
+2025-03-12 15:47:13.3563 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 15:47:13.6052 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 251.7206ms  
+2025-03-12 15:47:13.6184 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 15:47:13.6184 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.5924ms  
+2025-03-12 15:47:13.6338 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 15:47:13.6338 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 15:47:13.6338 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 7.1403ms  
+2025-03-12 15:47:13.7207 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 86.0546ms  
+2025-03-12 15:47:13.9522 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 15:47:14.2756 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 323.5938ms  
+2025-03-12 15:48:52.5419 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 15:48:52.5419 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 15:48:52.5419 | INFO | Hosting environment: Development  
+2025-03-12 15:48:52.5419 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 15:48:53.0576 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 15:48:53.1624 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 106.5301ms  
+2025-03-12 15:48:57.7626 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 15:48:58.0324 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 270.6520ms  
+2025-03-12 15:48:58.0324 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 15:48:58.0402 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 5.1845ms  
+2025-03-12 15:48:58.0402 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 15:48:58.0517 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 3.2400ms  
+2025-03-12 15:48:58.0517 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 15:48:58.0943 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.5934ms  
+2025-03-12 15:48:58.3776 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 15:48:58.6337 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 256.2967ms  
+2025-03-12 15:49:36.4123 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 15:49:36.4123 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 15:49:36.4123 | INFO | Hosting environment: Development  
+2025-03-12 15:49:36.4123 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 15:49:37.0674 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 15:49:37.1719 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 108.0433ms  
+2025-03-12 15:53:11.0098 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 15:53:11.2447 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 234.2932ms  
+2025-03-12 15:53:11.2447 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 15:53:11.2447 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.3971ms  
+2025-03-12 15:53:11.2447 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 15:53:11.2447 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 2.4912ms  
+2025-03-12 15:53:11.2593 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 15:53:11.2910 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 31.9796ms  
+2025-03-12 15:53:11.4944 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 15:53:11.6994 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 205.1557ms  
+2025-03-12 15:54:01.7452 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 90  
+2025-03-12 15:54:01.7759 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:54:01.8042 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 15:54:03.6985 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 15:54:03.7807 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 1974.6317ms  
+2025-03-12 15:54:03.7807 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:54:03.7807 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 90 - 400 374 application/problem+json;+charset=utf-8 2041.0569ms  
+2025-03-12 15:55:08.1939 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 90  
+2025-03-12 15:55:08.1939 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:55:08.1939 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 15:55:08.2317 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 15:55:08.2317 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 37.4525ms  
+2025-03-12 15:55:08.2317 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:55:08.2317 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 90 - 400 374 application/problem+json;+charset=utf-8 42.5689ms  
+2025-03-12 15:55:11.5448 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 90  
+2025-03-12 15:55:11.5448 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:55:11.5448 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 15:55:11.5746 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 15:55:11.5746 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 27.6064ms  
+2025-03-12 15:55:11.5746 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:55:11.5746 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 90 - 400 374 application/problem+json;+charset=utf-8 31.2316ms  
+2025-03-12 15:59:14.4703 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 90  
+2025-03-12 15:59:14.4703 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:59:14.4703 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 15:59:14.5214 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 15:59:14.5214 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 46.9409ms  
+2025-03-12 15:59:14.5214 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 15:59:14.5214 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 90 - 400 374 application/problem+json;+charset=utf-8 52.9173ms  
+2025-03-12 16:00:08.5915 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 102  
+2025-03-12 16:00:08.5956 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:00:08.5956 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:00:08.8058 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 16:00:08.8058 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 210.5919ms  
+2025-03-12 16:00:08.8058 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:00:08.8058 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 102 - 400 360 application/problem+json;+charset=utf-8 215.6996ms  
+2025-03-12 16:00:36.6145 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 16:00:36.6145 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 16:00:36.6145 | INFO | Hosting environment: Development  
+2025-03-12 16:00:36.6145 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 16:00:37.0596 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 16:00:37.1631 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 107.2039ms  
+2025-03-12 16:00:47.7367 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 16:00:48.0518 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 316.0906ms  
+2025-03-12 16:00:48.0518 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 16:00:48.0518 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.1847ms  
+2025-03-12 16:00:48.0652 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 16:00:48.0652 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 3.4431ms  
+2025-03-12 16:00:48.0652 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 16:00:48.1294 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.6022ms  
+2025-03-12 16:00:48.4503 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 16:00:48.7262 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 276.1259ms  
+2025-03-12 16:01:04.5479 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105  
+2025-03-12 16:01:04.5653 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:01:04.6004 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:01:05.4857 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 16:01:05.5828 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 975.7975ms  
+2025-03-12 16:01:05.5828 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:01:05.5828 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105 - 400 374 application/problem+json;+charset=utf-8 1036.5652ms  
+2025-03-12 16:01:40.3235 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105  
+2025-03-12 16:01:40.3335 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:01:40.3335 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:01:40.3919 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 16:01:40.3919 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 57.5353ms  
+2025-03-12 16:01:40.3919 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:01:40.3919 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105 - 400 374 application/problem+json;+charset=utf-8 69.2490ms  
+2025-03-12 16:02:31.8376 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 16:02:31.8376 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 16:02:31.8376 | INFO | Hosting environment: Development  
+2025-03-12 16:02:31.8376 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 16:02:32.9204 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 16:02:33.0414 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 127.1626ms  
+2025-03-12 16:02:44.1275 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 16:02:44.3777 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 251.1365ms  
+2025-03-12 16:02:44.3777 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 16:02:44.3777 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.5583ms  
+2025-03-12 16:02:44.3777 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 16:02:44.3940 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 3.3383ms  
+2025-03-12 16:02:44.3940 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 16:02:44.4270 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 31.0379ms  
+2025-03-12 16:02:44.6750 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 16:02:44.8822 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 207.4281ms  
+2025-03-12 16:03:04.0021 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105  
+2025-03-12 16:03:04.0031 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:03:04.0469 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:03:04.7693 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 16:03:04.8324 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 783.7304ms  
+2025-03-12 16:03:04.8324 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:03:04.8324 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105 - 400 374 application/problem+json;+charset=utf-8 835.3314ms  
+2025-03-12 16:05:39.8724 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105  
+2025-03-12 16:05:39.8845 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:05:39.8845 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:05:39.9224 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 16:05:39.9224 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 40.5986ms  
+2025-03-12 16:05:39.9224 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:05:39.9224 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105 - 400 374 application/problem+json;+charset=utf-8 53.9515ms  
+2025-03-12 16:05:44.9673 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105  
+2025-03-12 16:05:44.9673 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:05:44.9673 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:05:45.0265 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 16:05:45.0265 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 56.9286ms  
+2025-03-12 16:05:45.0265 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:05:45.0265 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105 - 400 374 application/problem+json;+charset=utf-8 60.8151ms  
+2025-03-12 16:07:40.9354 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105  
+2025-03-12 16:07:40.9354 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:07:40.9354 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:07:41.0075 | INFO | Executing action method WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) - Validation state: Valid  
+2025-03-12 16:08:23.2522 | INFO | Executed action method WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 42238.5072ms.  
+2025-03-12 16:08:23.5378 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:08:23.5838 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 42639.5226ms  
+2025-03-12 16:08:23.6574 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:08:42.3961 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105 - 200 83 application/json;+charset=utf-8 61459.9797ms  
+2025-03-12 16:12:45.8938 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 16:12:45.8938 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 16:12:45.8938 | INFO | Hosting environment: Development  
+2025-03-12 16:12:45.8938 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 16:12:46.9959 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 16:12:47.3299 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 339.1302ms  
+2025-03-12 16:12:51.1711 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 16:12:51.8610 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 688.9731ms  
+2025-03-12 16:12:51.8835 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 16:12:51.8882 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.8711ms  
+2025-03-12 16:12:51.9060 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 16:12:51.9060 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 4.8633ms  
+2025-03-12 16:12:51.9060 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 16:12:51.9894 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 77.5124ms  
+2025-03-12 16:12:52.4706 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 16:12:52.8525 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 382.1205ms  
+2025-03-12 16:13:26.4241 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AddBook?authorId=2 application/json-patch+json 76  
+2025-03-12 16:13:26.4534 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AddBook (WebApplication1)'  
+2025-03-12 16:13:26.4995 | INFO | Route matched with {action = "AddBook", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AddBook(WebApplication1.Modals.POCOs.FDAP03, Int32) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:13:27.3607 | INFO | Executing action method WebApplication1.Controller.AuthorController.AddBook (WebApplication1) - Validation state: Valid  
+2025-03-12 16:13:27.4511 | INFO | Executed action method WebApplication1.Controller.AuthorController.AddBook (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 86.9175ms.  
+2025-03-12 16:13:27.4511 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:13:27.5080 | INFO | Executed action WebApplication1.Controller.AuthorController.AddBook (WebApplication1) in 1006.6695ms  
+2025-03-12 16:13:27.5080 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AddBook (WebApplication1)'  
+2025-03-12 16:13:27.5080 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AddBook?authorId=2 application/json-patch+json 76 - 200 74 application/json;+charset=utf-8 1087.6070ms  
+2025-03-12 16:14:37.5891 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 16:14:37.6168 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 28.0056ms  
+2025-03-12 16:14:37.6168 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 16:14:37.6168 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 16:14:37.6168 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 1.0202ms  
+2025-03-12 16:14:37.6168 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 1.3372ms  
+2025-03-12 16:14:37.6168 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 16:14:37.6609 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.7789ms  
+2025-03-12 16:14:37.9615 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 16:14:38.4120 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 450.6388ms  
+2025-03-12 16:14:53.4814 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 16:14:53.4835 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 16:14:53.4835 | INFO | Hosting environment: Development  
+2025-03-12 16:14:53.4835 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 16:14:54.5263 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 16:14:54.6728 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 150.4887ms  
+2025-03-12 16:14:59.6906 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 16:15:00.1942 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 499.7935ms  
+2025-03-12 16:15:00.2328 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 16:15:00.2333 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 16:15:00.2490 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 16.3823ms  
+2025-03-12 16:15:00.2490 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 4.0399ms  
+2025-03-12 16:15:00.2662 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 16:15:00.3542 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 88.2394ms  
+2025-03-12 16:15:00.6096 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 16:15:00.9496 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 340.2620ms  
+2025-03-12 16:15:24.6240 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/Login?email=mj%40gmail.com&password=1234 - 0  
+2025-03-12 16:15:24.6574 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1)'  
+2025-03-12 16:15:24.6999 | INFO | Route matched with {action = "AuthorLogin", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorLogin(System.String, System.String) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:15:25.4867 | INFO | Executing action method WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1) - Validation state: Valid  
+2025-03-12 16:15:25.8152 | INFO | Executed action method WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 317.4335ms.  
+2025-03-12 16:15:25.8275 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:15:25.9856 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1) in 1278.1365ms  
+2025-03-12 16:15:25.9856 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1)'  
+2025-03-12 16:15:25.9856 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/Login?email=mj%40gmail.com&password=1234 - 0 - 200 396 application/json;+charset=utf-8 1361.9074ms  
+2025-03-12 16:15:55.4179 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks?authorId=2 - -  
+2025-03-12 16:15:55.4239 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:15:55.4655 | INFO | Route matched with {action = "GetAllBooks", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks(Int32) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:15:55.5044 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) - Validation state: Valid  
+2025-03-12 16:15:55.5237 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 16.2867ms.  
+2025-03-12 16:15:55.5237 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:15:55.5237 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) in 60.7509ms  
+2025-03-12 16:15:55.5237 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:15:55.5237 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks?authorId=2 - - - 200 73 application/json;+charset=utf-8 108.6861ms  
+2025-03-12 16:16:40.2224 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks?authorId=2 - -  
+2025-03-12 16:16:40.2379 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:16:40.2379 | INFO | Route matched with {action = "GetAllBooks", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks(Int32) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:16:40.2968 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) - Validation state: Valid  
+2025-03-12 16:16:40.2968 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2.4265ms.  
+2025-03-12 16:16:40.2968 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:16:40.2968 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) in 61.8871ms  
+2025-03-12 16:16:40.2968 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:16:40.2968 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks?authorId=2 - - - 200 73 application/json;+charset=utf-8 78.3615ms  
+2025-03-12 16:17:37.5318 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks?authorId=2 - -  
+2025-03-12 16:17:37.5323 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:17:37.5323 | INFO | Route matched with {action = "GetAllBooks", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks(Int32) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:17:37.5683 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) - Validation state: Valid  
+2025-03-12 16:17:37.5683 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.0301ms.  
+2025-03-12 16:17:37.5683 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:17:37.5683 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) in 36.6259ms  
+2025-03-12 16:17:37.5683 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:17:37.5683 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks?authorId=2 - - - 200 73 application/json;+charset=utf-8 40.3476ms  
+2025-03-12 16:17:57.6809 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks?authorId=2 - -  
+2025-03-12 16:17:57.6809 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:17:57.6809 | INFO | Route matched with {action = "GetAllBooks", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks(Int32) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:17:57.7317 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) - Validation state: Valid  
+2025-03-12 16:17:57.7317 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.7207ms.  
+2025-03-12 16:17:57.7317 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:17:57.7317 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) in 50.4153ms  
+2025-03-12 16:17:57.7317 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:17:57.7317 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks?authorId=2 - - - 200 73 application/json;+charset=utf-8 52.5934ms  
+2025-03-12 16:19:21.4683 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 16:19:21.5134 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 45.4622ms  
+2025-03-12 16:19:21.5134 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 16:19:21.5134 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 16:19:21.5191 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 16:19:21.5191 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 2.6504ms  
+2025-03-12 16:19:21.5191 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 1.3090ms  
+2025-03-12 16:19:21.5465 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.5952ms  
+2025-03-12 16:19:21.8745 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 16:19:22.3210 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 446.5802ms  
+2025-03-12 16:19:36.2085 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 16:19:36.2085 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 16:19:36.2085 | INFO | Hosting environment: Development  
+2025-03-12 16:19:36.2085 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 16:19:37.3848 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 16:19:37.5834 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 202.7225ms  
+2025-03-12 16:19:45.5686 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 16:19:45.9254 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 353.9369ms  
+2025-03-12 16:19:45.9642 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 16:19:45.9642 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 6.6133ms  
+2025-03-12 16:19:45.9732 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 16:19:45.9732 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 16:19:45.9732 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 5.8247ms  
+2025-03-12 16:19:46.0314 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.9167ms  
+2025-03-12 16:19:46.3388 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 16:19:47.0122 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 673.6565ms  
+2025-03-12 16:19:57.0361 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks - -  
+2025-03-12 16:19:57.1944 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:19:57.2296 | INFO | Route matched with {action = "GetAllBooks", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks() on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:19:57.9423 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) - Validation state: Valid  
+2025-03-12 16:19:58.0461 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 100.8341ms.  
+2025-03-12 16:19:58.0526 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:19:58.2095 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) in 978.6863ms  
+2025-03-12 16:19:58.2095 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:19:58.2095 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks - - - 200 73 application/json;+charset=utf-8 1179.4222ms  
+2025-03-12 16:20:16.7303 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/Login?email=mj%40gmail.com&password=1234 - 0  
+2025-03-12 16:20:16.7303 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1)'  
+2025-03-12 16:20:16.7512 | INFO | Route matched with {action = "AuthorLogin", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorLogin(System.String, System.String) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:20:16.8498 | INFO | Executing action method WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1) - Validation state: Valid  
+2025-03-12 16:20:17.0738 | INFO | Executed action method WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 220.438ms.  
+2025-03-12 16:20:17.0738 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:20:17.0898 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1) in 338.5755ms  
+2025-03-12 16:20:17.0898 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorLogin (WebApplication1)'  
+2025-03-12 16:20:17.0898 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/Login?email=mj%40gmail.com&password=1234 - 0 - 200 396 application/json;+charset=utf-8 359.8788ms  
+2025-03-12 16:20:33.8947 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks - -  
+2025-03-12 16:20:33.9692 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:20:33.9692 | INFO | Route matched with {action = "GetAllBooks", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks() on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:20:34.0031 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) - Validation state: Valid  
+2025-03-12 16:20:34.0933 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 89.9646ms.  
+2025-03-12 16:20:34.0933 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:20:34.1064 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1) in 137.0037ms  
+2025-03-12 16:20:34.1064 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:20:34.1064 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks - - - 200 316 application/json;+charset=utf-8 212.1249ms  
+2025-03-12 16:24:54.8525 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Admin/Login?email=codewithnavneet%40gmail.com&password=1234 - 0  
+2025-03-12 16:24:54.8525 | INFO | Executing endpoint 'WebApplication1.Controller.AdminController.AdminLogin (WebApplication1)'  
+2025-03-12 16:24:54.8639 | INFO | Route matched with {action = "AdminLogin", controller = "Admin"}. Executing controller action with signature WebApplication1.Utilitlies.Response AdminLogin(Microsoft.Extensions.Logging.ILogger`1[WebApplication1.Controller.AdminController], System.String, System.String) on controller WebApplication1.Controller.AdminController (WebApplication1).  
+2025-03-12 16:24:54.8950 | INFO | Executing action method WebApplication1.Controller.AdminController.AdminLogin (WebApplication1) - Validation state: Valid  
+2025-03-12 16:24:54.9179 | INFO | Admin loggin event  
+2025-03-12 16:24:54.9179 | INFO | Executed action method WebApplication1.Controller.AdminController.AdminLogin (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 21.6785ms.  
+2025-03-12 16:24:54.9179 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:24:54.9179 | INFO | Executed action WebApplication1.Controller.AdminController.AdminLogin (WebApplication1) in 54.7911ms  
+2025-03-12 16:24:54.9179 | INFO | Executed endpoint 'WebApplication1.Controller.AdminController.AdminLogin (WebApplication1)'  
+2025-03-12 16:24:54.9179 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Admin/Login?email=codewithnavneet%40gmail.com&password=1234 - 0 - 200 430 application/json;+charset=utf-8 66.5342ms  
+2025-03-12 16:25:17.7338 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllAuthors - -  
+2025-03-12 16:25:17.7482 | INFO | Executing endpoint 'WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1)'  
+2025-03-12 16:25:17.7482 | INFO | Route matched with {action = "GetAllAuthors", controller = "Admin"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllAuthors() on controller WebApplication1.Controller.AdminController (WebApplication1).  
+2025-03-12 16:25:17.7763 | INFO | Executing action method WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1) - Validation state: Valid  
+2025-03-12 16:25:17.7908 | INFO | Executed action method WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 14.3443ms.  
+2025-03-12 16:25:17.7908 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:25:17.7908 | INFO | Executed action WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1) in 41.19ms  
+2025-03-12 16:25:17.7908 | INFO | Executed endpoint 'WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1)'  
+2025-03-12 16:25:17.7908 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllAuthors - - - 200 962 application/json;+charset=utf-8 61.8903ms  
+2025-03-12 16:25:34.6729 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllBooks - -  
+2025-03-12 16:25:34.6775 | INFO | Executing endpoint 'WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:25:34.6775 | INFO | Route matched with {action = "GetAllBooks", controller = "Admin"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks() on controller WebApplication1.Controller.AdminController (WebApplication1).  
+2025-03-12 16:25:34.7140 | INFO | Executing action method WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1) - Validation state: Valid  
+2025-03-12 16:25:34.7140 | INFO | Executed action method WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 5.7282ms.  
+2025-03-12 16:25:34.7140 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:25:34.7140 | INFO | Executed action WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1) in 42.7674ms  
+2025-03-12 16:25:34.7140 | INFO | Executed endpoint 'WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1)'  
+2025-03-12 16:25:34.7140 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllBooks - - - 200 990 application/json;+charset=utf-8 49.1386ms  
+2025-03-12 16:26:12.0802 | INFO | Request starting HTTP/1.1 DELETE http://localhost:5276/api/Admin/DeleteAuthor?authorId=11 - -  
+2025-03-12 16:26:12.0870 | INFO | Executing endpoint 'WebApplication1.Controller.AdminController.DeleteAuthor (WebApplication1)'  
+2025-03-12 16:26:12.1060 | INFO | Route matched with {action = "DeleteAuthor", controller = "Admin"}. Executing controller action with signature WebApplication1.Utilitlies.Response DeleteAuthor(Int32) on controller WebApplication1.Controller.AdminController (WebApplication1).  
+2025-03-12 16:26:12.1277 | INFO | Executing action method WebApplication1.Controller.AdminController.DeleteAuthor (WebApplication1) - Validation state: Valid  
+2025-03-12 16:26:12.1292 | INFO | Executed action method WebApplication1.Controller.AdminController.DeleteAuthor (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 12.3516ms.  
+2025-03-12 16:26:12.1292 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:26:12.1292 | INFO | Executed action WebApplication1.Controller.AdminController.DeleteAuthor (WebApplication1) in 36.0688ms  
+2025-03-12 16:26:12.1292 | INFO | Executed endpoint 'WebApplication1.Controller.AdminController.DeleteAuthor (WebApplication1)'  
+2025-03-12 16:26:12.1292 | INFO | Request finished HTTP/1.1 DELETE http://localhost:5276/api/Admin/DeleteAuthor?authorId=11 - - - 200 69 application/json;+charset=utf-8 62.3056ms  
+2025-03-12 16:26:26.1565 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105  
+2025-03-12 16:26:26.1609 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:26:26.1609 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:26:26.2392 | INFO | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.  
+2025-03-12 16:26:26.2638 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 100.4972ms  
+2025-03-12 16:26:26.2638 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:26:26.2638 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105 - 400 374 application/problem+json;+charset=utf-8 107.6093ms  
+2025-03-12 16:27:17.2820 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105  
+2025-03-12 16:27:17.2868 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:27:17.2868 | INFO | Route matched with {action = "AuthorRegister", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response AuthorRegister(WebApplication1.Modals.POCOs.FDAP01) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-03-12 16:27:17.3166 | INFO | Executing action method WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) - Validation state: Valid  
+2025-03-12 16:27:17.3735 | INFO | Executed action method WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 47.4311ms.  
+2025-03-12 16:27:17.3735 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 16:27:17.3735 | INFO | Executed action WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1) in 87.1675ms  
+2025-03-12 16:27:17.3735 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.AuthorRegister (WebApplication1)'  
+2025-03-12 16:27:17.3735 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Author/AuthorRegister application/json-patch+json 105 - 200 83 application/json;+charset=utf-8 97.7087ms  
+2025-03-12 17:34:43.6354 | INFO | Now listening on: http://localhost:5276  
+2025-03-12 17:34:43.6354 | INFO | Application started. Press Ctrl+C to shut down.  
+2025-03-12 17:34:43.6354 | INFO | Hosting environment: Development  
+2025-03-12 17:34:43.6354 | INFO | Content root path: C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\4_DotNet_Core\Final_Demo_DNC\WebApplication1\WebApplication1  
+2025-03-12 17:34:44.1732 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/ - -  
+2025-03-12 17:34:44.2931 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/ - - - 404 0 - 120.7196ms  
+2025-03-12 17:34:47.8985 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.html - -  
+2025-03-12 17:34:48.8830 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.html - - - 200 - text/html;charset=utf-8 985.4074ms  
+2025-03-12 17:34:48.8830 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - -  
+2025-03-12 17:34:48.8866 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/index.js - -  
+2025-03-12 17:34:48.8866 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 3.0667ms  
+2025-03-12 17:34:48.8866 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/index.js - - - 200 - application/javascript;charset=utf-8 6.7798ms  
+2025-03-12 17:34:48.8866 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/_vs/browserLink - -  
+2025-03-12 17:34:48.9350 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 39.9894ms  
+2025-03-12 17:34:49.2595 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - -  
+2025-03-12 17:34:49.5514 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 292.2053ms  
+2025-03-12 17:35:08.4415 | INFO | Request starting HTTP/1.1 POST http://localhost:5276/api/Admin/Login?email=codewithnavneet%40gmail.com&password=1234 - 0  
+2025-03-12 17:35:08.4497 | INFO | Executing endpoint 'WebApplication1.Controller.AdminController.AdminLogin (WebApplication1)'  
+2025-03-12 17:35:08.4861 | INFO | Route matched with {action = "AdminLogin", controller = "Admin"}. Executing controller action with signature WebApplication1.Utilitlies.Response AdminLogin(Microsoft.Extensions.Logging.ILogger`1[WebApplication1.Controller.AdminController], System.String, System.String) on controller WebApplication1.Controller.AdminController (WebApplication1).  
+2025-03-12 17:35:09.1040 | INFO | Executing action method WebApplication1.Controller.AdminController.AdminLogin (WebApplication1) - Validation state: Valid  
+2025-03-12 17:35:09.3360 | INFO | Admin loggin event  
+2025-03-12 17:35:09.3393 | INFO | Executed action method WebApplication1.Controller.AdminController.AdminLogin (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 222.8899ms.  
+2025-03-12 17:35:09.3393 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 17:35:09.4634 | INFO | Executed action WebApplication1.Controller.AdminController.AdminLogin (WebApplication1) in 975.9107ms  
+2025-03-12 17:35:09.4634 | INFO | Executed endpoint 'WebApplication1.Controller.AdminController.AdminLogin (WebApplication1)'  
+2025-03-12 17:35:09.4634 | INFO | Request finished HTTP/1.1 POST http://localhost:5276/api/Admin/Login?email=codewithnavneet%40gmail.com&password=1234 - 0 - 200 430 application/json;+charset=utf-8 1027.3951ms  
+2025-03-12 17:35:45.4090 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllAuthors - -  
+2025-03-12 17:35:45.5094 | INFO | Executing endpoint 'WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1)'  
+2025-03-12 17:35:45.5119 | INFO | Route matched with {action = "GetAllAuthors", controller = "Admin"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllAuthors() on controller WebApplication1.Controller.AdminController (WebApplication1).  
+2025-03-12 17:35:45.5561 | INFO | Executing action method WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1) - Validation state: Valid  
+2025-03-12 17:35:45.5736 | INFO | Executed action method WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 16.8233ms.  
+2025-03-12 17:35:45.5736 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 17:35:45.5736 | INFO | Executed action WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1) in 73.6579ms  
+2025-03-12 17:35:45.5736 | INFO | Executed endpoint 'WebApplication1.Controller.AdminController.GetAllAuthors (WebApplication1)'  
+2025-03-12 17:35:45.5736 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllAuthors - - - 200 962 application/json;+charset=utf-8 176.9225ms  
+2025-03-12 17:35:59.0374 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllBooks - -  
+2025-03-12 17:35:59.0374 | INFO | Executing endpoint 'WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1)'  
+2025-03-12 17:35:59.0374 | INFO | Route matched with {action = "GetAllBooks", controller = "Admin"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks() on controller WebApplication1.Controller.AdminController (WebApplication1).  
+2025-03-12 17:35:59.7008 | INFO | Executing action method WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1) - Validation state: Valid  
+2025-03-12 17:35:59.7143 | INFO | Executed action method WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 12.388ms.  
+2025-03-12 17:35:59.7143 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 17:35:59.7143 | INFO | Executed action WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1) in 675.38ms  
+2025-03-12 17:35:59.7143 | INFO | Executed endpoint 'WebApplication1.Controller.AdminController.GetAllBooks (WebApplication1)'  
+2025-03-12 17:35:59.7143 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Admin/GetAllBooks - - - 200 990 application/json;+charset=utf-8 682.3544ms  
+2025-03-12 17:36:32.2374 | INFO | Request starting HTTP/1.1 DELETE http://localhost:5276/api/Admin/DeleteAuthor?authorId=12 - -  
+2025-03-12 17:36:32.2548 | INFO | Executing endpoint 'WebApplication1.Controller.AdminController.DeleteAuthor (WebApplication1)'  
+2025-03-12 17:36:32.2738 | INFO | Route matched with {action = "DeleteAuthor", controller = "Admin"}. Executing controller action with signature WebApplication1.Utilitlies.Response DeleteAuthor(Int32) on controller WebApplication1.Controller.AdminController (WebApplication1).  
+2025-03-12 17:36:32.3013 | INFO | Executing action method WebApplication1.Controller.AdminController.DeleteAuthor (WebApplication1) - Validation state: Valid  
+2025-03-12 17:36:32.3185 | INFO | Executed action method WebApplication1.Controller.AdminController.DeleteAuthor (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 14.5614ms.  
+2025-03-12 17:36:32.3185 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-03-12 17:36:32.3185 | INFO | Executed action WebApplication1.Controller.AdminController.DeleteAuthor (WebApplication1) in 45.2886ms  
+2025-03-12 17:36:32.3185 | INFO | Executed endpoint 'WebApplication1.Controller.AdminController.DeleteAuthor (WebApplication1)'  
+2025-03-12 17:36:32.3185 | INFO | Request finished HTTP/1.1 DELETE http://localhost:5276/api/Admin/DeleteAuthor?authorId=12 - - - 200 69 application/json;+charset=utf-8 81.9607ms  

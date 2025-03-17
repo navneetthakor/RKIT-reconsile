@@ -19,9 +19,9 @@ namespace WebApplication1.Controller
         private IDbConnection _connection;
 
 
-        public AdminController(IDatabaseService db)
+        public AdminController(IDatabaseService databaseService)
         {
-            _connection = db.db;
+            _connection = databaseService.db;
         }
 
 
@@ -38,8 +38,8 @@ namespace WebApplication1.Controller
         {
             try
             {
-                AdminLogics al = new AdminLogics(_connection, null);
-                Response resposne = al.Login(email, password);
+                AdminLogics adminLogics = new AdminLogics(_connection, null);
+                Response resposne = adminLogics.Login(email, password);
                 logger.LogInformation("Admin loggin event");
                 return resposne;
             }
@@ -55,14 +55,18 @@ namespace WebApplication1.Controller
 
         [HttpGet]
         [Route("GetAllAuthors")]
+        /// <summary>
+        /// Get all authors
+        /// <return>Response object</return>
+        /// </summary>
         public Response GetAllAuthors()
         {
             Response response = new Response();
             try
             {
-                AdminLogics al = new AdminLogics(_connection, null);
+                AdminLogics adminLogics = new AdminLogics(_connection, null);
 
-                    Response result = al.IsAdmin(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
+                    Response result = adminLogics.IsAdmin(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
                 if (result.IsError)
                 {
                     response.IsError = true;
@@ -71,7 +75,7 @@ namespace WebApplication1.Controller
                     return response;
                 }
 
-                response = al.GetAllAuthors();
+                response = adminLogics.GetAllAuthors();
                 response.StatusCode = MyStatusCodes.Success;
                 return response;
             }
@@ -86,14 +90,18 @@ namespace WebApplication1.Controller
 
         [HttpGet]
         [Route("GetAllBooks")]
+        /// <summary>
+        /// get all books with corresponding Author
+        /// <return>Response object</return>
+        /// </summary>
         public Response GetAllBooks()
         {
             Response response = new Response();
             try
             {
-                AdminLogics al = new AdminLogics(_connection, null);
+                AdminLogics adminLogics = new AdminLogics(_connection, null);
 
-                Response result = al.IsAdmin(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
+                Response result = adminLogics.IsAdmin(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
                 if (result.IsError)
                 {
                     response.IsError = true;
@@ -102,7 +110,7 @@ namespace WebApplication1.Controller
                     return response;
                 }
 
-                response = al.GetAllBooks();
+                response = adminLogics.GetAllBooks();
                 response.StatusCode = MyStatusCodes.Success;
                 return response;
             }
@@ -117,14 +125,19 @@ namespace WebApplication1.Controller
 
         [HttpDelete]
         [Route("DeleteAuthor")]
-        public Response DeleteAuthor(int Author_id)
+        /// <summary>
+        /// Delete auther by id
+        /// <paramref name="authorId"> Author Id </paramref>
+        /// <return>Response object</return>
+        /// </summary>
+        public Response DeleteAuthor(int authorId)
         {
             Response response = new Response();
             try
             {
-                AdminLogics al = new AdminLogics(_connection, null);
+                AdminLogics adminLogics = new AdminLogics(_connection, null);
 
-                Response result = al.IsAdmin(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
+                Response result = adminLogics.IsAdmin(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
                 if (result.IsError)
                 {
                     response.IsError = true;
@@ -133,13 +146,13 @@ namespace WebApplication1.Controller
                     return response;
                 }
 
-                result = al.PreDelete(Author_id, WOBEnum.Author);
+                result = adminLogics.PreDelete(authorId, WOBEnum.Author);
                 if (result.IsError) throw new Exception(result.Message);
 
-                result = al.ValidateOnDelete(WOBEnum.Author);
+                result = adminLogics.ValidateOnDelete(WOBEnum.Author);
                 if (result.IsError) throw new Exception(result.Message);
 
-                result = al.Delete(WOBEnum.Author);
+                result = adminLogics.Delete(WOBEnum.Author);
                 if (result.IsError) throw new Exception(result.Message);
 
                 response.Data = 1;
@@ -159,14 +172,19 @@ namespace WebApplication1.Controller
 
         [HttpDelete]
         [Route("DeleteBook")]
-        public Response DeleteBook(int Book_id)
+        /// <summary>
+        /// Delete auther by id
+        /// <paramref name="bookId"> Book Id </paramref>
+        /// <return>Response object</return>
+        /// </summary>
+        public Response DeleteBook(int bookId)
         {
             Response response = new Response();
             try
             {
-                AdminLogics al = new AdminLogics(_connection, null);
+                AdminLogics adminLogics = new AdminLogics(_connection, null);
 
-                Response result = al.IsAdmin(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
+                Response result = adminLogics.IsAdmin(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
                 if (result.IsError)
                 {
                     response.IsError = true;
@@ -175,13 +193,13 @@ namespace WebApplication1.Controller
                     return response;
                 }
 
-                result = al.PreDelete(Book_id, WOBEnum.Book);
+                result = adminLogics.PreDelete(bookId, WOBEnum.Book);
                 if (result.IsError) throw new Exception(result.Message);
 
-                result = al.ValidateOnDelete(WOBEnum.Book);
+                result = adminLogics.ValidateOnDelete(WOBEnum.Book);
                 if (result.IsError) throw new Exception(result.Message);
 
-                result = al.Delete(WOBEnum.Book);
+                result = adminLogics.Delete(WOBEnum.Book);
                 if (result.IsError) throw new Exception(result.Message);
 
                 response.Data = 1;

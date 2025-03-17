@@ -12,15 +12,32 @@ namespace WebApplication1.Business_Logic.Services
 {
     internal class AuthorLogics : IDbAddOppar, IDbDeleteOppar
     {
+        /// <summary>
+        /// for database connection
+        /// </summary>
         private IDbConnection _dbConnection;
+
+        /// <summary>
+        /// pocos of book (used in multiple functions)
+        /// </summary>
         private FDAP03 _fdap03;
-        private FDAP01 _fdap01;
-        public AuthorLogics(IDbConnection dbConnection, FDAP01 fdap01)
+
+        /// <summary>
+        /// Author id of current user
+        /// </summary>
+        private int authorId;
+
+        public AuthorLogics(IDbConnection dbConnection, int? fdap01)
         {
             _dbConnection = dbConnection;
-            _fdap01 = fdap01;
+            authorId = fdap01?? 0;
         }
 
+        /// <summary>
+        /// Method for registering new Author
+        /// </summary>
+        /// <param name="user">poco object</param>
+        /// <returns></returns>
         public Response RegisterAuthor(FDAP01 user)
         {
             Response response = new Response();
@@ -61,6 +78,12 @@ namespace WebApplication1.Business_Logic.Services
             return response;
         }
 
+        /// <summary>
+        /// Method for Author login
+        /// </summary>
+        /// <param name="email">email of author</param>
+        /// <param name="password">password of author</param>
+        /// <returns></returns>
         public Response Login(string email, string password)
         {
             Response response = new Response();
@@ -94,6 +117,11 @@ namespace WebApplication1.Business_Logic.Services
 
         }
 
+        /// <summary>
+        /// Method to check author exists or not
+        /// </summary>
+        /// <param name="email">email of author</param>
+        /// <returns>Response Object</returns>
         public Response IsAuthor(string email)
         {
             Response response = new Response();
@@ -136,7 +164,7 @@ namespace WebApplication1.Business_Logic.Services
 
                 _fdap03.A03F02 = fdap03.A03F02; // title of book
                 _fdap03.A03F03 = fdap03.A03F03; // desc of book
-                _fdap03.A03F04 = _fdap01.A01F01; // id of author
+                _fdap03.A03F04 = authorId; // id of author
                 if (AOU == OppEnum.U)
                 {
                     _fdap03.A03F01 = fdap03.A03F01;
@@ -168,16 +196,16 @@ namespace WebApplication1.Business_Logic.Services
                 if (AOU == OppEnum.A)
                 {
 
-                    //List<FDAP03> lst = _dbConnection.Select<FDAP03>($"select * from fdap03 where A03F02 = {_fdap03.A03F02} and A03F04 = {_fdap01.A01F01}");
-                    List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F02 == _fdap03.A03F02 && x.A03F04 == _fdap01.A01F01);
+                    //List<FDAP03> lst = _dbConnection.Select<FDAP03>($"select * from fdap03 where A03F02 = {_fdap03.A03F02} and A03F04 = {authorId.A01F01}");
+                    List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F02 == _fdap03.A03F02 && x.A03F04 == authorId);
 
                     if (lst.Count != 0) throw new Exception("Book with same title exists for current Author");
                 }
                 else
                 {
                     // checking with id becasue use can't update id
-                    //List<FDAP03> lst = _dbConnection.Select<FDAP03>($"select * from fdap03 where A03F01 = {_fdap03.A03F01} and A03F04 = {_fdap01.A01F03}");
-                    List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F01 == _fdap03.A03F01 && x.A03F04 == _fdap01.A01F01);
+                    //List<FDAP03> lst = _dbConnection.Select<FDAP03>($"select * from fdap03 where A03F01 = {_fdap03.A03F01} and A03F04 = {authorId.A01F03}");
+                    List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F01 == _fdap03.A03F01 && x.A03F04 == authorId);
                     if (lst.Count == 0) throw new Exception("Book with given id not exists for current Author");
                 }
                 response.Message = "Presave done";
@@ -299,13 +327,17 @@ namespace WebApplication1.Business_Logic.Services
             }
         }
 
-
-        public Response GetAllBooks(int Author_id)
+        /// <summary>
+        /// Get all books of given user
+        /// </summary>
+        /// <param name="authorId"></param>
+        /// <returns></returns>
+        public Response GetAllBooks(int authorId)
         {
             Response response = new Response();
             try
             {
-                List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F04 == Author_id);
+                List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F04 == authorId);
 
                 response.Data = lst;
                 response.Message = "PreDelete done";

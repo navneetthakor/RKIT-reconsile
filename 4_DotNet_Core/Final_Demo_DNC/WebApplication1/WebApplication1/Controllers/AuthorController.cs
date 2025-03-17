@@ -5,28 +5,41 @@ using System.Data;
 using WebApplication1.Business_Logic.Services;
 using WebApplication1.Modals.Enums;
 using WebApplication1.Modals.POCOs;
-using WebApplication1.Modals.DTOs;
 
 namespace WebApplication1.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
+    ///<summary>
+    /// contains all controllers related to admin
+    /// </summary>
     public class AuthorController : ControllerBase
     {
+        ///<summary>
+        /// object for database connection
+        /// </summary>
         private IDbConnection _connection;
-        public AuthorController(IDatabaseService db)
+
+
+        public AuthorController(IDatabaseService databaseService)
         {
-            _connection = db.db;
+            _connection = databaseService.db;
         }
 
         [HttpPost]
         [Route("Login")]
+        /// <summary>
+        /// for Author login
+        /// <paramref name="email"> email </paramref>
+        /// <paramref name="password"> password </paramref>
+        /// <return>Response object</return>
+        /// </summary>
         public Response AuthorLogin(string email, string password)
         {
             try
             {
-                AuthorLogics al = new AuthorLogics(_connection, null);
-                Response resposne = al.Login(email, password);
+                AuthorLogics authorLogics = new AuthorLogics(_connection, null);
+                Response resposne = authorLogics.Login(email, password);
                 return resposne;
             }
             catch (Exception ex)
@@ -41,12 +54,17 @@ namespace WebApplication1.Controller
 
         [HttpPost]
         [Route("AuthorRegister")]
+        /// <summary>
+        /// for Author Registration
+        /// <paramref name="fdap01"> FDAP01 poco object </paramref>
+        /// <return>Response object</return>
+        /// </summary>
         public Response AuthorRegister([FromBody] FDAP01 fdap01)
         {
             try
             {
-                AuthorLogics al = new AuthorLogics(_connection, null);
-                Response resposne = al.RegisterAuthor(fdap01);
+                AuthorLogics authorLogics = new AuthorLogics(_connection, null);
+                Response resposne = authorLogics.RegisterAuthor(fdap01);
                 return resposne;
             }
             catch (Exception ex)
@@ -61,14 +79,19 @@ namespace WebApplication1.Controller
 
         [HttpGet]
         [Route("GetAllBooks")]
+        /// <summary>
+        /// Get all books of given user
+        /// <paramref name="fdap01"> FDAP01 poco object </paramref>
+        /// <return>Response object</return>
+        /// </summary>
         public Response GetAllBooks()
         {
             Response response = new Response();
             try
             {
-                AuthorLogics al = new AuthorLogics(_connection, null);
+                AuthorLogics authorLogics = new AuthorLogics(_connection, null);
 
-                Response result = al.IsAuthor(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
+                Response result = authorLogics.IsAuthor(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
                 if (result.IsError)
                 {
                     response.IsError = true;
@@ -77,7 +100,7 @@ namespace WebApplication1.Controller
                     return response;
                 }
 
-                response = al.GetAllBooks(result.Data.A01F01);
+                response = authorLogics.GetAllBooks(result.Data.A01F01);
                 response.StatusCode = MyStatusCodes.Success;
                 return response;
             }
@@ -93,14 +116,19 @@ namespace WebApplication1.Controller
 
         [HttpDelete]
         [Route("DeleteBook")]
-        public Response DeleteBook(int Book_id)
+        /// <summary>
+        /// delete book of user (by book_id)
+        /// <paramref name="bookId"> book id </paramref>
+        /// <return>Response object</return>
+        /// </summary>
+        public Response DeleteBook(int bookId)
         {
             Response response = new Response();
             try
             {
-                AuthorLogics al = new AuthorLogics(_connection, null);
+                AuthorLogics authorLogics = new AuthorLogics(_connection, null);
 
-                Response result = al.IsAuthor(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
+                Response result = authorLogics.IsAuthor(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
                 if (result.IsError)
                 {
                     response.IsError = true;
@@ -109,13 +137,13 @@ namespace WebApplication1.Controller
                     return response;
                 }
 
-                result = al.PreDelete(Book_id);
+                result = authorLogics.PreDelete(bookId);
                 if (result.IsError) throw new Exception(result.Message);
 
-                result = al.ValidateOnDelete(result.Data.A01F01);
+                result = authorLogics.ValidateOnDelete(result.Data.A01F01);
                 if (result.IsError) throw new Exception(result.Message);
 
-                result = al.Delete();
+                result = authorLogics.Delete();
                 if (result.IsError) throw new Exception(result.Message);
 
                 response.Data = 1;
@@ -132,16 +160,21 @@ namespace WebApplication1.Controller
             }
         }
 
-        [HttpDelete]
+        [HttpPost]
         [Route("AddBook")]
-        public Response AddBook(FDAP03 fdap03)
+        /// <summary>
+        /// delete book of user (by book_id)
+        /// <paramref name="fdap03"> FDAP03 poco object </paramref>
+        /// <return>Response object</return>
+        /// </summary>
+        public Response AddBook(FDAP03 fdap03, int authorId)
         {
             Response response = new Response();
             try
             {
-                AuthorLogics al = new AuthorLogics(_connection, null);
+                AuthorLogics authorLogics = new AuthorLogics(_connection, authorId);
 
-                Response result = al.IsAuthor(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
+                Response result = authorLogics.IsAuthor(User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value);
                 if (result.IsError)
                 {
                     response.IsError = true;
@@ -150,13 +183,13 @@ namespace WebApplication1.Controller
                     return response;
                 }
 
-                result = al.PreSave(fdap03, OppEnum.A);
+                result = authorLogics.PreSave(fdap03, OppEnum.A);
                 if (result.IsError) throw new Exception(result.Message);
 
-                result = al.ValidateOnSave(OppEnum.U);
+                result = authorLogics.ValidateOnSave(OppEnum.U);
                 if (result.IsError) throw new Exception(result.Message);
 
-                result = al.Save(OppEnum.A);
+                result = authorLogics.Save(OppEnum.A);
                 if (result.IsError) throw new Exception(result.Message);
 
                 response.Data = 1;
