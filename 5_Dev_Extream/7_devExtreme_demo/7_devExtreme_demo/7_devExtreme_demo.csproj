@@ -225,9 +225,10 @@
     <Content Include="CSS\project2.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="HTML\Project1.html\index.html" />
-    <Content Include="HTML\Project2.html\index.html" />
-    <Content Include="HTML\Project3.html\index.html" />
+    <Content Include="HTML\Project1_Editors.html\index.html" />
+    <Content Include="HTML\Project2_dataGrid.html\index.html" />
+    <Content Include="HTML\Project3_Final.html\index.html" />
+    <Content Include="JS\project1.js" />
     <Content Include="JS\project2.js" />
     <Content Include="JS\project3.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
