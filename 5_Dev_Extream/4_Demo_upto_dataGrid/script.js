@@ -236,24 +236,39 @@ $(() => {
         showBorders: true,
         showRowLines: true,
         columns: [
-            { dataField: 'id', caption: 'ID' },
+            { dataField: 'id', caption: 'ID', sortIndex: 0, sortOrder: 'asc' },
             { dataField: 'fname', caption: 'First Name' },
-            { dataField: 'lname', caption: 'Last Name' },
-            { dataField: 'fantcy_points', caption: 'Fantcy Points',  allowFiltering: false },
+            { dataField: 'lname', caption: 'Last Name', hidingPriority: 0 },
+            { dataField: 'fantcy_points', caption: 'Fantcy Points', allowFiltering: false },
+            {
+                type: "adaptive",
+                width: 50,
+            }
         ],
 
+
+        // allowing user to changing layout of visible columns
+        allowColumnReordering: true,
+        columnChooser: {
+            enabled: true,
+        },
+
+        // setting up pagging 
         paging: {
             pageSize: 7,
             pageIndex: 0, // default : 0
         },
 
+        // pager for other pagging options visible in the footer of datagrid
         pager: {
             showNavigationButtons: 'true',
             showPageSizeSelector: true, // default: false
             allowedPageSizes: [1, 3, 5, 7]
         },
 
+        // editing options 
         editing: {
+            mode: 'row',
             allowAdding: true,
             allowUpdating: true,
             allowDeleting: true,
@@ -277,7 +292,7 @@ $(() => {
             allowCollapsing: false
         },
 
-        
+
 
         // filtering
         filterRow: {
@@ -289,10 +304,85 @@ $(() => {
             visible: true,
         },
 
+        // filter panel to write logic for filtering 
         filterPanel: {
             visible: true,
             filterSyncEnabled: true
+        },
+
+        // for sorting 
+        sorting: {
+            mode: "multiple" // so that multiple rows can be selected
+        },
+
+        selection: {
+            mode: 'multiple',
+            selectAllMode: 'allPage',
+            allowSelectAll: true
+        },
+
+        selectedRowKeys: [1, 3, 4],
+
+        // storing user configuration in browser 
+        stateStoring: {
+            enabled: true,
+            type: "localStorage", /// 'sessionStorage', 'custom'
+            storageKey: 'nk', // key used to store settings
+        },
+
+        // master view 
+        masterDetail: {
+            // to enable masterDetail
+            enabled: true,
+
+            // template to configure it
+            template: (container, options) => {
+                console.log(options);
+                const data = options.data;
+
+                $('<div>')
+                    .text(`${data.fname}'s info:`)
+                    .appendTo(container);
+                
+                $('<div>')
+                    .html(`${data.fname}'s id no is ${data.id} and has ${data.fantcy_points} fantcy points!`)
+                    .appendTo(container)
+            }
+        },
+
+        // exporting selected rows
+        export: {
+            enabled: true,
+            formats: ['xlsx'],
+            allowExportSelectedData: true,
+        },
+        onExporting(e) {
+            const workbook = new ExcelJS.Workbook();
+            const worksheet = workbook.addWorksheet('Students');
+
+            DevExpress.excelExporter.exportDataGrid({
+                component: e.component,
+                worksheet,
+                autoFilterEnabled: true,
+            }).then(() => {
+                workbook.xlsx.writeBuffer().then((buffer) => {
+                    saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'Data_grid_demo.xlsx');
+                });
+            });
+        },
+
+        /*
+        * events 
+        */
+        onSelectionChanged: (e) => {
+            const selectedKeys = e.selectedRowKeys;   // Array of selected row keys
+            const selectedData = e.selectedRowsData;  // Array of selected row data
+            if (selectedKeys && selectedData.length > 0) {
+
+                console.log("Selected rows: ", selectedData);
+                console.log("Selected keys: ", selectedKeys);
+            }
         }
     })
 
-})
+});
