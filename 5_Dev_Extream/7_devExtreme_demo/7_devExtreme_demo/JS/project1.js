@@ -1,7 +1,11 @@
-﻿$(() => {
+﻿
+
+$(() => {
+    // TextBox for Trainer's Name
     $('#tname').dxTextBox({
         tabIndex: 1,
         placeholder: 'Keyur Adyaru',
+        showClearButton: true,
     }).dxValidator({
         validationRules: [{
             type: 'required',
@@ -9,6 +13,7 @@
         }]
     });
 
+     // TextBox for EID
     $('#teid').dxTextBox({
         tabIndex: 2,
         placeholder: 'xxx'
@@ -22,6 +27,7 @@
         }]
     });
 
+    // RadioGroup for Feedback Level
     let tdccOptions = ['poor', 'average', 'thik-thak', 'nice', 'master'];
     $('#tdcc').dxRadioGroup({
         tabIndex: 3,
@@ -34,12 +40,14 @@
         }]
     });
 
+    // TextArea for Suggestions
     $('#suggestions').dxTextArea({
         tabIndex: 4,
         placeholder: 'Provide your valuable suggestions to make reconsilation proccess better for future telents',
         height: '5rem'
     })
 
+    // TextBox for users EID
     $('#yeid').dxTextBox({
         tabIndex: 5,
         placeholder: 'xxx',
@@ -53,6 +61,7 @@
         }]
     });
 
+    // CheckBox for Agreement
     $('#you_agree_checkBox').dxCheckBox({
         text: 'You are agree that your feedback is unbiased.'
     }).dxValidator({
@@ -62,6 +71,7 @@
         }]
     })
 
+     // Submit Button
     $('#submit_button').dxButton({
         width: '60%',
         text: 'submit',
@@ -70,6 +80,7 @@
         useSubmitBehavior: true,
     });
 
+    // Form Submission
     $('#myForm').submit((e) => {
         e.preventDefault();
         alert("form submited");

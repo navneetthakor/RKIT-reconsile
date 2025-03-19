@@ -23,8 +23,7 @@
 
     <!-- DevExtreme library -->
     <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
-    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
-    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
+
 </head>
 
 <body>
@@ -90,7 +89,7 @@
                 });
 
             // updating data
-            store.update(1, { id: 1, name: "Navneet kumar" })
+            store.update(1, {name: "Navneet kumar" })
                 .done((data, key) => console.log("updating", data, key))
                 .fail((e) => console.log("update E : ", e));
 
@@ -112,14 +111,15 @@
             // load data 
             store.load()
                 .done(function (data) {
-                    console.log("load :", data);
+                    console.log("load :", data); 
                 })
                 .fail(function (error) {
                     console.log("load-E :", error);
                 });
 
             //get key (for string values : case-in sensitive checking)
-            console.log("key : ", store.keyOf({ id: 5, name: 'janki' }));
+            // need to provide full object 
+            console.log("key : ", store.keyOf({id:5, name: 'janki' }));
 
             //get element by key
             store.byKey(5)

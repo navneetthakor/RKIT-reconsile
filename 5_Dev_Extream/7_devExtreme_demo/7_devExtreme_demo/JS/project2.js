@@ -1,5 +1,7 @@
 ﻿
 $(() => {
+
+    //Uses name 
     $('#fname').dxTextBox({
         tabIndex: 1,
         placeholder: 'Navneet Kumar',
@@ -10,7 +12,7 @@ $(() => {
         }]
     });
 
-
+    // number of dummy records user wants initially
     $('#num_of_record').dxTextBox({
         tabIndex: 5,
         placeholder: 'xxx',
@@ -24,8 +26,9 @@ $(() => {
         }]
     });
 
+    // checkbox on the form
     $('#you_agree_checkBox').dxCheckBox({
-        text: 'You are agree that your feedback is unbiased.'
+        text: 'You are agree to our terms and conditions.'
     }).dxValidator({
         validationRules: [{
             type: 'required',
@@ -33,6 +36,7 @@ $(() => {
         }]
     })
 
+    // to submit the form
     $('#submit_button').dxButton({
         width: '60%',
         text: 'submit',
@@ -41,6 +45,8 @@ $(() => {
         useSubmitBehavior: true,
     });
 
+    // preventing traditional form submission
+    // and enabling display of datagrid
     $('#myForm').submit((e) => {
         e.preventDefault();
         $('#myForm')[0].reset();
@@ -58,10 +64,10 @@ $(() => {
 
 
     //    -------  main2 -------
-    let username = $('#fname').dxTextBox('instance').option('text');
-    let username_text = `Hello ${username}!`
+    //let username = $('#fname').dxTextBox('instance').option('text');
+    //let username_text = `Hello ${username}!`
 
-    $('#name_text_box').text(username_text);
+    //$('#name_text_box').text(username_text);
 
     $('#back_button').dxButton({
         text: 'Back to Home',
@@ -102,9 +108,7 @@ $(() => {
                     // logic to display seed data + newly added data 
                     let finalArray = response.slice(0, num_of_record)
                     let temp = response.slice(initial_lenth);
-                    temp.forEach(element => {
-                        finalArray.push(element)
-                    });
+                    finalArray.push(...temp)
 
                     // resolve it
                     result.resolve(finalArray);
@@ -236,21 +240,21 @@ $(() => {
         showBorders: true,
         showRowLines: true,
         columns: [
-            { dataField: 'id', caption: 'ID' },
+            { dataField: 'id', caption: 'ID', allowAdding: false, allowUpdating: false },
             { dataField: 'fname', caption: 'First Name' },
             { dataField: 'lname', caption: 'Last Name' },
-            { dataField: 'fantcy_ponits', caption: 'Fantcy Points' },
+            { dataField: 'fantcy_points', caption: 'Fantcy Points' },
         ],
 
         paging: {
-            pageSize: 10,
+            pageSize: 7,
             pageIndex: 0, // default : 0
         },
 
         pager: {
             showNavigationButtons: 'true',
             showPageSizeSelector: true, // default: false
-            allowedPageSizes: [1, 3, 5, 10]
+            allowedPageSizes: [1, 3, 5, 7]
         },
 
         editing: {
@@ -261,7 +265,35 @@ $(() => {
 
         searchPanel: {
             visible: true
+        },
+
+        //grouping 
+        grouping: {
+            contextMenuEnabled: true,
+            expandMode: 'rowClick',
+        },
+
+        // drag column over header
+        groupPanel: {
+            visible: true,
+            allowColumnDragging: false,
+        }, 
+
+        // filtering
+        filterRow: {
+            visible: true, 
+        },
+
+        // header filtering
+        headerFilter: {
+            visible: true,
+        },
+
+        filterPanel: {
+            visible: true,
+            filterSyncEnabled: true
         }
+
     })
 
 })
