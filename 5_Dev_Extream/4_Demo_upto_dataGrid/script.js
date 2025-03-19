@@ -94,18 +94,18 @@ $(() => {
                     console.log('data loaded')
 
                     // see initial length of dataset 
-                    if(initial_lenth === -1) initial_lenth = response.length;
+                    if (initial_lenth === -1) initial_lenth = response.length;
 
                     // how much seed data user wants
                     let num_of_record = Number($('#num_of_record').dxTextBox('instance').option('text'));
-                    
+
                     // logic to display seed data + newly added data 
                     let finalArray = response.slice(0, num_of_record)
                     let temp = response.slice(initial_lenth);
                     temp.forEach(element => {
                         finalArray.push(element)
                     });
-                    
+
                     // resolve it
                     result.resolve(finalArray);
                 },
@@ -239,18 +239,18 @@ $(() => {
             { dataField: 'id', caption: 'ID' },
             { dataField: 'fname', caption: 'First Name' },
             { dataField: 'lname', caption: 'Last Name' },
-            { dataField: 'fantcy_ponits', caption: 'Fantcy Points' },
+            { dataField: 'fantcy_points', caption: 'Fantcy Points',  allowFiltering: false },
         ],
 
         paging: {
-            pageSize: 10,
+            pageSize: 7,
             pageIndex: 0, // default : 0
         },
 
         pager: {
             showNavigationButtons: 'true',
             showPageSizeSelector: true, // default: false
-            allowedPageSizes: [1, 3, 5, 10]
+            allowedPageSizes: [1, 3, 5, 7]
         },
 
         editing: {
@@ -259,8 +259,39 @@ $(() => {
             allowDeleting: true,
         },
 
+        // search panel
         searchPanel: {
             visible: true
+        },
+
+        // drag column over header
+        groupPanel: {
+            visible: true,
+        },
+
+        //grouping 
+        grouping: {
+            contextMenuEnabled: true,
+            expandMode: 'rowClick',
+            autoExpandAll: true,
+            allowCollapsing: false
+        },
+
+        
+
+        // filtering
+        filterRow: {
+            visible: true,
+        },
+
+        // header filtering
+        headerFilter: {
+            visible: true,
+        },
+
+        filterPanel: {
+            visible: true,
+            filterSyncEnabled: true
         }
     })
 
