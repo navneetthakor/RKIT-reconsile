@@ -237,7 +237,7 @@ $(() => {
         showBorders: true,
         showRowLines: true,
         columns: [
-            { dataField: 'id', caption: 'ID', sortIndex: 0, sortOrder: 'asc' },
+            { dataField: 'id', caption: 'ID', sortIndex: 0, sortOrder: 'asc', allowEditing: false, allowAdding: false },
             {
                 caption: 'Name',
                 columns: [
