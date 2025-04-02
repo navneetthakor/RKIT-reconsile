@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ 
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.1.3/css/dx.light.css">
+ 
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.1.3/js/dx.all.js"></script>
+ 
+    <title>Columns</title>
+</head>
+ 
+<body>
+    <div class="demo-container">
+        <div id="gridContainer"></div>
+    </div>
+</body>
+ 
+<script>
+    const cars = [
+        {
+            "CarID": 11,
+            "Model": "Toyota Corolla",
+            "Make": "Toyota",
+            "Year": 2020,
+            "Color": "White",
+            "PricePerDay": 45,
+            "Availability": true,
+            "Location": "Los Angeles, USA",
+            "Owner": "John Doe",
+            "OwnerContact": "(212) 555-1234",
+            "Description": "A reliable and fuel-efficient sedan, perfect for city and highway drives."
+        },
+        {
+            "CarID": 2,
+            "Model": "Honda Civic",
+            "Make": "Honda",
+            "Year": 2019,
+            "Color": "Black",
+            "PricePerDay": 50,
+            "Availability": true,
+            "Location": "Los Angeles, USA",
+            "Owner": "Jane Smith",
+            "OwnerContact": "(310) 555-5678",
+            "Description": "Sporty and comfortable, ideal for both short and long trips."
+        },
+        {
+            "CarID": 1,
+            "Model": "Ford Mustang",
+            "Make": "Ford",
+            "Year": 2021,
+            "Color": "Red",
+            "PricePerDay": 120,
+            "Availability": false,
+            "Location": "Miami, USA",
+            "Owner": "Carlos Martinez",
+            "OwnerContact": "(305) 555-9876",
+            "Description": "A powerful muscle car with top-notch performance and style."
+        },
+        {
+            "CarID": 4,
+            "Model": "Tesla Model 3",
+            "Make": "Tesla",
+            "Year": 2022,
+            "Color": "Blue",
+            "PricePerDay": 90,
+            "Availability": true,
+            "Location": "San Francisco, USA",
+            "Owner": "Emily Johnson",
+            "OwnerContact": "(415) 555-6543",
+            "Description": "An electric car with autopilot features and great mileage."
+        },
+        {
+            "CarID": 5,
+            "Model": "Jeep Wrangler",
+            "Make": "Jeep",
+            "Year": 2018,
+            "Color": "Green",
+            "PricePerDay": 75,
+            "Availability": true,
+            "Location": "Denver, USA",
+            "Owner": "Michael Brown",
+            "OwnerContact": "(303) 555-2222",
+            "Description": "Perfect for off-road adventures with a rugged design."
+        },
+        {
+            "CarID": 6,
+            "Model": "BMW X5",
+            "Make": "BMW",
+            "Year": 2021,
+            "Color": "Silver",
+            "PricePerDay": 150,
+            "Availability": true,
+            "Location": "Los Angeles, USA",
+            "Owner": "Jane Smith",
+            "OwnerContact": "(312) 555-8888",
+            "Description": "A luxury SUV with advanced safety and comfort features."
+        },
+        {
+            "CarID": 7,
+            "Model": "Mercedes-Benz C-Class",
+            "Make": "Mercedes-Benz",
+            "Year": 2020,
+            "Color": "Black",
+            "PricePerDay": 140,
+            "Availability": false,
+            "Location": "Houston, USA",
+            "Owner": "Robert Lee",
+            "OwnerContact": "(713) 555-7777",
+            "Description": "A premium sedan with elegant design and smooth driving."
+        },
+        {
+            "CarID": 8,
+            "Model": "Audi Q7",
+            "Make": "Audi",
+            "Year": 2019,
+            "Color": "Gray",
+            "PricePerDay": 130,
+            "Availability": true,
+            "Location": "Phoenix, USA",
+            "Owner": "Olivia Davis",
+            "OwnerContact": "(602) 555-6666",
+            "Description": "A spacious and high-performance luxury SUV."
+        },
+        {
+            "CarID": 9,
+            "Model": "Hyundai Elantra",
+            "Make": "Hyundai",
+            "Year": 2018,
+            "Color": "Blue",
+            "PricePerDay": 40,
+            "Availability": true,
+            "Location": "San Diego, USA",
+            "Owner": "James Wilson",
+            "OwnerContact": "(619) 555-4444",
+            "Description": "A budget-friendly sedan with great fuel efficiency."
+        },
+        {
+            "CarID": 10,
+            "Model": "Nissan Altima",
+            "Make": "Nissan",
+            "Year": 2021,
+            "Color": "White",
+            "PricePerDay": 55,
+            "Availability": true,
+            "Location": "Dallas, USA",
+            "Owner": "Isabella Thomas",
+            "OwnerContact": "(214) 555-3333",
+            "Description": "A midsize sedan with a comfortable and stylish interior."
+        },
+        {
+            "CarID": 11,
+            "Model": "Subaru Outback",
+            "Make": "Subaru",
+            "Year": 2020,
+            "Color": "Green",
+            "PricePerDay": 70,
+            "Availability": false,
+            "Location": "Seattle, USA",
+            "Owner": "Ethan White",
+            "OwnerContact": "(206) 555-2222",
+            "Description": "An all-wheel-drive crossover perfect for road trips."
+        },
+        {
+            "CarID": 12,
+            "Model": "Chevrolet Camaro",
+            "Make": "Chevrolet",
+            "Year": 2021,
+            "Color": "Yellow",
+            "PricePerDay": 110,
+            "Availability": true,
+            "Location": "Las Vegas, USA",
+            "Owner": "Ava Martin",
+            "OwnerContact": "(702) 555-1111",
+            "Description": "A stylish sports car with powerful performance."
+        },
+        {
+            "CarID": 13,
+            "Model": "Mazda CX-5",
+            "Make": "Mazda",
+            "Year": 2019,
+            "Color": "Red",
+            "PricePerDay": 65,
+            "Availability": true,
+            "Location": "Portland, USA",
+            "Owner": "William Harris",
+            "OwnerContact": "(503) 555-9999",
+            "Description": "A compact SUV with smooth handling and efficiency."
+        },
+        {
+            "CarID": 14,
+            "Model": "Kia Sportage",
+            "Make": "Kia",
+            "Year": 2018,
+            "Color": "Silver",
+            "PricePerDay": 60,
+            "Availability": false,
+            "Location": "Atlanta, USA",
+            "Owner": "Mia Robinson",
+            "OwnerContact": "(404) 555-8765",
+            "Description": "A versatile SUV with advanced tech features."
+        },
+        {
+            "CarID": 15,
+            "Model": "Volkswagen Passat",
+            "Make": "Volkswagen",
+            "Year": 2020,
+            "Color": "Blue",
+            "PricePerDay": 50,
+            "Availability": true,
+            "Location": "Orlando, USA",
+            "Owner": "Benjamin Young",
+            "OwnerContact": "(407) 555-6543",
+            "Description": "A sleek sedan with German engineering and reliability."
+        }
+    ];
+ 
+    $(() => {
+ 
+        const cities = ["Vapi", "Surat"];
+ 
+ 
+        const dg = $('#gridContainer').dxDataGrid({
+            dataSource: cars,
+            remoteOperations: true,
+ 
+            columns: [
+                {
+                    caption: "Details",
+                    columns: ["CarID", "Model", "Color"],
+ 
+                },
+                {
+                    dataField: "Make",
+                    allowFixing: true,
+                    allowHiding: false,
+                },
+                {
+                    dataField: "Year",
+                    caption: "Launch Year",
+                    width: 150,
+                    visible: true,
+                },
+                {
+                    dataField: "PricePerDay",
+                    dataType: "string",
+                    format: {
+                        type: "fixedPoint",
+                        precision: 3
+                    },
+                    validationRules: [{
+                        type: "numeric",
+                        message: "Price should be numeric value."
+                    }]
+                },
+                { dataField: "Availability" },
+                {
+                    dataField: "Location",
+                    lookup: {
+                        dataSource: cities
+                    },
+                },
+                {
+                    dataField: "Owner",
+                },
+                {
+                    dataField: "OwnerContact",
+                },
+                {
+                    dataField: "Description",
+                }
+            ],
+ 
+            keyExpr: "CarID",
+ 
+            editing: {
+                mode: "cell",
+                allowEditing: true,
+                allowUpdating: true
+            },
+ 
+            selection: {
+                mode: "multiple",
+                showCheckBoxesMode: 'always',
+                allowSelectAll: true,
+                deferred: false
+            },
+ 
+            masterDetail: {
+                enabled: true,
+                template: function (container, options) {
+                    container.append(`<div>More details about ${options.data.Model}</div>`);
+                }
+            },
+ 
+            grouping: {
+                contextMenuEnabled: true,
+            },
+            groupPanel: {
+                visible: true
+            },
+ 
+            onRowPrepared: function (e) {
+                console.log(e);
+ 
+                if (e.rowType === "header") {
+                    e.rowElement.css("font-weight", "bold");
+                } else if (e.rowType === "data") {
+                    if (e.rowIndex % 2 === 0) {
+                        e.rowElement.css("background-color", "#f2f2f2"); // Light gray
+                    }
+ 
+                    if (e.data.Year === 2020) {
+                        e.rowElement.css({
+                            "pointer-events": "none",
+                            "opacity": "0.3"
+                        });
+                    }
+                }
+ 
+                if (e.isEditing) {   // works only with batch or cell mode.
+                    e.rowElement.css("color", "red");
+                }
+ 
+                if (e.isExpanded) {
+                    e.rowElement.css("color", "green");
+                }
+ 
+                if (e.isSelected) {
+                    e.rowElement.css("border", "2px solid red");
+                }
+            },
+ 
+            onSelectionChanged: function () {
+                dg.repaint();
+            }
+ 
+ 
+        }).dxDataGrid('instance');
+    });
+ 
+</script>
+ 
+</html>
+ 

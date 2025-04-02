@@ -395,7 +395,35 @@ $(() => {
                 console.log("Selected rows: ", selectedData);
                 console.log("Selected keys: ", selectedKeys);
             }
-        }
+        },
+
+        /*
+        onRowPrepared
+        */
+        onRowPrepared: function (e) {
+            console.log(e);
+
+            if (e.rowType === "header") {
+                e.rowElement.css("color", "brown");
+            } else if (e.rowType === "data") {
+                e.rowElement.css("font-weight", 900)
+            } else if (e.rowType === "group") {
+                e.rowElement.css("color", "pink")
+            }
+
+            if (e.isEditing) {
+                e.rowElement.css("color", "red");
+            }
+
+            if (e.isExpanded) {
+                e.rowElement.css("color", "green");
+            }
+
+            if (e.isSelected) {
+                e.rowElement.css("font-weight", 400)
+            }
+        },
+
     })
 
 });

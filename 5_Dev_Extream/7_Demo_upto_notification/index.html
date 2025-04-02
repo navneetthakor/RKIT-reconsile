@@ -141,7 +141,8 @@
 
         title: isStudent ? form_data.student.title : form_data.professor.title,
         showTitle: true,
-        closeOnOutsideClick: true,
+        closeOnOutsideClick: false,
+        shading: false,
 
         onShown: function () {
           // Attach submit event after popup content is rendered
