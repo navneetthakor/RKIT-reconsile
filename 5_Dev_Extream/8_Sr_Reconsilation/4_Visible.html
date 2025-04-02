@@ -14,6 +14,8 @@
 
     <!-- DevExtreme library -->
     <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.all.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.web.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.2.15/js/dx.viz.js"></script> -->
     <style>
         .my-class {
             height: 20px;
@@ -31,10 +33,10 @@
         $(() => {
 
             let seedData = [
-                { id: 31, name: 'Navneet', Batch: 'B' },
-                { id: 33, name: 'Rohanshu', Batch: 'B' },
-                { id: 24, name: 'Meet', Batch: 'A' },
-                { id: 27, name: 'Jay', Batch: 'A' },
+                { id: 31, name: 'Navneet', Batch: 'B' , date: new Date()},
+                { id: 33, name: 'Rohanshu', Batch: 'B',date: new Date() },
+                { id: 24, name: 'Meet', Batch: 'A',date: new Date() },
+                { id: 27, name: 'Jay', Batch: 'A',date: new Date() },
             ];
 
             let store = new DevExpress.data.ArrayStore({
@@ -48,56 +50,50 @@
                 showBorders: true,
                 showRowLines: true,
 
-                // this options should not be enabled,
-                // as rowTemplate is not synchronized with them 
                 allowColumnReordering: true,
+
+                // see property for initially hide
                 columnChooser: {
                     enabled: true,
+                    mode: 'select'
+                    // see over here ---
                 },
 
-                 // we are selecting few columns
-                 columns: [
+                // minimum width for all the columns 
+                columnMinWidth: 300,
+
+
+                // we are selecting few columns
+                columns: [
                     {
                         dataField: 'id',
+
+                        // min width for individual
+                        minWidth: 800,
+                        
                     },
                     {
+                        // fixed width 
+                        width: 700,
                         dataField: 'name'
                     },
                     {
                         dataField: 'Batch',
-
-                        // to customize apperiance like adding images etc 
-                        // but it customizes 'data cells' only
-                        cellTemplate: function (element, info) {
-                            // here element is 'td'
-                            // and 'info' have greater details
-                            element.html("<div>" + info.text + "</div>")
-                            .css("color", "blue");
-                        },
-
                     },
+                    {
+                        dataField: 'date',
+                        dataType: 'Date',
+                        format: 'MM-yyyy'
+                    }
                 ],
 
+                // giving control to user to resize column -----
+                allowColumnResizing: true,
 
-
-                // have higher priority (compare to columns)
-                rowTemplate: function (container, item) {
-                    // container : grid container
-                    // item: devExtreme object
-                    let data = item.data;
-                    let markup = "<tbody class='dx-row'>" +
-                        "<tr>" +
-                        "<td>" + data.id + "</td>" +
-                        "<td>" + data.name + "</td>" +
-                        "<td>" + data.Batch + "</td>" +
-                        "</tr>" +
-                        "</tbody>";
-                    container.append(markup);
-                },
-
-                
-
-
+                // to fix column either left or right, irrespective of how much we horizontally scroll menu.
+                columnFixing:{
+                    enabled: true
+                }
             });
 
         });

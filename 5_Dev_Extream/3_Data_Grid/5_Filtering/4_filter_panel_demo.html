@@ -111,6 +111,7 @@
                     {
                         dataField: "id",
                         caption: "ID No.",
+                        filterOperations: ["contains", "=", "isId1"],
                     },
                     {
                         dataField: "name",
@@ -119,26 +120,53 @@
                     {
                         dataField: "position",
                         caption: "Position",
+                        
 
                     }],
 
                 headerFilter: {
-                    visible:true,
+                    visible: true,
                     allowSearch: true,
+                },
+                filterRow: {
+                    visible: true
                 },
 
                 /*
                 * filter panel: shows the applied filter expression
                 */
-                filterPanel:{
-                    visible:true,
+                filterPanel: {
+                    visible: true,
 
-                    // If a user changes the filter expression in the filter panel or filter builder, 
-                    // the changes are reflected in the filter row and header filter, and vice versa.
-                    // set filterSyncEnabled : 'false' to stop this behaviour 
-                    filterSyncEnabled: false
-                }
-                
+                },
+                // If a user changes the filter expression in the filter panel or filter builder, 
+                // the changes are reflected in the filter row and header filter, and vice versa.
+                // set filterSyncEnabled : 'false' to stop this behaviour 
+                filterSyncEnabled: false,
+
+                // creating custom filter 
+                filterBuilder: {
+                    customOperations: [ 
+                        {
+                            name: "isId1",
+                            caption: "Is Id 1",
+                            dataTypes: ["number"],
+                            icon: "check",
+                            hasValue: false,
+                            calculateFilterExpression: function(field) {
+                                console.log("isid")
+                                return [field.datafield, "=", 1];
+                            }
+                        }
+                    ]
+                },
+ 
+                filterBuilderPopup: {
+                    width: 600,
+                    title: "My Filter Builder"
+                },
+
+
 
             });
 

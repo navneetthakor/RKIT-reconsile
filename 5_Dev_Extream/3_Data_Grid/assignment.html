@@ -25,8 +25,8 @@
         var store = new DevExpress.data.CustomStore({
             key: "id",
             load: function (loadOptions) {
-                let skip = 2;
-                let take = 5;
+                let skip = loadOptions.skip || 2;
+                let take = loadOptions.take || 5;
                 let page = Math.floor(skip / take) + 1;
                 let d = $.Deferred();
                 $.ajax({
@@ -96,7 +96,7 @@
             },
  
             // cacheRawData: true, // below raw is required
-            loadMode: "raw", // processed
+            loadMode: "processed", // raw
             errorHandler: function (error) {
                 console.log("ERROR\n", error.message);
             },

@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div id="grouping_demo"></div>
+    <div id="row_editing"></div>
 
     <script defer>
         // Editing allows user to add, update and/or delete data in datagrid
@@ -84,14 +84,22 @@
                 data: prods,
             })
 
-            $("#grouping_demo").dxDataGrid({
+            $("#row_editing").dxDataGrid({
                 dataSource: store,
+
+                columnChooser: {
+                    enabled: true,
+                    allowSearch: true,
+                    emptyPanelText: "nothing bro",
+                    mode: "select", // select
+                    title: "my column chooser"
+                },
 
                 showRowLines: true,
                 showBorders: true,
 
                 paging: {
-                    pageSize: 10,
+                    pageSize: 20,
                     pageIndex: 1,
                     enabled: true,
                 },
@@ -100,30 +108,23 @@
                     showNavigationButtons: true,
                     showPageSizeSelector: true,
                     allowedPageSizes: [1, 2, 3],
-                    showInfo: true,
-                    infoText: "Page {0}. Total: {1} ({2} items)"
                 },
 
-                columns: [
-                    {
-                        dataField: "id",
-                        caption: "ID No.",
-                    },
-                    {
-                        dataField: "name",
-                        caption: "Name",
-                    },
-                    {
-                        dataField: "position",
-                        caption: "Position",
-                        // disable grouping in  this column
-                        // allowGrouping: false,
+                // editing objec facilitates us to add settings
+                editing: {
+                    mode: 'row',
 
-                        // initial grouping (group index becomes key)
-                        groupIndex: 0,
-                    }],
+                    // facilitates adding
+                    allowAdding: true,
 
-                // right click on header
+                    // facilitates updating 
+                    allowUpdating: true,
+
+                    // facilitates deleting
+                    allowDeleting: true,
+
+                },
+
                 grouping: {
                     // to show grouping options on right clicking in cloumn
                     contextMenuEnabled: true,
@@ -132,52 +133,41 @@
                     // defualt: 'buttonClick'
                     expandMode: 'rowClick',
 
-                    // prevent user from collapsing groupt
                     // autoExpandAll: true,
                     // allowCollapsing: false
                 },
 
-                // drag column over header
-                groupPanel: {
-                    visible: true,
-
-                    // disables column draging, and thus disables groupPanel logically.
-                    allowColumnDragging: true,
-                },
-
-                // events --------- 
-                onRowExpanding: function (e) {
-                    console.log("row expanding");
-                },
-                onRowExpanded: function (e) {
-                    console.log("row expanded");
-                },
-                onRowCollapsing: function (e) {
-                    console.log("row collapsing");
-                },
-                onRowCollapsed: function (e) {
-                    console.log("row collapsed");
-                }
+                // we can set additing attributes at column level too.
+                // allowEditing : default is true, if set to false -> user can't edit it.
+                columns: [
+                    { dataField: "id", caption: "ID No.", allowEditing: false },
+                    {
+                        dataField: "name", caption: "Name", visible: true,
+                        groupCellTemplate: function (cellElement, cellInfo) {
+                            cellElement.text(`Mr. ${cellInfo.value}`);
+                        },
+                    },
+                    {
+                        dataField: "position", caption: "Position", visible: false, allowHiding: false,
+                        editCellTemplate: MydropDownBox
+                    }
+                ],
 
 
             });
 
-            // to change group-index at runtime 
-            $("#dataGridContainer").dxDataGrid("columnOption", "City", "groupIndex", 0);
-
-            /*
-            * expand and collapse groups
-            */
-            //   to all 
-            $("#dataGridContainer").dxDataGrid('instance').expandAll();
-            $("#dataGridContainer").dxDataGrid('instance').collapseAll();
-
-            // specific level
-            // (provide groupIndex as parm )
-
-            // individual row
-            $("#dataGridContainer").dxDataGrid('instance').collapseRow(groupKey);
-
+            function MydropDownBox(cellElement, cellInfo) {
+                $("<div>")
+                    .appendTo(cellElement)
+                    .dxSelectBox({
+                        value: cellInfo.value,
+                        items: ["Developer", "HR"],
+                        onValueChanged: function (e) {
+                            // Update the cell value with the selected option
+                            cellElement.find("input").val(e.value);
+                        }
+                    });
+            }
 
         })
     </script>

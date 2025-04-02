@@ -121,6 +121,9 @@
 
                         // initial grouping (group index becomes key)
                         groupIndex: 0,
+
+                        // whather to group them initialy or not
+                        autoExpandGroup: false, // default : true
                     }],
 
                 // right click on header
@@ -133,7 +136,7 @@
                     expandMode: 'rowClick',
 
                     // prevent user from collapsing groupt
-                    // autoExpandAll: true,
+                    autoExpandAll: true,
                     // allowCollapsing: false
                 },
 
@@ -143,40 +146,9 @@
 
                     // disables column draging, and thus disables groupPanel logically.
                     allowColumnDragging: true,
-                },
-
-                // events --------- 
-                onRowExpanding: function (e) {
-                    console.log("row expanding");
-                },
-                onRowExpanded: function (e) {
-                    console.log("row expanded");
-                },
-                onRowCollapsing: function (e) {
-                    console.log("row collapsing");
-                },
-                onRowCollapsed: function (e) {
-                    console.log("row collapsed");
                 }
 
-
             });
-
-            // to change group-index at runtime 
-            $("#dataGridContainer").dxDataGrid("columnOption", "City", "groupIndex", 0);
-
-            /*
-            * expand and collapse groups
-            */
-            //   to all 
-            $("#dataGridContainer").dxDataGrid('instance').expandAll();
-            $("#dataGridContainer").dxDataGrid('instance').collapseAll();
-
-            // specific level
-            // (provide groupIndex as parm )
-
-            // individual row
-            $("#dataGridContainer").dxDataGrid('instance').collapseRow(groupKey);
 
 
         })

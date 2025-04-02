@@ -1,5 +1,6 @@
 
 $(() => {
+    // form related filed
     $('#fname').dxTextBox({
         tabIndex: 1,
         placeholder: 'Navneet Kumar',
@@ -237,8 +238,13 @@ $(() => {
         showRowLines: true,
         columns: [
             { dataField: 'id', caption: 'ID', sortIndex: 0, sortOrder: 'asc' },
-            { dataField: 'fname', caption: 'First Name' },
-            { dataField: 'lname', caption: 'Last Name', hidingPriority: 0 },
+            {
+                caption: 'Name',
+                columns: [
+                    { dataField: 'fname', caption: 'First Name' },
+                    { dataField: 'lname', caption: 'Last Name', hidingPriority: 0 }
+                ]
+            },
             { dataField: 'fantcy_points', caption: 'Fantcy Points', allowFiltering: false },
             {
                 type: "adaptive",
@@ -292,11 +298,10 @@ $(() => {
             allowCollapsing: false
         },
 
-
-
         // filtering
         filterRow: {
             visible: true,
+            applyFilter: 'onClick'
         },
 
         // header filtering
@@ -343,11 +348,19 @@ $(() => {
                 $('<div>')
                     .text(`${data.fname}'s info:`)
                     .appendTo(container);
-                
+
                 $('<div>')
                     .html(`${data.fname}'s id no is ${data.id} and has ${data.fantcy_points} fantcy points!`)
                     .appendTo(container)
             }
+        },
+
+        // summry 
+        summary: {
+            totalItems: [{
+                column: 'id',
+                summaryType: 'count',
+            }]
         },
 
         // exporting selected rows

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ 
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.1.3/css/dx.light.css">
+ 
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.1.3/js/dx.all.js"></script>
+ 
+    <title>Try</title>
+</head>
+ 
+<body>
+    <div id="grid"></div>
+</body>
+ 
+<script>
+    $(document).ready(function () {
+        var store = new DevExpress.data.CustomStore({
+            key: "id",
+ 
+            // in raw : totalCount etc not required.
+            loadMode: "raw",
+ 
+            load: function (loadOptions) {
+                let skip = loadOptions.skip || 0;
+                let take = loadOptions.take || 5;
+                let page = Math.floor(skip / take) + 1;
+                let d = $.Deferred();
+                $.ajax({
+                    url: `https://67b6b39807ba6e5908415d52.mockapi.io/api/dg-1/cars`,
+                    method: "GET",
+                    dataType: "json"
+                }).done(function (data) {
+                    console.log("h;o", data);
+                   
+                    d.resolve(data);
+                }).fail(function (error) {
+                    d.reject("Data loading error: " + error.statusText);
+                });
+                return d.promise();
+            }          
+        });
+ 
+        $("#grid").dxDataGrid({
+            dataSource: store,
+            remoteOperations: { paging: true },
+            paging: {
+                pageSize: 5,
+                enabled: true,
+            }
+        });
+ 
+ 
+    });
+</script>
+ 
+</html>
