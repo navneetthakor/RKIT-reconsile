@@ -261,7 +261,7 @@ $(() => {
 
         // setting up pagging 
         paging: {
-            pageSize: 7,
+            pageSize: 5,
             pageIndex: 0, // default : 0
         },
 
@@ -269,7 +269,7 @@ $(() => {
         pager: {
             showNavigationButtons: 'true',
             showPageSizeSelector: true, // default: false
-            allowedPageSizes: [1, 3, 5, 7]
+            allowedPageSizes: [1, 3, 5]
         },
 
         // editing options 

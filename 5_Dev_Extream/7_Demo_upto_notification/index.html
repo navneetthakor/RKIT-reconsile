@@ -71,8 +71,8 @@
                   let formData = formInstance.option('formData');
                   $('#loadPanel').dxLoadPanel('show')
                   setTimeout((e) => {
-                    $('#loadPanel').dxLoadPanel('hide');
                     $('#popup').dxPopup('instance').hide();
+                    $('#loadPanel').dxLoadPanel('hide');
                     DevExpress.ui.notify(
                       "Form Submitted",
                       'Success',
