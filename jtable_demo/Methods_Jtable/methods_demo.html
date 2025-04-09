@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/jquery-ui.min.css"
+        integrity="sha512-TFee0335YRJoyiqz8hA8KV3P0tXa5CpRBSoM0Wnkn7JoJx1kaq1yXL/rb8YFpWXkMOjRcv5txv+C6UluttluCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../jtable.2.4.0/themes/metro/blue/jtable.min.css">
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/smoothness/jquery-ui.css"> -->
+    <!-- ... -->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"
+        integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="../jtable.2.4.0/jquery.jtable.js"></script>
+
+</head>
+
+<body>
+    <div id="jtable_demo"></div>
+    <div id="addButton">
+        AddButton
+    </div>
+    <script>
+
+        $(document).ready(function () {
+            // student data
+            let students = [{
+                StudentId: 1,
+                Name: "Navneet",
+                Department: "Computer"
+            }, {
+                StudentId: 2,
+                Name: "Maulik",
+                Department: "Computer"
+            }];
+
+
+            $('#jtable_demo').jtable({
+
+                //#region general options (covere previously)
+                //for title of the table 
+                // if it is not set then table will not have any title 
+                title: 'The Student List',
+
+                /*
+                * paging related settings 
+                */
+                // to engable paging
+                // default: false
+                paging: true,
+
+                // to set page size
+                // default is 10
+                pageSize: 25,
+
+                //if pagin enable then it determins how to show gotoPageArea
+                // default : comboBox
+                // other options : textbox, none (to disable it)
+                gotoPageArea: "combobox",
+
+                // to decide page sizes that user can select from
+                // default:  [10, 25, 50, 100, 250, 500]
+                pageSizes: [5, 10],
+
+                // decides wheather page size change area should be visible or not
+                // default: true 
+                pageSizeChangeArea: false,
+
+                /* 
+                 * sorting not working clearly 
+                 */
+                // to enable sorting
+                // defulat : false
+                sorting: true,
+
+                // defualt sorting behavior /* not working */
+                defaultSorting: "Name ASC",
+
+                // allow multiple sorting
+                // default: false
+                multiSorting: true,
+
+
+
+                /*
+                * column related settings
+                */
+                // decides wheather user can resize column or not 
+                // default: false
+                columnResizable: true,
+
+                // allows user to show/hide data columns by right clicking table header.
+                // default: true 
+                columnSelectable: true,
+
+                /*
+                * selection related settings
+                */
+
+                // to enable checkboxes for selecting
+                // default false so while setting up selection we need to enable it.
+                selectingCheckboxes: true,
+
+                // allow selection
+                // checkbox to select all will not be visible
+                // default: false 
+                selecting: true,
+
+                //Allow multiple selecting
+                // selecting needs to be enabled for multiselect to work
+                // default : false
+                multiselect: true,
+
+                // to enable selection only by clicking boxes
+                // default true
+                selectOnRowClick: false,
+
+
+                // -- notworking
+                defaultDateFormat: "dd-MM-yyyy",
+
+
+                /*
+                * miselenious
+                */
+                //delete confirmation : open when we try to delete any row
+                // default: true
+                deleteConfirmation: true,
+
+                // to select themes
+                // other themes : jqueryui, lightcolor, basic
+                theme: 'metro',
+
+                // shows close button to close the table
+                // default : false
+                showCloseButton: true, /* not working */
+
+                //#endregion
+
+                // define all the actions over here
+                actions: {
+                    // necessory to view records in the table
+                    listAction: () => {
+                        return {
+                            "Records": students,
+                            "Result": "OK",
+                            "TotalRecordCount": students.length
+                        };
+                    },
+
+                    // for add button
+                    createAction: (data) => {
+                        // here data is params joined with &
+                        let params = data.split('&');
+                        let result = {};
+                        params.forEach(element => {
+                            let [key, value] = element.split('=');
+                            result[key] = value;
+                        });
+
+                        // set id
+                        result["StudentId"] = students.length + 1;
+                        console.log(result);
+                        students.push(result);
+
+                        return {
+                            "Result": "OK",
+                            "Record": result
+                        };
+                    },
+
+                    // for delete button infront of any row
+                    deleteAction: (data) => {
+                        console.log(data)
+                        students = students.filter((value, index, arr) => value.StudentId !== data.StudentId);
+                        console.log(students)
+                        return {
+                            "Result": "OK"
+                        }
+                    },
+
+                    // for update button infront of any row
+                    updateAction: (data) => {
+                        // here data is params joined with &
+                        let params = data.split('&');
+                        let result = {};
+                        params.forEach(element => {
+                            let [key, value] = element.split('=');
+                            result[key] = value;
+                        });
+
+                        // set id
+                        console.log(result);
+                        students.forEach((value, index, arr) => {
+                            if (value.StudentId === result.StudentId) {
+                                arr[index] = result;
+                            }
+                        })
+
+                        return {
+                            "Result": "OK",
+                            "Record": result
+                        };
+                    }
+                },
+                fields: {
+                    StudentId: {
+                        key: true,
+                        title: "Student id"
+                    },
+                    Name: {
+                        title: 'Name',
+
+                    },
+                    Department: {
+                        title: "Department"
+                    }
+                }
+            });
+
+            //#region  Methods
+            // 1. addRecord : programatically add record 
+            $('#jtable_demo').jtable('addRecord', {
+                record: {
+                    StudentId: 3,
+                    Name: "Rohanshu",
+                    Department: "Computer"
+                }
+            });
+            
+
+            // 2. changeColumnVisibility(columnName, visibility)
+            $('#jtable_demo').jtable('changeColumnVisibility', "Name", "hidden");
+
+            // 3. deleteRecode 
+            $('#jtable_demo').jtable('deleteRecord', {
+                key: 3,
+            });
+
+            // 4. get row by key 
+            let row1 = $("#jtable_demo").jtable("getRowByKey", 1);
+            console.log("getRow", row1);
+
+            // 5. select specific row 
+            $("#jtable_demo").jtable(
+                "selectRows",
+                $("#jtable_demo").jtable("getRowByKey", 1)
+            );
+
+            // 6.  Get selected rows
+            let selectedRows = $("#jtable_demo").jtable("selectedRows");
+            console.log("Selected rows:", selectedRows);
+
+            //7. reloads  data from server (kind of refersh)
+            $("#jtable_demo").jtable("reload", () => console.log("Reload completed"));
+            
+            // 8. shows create form 
+            $("#jtable_demo").jtable("showCreateForm");
+            
+
+            // 9. update record 
+            //updates only those fields which are passes in record
+            $('#jtable_demo').jtable('updateRecord', {
+                record: {
+                    StudentId: 1,
+                    Name: "NK",
+                },
+                clientOnly: true
+            });
+
+            //#endregion
+
+        });
+
+    </script>
+</body>
+
+</html>
