@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <link rel="stylesheet" href="./jtable.2.4.0/themes/basic/jtable_basic.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/smoothness/jquery-ui.css">
+    <!-- ... -->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./jtable.2.4.0/jquery.jtable.js"></script>
+
+</head>
+
+<body>
+    <div id="jtable_demo"></div>
+    <script>
+
+        $(document).ready(function () {
+
+            $('#jtable_demo').jtable({
+                title: 'The Student List',
+                paging: true, //Enable paging
+                pageSize: 10, //Set page size (default: 10)
+                sorting: true, //Enable sorting
+                defaultSorting: 'Name ASC', //Set default sorting
+                actions: {
+                    listAction: () => {
+                        let obj = {
+                            Records: [{
+                                StudentId: 1,
+                                Name: "Navneet"
+                            },{
+                                StudentId: 2,
+                                Name: "Maulik"
+                            }],
+                            Result: "OK",
+                            TotalRecordCount: 2
+                        }
+                        return obj;
+                    },
+                },
+                fields: {
+                    StudentId: {
+                        key: true,
+                        create: false,
+                        edit: false,
+                        list: false
+                    },
+                    Name: {
+                        title: 'Name',
+                        width: '23%'
+                    },
+                }
+            });
+
+            //Load student list from server
+            // $('#jtable_demo').jtable('load');
+        });
+
+    </script>
+</body>
+
+</html>

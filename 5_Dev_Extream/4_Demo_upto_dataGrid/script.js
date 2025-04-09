@@ -360,7 +360,8 @@ $(() => {
             totalItems: [{
                 column: 'id',
                 summaryType: 'count',
-            }]
+            }],
+            //  add gorupt summary -----> 
         },
 
         // exporting selected rows
