@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN setup | DevExtream</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/jquery-ui.min.css"
+        integrity="sha512-TFee0335YRJoyiqz8hA8KV3P0tXa5CpRBSoM0Wnkn7JoJx1kaq1yXL/rb8YFpWXkMOjRcv5txv+C6UluttluCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../jtable.2.4.0/themes/metro/blue/jtable.min.css">
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/smoothness/jquery-ui.css"> -->
+    <!-- ... -->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"
+        integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="../jtable.2.4.0/jquery.jtable.js"></script>
+
+</head>
+
+<body>
+    <div id="jtable_demo"></div>
+    <div id="addButton">
+        AddButton
+    </div>
+    <script>
+
+        $(document).ready(function () {
+            // student data
+            let students = [{
+                StudentId: 1,
+                Name: "Navneet",
+                BDate: new Date()
+            }, {
+                StudentId: 2,
+                Name: "Maulik",
+                BDate: new Date()
+            }];
+
+            // to illustrate option field
+            let nameOption =[{ Value: '1', DisplayText: 'Navneet' }, { Value:'2', DisplayText: 'Maulik' }, { Value: '3', DisplayText: 'Rohanshu' }, { Value: '4', DisplayText: 'Meet' }]
+
+
+            $('#jtable_demo').jtable({
+
+                //#region general options (covere previously)
+                //for title of the table 
+                // if it is not set then table will not have any title 
+                title: 'The Student List',
+
+                /*
+                * paging related settings 
+                */
+                // to engable paging
+                // default: false
+                paging: true,
+
+                // to set page size
+                // default is 10
+                pageSize: 25,
+
+                //if pagin enable then it determins how to show gotoPageArea
+                // default : comboBox
+                // other options : textbox, none (to disable it)
+                gotoPageArea: "combobox",
+
+                // to decide page sizes that user can select from
+                // default:  [10, 25, 50, 100, 250, 500]
+                pageSizes: [5, 10],
+
+                // decides wheather page size change area should be visible or not
+                // default: true 
+                pageSizeChangeArea: false,
+
+                /* 
+                 * sorting not working clearly 
+                 */
+                // to enable sorting
+                // defulat : false
+                sorting: true,
+
+                // defualt sorting behavior /* not working */
+                defaultSorting: "Name ASC",
+
+                // allow multiple sorting
+                // default: false
+                multiSorting: true,
+
+
+
+                /*
+                * column related settings
+                */
+                // decides wheather user can resize column or not 
+                // default: false
+                columnResizable: true,
+
+                // allows user to show/hide data columns by right clicking table header.
+                // default: true 
+                columnSelectable: true,
+
+                /*
+                * selection related settings
+                */
+
+                // to enable checkboxes for selecting
+                // default false so while setting up selection we need to enable it.
+                selectingCheckboxes: true,
+
+                // allow selection
+                // checkbox to select all will not be visible
+                // default: false 
+                selecting: true,
+
+                //Allow multiple selecting
+                // selecting needs to be enabled for multiselect to work
+                // default : false
+                multiselect: true,
+
+                // to enable selection only by clicking boxes
+                // default true
+                selectOnRowClick: false,
+
+
+                // -- notworking
+                defaultDateFormat: "dd-MM-yyyy",
+
+
+                /*
+                * miselenious
+                */
+                //delete confirmation : open when we try to delete any row
+                // default: true
+                deleteConfirmation: true,
+
+                // to select themes
+                // other themes : jqueryui, lightcolor, basic
+                theme: 'metro',
+
+                // shows close button to close the table
+                // default : false
+                showCloseButton: true, /* not working */
+
+                //#endregion
+
+                // define all the actions over here
+                actions: {
+                    // necessory to view records in the table
+                    listAction: () => {
+                        return {
+                            "Records": students,
+                            "Result": "OK",
+                            "TotalRecordCount": students.length
+                        };
+                    },
+
+                    // for add button
+                    createAction: () => { },
+
+                    // for delete button infront of any row
+                    deleteAction: () => { },
+
+                    // for update button infront of any row
+                    updateAction: () => { }
+                },
+                fields: {
+                    StudentId: {
+                        // weather columns is resizable or not 
+                        // default : true
+                        columnResizable: true,
+
+                        // whether this field should be visible in the create record form
+                        // default : true
+                        create: false,
+
+                        // whether this field should be visible in the create record form
+                        // default : true
+                        edit: false,
+
+                        // to provide default value, 
+                        //it must be valid value
+                        defaultValue: 333,
+
+                        // indicates this field is primary key for this record
+                        // each record must have one and only one key field
+                        // If a field is marked as key, create and edit options are set to false as default.
+                        // default: false
+                        key: true,
+
+                        // whether this field is shown in the table.
+                        // default: true
+                        list: true,
+
+                        // wether sorting should apply at this feild or not
+                        // default : true
+                        sorting: false,
+
+                        // title is necesory otherwise header of that column will be empty
+                        title: "Student id" 
+                    },
+                    Name: {
+                        title: 'Name',
+                        width: '23%',
+                        // (to define fully custom input area for edit and create form)
+                        input: function(data) {
+                            if (data.record) {
+                                return '<input type="text" name="Name" style="width:200px" value="' + data.record.Name + '" />';
+                            } else {
+                                return '<input type="text" name="Name" style="width:200px" value="enter your name here" />';
+                            }
+                        },
+
+                        // to display custom label for field in edit/create form. 
+                        inputTitle: "Give me your name buddy",
+
+                        //list of options visible in edit and create form mode
+                        // input have higher priority then options so if input is defined then options won't work
+                        // options: nameOption
+
+                        // visiblity of the column
+                        // default: visible 
+                        // fixed : user can't hide it
+                        // visible: feild visible by default but user can hide it
+                        // hidden: hidden as default but can be showed by the user
+                        visibility: 'fixed' 
+                    },
+
+                    // display : for custom column where we get all the data for record in function param.
+                    CustomColumn: {
+                        title: "Custom Column",
+                        display: function (data) {
+                            console.log(data);
+                            return `<button>${data.record.Name}</button>`;
+                        },
+
+                        // by default it is visible in create/edit form so mark it as hidden
+                        create: false,
+                        edit: false
+                    }
+                    // -- notworking
+                    // BDate: {
+                    //     // type: 'date',
+                    //     // displayFormat: 'dd-MM-yyyy'
+                    // }
+                }
+            });
+
+            // to load jtable
+            $('#EmployeeTable').jtable('load');
+
+        });
+
+    </script>
+</body>
+
+</html>
