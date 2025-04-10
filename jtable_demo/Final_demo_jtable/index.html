@@ -23,13 +23,11 @@
 
 <body>
     <div id="jtable_demo"></div>
-    <div id="addButton">
-        AddButton
-    </div>
     <script>
 
         $(document).ready(function () {
-            // student data
+            // api url 
+            let mockApiUrl = "https://67bd886c321b883e790cd96f.mockapi.io/api/dataGrid/student_data";
 
 
             $('#jtable_demo').jtable({
@@ -39,9 +37,9 @@
                 // if it is not set then table will not have any title 
                 title: 'The Student List',
 
-                
+
                 //#region  paging related settings 
-                
+
                 // to engable paging
                 // default: false
                 paging: true,
@@ -57,16 +55,16 @@
 
                 // to decide page sizes that user can select from
                 // default:  [10, 25, 50, 100, 250, 500]
-                pageSizes: [10,15,20],
+                pageSizes: [10, 15, 20],
 
                 // decides wheather page size change area should be visible or not
                 // default: true 
                 pageSizeChangeArea: true,
 
                 //#endregion
-                
+
                 //#region  sorting not working properly 
-                 
+
                 // to enable sorting
                 // defulat : false
                 sorting: true,
@@ -79,9 +77,9 @@
                 multiSorting: true,
 
                 //#endregion
-                
+
                 //#region  column related settings
-                
+
                 // decides wheather user can resize column or not 
                 // default: false
                 columnResizable: true,
@@ -91,9 +89,9 @@
                 columnSelectable: true,
 
                 //#endregion
-                
+
                 //#region  selection related settings
-                
+
 
                 // to enable checkboxes for selecting
                 // default false so while setting up selection we need to enable it.
@@ -116,7 +114,7 @@
                 //#endregion
 
                 //#region  miselenious
-                
+
                 //delete confirmation : open when we try to delete any row
                 // default: true
                 deleteConfirmation: true,
@@ -131,81 +129,165 @@
 
                 //#endregion
                 //#endregion
-                
+
                 // define all the actions over here
                 actions: {
                     // necessory to view records in the table
-                    listAction: () => {
-                        return {
-                            "Records": students,
-                            "Result": "OK",
-                            "TotalRecordCount": students.length
-                        };
+                    listAction: (postData, jtableParams) => {
+                        let startIndex = jtableParams.jtStartIndex;
+                        let pageSize = jtableParams.jtPageSize;
+
+                        // Simulate pagination logic
+                        const defferdObj = $.Deferred();
+
+                        $.ajax({
+                            url: mockApiUrl,
+                            type: "GET",
+                            dataType: "json",
+                            success: function (data) {
+                                let pageData = data.slice(startIndex, startIndex + pageSize);
+                                defferdObj.resolve({
+                                    Result: "OK",
+                                    Records: pageData,
+                                    TotalRecordCount: data.length,
+                                });
+                            },
+                            error: function () {
+                                defferdObj.reject();
+                            },
+                        });
+                        return defferdObj;
                     },
 
                     // for add button
                     createAction: (data) => {
-                        // here data is params joined with &
-                        let params = data.split('&');
-                        let result = {};
-                        params.forEach(element => {
-                            let [key, value] = element.split('=');
-                            result[key] = value;
+                        const defferdObj = $.Deferred();
+
+                        $.ajax({
+                            url: mockApiUrl,
+                            type: "GET",
+                            dataType: "json",
+                            success: function (data) {
+                                $dfd.resolve({
+                                    Result: "OK",
+                                    Records: data,
+                                    TotalRecordCount: data.length,
+                                });
+                            },
+                            error: function () {
+                                $dfd.reject();
+                            },
                         });
-
-                        // set id
-                        result["StudentId"] = students.length + 1;
-                        students.push(result);
-
-                        return {
-                            "Result": "OK",
-                            "Record": result
-                        };
+                        return defferdObj;
                     },
 
                     // for delete button infront of any row
                     deleteAction: (data) => {
-                        students = students.filter((value, index, arr) => value.StudentId !== data.StudentId);
-                        return {
-                            "Result": "OK"
-                        }
+                        const defferdObj = $.Deferred();
+
+                        $.ajax({
+                            url: mockApiUrl,
+                            type: "GET",
+                            dataType: "json",
+                            success: function (data) {
+                                $dfd.resolve({
+                                    Result: "OK",
+                                    Records: data,
+                                    TotalRecordCount: data.length,
+                                });
+                            },
+                            error: function () {
+                                $dfd.reject();
+                            },
+                        });
+                        return defferdObj;
                     },
 
                     // for update button infront of any row
                     updateAction: (data) => {
-                        // here data is params joined with &
-                        let params = data.split('&');
-                        let result = {};
-                        params.forEach(element => {
-                            let [key, value] = element.split('=');
-                            result[key] = value;
+                        const defferdObj = $.Deferred();
+
+                        $.ajax({
+                            url: mockApiUrl,
+                            type: "GET",
+                            dataType: "json",
+                            success: function (data) {
+                                $dfd.resolve({
+                                    Result: "OK",
+                                    Records: data,
+                                    TotalRecordCount: data.length,
+                                });
+                            },
+                            error: function () {
+                                $dfd.reject();
+                            },
                         });
-
-                        // set id
-                        students.forEach((value, index, arr) => {
-                            if (value.StudentId === result.StudentId) {
-                                arr[index] = result;
-                            }
-                        })
-
-                        return {
-                            "Result": "OK",
-                            "Record": result
-                        };
+                        return defferdObj;
                     }
                 },
                 fields: {
-                    StudentId: {
+                    id: {
                         key: true,
+                        list: true,
                         title: "Student id"
                     },
-                    Name: {
-                        title: 'Name',
+                    fname: {
+                        title: 'First Name',
 
                     },
-                    Department: {
-                        title: "Department"
-                    }
+                    lname: {
+                        title: "Last Name"
+                    },
+                    ChldTableBtn: {
+                        title: 'Open Child Table',
+                        edit: false,
+                        create: false,
+                        display: function (studentData) {
+                            //Create an image that will be used to open child table
+                            var img = $('<button> Child Table </button>');
+                            //Open child table when user clicks the image
+                            img.click(function () {
+                                $('#jtable_demo').jtable('openChildTable',
+                                    img.closest('tr'),
+                                    {
+                                        title: "Child Table of : " + studentData.record.fname,
+                                        actions: {
+                                            listAction: () => {
+                                                return {
+                                                    Result: "OK",
+                                                    Records: [studentData.record],
+                                                    TotalRecordCount: 1,
+                                                };
+                                            }
+                                        },
+                                        fields: {
+                                            fname: {
+                                                title: 'First Name'
+                                            },
+                                            lname: {
+                                                title: 'Last name'
+                                            },
+
+                                            fantcy_points: {
+                                                title: 'Fantacy points',
+                                            },
+
+                                        }
+                                    }, 
+                                    function (data) { //opened handler
+                                        data.childTable.jtable('load');
+                                    });
+                            });
+                            //Return image to show on the person row
+                            return img;
+                        }
+                    },
+                },
+
+                // for close button 
+                closeRequested: () => {
+                    console.log('Closing Main table');
+                    $('#jtable_demo').hide();
                 },
 
             });
