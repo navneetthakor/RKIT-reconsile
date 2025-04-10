@@ -166,7 +166,6 @@
 
                         // set id
                         result["StudentId"] = students.length + 1;
-                        console.log(result);
                         students.push(result);
 
                         return {
@@ -177,9 +176,7 @@
 
                     // for delete button infront of any row
                     deleteAction: (data) => {
-                        console.log(data)
                         students = students.filter((value, index, arr) => value.StudentId !== data.StudentId);
-                        console.log(students)
                         return {
                             "Result": "OK"
                         }
@@ -196,7 +193,6 @@
                         });
 
                         // set id
-                        console.log(result);
                         students.forEach((value, index, arr) => {
                             if (value.StudentId === result.StudentId) {
                                 arr[index] = result;
@@ -221,61 +217,124 @@
                     Department: {
                         title: "Department"
                     }
-                }
-            });
-
-            //#region  Methods
-            // 1. addRecord : programatically add record 
-            $('#jtable_demo').jtable('addRecord', {
-                record: {
-                    StudentId: 3,
-                    Name: "Rohanshu",
-                    Department: "Computer"
-                }
-            });
-            
-
-            // 2. changeColumnVisibility(columnName, visibility)
-            $('#jtable_demo').jtable('changeColumnVisibility', "Name", "hidden");
-
-            // 3. deleteRecode 
-            $('#jtable_demo').jtable('deleteRecord', {
-                key: 3,
-            });
-
-            // 4. get row by key 
-            let row1 = $("#jtable_demo").jtable("getRowByKey", 1);
-            console.log("getRow", row1);
-
-            // 5. select specific row 
-            $("#jtable_demo").jtable(
-                "selectRows",
-                $("#jtable_demo").jtable("getRowByKey", 1)
-            );
-
-            // 6.  Get selected rows
-            let selectedRows = $("#jtable_demo").jtable("selectedRows");
-            console.log("Selected rows:", selectedRows);
-
-            //7. reloads  data from server (kind of refersh)
-            $("#jtable_demo").jtable("reload", () => console.log("Reload completed"));
-            
-            // 8. shows create form 
-            $("#jtable_demo").jtable("showCreateForm");
-            
-
-            // 9. update record 
-            //updates only those fields which are passes in record
-            $('#jtable_demo').jtable('updateRecord', {
-                record: {
-                    StudentId: 1,
-                    Name: "NK",
                 },
-                clientOnly: true
+
+
+                //#region  Events of JTable
+
+                // fire when user click on close button visible in top right of the table if "showCloseButton : true" set
+                closeRequested: () => {
+                    console.log('Closing this table');
+                    $('#jtable_demo').hide();
+                },
+
+                // called when form is closed
+                // both in edit and create mode
+                formClosed: function () {
+                    console.log('formClosed event triggered');
+                },
+
+                // fires when form is created
+                formCreated: function (event, data) {
+                    // event : custom jquery event 
+                    // data : contains -> form object and formType : (create/edit)
+                    console.log('formCreated event triggered', event, data);
+                },
+
+                formSubmitting: function (event, data) {
+                    console.log('formSubmitting event triggered', event, data);
+
+                    // Get form reference
+                    let form = data.form;
+                    console.log(form);
+
+                    // Get individual values
+                    let name = form.find('input[name="Name"]').val();
+                    let department = form.find('input[name="Department"]').val();
+                    console.log("name : " ,name);
+                    console.log(  "department : " ,department);
+
+                    // to continue submitting
+                    return true;
+
+                    // to cancel submition 
+                    // return false;
+                },
+
+                // calls when record is loading
+                // when called : initial rendering, adding record and deleting record (not fired when updating record)
+                loadingRecords: function () {
+                    console.log('loadingRecords event triggered');
+                },
+
+                // fires when we add records 
+                // only for create record
+                recordAdded: function (event, data) {
+                    /*
+                    data : {
+                        record : {},
+                        serverResponse : {}
+                    }
+                    */
+                    console.log(' recordAdded event triggered:', event, data);
+                },
+
+                // fires after record deletion
+                recordDeleted: function (event, data) {
+                    /*
+                    data : {
+                        record: {},
+                        serverResponse: {},
+                        row (html element)
+                    }
+                    */
+                    console.log('recordDeleted event triggered:', event, data);
+                },
+
+                // after records loading completed
+                 // fires only in create, delete mode
+                recordsLoaded: function (event, data) {
+                    /*
+                    data : {
+                        record : [{}],
+                        serverResponse : {}
+                    }
+                    */
+                    console.log('recordsLoaded:', event, data);
+                },
+
+
+                // fires after record updated
+                recordUpdated: function (event, data) {
+                    console.log('recordUpdated triggered:', data.record);
+                },
+
+                // fires when row is inserted in to the table
+                rowInserted: function (event, data) {
+                    console.log('rowInserted:', data.row);
+                },
+
+                // fires when row is removed form the table
+                // reasons : reloading, deletion
+                rowsRemoved: function (event, data) {
+                    console.log(' rowsRemoved:', data);
+                },
+
+                // when record updation completed successfully
+                rowUpdated: function (event, data) {
+                    console.log('rowUpdated triggered:', data);
+                },
+
+                // when row selection changes
+                selectionChanged: function () {
+                    let selectedRows = $('#jtable_demo').jtable('selectedRows');
+                    console.log('selectionChanged: ' + selectedRows.length );
+                }
+                //#endregion
             });
 
-            //#endregion
-
+            // Without this, table will stay empty
+            $('#jtable_demo').jtable('load');
         });
 
     </script>
