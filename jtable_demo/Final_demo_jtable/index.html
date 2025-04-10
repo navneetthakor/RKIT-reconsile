@@ -30,15 +30,7 @@
 
         $(document).ready(function () {
             // student data
-            let students = [{
-                StudentId: 1,
-                Name: "Navneet",
-                BDate: new Date()
-            }, {
-                StudentId: 2,
-                Name: "Maulik",
-                BDate: new Date()
-            }];
+
 
             $('#jtable_demo').jtable({
 
@@ -65,7 +57,7 @@
 
                 // to decide page sizes that user can select from
                 // default:  [10, 25, 50, 100, 250, 500]
-                pageSizes: [5,10],
+                pageSizes: [10,15,20],
 
                 // decides wheather page size change area should be visible or not
                 // default: true 
@@ -101,6 +93,7 @@
                 //#endregion
                 
                 //#region  selection related settings
+                
 
                 // to enable checkboxes for selecting
                 // default false so while setting up selection we need to enable it.
@@ -139,8 +132,6 @@
                 //#endregion
                 //#endregion
                 
-
-
                 // define all the actions over here
                 actions: {
                     // necessory to view records in the table
@@ -153,37 +144,74 @@
                     },
 
                     // for add button
-                    createAction: () => { },
+                    createAction: (data) => {
+                        // here data is params joined with &
+                        let params = data.split('&');
+                        let result = {};
+                        params.forEach(element => {
+                            let [key, value] = element.split('=');
+                            result[key] = value;
+                        });
+
+                        // set id
+                        result["StudentId"] = students.length + 1;
+                        students.push(result);
+
+                        return {
+                            "Result": "OK",
+                            "Record": result
+                        };
+                    },
 
                     // for delete button infront of any row
-                    deleteAction: () => { },
+                    deleteAction: (data) => {
+                        students = students.filter((value, index, arr) => value.StudentId !== data.StudentId);
+                        return {
+                            "Result": "OK"
+                        }
+                    },
 
                     // for update button infront of any row
-                    updateAction: () => { }
+                    updateAction: (data) => {
+                        // here data is params joined with &
+                        let params = data.split('&');
+                        let result = {};
+                        params.forEach(element => {
+                            let [key, value] = element.split('=');
+                            result[key] = value;
+                        });
+
+                        // set id
+                        students.forEach((value, index, arr) => {
+                            if (value.StudentId === result.StudentId) {
+                                arr[index] = result;
+                            }
+                        })
+
+                        return {
+                            "Result": "OK",
+                            "Record": result
+                        };
+                    }
                 },
                 fields: {
                     StudentId: {
                         key: true,
-                        create: false,
-                        edit: false,
-                        list: true,
-                        title: "Student id" // title is necesory
+                        title: "Student id"
                     },
                     Name: {
                         title: 'Name',
-                        width: '23%'
+
                     },
-                    // -- notworking
-                    // BDate: {
-                    //     // type: 'date',
-                    //     // displayFormat: 'dd-MM-yyyy'
-                    // }
-                }
+                    Department: {
+                        title: "Department"
+                    }
+                },
+
             });
 
-            // to load jtable
-            $('#EmployeeTable').jtable('load');
-
+            // Without this, table will stay empty
+            $('#jtable_demo').jtable('load');
         });
 
     </script>
