@@ -56,7 +56,7 @@ $(() => {
 
         //#region  sorting not working properly 
         sorting: true,
-        defaultSorting: "Name ASC",
+        defaultSorting: "a03F01 ASC",
         multiSorting: false,
         //#endregion
 
