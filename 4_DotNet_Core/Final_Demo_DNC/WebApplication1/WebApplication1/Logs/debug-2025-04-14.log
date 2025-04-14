@@ -45005,3 +45005,381 @@
 2025-04-14 18:26:34.0375 | DEBUG | Attempting to select the first formatter in the output formatters list which can write the result. 
 2025-04-14 18:26:34.0375 | DEBUG | Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response. 
 2025-04-14 18:26:34.0375 | DEBUG | Connection id "0HNBR9RUE6PA7" completed keep alive response. 
+2025-04-14 18:26:34.4222 | DEBUG | The request path  does not match the path filter 
+2025-04-14 18:26:34.4222 | DEBUG | The request has an origin header: 'http://127.0.0.1:5503'. 
+2025-04-14 18:26:34.4222 | DEBUG | 1 candidate(s) found for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:26:34.4222 | DEBUG | Endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' with route pattern 'api/Author/GetAllBooks2' is valid for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:26:34.4222 | DEBUG | Request matched endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' 
+2025-04-14 18:26:34.4222 | DEBUG | Execution plan of authorization filters (in the following order): None 
+2025-04-14 18:26:34.4222 | DEBUG | Execution plan of resource filters (in the following order): None 
+2025-04-14 18:26:34.4222 | DEBUG | Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2025-04-14 18:26:34.4222 | DEBUG | Execution plan of exception filters (in the following order): None 
+2025-04-14 18:26:34.4222 | DEBUG | Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2025-04-14 18:26:34.4222 | DEBUG | Executing controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:26:34.4370 | DEBUG | Executed controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:26:34.4370 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:26:34.4370 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' using the name 'skip' in request data ... 
+2025-04-14 18:26:34.4370 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:34.4370 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:34.4370 | DEBUG | Attempting to validate the bound parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:26:34.4370 | DEBUG | Done attempting to validate the bound parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:34.4370 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:26:34.4370 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' using the name 'take' in request data ... 
+2025-04-14 18:26:34.4370 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:34.4370 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:34.4370 | DEBUG | Attempting to validate the bound parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:26:34.4370 | DEBUG | Done attempting to validate the bound parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:34.4370 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:26:34.4370 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' using the name 'sortFeild' in request data ... 
+2025-04-14 18:26:34.4370 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:34.4370 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:34.4370 | DEBUG | Attempting to validate the bound parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:26:34.4370 | DEBUG | Done attempting to validate the bound parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:34.4370 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:26:34.4370 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' using the name 'sortType' in request data ... 
+2025-04-14 18:26:34.4370 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:34.4370 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:34.4370 | DEBUG | Attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:26:34.4370 | DEBUG | Done attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:34.4442 | DEBUG | List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter 
+2025-04-14 18:26:34.4442 | DEBUG | No information found on request to perform content negotiation. 
+2025-04-14 18:26:34.4442 | DEBUG | Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2025-04-14 18:26:34.4442 | DEBUG | Attempting to select the first formatter in the output formatters list which can write the result. 
+2025-04-14 18:26:34.4442 | DEBUG | Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response. 
+2025-04-14 18:26:34.4442 | DEBUG | Connection id "0HNBR9RUE6PA7" completed keep alive response. 
+2025-04-14 18:26:44.0252 | DEBUG | The request path  does not match the path filter 
+2025-04-14 18:26:44.0252 | DEBUG | The request has an origin header: 'http://127.0.0.1:5503'. 
+2025-04-14 18:26:44.0252 | DEBUG | 1 candidate(s) found for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:26:44.0252 | DEBUG | Endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' with route pattern 'api/Author/GetAllBooks2' is valid for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:26:44.0252 | DEBUG | Request matched endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' 
+2025-04-14 18:26:44.0252 | DEBUG | Execution plan of authorization filters (in the following order): None 
+2025-04-14 18:26:44.0252 | DEBUG | Execution plan of resource filters (in the following order): None 
+2025-04-14 18:26:44.0252 | DEBUG | Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2025-04-14 18:26:44.0252 | DEBUG | Execution plan of exception filters (in the following order): None 
+2025-04-14 18:26:44.0252 | DEBUG | Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2025-04-14 18:26:44.0252 | DEBUG | Executing controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:26:44.0423 | DEBUG | Executed controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' using the name 'skip' in request data ... 
+2025-04-14 18:26:44.0423 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:44.0423 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to validate the bound parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:26:44.0423 | DEBUG | Done attempting to validate the bound parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' using the name 'take' in request data ... 
+2025-04-14 18:26:44.0423 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:44.0423 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to validate the bound parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:26:44.0423 | DEBUG | Done attempting to validate the bound parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' using the name 'sortFeild' in request data ... 
+2025-04-14 18:26:44.0423 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:44.0423 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to validate the bound parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:26:44.0423 | DEBUG | Done attempting to validate the bound parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' using the name 'sortType' in request data ... 
+2025-04-14 18:26:44.0423 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:44.0423 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:26:44.0423 | DEBUG | Done attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:44.0423 | DEBUG | List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter 
+2025-04-14 18:26:44.0423 | DEBUG | No information found on request to perform content negotiation. 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2025-04-14 18:26:44.0423 | DEBUG | Attempting to select the first formatter in the output formatters list which can write the result. 
+2025-04-14 18:26:44.0423 | DEBUG | Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response. 
+2025-04-14 18:26:44.0423 | DEBUG | Connection id "0HNBR9RUE6PA7" completed keep alive response. 
+2025-04-14 18:26:45.0047 | DEBUG | The request path  does not match the path filter 
+2025-04-14 18:26:45.0047 | DEBUG | The request has an origin header: 'http://127.0.0.1:5503'. 
+2025-04-14 18:26:45.0047 | DEBUG | 1 candidate(s) found for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:26:45.0047 | DEBUG | Endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' with route pattern 'api/Author/GetAllBooks2' is valid for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:26:45.0047 | DEBUG | Request matched endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' 
+2025-04-14 18:26:45.0047 | DEBUG | Execution plan of authorization filters (in the following order): None 
+2025-04-14 18:26:45.0047 | DEBUG | Execution plan of resource filters (in the following order): None 
+2025-04-14 18:26:45.0047 | DEBUG | Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2025-04-14 18:26:45.0047 | DEBUG | Execution plan of exception filters (in the following order): None 
+2025-04-14 18:26:45.0047 | DEBUG | Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2025-04-14 18:26:45.0047 | DEBUG | Executing controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:26:45.0216 | DEBUG | Executed controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' using the name 'skip' in request data ... 
+2025-04-14 18:26:45.0216 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:45.0216 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to validate the bound parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:26:45.0216 | DEBUG | Done attempting to validate the bound parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' using the name 'take' in request data ... 
+2025-04-14 18:26:45.0216 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:45.0216 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to validate the bound parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:26:45.0216 | DEBUG | Done attempting to validate the bound parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' using the name 'sortFeild' in request data ... 
+2025-04-14 18:26:45.0216 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:45.0216 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to validate the bound parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:26:45.0216 | DEBUG | Done attempting to validate the bound parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' using the name 'sortType' in request data ... 
+2025-04-14 18:26:45.0216 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:45.0216 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:26:45.0216 | DEBUG | Done attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:45.0216 | DEBUG | List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter 
+2025-04-14 18:26:45.0216 | DEBUG | No information found on request to perform content negotiation. 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2025-04-14 18:26:45.0216 | DEBUG | Attempting to select the first formatter in the output formatters list which can write the result. 
+2025-04-14 18:26:45.0216 | DEBUG | Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response. 
+2025-04-14 18:26:45.0216 | DEBUG | Connection id "0HNBR9RUE6PA7" completed keep alive response. 
+2025-04-14 18:26:45.2052 | DEBUG | The request path  does not match the path filter 
+2025-04-14 18:26:45.2052 | DEBUG | The request has an origin header: 'http://127.0.0.1:5503'. 
+2025-04-14 18:26:45.2052 | DEBUG | 1 candidate(s) found for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:26:45.2052 | DEBUG | Endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' with route pattern 'api/Author/GetAllBooks2' is valid for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:26:45.2052 | DEBUG | Request matched endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' 
+2025-04-14 18:26:45.2052 | DEBUG | Execution plan of authorization filters (in the following order): None 
+2025-04-14 18:26:45.2052 | DEBUG | Execution plan of resource filters (in the following order): None 
+2025-04-14 18:26:45.2052 | DEBUG | Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2025-04-14 18:26:45.2052 | DEBUG | Execution plan of exception filters (in the following order): None 
+2025-04-14 18:26:45.2052 | DEBUG | Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2025-04-14 18:26:45.2052 | DEBUG | Executing controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:26:45.2281 | DEBUG | Executed controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' using the name 'skip' in request data ... 
+2025-04-14 18:26:45.2281 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:45.2281 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to validate the bound parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:26:45.2281 | DEBUG | Done attempting to validate the bound parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' using the name 'take' in request data ... 
+2025-04-14 18:26:45.2281 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:45.2281 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to validate the bound parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:26:45.2281 | DEBUG | Done attempting to validate the bound parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' using the name 'sortFeild' in request data ... 
+2025-04-14 18:26:45.2281 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:45.2281 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to validate the bound parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:26:45.2281 | DEBUG | Done attempting to validate the bound parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' using the name 'sortType' in request data ... 
+2025-04-14 18:26:45.2281 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:45.2281 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:26:45.2281 | DEBUG | Done attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:45.2281 | DEBUG | List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter 
+2025-04-14 18:26:45.2281 | DEBUG | No information found on request to perform content negotiation. 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2025-04-14 18:26:45.2281 | DEBUG | Attempting to select the first formatter in the output formatters list which can write the result. 
+2025-04-14 18:26:45.2281 | DEBUG | Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response. 
+2025-04-14 18:26:45.2281 | DEBUG | Connection id "0HNBR9RUE6PA7" completed keep alive response. 
+2025-04-14 18:26:45.6090 | DEBUG | The request path  does not match the path filter 
+2025-04-14 18:26:45.6090 | DEBUG | The request has an origin header: 'http://127.0.0.1:5503'. 
+2025-04-14 18:26:45.6090 | DEBUG | 1 candidate(s) found for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:26:45.6090 | DEBUG | Endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' with route pattern 'api/Author/GetAllBooks2' is valid for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:26:45.6090 | DEBUG | Request matched endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' 
+2025-04-14 18:26:45.6090 | DEBUG | Execution plan of authorization filters (in the following order): None 
+2025-04-14 18:26:45.6090 | DEBUG | Execution plan of resource filters (in the following order): None 
+2025-04-14 18:26:45.6090 | DEBUG | Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2025-04-14 18:26:45.6090 | DEBUG | Execution plan of exception filters (in the following order): None 
+2025-04-14 18:26:45.6090 | DEBUG | Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2025-04-14 18:26:45.6090 | DEBUG | Executing controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:26:45.6233 | DEBUG | Executed controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:26:45.6233 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:26:45.6233 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' using the name 'skip' in request data ... 
+2025-04-14 18:26:45.6233 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:45.6233 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:45.6233 | DEBUG | Attempting to validate the bound parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:26:45.6233 | DEBUG | Done attempting to validate the bound parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:26:45.6233 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:26:45.6233 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' using the name 'take' in request data ... 
+2025-04-14 18:26:45.6233 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:45.6233 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:45.6233 | DEBUG | Attempting to validate the bound parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:26:45.6233 | DEBUG | Done attempting to validate the bound parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:26:45.6233 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:26:45.6233 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' using the name 'sortFeild' in request data ... 
+2025-04-14 18:26:45.6233 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:45.6233 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:45.6233 | DEBUG | Attempting to validate the bound parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:26:45.6233 | DEBUG | Done attempting to validate the bound parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:26:45.6233 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:26:45.6233 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' using the name 'sortType' in request data ... 
+2025-04-14 18:26:45.6233 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:45.6233 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:45.6233 | DEBUG | Attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:26:45.6233 | DEBUG | Done attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:26:45.6233 | DEBUG | List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter 
+2025-04-14 18:26:45.6233 | DEBUG | No information found on request to perform content negotiation. 
+2025-04-14 18:26:45.6305 | DEBUG | Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2025-04-14 18:26:45.6305 | DEBUG | Attempting to select the first formatter in the output formatters list which can write the result. 
+2025-04-14 18:26:45.6305 | DEBUG | Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response. 
+2025-04-14 18:26:45.6305 | DEBUG | Connection id "0HNBR9RUE6PA7" completed keep alive response. 
+2025-04-14 18:27:12.4950 | DEBUG | The request path  does not match the path filter 
+2025-04-14 18:27:12.4950 | DEBUG | The request has an origin header: 'http://127.0.0.1:5503'. 
+2025-04-14 18:27:12.4950 | DEBUG | 1 candidate(s) found for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:27:12.4950 | DEBUG | Endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' with route pattern 'api/Author/GetAllBooks2' is valid for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:27:12.4950 | DEBUG | Request matched endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' 
+2025-04-14 18:27:12.4950 | DEBUG | Execution plan of authorization filters (in the following order): None 
+2025-04-14 18:27:12.4950 | DEBUG | Execution plan of resource filters (in the following order): None 
+2025-04-14 18:27:12.4950 | DEBUG | Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2025-04-14 18:27:12.4950 | DEBUG | Execution plan of exception filters (in the following order): None 
+2025-04-14 18:27:12.4950 | DEBUG | Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2025-04-14 18:27:12.4950 | DEBUG | Executing controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:27:12.5166 | DEBUG | Executed controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:27:12.5166 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:27:12.5166 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' using the name 'skip' in request data ... 
+2025-04-14 18:27:12.5166 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:27:12.5166 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:27:12.5166 | DEBUG | Attempting to validate the bound parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:27:12.5166 | DEBUG | Done attempting to validate the bound parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:27:12.5166 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:27:12.5166 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' using the name 'take' in request data ... 
+2025-04-14 18:27:12.5166 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:27:12.5166 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:27:12.5166 | DEBUG | Attempting to validate the bound parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:27:12.5166 | DEBUG | Done attempting to validate the bound parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:27:12.5166 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:27:12.5166 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' using the name 'sortFeild' in request data ... 
+2025-04-14 18:27:12.5166 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:27:12.5166 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:27:12.5166 | DEBUG | Attempting to validate the bound parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:27:12.5166 | DEBUG | Done attempting to validate the bound parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:27:12.5166 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:27:12.5166 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' using the name 'sortType' in request data ... 
+2025-04-14 18:27:12.5166 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:27:12.5166 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:27:12.5166 | DEBUG | Attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:27:12.5166 | DEBUG | Done attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:27:12.5242 | DEBUG | List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter 
+2025-04-14 18:27:12.5242 | DEBUG | No information found on request to perform content negotiation. 
+2025-04-14 18:27:12.5242 | DEBUG | Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2025-04-14 18:27:12.5242 | DEBUG | Attempting to select the first formatter in the output formatters list which can write the result. 
+2025-04-14 18:27:12.5242 | DEBUG | Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response. 
+2025-04-14 18:27:12.5242 | DEBUG | Connection id "0HNBR9RUE6PA7" completed keep alive response. 
+2025-04-14 18:27:13.5302 | DEBUG | The request path  does not match the path filter 
+2025-04-14 18:27:13.5302 | DEBUG | The request has an origin header: 'http://127.0.0.1:5503'. 
+2025-04-14 18:27:13.5302 | DEBUG | 1 candidate(s) found for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:27:13.5302 | DEBUG | Endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' with route pattern 'api/Author/GetAllBooks2' is valid for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:27:13.5302 | DEBUG | Request matched endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' 
+2025-04-14 18:27:13.5302 | DEBUG | Execution plan of authorization filters (in the following order): None 
+2025-04-14 18:27:13.5302 | DEBUG | Execution plan of resource filters (in the following order): None 
+2025-04-14 18:27:13.5302 | DEBUG | Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2025-04-14 18:27:13.5302 | DEBUG | Execution plan of exception filters (in the following order): None 
+2025-04-14 18:27:13.5302 | DEBUG | Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2025-04-14 18:27:13.5302 | DEBUG | Executing controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:27:13.5596 | DEBUG | Executed controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:27:13.5596 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:27:13.5596 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' using the name 'skip' in request data ... 
+2025-04-14 18:27:13.5596 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:27:13.5596 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:27:13.5596 | DEBUG | Attempting to validate the bound parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:27:13.5596 | DEBUG | Done attempting to validate the bound parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:27:13.5596 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:27:13.5596 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' using the name 'take' in request data ... 
+2025-04-14 18:27:13.5596 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:27:13.5596 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:27:13.5596 | DEBUG | Attempting to validate the bound parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:27:13.5596 | DEBUG | Done attempting to validate the bound parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:27:13.5596 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:27:13.5596 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' using the name 'sortFeild' in request data ... 
+2025-04-14 18:27:13.5596 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:27:13.5596 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:27:13.5596 | DEBUG | Attempting to validate the bound parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:27:13.5596 | DEBUG | Done attempting to validate the bound parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:27:13.5596 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:27:13.5596 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' using the name 'sortType' in request data ... 
+2025-04-14 18:27:13.5596 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:27:13.5596 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:27:13.5596 | DEBUG | Attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:27:13.5596 | DEBUG | Done attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:27:13.5755 | DEBUG | List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter 
+2025-04-14 18:27:13.5755 | DEBUG | No information found on request to perform content negotiation. 
+2025-04-14 18:27:13.5755 | DEBUG | Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2025-04-14 18:27:13.5755 | DEBUG | Attempting to select the first formatter in the output formatters list which can write the result. 
+2025-04-14 18:27:13.5755 | DEBUG | Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response. 
+2025-04-14 18:27:13.5755 | DEBUG | Connection id "0HNBR9RUE6PA7" completed keep alive response. 
+2025-04-14 18:27:13.7351 | DEBUG | The request path  does not match the path filter 
+2025-04-14 18:27:13.7351 | DEBUG | The request has an origin header: 'http://127.0.0.1:5503'. 
+2025-04-14 18:27:13.7351 | DEBUG | 1 candidate(s) found for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:27:13.7351 | DEBUG | Endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' with route pattern 'api/Author/GetAllBooks2' is valid for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:27:13.7351 | DEBUG | Request matched endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' 
+2025-04-14 18:27:13.7351 | DEBUG | Execution plan of authorization filters (in the following order): None 
+2025-04-14 18:27:13.7351 | DEBUG | Execution plan of resource filters (in the following order): None 
+2025-04-14 18:27:13.7351 | DEBUG | Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2025-04-14 18:27:13.7351 | DEBUG | Execution plan of exception filters (in the following order): None 
+2025-04-14 18:27:13.7351 | DEBUG | Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2025-04-14 18:27:13.7351 | DEBUG | Executing controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:27:13.7498 | DEBUG | Executed controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:27:13.7498 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:27:13.7498 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' using the name 'skip' in request data ... 
+2025-04-14 18:27:13.7498 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:27:13.7498 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:27:13.7498 | DEBUG | Attempting to validate the bound parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:27:13.7498 | DEBUG | Done attempting to validate the bound parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:27:13.7498 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:27:13.7498 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' using the name 'take' in request data ... 
+2025-04-14 18:27:13.7498 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:27:13.7498 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:27:13.7498 | DEBUG | Attempting to validate the bound parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:27:13.7498 | DEBUG | Done attempting to validate the bound parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:27:13.7498 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:27:13.7498 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' using the name 'sortFeild' in request data ... 
+2025-04-14 18:27:13.7498 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:27:13.7498 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:27:13.7498 | DEBUG | Attempting to validate the bound parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:27:13.7498 | DEBUG | Done attempting to validate the bound parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:27:13.7498 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:27:13.7498 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' using the name 'sortType' in request data ... 
+2025-04-14 18:27:13.7498 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:27:13.7498 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:27:13.7498 | DEBUG | Attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:27:13.7498 | DEBUG | Done attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:27:13.7564 | DEBUG | List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter 
+2025-04-14 18:27:13.7564 | DEBUG | No information found on request to perform content negotiation. 
+2025-04-14 18:27:13.7564 | DEBUG | Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2025-04-14 18:27:13.7564 | DEBUG | Attempting to select the first formatter in the output formatters list which can write the result. 
+2025-04-14 18:27:13.7564 | DEBUG | Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response. 
+2025-04-14 18:27:13.7564 | DEBUG | Connection id "0HNBR9RUE6PA7" completed keep alive response. 
+2025-04-14 18:27:14.1326 | DEBUG | The request path  does not match the path filter 
+2025-04-14 18:27:14.1326 | DEBUG | The request has an origin header: 'http://127.0.0.1:5503'. 
+2025-04-14 18:27:14.1326 | DEBUG | 1 candidate(s) found for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:27:14.1326 | DEBUG | Endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' with route pattern 'api/Author/GetAllBooks2' is valid for the request path '/api/Author/GetAllBooks2' 
+2025-04-14 18:27:14.1326 | DEBUG | Request matched endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)' 
+2025-04-14 18:27:14.1326 | DEBUG | Execution plan of authorization filters (in the following order): None 
+2025-04-14 18:27:14.1326 | DEBUG | Execution plan of resource filters (in the following order): None 
+2025-04-14 18:27:14.1326 | DEBUG | Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2025-04-14 18:27:14.1326 | DEBUG | Execution plan of exception filters (in the following order): None 
+2025-04-14 18:27:14.1326 | DEBUG | Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2025-04-14 18:27:14.1326 | DEBUG | Executing controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:27:14.1472 | DEBUG | Executed controller factory for controller WebApplication1.Controller.AuthorController (WebApplication1) 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to bind parameter 'skip' of type 'System.Int32' using the name 'skip' in request data ... 
+2025-04-14 18:27:14.1472 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:27:14.1472 | DEBUG | Done attempting to bind parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to validate the bound parameter 'skip' of type 'System.Int32' ... 
+2025-04-14 18:27:14.1472 | DEBUG | Done attempting to validate the bound parameter 'skip' of type 'System.Int32'. 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to bind parameter 'take' of type 'System.Int32' using the name 'take' in request data ... 
+2025-04-14 18:27:14.1472 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:27:14.1472 | DEBUG | Done attempting to bind parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to validate the bound parameter 'take' of type 'System.Int32' ... 
+2025-04-14 18:27:14.1472 | DEBUG | Done attempting to validate the bound parameter 'take' of type 'System.Int32'. 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to bind parameter 'sortFeild' of type 'System.String' using the name 'sortFeild' in request data ... 
+2025-04-14 18:27:14.1472 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:27:14.1472 | DEBUG | Done attempting to bind parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to validate the bound parameter 'sortFeild' of type 'System.String' ... 
+2025-04-14 18:27:14.1472 | DEBUG | Done attempting to validate the bound parameter 'sortFeild' of type 'System.String'. 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]' using the name 'sortType' in request data ... 
+2025-04-14 18:27:14.1472 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:27:14.1472 | DEBUG | Done attempting to bind parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]' ... 
+2025-04-14 18:27:14.1472 | DEBUG | Done attempting to validate the bound parameter 'sortType' of type 'System.Nullable`1[System.Int32]'. 
+2025-04-14 18:27:14.1472 | DEBUG | List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter 
+2025-04-14 18:27:14.1472 | DEBUG | No information found on request to perform content negotiation. 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2025-04-14 18:27:14.1472 | DEBUG | Attempting to select the first formatter in the output formatters list which can write the result. 
+2025-04-14 18:27:14.1472 | DEBUG | Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response. 
+2025-04-14 18:27:14.1472 | DEBUG | Connection id "0HNBR9RUE6PA7" completed keep alive response. 
