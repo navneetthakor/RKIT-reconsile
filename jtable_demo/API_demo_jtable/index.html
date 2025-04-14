@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Demo (JTable)</title>
+
+    <!-- CSS (JQueryUI and then JTable-metro_blue_theme) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/jquery-ui.min.css"
+        integrity="sha512-TFee0335YRJoyiqz8hA8KV3P0tXa5CpRBSoM0Wnkn7JoJx1kaq1yXL/rb8YFpWXkMOjRcv5txv+C6UluttluCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../jtable.2.4.0/themes/metro/blue/jtable.min.css">
+
+    <!-- script files (jquery, jquery_ui, jtable)  -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"
+        integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="../jtable.2.4.0/jquery.jtable.js"></script>
+
+    <!-- script for jquery validation engine  -->
+    
+</head>
+<body>
+    <div id="jtable_demo"></div>
+
+    <script>
+        $(()=>{
+            const myUrl = 'http://localhost:5276/api/Author'
+            $('#jtable_demo').jtable({
+                //#region general options (covere previously)
+                title: 'The Student List',
+
+
+                //#region  paging related settings 
+                paging: true,
+                pageSize: 2,
+                pageSizes: [1, 2, 3,5,10],
+                //#endregion
+
+                //#region  sorting not working properly 
+                sorting: true,
+                defaultSorting: "Name ASC",
+                multiSorting: false,
+                //#endregion
+
+                //#region  column related settings
+                columnResizable: true,
+                columnSelectable: true,
+
+                //#endregion
+
+                //#region  miselenious
+
+                //delete confirmation : open when we try to delete any row
+                // default: true
+                deleteConfirmation: true,
+
+                // to select themes
+                // other themes : jqueryui, lightcolor, basic
+                theme: 'metro',
+
+                // shows close button to close the table
+                // default : false
+                showCloseButton: true,
+
+                //#endregion
+                //#endregion
+
+                //#region action
+                actions: {
+                    // necessory to view records in the table
+                    listAction: (postData, jtableParams) => {
+                        console.log(jtableParams);
+                        let skip = -1, take ="",sortFeild ="a03F01", sortType = 1;
+                        skip = jtableParams.jtStartIndex;
+                        take = jtableParams.jtPageSize;
+                        let sortingData = jtableParams.jtSorting;
+                        
+                        if(sortingData){
+                            sortFeild = sortingData.split(" ")[0] ? sortingData.split(" ")[0] : "" ;
+                            sortType = sortingData.split(" ")[1] === "DESC" ? 0 : 1;
+                        }
+
+                        // Simulate pagination logic
+                        const defferdObj = $.Deferred();
+
+                        $.ajax({
+                            url: `${myUrl}/GetAllBooks2?skip=${skip}&take=${take}&sortFeild=${sortFeild}&sortType=${sortType}`,
+                            type: "GET",
+                            dataType: "json",
+                            success: function (data) {
+                                let pageData = data.data.items;
+                                defferdObj.resolve({
+                                    Result: "OK",
+                                    Records: pageData,
+                                    TotalRecordCount: data.data.totalCount,
+                                });
+                            },
+                            error: function () {
+                                defferdObj.reject();
+                            },
+                        });
+                        return defferdObj;
+                    },
+
+                    // for add button
+                    createAction: (data) => {
+                        const defferdObj = $.Deferred();
+                        $.ajax({
+                            url: `${myUrl}/AddBook2?${data}`,
+                            type: "POST",
+                            dataType: "json",
+                            contentType: 'application/json',
+                            success: function (data) {
+                                defferdObj.resolve({
+                                    Result: "OK",
+                                });
+                            },
+                            error: function (error) {
+                                console.log(error);
+                                defferdObj.reject();
+                            },
+                        });
+                        return defferdObj;
+                    },
+
+                    // for delete button infront of any row
+                    deleteAction: (data) => {
+                        const defferdObj = $.Deferred();
+                        console.log(data);
+
+                        $.ajax({
+                            url: `${myUrl}/DeleteBook2?a03F01=${data.a03F01}`,
+                            type: "Delete",
+                            dataType: "json",
+                            success: function (data) {
+                                $dfd.resolve({
+                                    Result: "OK",
+                                    Records: data,
+                                    TotalRecordCount: data.length,
+                                });
+                            },
+                            error: function () {
+                                $dfd.reject();
+                            },
+                        });
+                        return defferdObj;
+                    },
+
+                    // for update button infront of any row
+                    updateAction: (data) => {
+                        const defferdObj = $.Deferred();
+
+                        $.ajax({
+                            url: `${myUrl}/UpdateBook2?${data}`,
+                            type: "PUT",
+                            dataType: "json",
+                            success: function (data) {
+                                $dfd.resolve({
+                                    Result: "OK",
+                                });
+                            },
+                            error: function () {
+                                $dfd.reject();
+                            },
+                        });
+                        return defferdObj;
+                    }
+                },
+               
+                //#endregion
+
+                fields: {
+                    a03F01: {
+                        key: true,
+                        list: true,
+                        title: "Book id"
+                    },
+                    a03F02: {
+                        title: 'Book Title',
+
+                    },
+                    a03F03: {
+                        title: "Book Description"
+                    },
+                },
+
+                // for close button 
+                closeRequested: () => {
+                    console.log('Closing Main table');
+                    $('#jtable_demo').hide();
+                },
+
+            })
+            // Without this, table will stay empty
+            $('#jtable_demo').jtable('load');
+        })
+    </script>
+</body>
+</html>

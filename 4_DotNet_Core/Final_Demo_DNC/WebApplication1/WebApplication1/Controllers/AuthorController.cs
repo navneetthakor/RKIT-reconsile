@@ -5,10 +5,16 @@ using System.Data;
 using WebApplication1.Business_Logic.Services;
 using WebApplication1.Modals.Enums;
 using WebApplication1.Modals.POCOs;
+using System.Data.Common;
+using ServiceStack.OrmLite;
+using ServiceStack;
+using System.Diagnostics;
+using System.Linq;
+using Mysqlx.Crud;
 
 namespace WebApplication1.Controller
 {
-    [Route("api/[controller]")]
+    [Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
     [ApiController]
     ///<summary>
     /// contains all controllers related to admin
@@ -26,8 +32,7 @@ namespace WebApplication1.Controller
             _connection = databaseService.db;
         }
 
-        [HttpPost]
-        [Route("Login")]
+        [HttpPost("Login")]
         /// <summary>
         /// for Author login
         /// <paramref name="email"> email </paramref>
@@ -52,8 +57,7 @@ namespace WebApplication1.Controller
             }
         }
 
-        [HttpPost]
-        [Route("AuthorRegister")]
+        [HttpPost("AuthorRegister")]
         /// <summary>
         /// for Author Registration
         /// <paramref name="fdap01"> FDAP01 poco object </paramref>
@@ -77,8 +81,7 @@ namespace WebApplication1.Controller
             }
         }
 
-        [HttpGet]
-        [Route("GetAllBooks")]
+        [HttpGet("GetAllBooks")]
         /// <summary>
         /// Get all books of given user
         /// <paramref name="fdap01"> FDAP01 poco object </paramref>
@@ -113,9 +116,55 @@ namespace WebApplication1.Controller
             }
         }
 
+        [HttpGet("GetAllBooks2")]
+        /// <summary>
+        /// Get all books of given user
+        /// using for JTable Demo
+        /// </summary>
+        public Response GetAllBooks2(int skip, int take, string? sortFeild, int? sortType)
+        {
+            Response response = new Response();
+            try
+            {
+                List<FDAP03> lst = _connection.Select<FDAP03>(x => x.A03F04 == 2);
+                long totalCnt = lst.Count;
+                if (skip != -1)
+                {
+                    lst = lst.Skip(skip).Take(take).ToList();
+                    Debug.WriteLine(skip + " , " + take);
+                }
+                if(sortFeild != null)
+                {
+                    if (sortType == 1)
+                        if(sortFeild == "a03F01")
+                            lst = lst.OrderBy(e => e.A03F01).ToList();
+                        else
+                            lst = lst.OrderBy(e => e.A03F02).ToList();
+                    else
+                        if(sortFeild == "a03F01")
+                            lst = lst.OrderByDescending(e => e.A03F01).ToList();
+                        else
+                            lst = lst.OrderByDescending(e => e.A03F02).ToList();
 
-        [HttpDelete]
-        [Route("DeleteBook")]
+
+                    Debug.WriteLine("sorting : " + sortFeild + " , " + sortType);
+                }
+                response.Data= new { items = lst, totalCount = totalCnt };
+                
+                response.StatusCode = MyStatusCodes.Success;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.IsError = true;
+                response.Message = ex.Message;
+                response.StatusCode = MyStatusCodes.Internal_server_Error;
+                return response;
+            }
+        }
+
+
+        [HttpDelete("DeleteBook")]
         /// <summary>
         /// delete book of user (by book_id)
         /// <paramref name="bookId"> book id </paramref>
@@ -160,8 +209,35 @@ namespace WebApplication1.Controller
             }
         }
 
-        [HttpPost]
-        [Route("AddBook")]
+        [HttpDelete("DeleteBook2")]
+        /// <summary>
+        /// delete book of user (by book_id)
+        /// used in JTable demo
+        /// </summary>
+        public Response DeleteBook2(int a03F01)
+        {
+            Response response = new Response();
+            try
+            {
+                AuthorLogics authorLogics = new AuthorLogics(_connection, null);
+
+                int result = _connection.DeleteById<FDAP03>(a03F01);
+
+                response.Data = 1;
+                response.Message = "Success full";
+                response.StatusCode = MyStatusCodes.Success;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.IsError = true;
+                response.Message = ex.Message;
+                response.StatusCode = MyStatusCodes.Internal_server_Error;
+                return response;
+            }
+        }
+
+        [HttpPost("AddBook")]
         /// <summary>
         /// delete book of user (by book_id)
         /// <paramref name="fdap03"> FDAP03 poco object </paramref>
@@ -194,6 +270,76 @@ namespace WebApplication1.Controller
 
                 response.Data = 1;
                 response.Message = result.Message;
+                response.StatusCode = MyStatusCodes.Success;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.IsError = true;
+                response.Message = ex.Message;
+                response.StatusCode = MyStatusCodes.Internal_server_Error;
+                return response;
+            }
+        }
+
+
+        [HttpPost("AddBook2")]
+        /// <summary>
+        /// Add book of author
+        /// using in JTable demo
+        /// </summary>
+        public Response AddBook2(string a03F02, string a03F03)
+        {
+            Response response = new Response();
+            try
+            {
+                FDAP03 fdap03 = new FDAP03() {
+                    A03F03 = a03F03,
+                    A03F02 = a03F02,
+                    A03F04 = 2
+                };
+
+                Debug.WriteLine(fdap03.A03F02);
+                long result = _connection.Insert(fdap03);
+                
+
+
+                response.Data = 1;
+                response.Message = "Record added";
+                response.StatusCode = MyStatusCodes.Success;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.IsError = true;
+                response.Message = ex.Message;
+                response.StatusCode = MyStatusCodes.Internal_server_Error;
+                return response;
+            }
+        }
+
+        [HttpPut("UpdateBook2")]
+        /// <summary>
+        /// Add book of author
+        /// using in JTable demo
+        /// </summary>
+        public Response UpdateBook2(int a03F01, string a03F02, string a03F03)
+        {
+            Response response = new Response();
+            try
+            {
+                FDAP03 fdap03 = new FDAP03()
+                {
+                    A03F01 = a03F01,
+                    A03F03 = a03F03,
+                    A03F02 = a03F02,
+                    A03F04 = 2
+                };
+                Debug.WriteLine(fdap03.A03F02);
+                long result = _connection.Update(fdap03);
+
+                response.Data = 1;
+                response.Message = "Record added";
                 response.StatusCode = MyStatusCodes.Success;
                 return response;
             }

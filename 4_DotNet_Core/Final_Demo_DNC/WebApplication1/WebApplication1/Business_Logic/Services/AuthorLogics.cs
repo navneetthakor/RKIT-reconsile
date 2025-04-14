@@ -340,7 +340,7 @@ namespace WebApplication1.Business_Logic.Services
                 List<FDAP03> lst = _dbConnection.Select<FDAP03>(x => x.A03F04 == authorId);
 
                 response.Data = lst;
-                response.Message = "PreDelete done";
+                response.Message = "all books get done done";
                 return response;
             }
             catch (Exception ex)

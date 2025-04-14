@@ -24,6 +24,16 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers().AddNewtonsoftJson();
+            // Cors Configuration
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+            });
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             services.AddTransient<IDatabaseService, DatabaseService>();
@@ -37,6 +47,8 @@ namespace WebApplication1
                     Type = SecuritySchemeType.ApiKey,
                     Description = "Provide the API key in the header"
                 });
+
+                
 
                 // Add security requirement to require the API key
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -65,6 +77,8 @@ namespace WebApplication1
                 app.UseSwaggerUI();
 
             }
+
+            app.UseCors();
 
             //calling 
             app.UseRouting();
