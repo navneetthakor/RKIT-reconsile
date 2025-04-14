@@ -23,9 +23,6 @@
 
 <body>
     <div id="jtable_demo"></div>
-    <div id="addButton">
-        AddButton
-    </div>
     <script>
 
         $(document).ready(function () {
@@ -41,20 +38,22 @@
             }];
 
             $('#jtable_demo').jtable({
+
+                //#region general options (covere previously)
                 //for title of the table 
                 // if it is not set then table will not have any title 
                 title: 'The Student List',
 
-                /*
-                * paging related settings 
-                */
+                
+                //#region  paging related settings 
+                
                 // to engable paging
                 // default: false
                 paging: true,
 
                 // to set page size
                 // default is 10
-                pageSize: 25,
+                pageSize: 10,
 
                 //if pagin enable then it determins how to show gotoPageArea
                 // default : comboBox
@@ -63,15 +62,16 @@
 
                 // to decide page sizes that user can select from
                 // default:  [10, 25, 50, 100, 250, 500]
-                pageSizes : [5,10],
+                pageSizes: [5,10],
 
                 // decides wheather page size change area should be visible or not
                 // default: true 
-                pageSizeChangeArea : false,
+                pageSizeChangeArea: true,
 
-                /* 
-                 * sorting not working clearly 
-                 */
+                //#endregion
+                
+                //#region  sorting not working properly 
+                 
                 // to enable sorting
                 // defulat : false
                 sorting: true,
@@ -83,22 +83,21 @@
                 // default: false
                 multiSorting: true,
 
+                //#endregion
                 
-
-                /*
-                * column related settings
-                */
-               // decides wheather user can resize column or not 
-               // default: false
+                //#region  column related settings
+                
+                // decides wheather user can resize column or not 
+                // default: false
                 columnResizable: true,
 
                 // allows user to show/hide data columns by right clicking table header.
                 // default: true 
                 columnSelectable: true,
 
-                /*
-                * selection related settings
-                */
+                //#endregion
+                
+                //#region  selection related settings
 
                 // to enable checkboxes for selecting
                 // default false so while setting up selection we need to enable it.
@@ -118,14 +117,10 @@
                 // default true
                 selectOnRowClick: false,
 
+                //#endregion
 
-                // -- notworking
-                defaultDateFormat: "dd-MM-yyyy",
-
+                //#region  miselenious
                 
-                /*
-                * miselenious
-                */
                 //delete confirmation : open when we try to delete any row
                 // default: true
                 deleteConfirmation: true,
@@ -136,7 +131,12 @@
 
                 // shows close button to close the table
                 // default : false
-                showCloseButton : true, /* not working */
+                showCloseButton: true,
+
+                //#endregion
+                //#endregion
+                
+
 
                 // define all the actions over here
                 actions: {
