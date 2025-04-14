@@ -8321,3 +8321,13 @@
 2025-04-14 14:44:39.2468 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) in 28.5551ms  
 2025-04-14 14:44:39.2468 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)'  
 2025-04-14 14:44:39.2468 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks2?skip=0&take=3&sortFeild=a03F02&sortType=1 - - - 200 327 application/json;+charset=utf-8 29.4734ms  
+2025-04-14 14:44:40.2669 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks2?skip=0&take=3&sortFeild=a03F02&sortType=0 - -  
+2025-04-14 14:44:40.2669 | INFO | CORS policy execution successful.  
+2025-04-14 14:44:40.2669 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)'  
+2025-04-14 14:44:40.2669 | INFO | Route matched with {action = "GetAllBooks2", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks2(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-04-14 14:44:40.2817 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) - Validation state: Valid  
+2025-04-14 14:44:40.2817 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6.7674ms.  
+2025-04-14 14:44:40.2895 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-04-14 14:44:40.2895 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) in 21.9135ms  
+2025-04-14 14:44:40.2895 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)'  
+2025-04-14 14:44:40.2895 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks2?skip=0&take=3&sortFeild=a03F02&sortType=0 - - - 200 327 application/json;+charset=utf-8 22.9044ms  

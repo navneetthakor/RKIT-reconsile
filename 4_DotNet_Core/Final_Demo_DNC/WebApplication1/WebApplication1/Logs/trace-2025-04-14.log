@@ -11863,3 +11863,19 @@
 2025-04-14 14:44:39.2468 | TRACE | After executing action result Microsoft.AspNetCore.Mvc.ObjectResult. 
 2025-04-14 14:44:39.2468 | TRACE | Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
 2025-04-14 14:44:39.2468 | TRACE | Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2025-04-14 14:44:40.2669 | TRACE | All hosts are allowed. 
+2025-04-14 14:44:40.2817 | TRACE | Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2025-04-14 14:44:40.2817 | TRACE | Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2025-04-14 14:44:40.2817 | TRACE | Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2025-04-14 14:44:40.2817 | TRACE | Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2025-04-14 14:44:40.2817 | TRACE | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) with arguments (0, 3, a03F02, 0) 
+2025-04-14 14:44:40.2817 | TRACE | Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2025-04-14 14:44:40.2817 | TRACE | Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2025-04-14 14:44:40.2817 | TRACE | Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2025-04-14 14:44:40.2817 | TRACE | Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2025-04-14 14:44:40.2817 | TRACE | Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2025-04-14 14:44:40.2817 | TRACE | Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2025-04-14 14:44:40.2817 | TRACE | Before executing action result Microsoft.AspNetCore.Mvc.ObjectResult. 
+2025-04-14 14:44:40.2895 | TRACE | After executing action result Microsoft.AspNetCore.Mvc.ObjectResult. 
+2025-04-14 14:44:40.2895 | TRACE | Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2025-04-14 14:44:40.2895 | TRACE | Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
