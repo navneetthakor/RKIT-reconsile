@@ -1,0 +1,26 @@
+2025-02-25 16:19:00.8200 | INFO | BlogManagementSystem.Startup | NLog configuration loaded successfully.
+2025-02-25 16:19:01.0611 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5095
+2025-02-25 16:19:01.1626 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down.
+2025-02-25 16:19:01.1626 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development
+2025-02-25 16:19:01.1626 | INFO | Microsoft.Hosting.Lifetime | Content root path: C:\Maulik Bhatt\RKIT Training\DotNet Core\BlogManagementSystem
+2025-02-25 16:19:01.5329 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.html - -
+2025-02-25 16:19:01.6478 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.html - - - 200 - text/html;charset=utf-8 116.0015ms
+2025-02-25 16:19:01.6478 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/_vs/browserLink - -
+2025-02-25 16:19:01.6478 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - -
+2025-02-25 16:19:01.6478 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - - - 200 13792 application/javascript;+charset=utf-8 1.5139ms
+2025-02-25 16:19:01.6725 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.1554ms
+2025-02-25 16:19:01.7032 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - -
+2025-02-25 16:19:01.7071 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 3.7940ms
+2025-02-25 16:24:16.4913 | INFO | BlogManagementSystem.Startup | NLog configuration loaded successfully.
+2025-02-25 16:24:16.7463 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5095
+2025-02-25 16:24:16.8487 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down.
+2025-02-25 16:24:16.8487 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development
+2025-02-25 16:24:16.8487 | INFO | Microsoft.Hosting.Lifetime | Content root path: C:\Maulik Bhatt\RKIT Training\DotNet Core\BlogManagementSystem
+2025-02-25 16:24:17.2595 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.html - -
+2025-02-25 16:24:17.3818 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.html - - - 200 - text/html;charset=utf-8 123.3006ms
+2025-02-25 16:24:17.3818 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/_vs/browserLink - -
+2025-02-25 16:24:17.3818 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - -
+2025-02-25 16:24:17.3818 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - - - 200 13792 application/javascript;+charset=utf-8 1.7345ms
+2025-02-25 16:24:17.4078 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 21.6790ms
+2025-02-25 16:24:17.4319 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - -
+2025-02-25 16:24:17.4319 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 4.0091ms

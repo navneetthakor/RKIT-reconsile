@@ -1,0 +1,76 @@
+[
+  {
+    "ContainingType": "BlogManagementSystem.Controllers.CLBlogController",
+    "Method": "AddBlog",
+    "RelativePath": "api/CLBlog/add-blog",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objDTOBLG01",
+        "Type": "BlogManagementSystem.Models.DTO.DTOBLG01",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogManagementSystem.Controllers.CLBlogController",
+    "Method": "DeleteBlog",
+    "RelativePath": "api/CLBlog/delete-blog",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogManagementSystem.Controllers.CLBlogController",
+    "Method": "GetAllBlogs",
+    "RelativePath": "api/CLBlog/get-all-blogs",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogManagementSystem.Controllers.CLBlogController",
+    "Method": "GetBlogByID",
+    "RelativePath": "api/CLBlog/get-blog-by-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogManagementSystem.Controllers.CLBlogController",
+    "Method": "UpdateBlog",
+    "RelativePath": "api/CLBlog/update-blog",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objDTOBLG01",
+        "Type": "BlogManagementSystem.Models.DTO.DTOBLG01",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

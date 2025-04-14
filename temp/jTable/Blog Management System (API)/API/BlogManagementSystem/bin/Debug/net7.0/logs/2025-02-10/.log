@@ -1,0 +1,133 @@
+2025-02-10 13:14:55.7587 | INFO | BlogManagementSystem.Startup | NLog configuration loaded successfully.
+2025-02-10 13:15:08.8129 | INFO | BlogManagementSystem.Startup | NLog configuration loaded successfully.
+2025-02-10 13:15:26.2811 | INFO | BlogManagementSystem.Startup | NLog configuration loaded successfully.
+2025-02-10 13:16:15.9992 | INFO | BlogManagementSystem.Startup | NLog configuration loaded successfully.
+2025-02-10 13:16:27.7249 | INFO | BlogManagementSystem.Startup | NLog configuration loaded successfully.
+2025-02-10 13:17:29.2710 | INFO | BlogManagementSystem.Startup | NLog configuration loaded successfully.
+2025-02-10 13:17:54.9909 | INFO | BlogManagementSystem.Startup | NLog configuration loaded successfully.
+2025-02-10 13:17:56.8165 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5095
+2025-02-10 13:17:56.8299 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down.
+2025-02-10 13:17:56.8299 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development
+2025-02-10 13:17:56.8299 | INFO | Microsoft.Hosting.Lifetime | Content root path: F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem
+2025-02-10 13:17:58.3869 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.html - -
+2025-02-10 13:17:59.1927 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - -
+2025-02-10 13:17:59.2290 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.html - - - 200 - text/html;charset=utf-8 813.8202ms
+2025-02-10 13:17:59.2290 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - - - 200 12010 application/javascript;+charset=utf-8 20.1283ms
+2025-02-10 13:17:59.2368 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/_vs/browserLink - -
+2025-02-10 13:17:59.3329 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 96.1002ms
+2025-02-10 13:17:59.5461 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - -
+2025-02-10 13:17:59.7370 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 190.9103ms
+2025-02-10 13:19:04.7170 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/api/CLBlog/get-all-blogs - -
+2025-02-10 13:19:04.7489 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)'
+2025-02-10 13:19:04.7660 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAllBlogs", controller = "CLBlog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllBlogs() on controller BlogManagementSystem.Controllers.CLBlogController (BlogManagementSystem).
+2025-02-10 13:19:04.7660 | INFO | BlogManagementSystem.Filters.LogActionFilter | Executing action: BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)
+2025-02-10 13:19:04.7660 | INFO | BlogManagementSystem.Controllers.CLBlogController | Fetching all blog posts.
+2025-02-10 13:19:06.2916 | INFO | BlogManagementSystem.Filters.LogActionFilter | Action executed successfully: BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)
+2025-02-10 13:19:06.2971 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'BlogManagementSystem.Models.Response'.
+2025-02-10 13:19:06.4443 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem) in 1673.9713ms
+2025-02-10 13:19:06.4443 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)'
+2025-02-10 13:19:06.4443 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/api/CLBlog/get-all-blogs - - - 200 54 application/json;+charset=utf-8 1727.7034ms
+2025-02-10 13:19:33.9497 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 POST http://localhost:5095/api/CLBlog/add-blog application/json-patch+json 61
+2025-02-10 13:19:33.9497 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'BlogManagementSystem.Controllers.CLBlogController.AddBlog (BlogManagementSystem)'
+2025-02-10 13:19:33.9687 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "AddBlog", controller = "CLBlog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddBlog(BlogManagementSystem.Models.DTO.DTOBLG01) on controller BlogManagementSystem.Controllers.CLBlogController (BlogManagementSystem).
+2025-02-10 13:19:34.0613 | INFO | BlogManagementSystem.Filters.LogActionFilter | Executing action: BlogManagementSystem.Controllers.CLBlogController.AddBlog (BlogManagementSystem)
+2025-02-10 13:19:34.0613 | INFO | BlogManagementSystem.Controllers.CLBlogController | Creating a new blog post.
+2025-02-10 13:22:01.3375 | INFO | BlogManagementSystem.Startup | NLog configuration loaded successfully.
+2025-02-10 13:22:01.7233 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5095
+2025-02-10 13:22:01.7233 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down.
+2025-02-10 13:22:01.7233 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development
+2025-02-10 13:22:01.7233 | INFO | Microsoft.Hosting.Lifetime | Content root path: F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem
+2025-02-10 13:22:03.0639 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.html - -
+2025-02-10 13:22:03.5818 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - -
+2025-02-10 13:22:03.5818 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/_vs/browserLink - -
+2025-02-10 13:22:03.5818 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.html - - - 200 - text/html;charset=utf-8 522.6951ms
+2025-02-10 13:22:03.5818 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - - - 200 12010 application/javascript;+charset=utf-8 4.0291ms
+2025-02-10 13:22:03.6225 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.6375ms
+2025-02-10 13:22:03.8886 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - -
+2025-02-10 13:22:04.0705 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 181.0495ms
+2025-02-10 13:22:13.1014 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 POST http://localhost:5095/api/CLBlog/add-blog application/json-patch+json 61
+2025-02-10 13:22:13.1301 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'BlogManagementSystem.Controllers.CLBlogController.AddBlog (BlogManagementSystem)'
+2025-02-10 13:22:13.1520 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "AddBlog", controller = "CLBlog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddBlog(BlogManagementSystem.Models.DTO.DTOBLG01) on controller BlogManagementSystem.Controllers.CLBlogController (BlogManagementSystem).
+2025-02-10 13:22:13.2516 | INFO | BlogManagementSystem.Filters.LogActionFilter | Executing action: BlogManagementSystem.Controllers.CLBlogController.AddBlog (BlogManagementSystem)
+2025-02-10 13:22:13.2524 | INFO | BlogManagementSystem.Controllers.CLBlogController | Creating a new blog post.
+2025-02-10 13:22:13.7044 | INFO | BlogManagementSystem.Filters.LogActionFilter | Action executed successfully: BlogManagementSystem.Controllers.CLBlogController.AddBlog (BlogManagementSystem)
+2025-02-10 13:22:13.7100 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'BlogManagementSystem.Models.Response'.
+2025-02-10 13:22:13.7531 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action BlogManagementSystem.Controllers.CLBlogController.AddBlog (BlogManagementSystem) in 597.5556ms
+2025-02-10 13:22:13.7531 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'BlogManagementSystem.Controllers.CLBlogController.AddBlog (BlogManagementSystem)'
+2025-02-10 13:22:13.7531 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 POST http://localhost:5095/api/CLBlog/add-blog application/json-patch+json 61 - 200 52 application/json;+charset=utf-8 652.2726ms
+2025-02-10 13:22:20.2043 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/api/CLBlog/get-all-blogs - -
+2025-02-10 13:22:20.2072 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)'
+2025-02-10 13:22:20.2072 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAllBlogs", controller = "CLBlog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllBlogs() on controller BlogManagementSystem.Controllers.CLBlogController (BlogManagementSystem).
+2025-02-10 13:22:20.2072 | INFO | BlogManagementSystem.Filters.LogActionFilter | Executing action: BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)
+2025-02-10 13:22:20.2072 | INFO | BlogManagementSystem.Controllers.CLBlogController | Fetching all blog posts.
+2025-02-10 13:22:20.2369 | ERROR | BlogManagementSystem.Filters.LogActionFilter | Error occurred during action execution: Table 'blogdb.blg01' doesn't exist
+2025-02-10 13:22:20.2378 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem) in 28.1007ms
+2025-02-10 13:22:20.2378 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)'
+2025-02-10 13:22:20.2378 | ERROR | Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware | An unhandled exception has occurred while executing the request.
+2025-02-10 13:22:20.2789 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/api/CLBlog/get-all-blogs - - - 500 - text/plain;+charset=utf-8 74.5640ms
+2025-02-10 13:24:33.0860 | INFO | BlogManagementSystem.Startup | NLog configuration loaded successfully.
+2025-02-10 13:24:33.4104 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5095
+2025-02-10 13:24:33.4196 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down.
+2025-02-10 13:24:33.4196 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development
+2025-02-10 13:24:33.4196 | INFO | Microsoft.Hosting.Lifetime | Content root path: F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem
+2025-02-10 13:24:33.8367 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.html - -
+2025-02-10 13:24:34.0977 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.html - - - 200 - text/html;charset=utf-8 263.4441ms
+2025-02-10 13:24:34.1424 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/_vs/browserLink - -
+2025-02-10 13:24:34.1424 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - -
+2025-02-10 13:24:34.1478 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - - - 200 12010 application/javascript;+charset=utf-8 2.7528ms
+2025-02-10 13:24:34.1651 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.6343ms
+2025-02-10 13:24:34.2111 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - -
+2025-02-10 13:24:34.3361 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 124.8446ms
+2025-02-10 13:24:38.0322 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/api/CLBlog/get-all-blogs - -
+2025-02-10 13:24:38.0557 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)'
+2025-02-10 13:24:38.0557 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAllBlogs", controller = "CLBlog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllBlogs() on controller BlogManagementSystem.Controllers.CLBlogController (BlogManagementSystem).
+2025-02-10 13:24:38.0557 | INFO | BlogManagementSystem.Filters.LogActionFilter | Executing action: BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)
+2025-02-10 13:24:38.0695 | INFO | BlogManagementSystem.Controllers.CLBlogController | Fetching all blog posts.
+2025-02-10 13:24:38.4452 | ERROR | BlogManagementSystem.Filters.LogActionFilter | Error occurred during action execution: Table 'blogdb.blg01' doesn't exist
+2025-02-10 13:24:38.4452 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem) in 379.3811ms
+2025-02-10 13:24:38.4452 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)'
+2025-02-10 13:24:38.4452 | ERROR | Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware | An unhandled exception has occurred while executing the request.
+2025-02-10 13:24:38.4747 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/api/CLBlog/get-all-blogs - - - 500 - text/plain;+charset=utf-8 442.6484ms
+2025-02-10 13:24:57.3404 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/api/CLBlog/get-all-blogs - -
+2025-02-10 13:24:57.3404 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)'
+2025-02-10 13:24:57.3404 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAllBlogs", controller = "CLBlog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllBlogs() on controller BlogManagementSystem.Controllers.CLBlogController (BlogManagementSystem).
+2025-02-10 13:24:57.3404 | INFO | BlogManagementSystem.Filters.LogActionFilter | Executing action: BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)
+2025-02-10 13:24:57.3404 | INFO | BlogManagementSystem.Controllers.CLBlogController | Fetching all blog posts.
+2025-02-10 13:24:57.5021 | INFO | BlogManagementSystem.Filters.LogActionFilter | Action executed successfully: BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)
+2025-02-10 13:24:57.5021 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'BlogManagementSystem.Models.Response'.
+2025-02-10 13:24:57.5265 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem) in 182.0746ms
+2025-02-10 13:24:57.5265 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)'
+2025-02-10 13:24:57.5265 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/api/CLBlog/get-all-blogs - - - 200 172 application/json;+charset=utf-8 186.3216ms
+2025-02-10 13:26:22.3589 | INFO | BlogManagementSystem.Startup | NLog configuration loaded successfully.
+2025-02-10 13:26:22.7260 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5095
+2025-02-10 13:26:22.7351 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down.
+2025-02-10 13:26:22.7351 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development
+2025-02-10 13:26:22.7351 | INFO | Microsoft.Hosting.Lifetime | Content root path: F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem
+2025-02-10 13:26:23.0581 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.html - -
+2025-02-10 13:26:23.2920 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.html - - - 200 - text/html;charset=utf-8 235.9489ms
+2025-02-10 13:26:23.3312 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/_vs/browserLink - -
+2025-02-10 13:26:23.3312 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - -
+2025-02-10 13:26:23.3312 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/_framework/aspnetcore-browser-refresh.js - - - 200 12010 application/javascript;+charset=utf-8 2.1828ms
+2025-02-10 13:26:23.3519 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.6729ms
+2025-02-10 13:26:23.4114 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - -
+2025-02-10 13:26:23.5247 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 113.2328ms
+2025-02-10 13:26:36.2616 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 POST http://localhost:5095/api/CLBlog/add-blog application/json-patch+json 61
+2025-02-10 13:26:36.2862 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'BlogManagementSystem.Controllers.CLBlogController.AddBlog (BlogManagementSystem)'
+2025-02-10 13:26:36.3035 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "AddBlog", controller = "CLBlog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddBlog(BlogManagementSystem.Models.DTO.DTOBLG01) on controller BlogManagementSystem.Controllers.CLBlogController (BlogManagementSystem).
+2025-02-10 13:26:36.3985 | INFO | BlogManagementSystem.Filters.LogActionFilter | Executing action: BlogManagementSystem.Controllers.CLBlogController.AddBlog (BlogManagementSystem)
+2025-02-10 13:26:36.3985 | INFO | BlogManagementSystem.Controllers.CLBlogController | Creating a new blog post.
+2025-02-10 13:26:36.7621 | INFO | BlogManagementSystem.Filters.LogActionFilter | Action executed successfully: BlogManagementSystem.Controllers.CLBlogController.AddBlog (BlogManagementSystem)
+2025-02-10 13:26:36.7621 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'BlogManagementSystem.Models.Response'.
+2025-02-10 13:26:36.8078 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action BlogManagementSystem.Controllers.CLBlogController.AddBlog (BlogManagementSystem) in 500.1919ms
+2025-02-10 13:26:36.8078 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'BlogManagementSystem.Controllers.CLBlogController.AddBlog (BlogManagementSystem)'
+2025-02-10 13:26:36.8078 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 POST http://localhost:5095/api/CLBlog/add-blog application/json-patch+json 61 - 200 52 application/json;+charset=utf-8 546.8037ms
+2025-02-10 13:26:41.9920 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET http://localhost:5095/api/CLBlog/get-all-blogs - -
+2025-02-10 13:26:41.9920 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)'
+2025-02-10 13:26:41.9989 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAllBlogs", controller = "CLBlog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllBlogs() on controller BlogManagementSystem.Controllers.CLBlogController (BlogManagementSystem).
+2025-02-10 13:26:41.9989 | INFO | BlogManagementSystem.Filters.LogActionFilter | Executing action: BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)
+2025-02-10 13:26:41.9989 | INFO | BlogManagementSystem.Controllers.CLBlogController | Fetching all blog posts.
+2025-02-10 13:26:42.0495 | INFO | BlogManagementSystem.Filters.LogActionFilter | Action executed successfully: BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)
+2025-02-10 13:26:42.0495 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'BlogManagementSystem.Models.Response'.
+2025-02-10 13:26:42.0495 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem) in 54.0235ms
+2025-02-10 13:26:42.0495 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'BlogManagementSystem.Controllers.CLBlogController.GetAllBlogs (BlogManagementSystem)'
+2025-02-10 13:26:42.0495 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET http://localhost:5095/api/CLBlog/get-all-blogs - - - 200 283 application/json;+charset=utf-8 61.4216ms
