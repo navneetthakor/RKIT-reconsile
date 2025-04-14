@@ -90,23 +90,23 @@ $(() => {
         //#endregion
         //#endregion
 
-        toolbar: {
-            items: [
-                {
-                    text: "Add/Update Book",
-                    click: function () {
-                        var $selectedRows = $('#jtable_demo').jtable('selectedRows');
-                        if ($selectedRows.length > 0) {
-                            var rowData = $selectedRows.data('record');
-                            window.openEditPopup(rowData);
-                        }
-                        else {
-                            window.openAddPopup()
-                        }
-                    },
-                },
-            ],
-        },
+        // toolbar: {
+        //     items: [
+        //         {
+        //             text: "Add/Update Book",
+        //             click: function () {
+        //                 var $selectedRows = $('#jtable_demo').jtable('selectedRows');
+        //                 if ($selectedRows.length > 0) {
+        //                     var rowData = $selectedRows.data('record');
+        //                     window.openEditPopup(rowData);
+        //                 }
+        //                 else {
+        //                     window.openAddPopup()
+        //                 }
+        //             },
+        //         },
+        //     ],
+        // },
         //#region action
         actions: {
             // necessory to view records in the table
@@ -155,6 +155,7 @@ $(() => {
                     success: function (data) {
                         defferdObj.resolve({
                             Result: "OK",
+                            Record: data
                         });
                     },
                     error: function (error) {
@@ -221,7 +222,8 @@ $(() => {
             },
             a03F03: {
                 title: "Book Description",
-                inputClass: 'validate[required]'
+                inputClass: 'validate[required]',
+                sorting: false
             },
         },
 
@@ -230,6 +232,12 @@ $(() => {
             console.log('Closing Main table');
             $('#jtable_demo').hide();
         },
+
+        // recordAdded: function (event, data) {
+        //     // This runs after a record is added
+        //     console.log("Record added", data);
+        //     $('#jtable_demo').jtable('closeDialog'); // <- Closes the add
+        // },
 
         //Initialize validation logic when a form is created
         formCreated: function (event, data) {
