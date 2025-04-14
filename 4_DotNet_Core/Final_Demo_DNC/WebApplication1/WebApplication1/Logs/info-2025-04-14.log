@@ -11057,3 +11057,43 @@
 2025-04-14 18:24:22.8628 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) in 21.6727ms  
 2025-04-14 18:24:22.8628 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)'  
 2025-04-14 18:24:22.8628 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks2?skip=0&take=2&sortFeild=a03F01&sortType=1 - - - 200 243 application/json;+charset=utf-8 22.1737ms  
+2025-04-14 18:24:23.2583 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks2?skip=0&take=2&sortFeild=a03F01&sortType=1 - -  
+2025-04-14 18:24:23.2583 | INFO | CORS policy execution successful.  
+2025-04-14 18:24:23.2583 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)'  
+2025-04-14 18:24:23.2583 | INFO | Route matched with {action = "GetAllBooks2", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks2(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-04-14 18:24:23.2739 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) - Validation state: Valid  
+2025-04-14 18:24:23.2739 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 5.8596ms.  
+2025-04-14 18:24:23.2739 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-04-14 18:24:23.2739 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) in 22.2153ms  
+2025-04-14 18:24:23.2739 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)'  
+2025-04-14 18:24:23.2739 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks2?skip=0&take=2&sortFeild=a03F01&sortType=1 - - - 200 243 application/json;+charset=utf-8 22.7244ms  
+2025-04-14 18:26:20.4979 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks2?skip=0&take=2&sortFeild=a03F01&sortType=1 - -  
+2025-04-14 18:26:20.4979 | INFO | CORS policy execution successful.  
+2025-04-14 18:26:20.4979 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)'  
+2025-04-14 18:26:20.4979 | INFO | Route matched with {action = "GetAllBooks2", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks2(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-04-14 18:26:20.5337 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) - Validation state: Valid  
+2025-04-14 18:26:20.5415 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 7.2067ms.  
+2025-04-14 18:26:20.5415 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-04-14 18:26:20.5415 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) in 43.1342ms  
+2025-04-14 18:26:20.5415 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)'  
+2025-04-14 18:26:20.5415 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks2?skip=0&take=2&sortFeild=a03F01&sortType=1 - - - 200 243 application/json;+charset=utf-8 44.2482ms  
+2025-04-14 18:26:21.4804 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks2?skip=0&take=2&sortFeild=a03F01&sortType=1 - -  
+2025-04-14 18:26:21.4804 | INFO | CORS policy execution successful.  
+2025-04-14 18:26:21.4804 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)'  
+2025-04-14 18:26:21.4804 | INFO | Route matched with {action = "GetAllBooks2", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks2(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-04-14 18:26:21.5019 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) - Validation state: Valid  
+2025-04-14 18:26:21.5090 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6.2995ms.  
+2025-04-14 18:26:21.5090 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-04-14 18:26:21.5090 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) in 28.8589ms  
+2025-04-14 18:26:21.5090 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)'  
+2025-04-14 18:26:21.5090 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks2?skip=0&take=2&sortFeild=a03F01&sortType=1 - - - 200 243 application/json;+charset=utf-8 29.3971ms  
+2025-04-14 18:26:21.6800 | INFO | Request starting HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks2?skip=0&take=2&sortFeild=a03F01&sortType=1 - -  
+2025-04-14 18:26:21.6800 | INFO | CORS policy execution successful.  
+2025-04-14 18:26:21.6800 | INFO | Executing endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)'  
+2025-04-14 18:26:21.6800 | INFO | Route matched with {action = "GetAllBooks2", controller = "Author"}. Executing controller action with signature WebApplication1.Utilitlies.Response GetAllBooks2(Int32, Int32, System.String, System.Nullable`1[System.Int32]) on controller WebApplication1.Controller.AuthorController (WebApplication1).  
+2025-04-14 18:26:21.7001 | INFO | Executing action method WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) - Validation state: Valid  
+2025-04-14 18:26:21.7001 | INFO | Executed action method WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 5.9633ms.  
+2025-04-14 18:26:21.7001 | INFO | Executing ObjectResult, writing value of type 'WebApplication1.Utilitlies.Response'.  
+2025-04-14 18:26:21.7001 | INFO | Executed action WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1) in 26.646ms  
+2025-04-14 18:26:21.7001 | INFO | Executed endpoint 'WebApplication1.Controller.AuthorController.GetAllBooks2 (WebApplication1)'  
+2025-04-14 18:26:21.7001 | INFO | Request finished HTTP/1.1 GET http://localhost:5276/api/Author/GetAllBooks2?skip=0&take=2&sortFeild=a03F01&sortType=1 - - - 200 243 application/json;+charset=utf-8 27.2492ms  
