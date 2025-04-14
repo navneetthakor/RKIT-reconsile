@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Demo (JTable)</title>
+
+    <!-- css for jquery validation engine  -->
+    <link
+        rel="C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\jtable_demo\jQuery-Validation-Engine-master\css\validationEngine.jquery.css"
+        href="style.css">
 
     <!-- CSS (JQueryUI and then JTable-metro_blue_theme) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/jquery-ui.min.css"
@@ -19,14 +25,125 @@
     <script type="text/javascript" src="../jtable.2.4.0/jquery.jtable.js"></script>
 
     <!-- script for jquery validation engine  -->
-    
+    <script
+        src="C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\jtable_demo\jQuery-Validation-Engine-master\js\jquery.validationEngine.js"></script>
+    <script
+        src="C:\Users\navneetkumar.t\source\repos\navneetthakor\RKIT-reconsile\jtable_demo\jQuery-Validation-Engine-master\js\languages\jquery.validationEngine-en.js"></script>
+
+    <!-- custom styling for form  -->
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #custom_user_form {
+            position: absolute;
+            top: 36vh;
+            left: 30vw;
+            border: 2px solid blue;
+            width: 30vw;
+            height: 20vh;
+
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        #custom_user_form button {
+            width: 5vw;
+            height: 5vh;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        #save {
+            background-color: green;
+        }
+
+        #cancel {
+            background-color: orangered;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+    </style>
+
 </head>
+
 <body>
+    <!-- jtable  -->
     <div id="jtable_demo"></div>
 
+    <!-- form that will be open when user clicks on to the custom add button  -->
+    <div id="custom_user_form" class="d-none">
+        <div>
+            <span>Book Name : </span>
+            <input type="text" name="bname" id="bname">
+        </div>
+        <div>
+            <span>Book Description : </span>
+            <input type="text" name="bdesc" id="bdesc">
+        </div>
+        <div>
+
+            <button id="cancel">Cancel</button>
+            <button id="save">Save</button>
+        </div>
+    </div>
+
     <script>
-        $(()=>{
-            const myUrl = 'http://localhost:5276/api/Author'
+
+        $(() => {
+            const myUrl = 'http://localhost:5276/api/Author';
+
+            // for edit popup
+            window.openEditPopup = (rowData) => {
+                $('#custom_user_form').removeClass('d-none');
+                $('#custom_user_form').addClass('d-flex');
+
+                $('#bname').val(rowData.a03F02);
+                $('#bdesc').val(rowData.a03F03);
+
+                $('#save').click(() => {
+                    $('#jtable_demo').jtable('updateRecord', {
+                        record: {
+                            a03F01: rowData.a03F01,
+                            a03F02: $('#bname').val(),
+                            a03F03: $('#bdesc').val(),
+                        }
+                    });
+                    $('#cancel').click();
+                })
+            };
+
+            window.openAddPopup = () => {
+                $('#custom_user_form').removeClass('d-none');
+                $('#custom_user_form').addClass('d-flex');
+
+                $('#save').click(() => {
+                    $('#jtable_demo').jtable('addRecord', {
+                        record: {
+                            a03F02: $('#bname').val(),
+                            a03F03: $('#bdesc').val(),
+                        }
+                    });
+                    $('#cancel').click();
+                })
+            }
+
+            $('#cancel').click(() => {
+                $('#custom_user_form').addClass('d-none');
+                $('#custom_user_form').removeClass('d-flex');
+            })
+
             $('#jtable_demo').jtable({
                 //#region general options (covere previously)
                 title: 'The Student List',
@@ -35,7 +152,7 @@
                 //#region  paging related settings 
                 paging: true,
                 pageSize: 2,
-                pageSizes: [1, 2, 3,5,10],
+                pageSizes: [1, 2, 3, 5, 10],
                 //#endregion
 
                 //#region  sorting not working properly 
@@ -48,6 +165,13 @@
                 columnResizable: true,
                 columnSelectable: true,
 
+                //#endregion
+
+                //#region  selection related settings
+                selectingCheckboxes: true,
+                selecting: true,
+                multiselect: false,
+                selectOnRowClick: false,
                 //#endregion
 
                 //#region  miselenious
@@ -67,18 +191,36 @@
                 //#endregion
                 //#endregion
 
+                toolbar: {
+                    items: [
+                        {
+                            icon: "https://img.icons8.com/ios-glyphs/30/add--v1.png",
+                            text: "Add/Update Book",
+                            click: function () {
+                                var $selectedRows = $('#jtable_demo').jtable('selectedRows');
+                                if ($selectedRows.length > 0) {
+                                    var rowData = $selectedRows.data('record');
+                                    window.openEditPopup(rowData);
+                                }
+                                else {
+                                    window.openAddPopup()
+                                }
+                            },
+                        },
+                    ],
+                },
                 //#region action
                 actions: {
                     // necessory to view records in the table
                     listAction: (postData, jtableParams) => {
                         console.log(jtableParams);
-                        let skip = -1, take ="",sortFeild ="a03F01", sortType = 1;
+                        let skip = -1, take = "", sortFeild = "a03F01", sortType = 1;
                         skip = jtableParams.jtStartIndex;
                         take = jtableParams.jtPageSize;
                         let sortingData = jtableParams.jtSorting;
-                        
-                        if(sortingData){
-                            sortFeild = sortingData.split(" ")[0] ? sortingData.split(" ")[0] : "" ;
+
+                        if (sortingData) {
+                            sortFeild = sortingData.split(" ")[0] ? sortingData.split(" ")[0] : "";
                             sortType = sortingData.split(" ")[1] === "DESC" ? 0 : 1;
                         }
 
@@ -168,7 +310,7 @@
                         return defferdObj;
                     }
                 },
-               
+
                 //#endregion
 
                 fields: {
@@ -179,10 +321,11 @@
                     },
                     a03F02: {
                         title: 'Book Title',
-
+                        inputClass: 'validate[required]'
                     },
                     a03F03: {
-                        title: "Book Description"
+                        title: "Book Description",
+                        inputClass: 'validate[required]'
                     },
                 },
 
@@ -192,10 +335,32 @@
                     $('#jtable_demo').hide();
                 },
 
+                //Initialize validation logic when a form is created
+                formCreated: function (event, data) {
+                    data.form.validationEngine();
+                    data.form.validationEngine("attach", {
+                        promptPosition: "inline",
+                        scroll: false,
+                        autoPositionUpdate: true,
+                        showArrow: false,
+                        prettySelect: true,
+                    });
+                },
+                //Validate form when it is being submitted
+                formSubmitting: function (event, data) {
+                    return data.form.validationEngine('validate');
+                },
+                //Dispose validation logic when form is closed
+                formClosed: function (event, data) {
+                    data.form.validationEngine('hide');
+                    data.form.validationEngine('detach');
+                }
+
             })
             // Without this, table will stay empty
             $('#jtable_demo').jtable('load');
         })
     </script>
 </body>
+
 </html>
