@@ -40,6 +40,7 @@ $(() => {
     $('#cancel').click(() => {
         $('#custom_user_form').addClass('d-none');
         $('#custom_user_form').removeClass('d-flex');
+        $('#jtable_demo').jtable('load');
     })
 
     $('#jtable_demo').jtable({
@@ -92,7 +93,6 @@ $(() => {
         toolbar: {
             items: [
                 {
-                    icon: "https://img.icons8.com/ios-glyphs/30/add--v1.png",
                     text: "Add/Update Book",
                     click: function () {
                         var $selectedRows = $('#jtable_demo').jtable('selectedRows');
@@ -177,8 +177,6 @@ $(() => {
                     success: function (data) {
                         $dfd.resolve({
                             Result: "OK",
-                            Records: data,
-                            TotalRecordCount: data.length,
                         });
                     },
                     error: function () {
