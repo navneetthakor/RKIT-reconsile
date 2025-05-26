@@ -43,6 +43,27 @@ $(() => {
         $('#jtable_demo').jtable('load');
     })
 
+    // JQuery validation engine rules 
+    if ($.validationEngineLanguage && $.validationEngineLanguage.allRules) {
+        var customValidationMessages = {
+            "required": {
+                "defaultMessage": "This field is mandatory."
+            },
+            "custom[email]": {
+                "defaultMessage": "Please enter a valid email address."
+            },
+            // Add more rules...
+        };
+
+        $.extend(true, $.validationEngineLanguage.allRules, customValidationMessages);
+        console.dir($.validationEngineLanguage.allRules);
+    } else {
+        console.error("Validation engine language file not loaded. Cannot set custom messages.");
+    }
+    
+
+
+    // jtable related settings
     $('#jtable_demo').jtable({
         //#region general options (covere previously)
         title: 'The Student List',
@@ -90,23 +111,23 @@ $(() => {
         //#endregion
         //#endregion
 
-        // toolbar: {
-        //     items: [
-        //         {
-        //             text: "Add/Update Book",
-        //             click: function () {
-        //                 var $selectedRows = $('#jtable_demo').jtable('selectedRows');
-        //                 if ($selectedRows.length > 0) {
-        //                     var rowData = $selectedRows.data('record');
-        //                     window.openEditPopup(rowData);
-        //                 }
-        //                 else {
-        //                     window.openAddPopup()
-        //                 }
-        //             },
-        //         },
-        //     ],
-        // },
+        toolbar: {
+            items: [
+                {
+                    text: "Add/Update Book",
+                    click: function () {
+                        var $selectedRows = $('#jtable_demo').jtable('selectedRows');
+                        if ($selectedRows.length > 0) {
+                            var rowData = $selectedRows.data('record');
+                            window.openEditPopup(rowData);
+                        }
+                        else {
+                            window.openAddPopup()
+                        }
+                    },
+                },
+            ],
+        },
         //#region action
         actions: {
             // necessory to view records in the table
